@@ -30,14 +30,18 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (the example is intentionally versioned)
 .env*
+!.env.example
 
 # vercel
-.vercel
+.vercel/
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# browser tests
+/playwright-report/
+/test-results/
+/.test-results/

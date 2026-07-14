@@ -1,192 +1,161 @@
 # Site Profissional — Marco Aurélio Pereira Barbosa
 
-Site institucional/profissional de apresentação de **Marco Aurélio Pereira Barbosa**, voltado à divulgação de trajetória, formação complementar, áreas de conhecimento e atuação relacionada à **Perícia Digital, Computação Forense e Evidências Digitais**.
+Site institucional de apresentação profissional voltado à Perícia Digital, Computação Forense e Evidências Digitais. O projeto inclui uma página principal responsiva e um cartão virtual próprio para compartilhamento em celulares e aplicativos como o WhatsApp.
 
-O projeto tem finalidade de apresentação pública, com linguagem técnica, objetiva e institucional, reunindo informações sobre experiência, especialização, credenciais, contato profissional e referências de atuação.
+## Recursos
 
-## Objetivo
+- página institucional responsiva;
+- navegação móvel acessível com suporte a teclado e `Escape`;
+- cartão profissional em `/cartao`;
+- compartilhamento pela Web Share API com cópia de link como alternativa;
+- links para WhatsApp, telefone, e-mail e Currículo Lattes;
+- contato em formato vCard (`.vcf`);
+- QR Code gerado localmente pelo servidor;
+- imagens Open Graph de 1200 × 630 geradas pelo Next.js;
+- metadados, robots, sitemap e manifest;
+- cabeçalhos defensivos e Content Security Policy;
+- testes end-to-end com Playwright;
+- workflow de CI para GitHub Actions.
 
-Apresentar, de forma clara e organizada:
+## Stack
 
-* trajetória profissional;
-* áreas de conhecimento em perícia digital e computação forense;
-* formação complementar;
-* credenciais profissionais;
-* vínculo com estudos e tecnologia forense;
-* canais de contato profissional;
-* links externos relevantes, como Currículo Lattes;
-* conexão futura com projetos digitais autorais.
-
-## Identidade do site
-
-O site adota uma identidade visual escura, técnica e profissional, com uso de tons em azul/ciano, fundo escuro e cards informativos.
-
-A proposta visual busca transmitir:
-
-* seriedade;
-* organização;
-* tecnologia;
-* clareza técnica;
-* confiabilidade;
-* atuação profissional;
-* foco em evidências digitais e computação forense.
-
-## Stack utilizada
-
-* Next.js
-* React
-* Tailwind CSS
-* JavaScript
-* Vercel
-* GitHub
+- Next.js 16 com App Router;
+- React 19;
+- Tailwind CSS 4;
+- JavaScript;
+- Playwright;
+- Node.js 24 LTS.
 
 ## Estrutura principal
 
 ```text
-pericia-digital-marco-site/
-├── app/
-│   ├── globals.css
-│   ├── layout.js
+app/
+├── cartao/
+│   ├── contato.vcf/route.js
+│   ├── qr-code/route.js
+│   ├── opengraph-image.jsx
 │   └── page.js
-├── public/
-│   ├── apecof.jpeg
-│   ├── marco.jpeg
-│   └── favicon.ico
-├── package.json
-├── postcss.config.mjs
-├── eslint.config.mjs
-├── next.config.mjs
-└── README.md
+├── favicon.ico
+├── global-error.js
+├── globals.css
+├── layout.js
+├── manifest.js
+├── not-found.js
+├── opengraph-image.jsx
+├── page.js
+├── robots.js
+└── sitemap.js
+components/
+data/profile.js
+lib/site-url.js
+public/
+├── apecof.jpeg
+└── marco.jpeg
+tests/e2e/site.spec.js
+.github/workflows/ci.yml
 ```
 
-## Conteúdo da página
+O favicon fica em `app/favicon.ico`, conforme a convenção do App Router.
 
-A página principal contém as seguintes seções:
+## Requisitos
 
-* Início;
-* Perícia Digital;
-* Áreas de Especialização;
-* Trajetória Profissional;
-* Credenciais;
-* APECOF;
-* Contato.
+- Node.js 24 LTS;
+- npm compatível com a instalação do Node.js;
+- Windows, macOS ou Linux.
 
-## Informações apresentadas
+O arquivo `.nvmrc` fixa a linha 24. O `package.json` usa `engines.node: 24.x` para compatibilidade com a versão LTS padrão da Vercel.
 
-O site apresenta informações públicas e institucionais sobre:
+## Variável de ambiente
 
-* perícia digital;
-* computação forense;
-* evidências digitais;
-* dispositivos móveis;
-* análise técnica;
-* cadeia de custódia;
-* documentação de vestígios;
-* leitura crítica de laudos;
-* formação complementar;
-* contato profissional.
+Copie `.env.example` para `.env.local` durante o desenvolvimento, se precisar definir explicitamente a URL:
 
-## Cuidados de segurança e privacidade
-
-Este projeto não deve conter:
-
-* dados sensíveis;
-* dados de ocorrências reais;
-* documentos sigilosos;
-* informações restritas;
-* senhas;
-* tokens;
-* chaves de API;
-* arquivos `.env`;
-* dados pessoais de terceiros;
-* materiais institucionais não autorizados.
-
-As imagens e informações utilizadas devem possuir autorização, finalidade institucional ou caráter público adequado.
-
-## Rodar localmente
-
-Instale as dependências:
-
-```bash
-npm install
+```env
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-Inicie o servidor de desenvolvimento:
+Na Vercel, `NEXT_PUBLIC_SITE_URL` deve receber a URL pública real, incluindo `https://`. Não há domínio definitivo configurado no repositório.
 
-```bash
+A mesma fonte de URL é usada em canonical, sitemap, compartilhamento, QR Code e vCard. Em previews da Vercel, o projeto pode usar a URL informada automaticamente pela plataforma. Em desenvolvimento, o fallback é `http://localhost:3000`.
+
+## Instalação e execução
+
+```powershell
+cd "C:\Users\marco\Desktop\Codex\pericia-digital-marco-site"
+npm ci
 npm run dev
 ```
 
-Acesse no navegador:
+Acesse:
 
-```text
-http://localhost:3000
-```
+- página principal: `http://localhost:3000`;
+- cartão virtual: `http://localhost:3000/cartao`.
 
-Caso a porta 3000 esteja em uso, o Next.js poderá iniciar automaticamente em outra porta, como:
+## Validação
 
-```text
-http://localhost:3001
-```
-
-## Build de produção
-
-Para gerar a versão de produção:
-
-```bash
+```powershell
+npm ls --depth=0
+npm audit --omit=dev
+npm audit
+npm run lint
+npm run test
 npm run build
 ```
 
-Para executar localmente a versão gerada:
+Na primeira execução local dos testes, instale o navegador do Playwright:
 
-```bash
-npm run start
+```powershell
+npx playwright install chromium
 ```
 
-## Lint
+Os testes verificam 320, 375, 390, 430, 768, 1024 e 1440 px, navegação móvel, ausência de rolagem horizontal, imagens, contatos, QR Code, VCF, metadados e cabeçalhos.
 
-Para verificar o código com ESLint:
+## Build de produção
 
-```bash
-npm run lint
+```powershell
+npm run build
+npm start
 ```
 
-## Deploy
+## Cartão virtual
 
-O deploy pode ser realizado pela Vercel.
+A página `/cartao` apresenta os mesmos dados profissionais centralizados em `data/profile.js` e oferece:
 
-Quando o projeto estiver conectado ao GitHub, cada atualização enviada para a branch principal poderá acionar novo deploy automático na Vercel, conforme configuração do projeto.
+- acesso ao site principal;
+- WhatsApp;
+- ligação telefônica;
+- e-mail;
+- download do contato em `/cartao/contato.vcf`;
+- compartilhamento nativo;
+- cópia do link;
+- QR Code em `/cartao/qr-code`;
+- imagem social em `/cartao/opengraph-image`.
 
-Fluxo recomendado:
+Se a Web Share API não estiver disponível, o botão de compartilhamento copia o endereço do cartão e informa o resultado na tela.
 
-```bash
-git status
-git add .
-git commit -m "docs: atualiza README do site profissional"
-git push origin main
-```
+## Segurança e privacidade
 
-## Integração com Dama Universe
+O projeto não deve incluir senhas, tokens, chaves, arquivos `.env` reais, documentos sigilosos ou dados pessoais de terceiros. `.next`, `node_modules`, relatórios de teste e `.vercel` permanecem ignorados.
 
-Este site pessoal/profissional pode ser vinculado ao projeto **Dama Universe** como página de referência sobre o criador.
+As imagens `public/marco.jpeg` e `public/apecof.jpeg` fazem parte do conteúdo autorizado deste projeto. Elas não possuem metadados EXIF ou GPS.
 
-Estratégia recomendada:
+## Git e publicação
 
-* manter este site como apresentação profissional de Marco Aurélio Pereira Barbosa;
-* manter o Dama Universe como ecossistema de projetos, programas, GPTs personalizados, downloads, blog e ferramentas;
-* criar links cruzados entre os dois sites:
+A branch de trabalho preparada é `fix/producao-mobile-cartao`. O repositório não possui remoto configurado e nenhum push ou deploy foi executado.
 
-  * no Dama Universe: “Quem está por trás do Dama Universe”;
-  * no site pessoal: “Projetos e ferramentas — Dama Universe”.
+O manual completo para criar o repositório no GitHub, enviar a branch, importar na Vercel, configurar variável e domínio está em:
+
+[`docs/PUBLICACAO_GITHUB_VERCEL.md`](docs/PUBLICACAO_GITHUB_VERCEL.md)
 
 ## Autor
 
 **Marco Aurélio Pereira Barbosa**
+
 Campo Grande/MS
+
 E-mail: [marcobarbo@gmail.com](mailto:marcobarbo@gmail.com)
-Currículo Lattes: https://lattes.cnpq.br/1970561249212557
+
+Currículo Lattes: <https://lattes.cnpq.br/1970561249212557>
 
 ## Licença e uso
 
-Este projeto possui finalidade institucional e autoral.
-A reprodução, adaptação ou redistribuição do conteúdo deve respeitar a autoria, a finalidade profissional e eventuais restrições aplicáveis às imagens, textos e materiais utilizados.
+Este projeto possui finalidade institucional e autoral. A reprodução, adaptação ou redistribuição deve respeitar a autoria e eventuais restrições aplicáveis às imagens e ao conteúdo.
