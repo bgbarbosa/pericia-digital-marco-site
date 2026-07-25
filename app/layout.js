@@ -54,7 +54,11 @@ export const metadata = {
     description,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.svg",
   },
   manifest: "/manifest.webmanifest",
 };
