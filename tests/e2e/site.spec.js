@@ -98,6 +98,60 @@ test("hero prioriza capacitações e preserva o cargo público como informação
   await expect(page.locator("#sobre")).toContainText("Investigador da Polícia Civil");
 });
 
+test("experiência forense e formação acadêmica são apresentadas sem dados sensíveis", async ({
+  page,
+}) => {
+  await page.goto("/");
+
+  const knowledgeSection = page.locator("#conhecimentos");
+  await expect(
+    knowledgeSection.getByRole("heading", {
+      level: 2,
+      name: "Perícia digital, investigação e tecnologia forense",
+    }),
+  ).toBeVisible();
+  await expect(knowledgeSection).toContainText(
+    "A trajetória profissional reúne mais de 12 anos de experiência em investigação e análise técnica",
+  );
+  await expect(knowledgeSection).not.toContainText("Áreas de conhecimento complementar");
+
+  await expect(knowledgeSection.locator("article h3").allTextContents()).resolves.toEqual([
+    "Perícia digital e evidências eletrônicas",
+    "Investigação digital e OSINT",
+    "Computação forense",
+    "Análise de dados e organização da informação",
+    "Dispositivos móveis",
+    "Leitura técnica de documentos e laudos",
+    "Imagem, áudio, vídeo e metadados",
+    "Segurança da informação",
+  ]);
+
+  const aboutSection = page.locator("#sobre");
+  await expect(aboutSection).toContainText(
+    "Pós-graduado em Inteligência Artificial para Agentes da Lei",
+  );
+  await expect(aboutSection).toContainText(
+    "Especialização em Inteligência Artificial pela Universidade Tecnológica Federal do Paraná - UTFPR, em andamento.",
+  );
+  await expect(page.getByText(/Curso de ChatGPT para Policiais e Agentes da Lei/)).toBeVisible();
+
+  const hero = page.locator("#inicio");
+  await expect(hero).toContainText("Pós-graduado em Inteligência Artificial");
+  await expect(hero).toContainText("Mais de 12 anos em investigação e análise técnica");
+  await expect(hero).not.toContainText("Investigador da Polícia Civil");
+
+  const publicContent = page.locator("body");
+  for (const sensitiveTerm of [
+    /(?:^|[\s:;,()])CPF(?:$|[\s:;,().])/i,
+    /(?:^|[\s:;,()])RG(?:$|[\s:;,().])/i,
+    /data de nascimento/i,
+    /código de validação/i,
+    /número de registro acadêmico/i,
+  ]) {
+    await expect(publicContent).not.toContainText(sensitiveTerm);
+  }
+});
+
 test("cartão virtual oferece contatos, QR Code, VCF e compartilhamento alternativo", async ({
   page,
 }) => {
@@ -119,6 +173,10 @@ test("cartão virtual oferece contatos, QR Code, VCF e compartilhamento alternat
   ]) {
     await expect(page.getByRole("listitem").filter({ hasText: area })).toHaveCount(1);
   }
+  await expect(
+    page.getByRole("heading", { level: 2, name: "Investigação e tecnologia forense" }),
+  ).toBeVisible();
+  await expect(page.getByText(/Experiência em investigação, análise técnica e evidências digitais/)).toBeVisible();
   await expect(page.getByAltText(/Logotipo da APECOF/i)).toHaveCount(0);
   await expect(page.locator('a[href^="https://wa.me/"]')).toBeVisible();
   await expect(page.locator('a[href^="tel:"]')).toBeVisible();

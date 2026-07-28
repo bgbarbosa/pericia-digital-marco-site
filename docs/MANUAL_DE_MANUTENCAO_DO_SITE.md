@@ -25,7 +25,7 @@ pericia-digital-marco-site/
 |-- data/profile.js                   # fonte estruturada de conteúdo
 |-- lib/site-url.js                   # URL pública
 |-- public/                            # retrato, marca e ícones
-|-- tests/e2e/site.spec.js            # 13 testes Playwright
+|-- tests/e2e/site.spec.js            # 14 testes Playwright
 |-- next.config.mjs                   # CSP e headers
 |-- package.json                      # scripts e dependências
 `-- playwright.config.js              # servidor de teste na porta 3100
@@ -82,7 +82,7 @@ Edite conscientemente `profile.name`, `title`, `heroTitle`, `subtitle`, `introdu
 
 **Principal:** `components/HeroSection.jsx`. **Dados:** `profile` e `heroHighlights` em `data/profile.js`.
 
-Mantenha um único H1, o CTA principal em `#capacitacoes`, o Lattes e o cartão. Para trocar os três destaques, altere `heroHighlights`. Teste texto, imagem e botões em 320, 390, 768 e 1440 px. O hero influencia a primeira impressão, os testes de posicionamento e, editorialmente, metadata e OG. Não reintroduza o cargo público como título principal.
+Mantenha um único H1, o CTA principal em `#capacitacoes`, o Lattes e o cartão. Cada destaque usa `{ label, text }`; preserve os eixos Formação, Aplicação e Experiência sem inserir o nome do órgão público. Teste texto, imagem e botões em 320, 390, 768 e 1440 px. O hero influencia a primeira impressão, os testes de posicionamento e, editorialmente, metadata e OG. Não reintroduza o cargo público como título principal.
 
 ## 6. Adicionar ou atualizar modalidade de capacitação
 
@@ -102,17 +102,28 @@ Use `{ title, text }`, preserve linguagem responsável e destaque validação hu
 
 Cada item usa `{ title, text }`. Soluções digitais são oferta secundária; não anuncie produto, disponibilidade ou integração que não exista. Valide `/#solucoes-digitais`, aviso institucional, contato e textos de metadata. A redação final desta oferta é uma pendência institucional antes da produção.
 
-## 9. Adicionar ou atualizar conhecimento complementar
+## 9. Adicionar ou atualizar experiência e formação forense
 
 **Principal:** `knowledgeAreas`; **componente:** `KnowledgeAreasSection` em `components/ProfessionalSections.jsx`.
 
-Use `{ title, text }` e mantenha perícia/computação forense como formação complementar. `specializationAreas` é apenas alias de compatibilidade. Teste `/#conhecimentos`; o cartão não é derivado dessa lista. Se o resumo do cartão precisar mudar, edite também `virtualCardAreas` ou `virtualCardComplement`.
+Use `{ title, text }` e preserve a ordem: perícia digital; investigação/OSINT; computação forense; análise de dados; dispositivos móveis; documentos/laudos; imagem, áudio e vídeo; segurança da informação. A seção deve comunicar experiência, formação e conhecimento aplicado, nunca contratação de perícia ou garantia de resultado. `specializationAreas` é apenas alias de compatibilidade. Teste `/#conhecimentos`; o cartão usa a estrutura independente `virtualCardForensics`.
 
 ## 10. Alterar trajetória e credenciais
 
 **Principais:** `TrajectorySection`, `CredentialsSection`, `credentials` e `emphasisPoints`.
 
-Textos narrativos ficam em `components/ProfessionalSections.jsx`; listas ficam em `data/profile.js`. Confirme formação e experiência antes de publicar. Teste `/#sobre`, credenciais e a marca APECOF. Mudanças curriculares podem exigir revisão do vCard, cartão, metadata e OG, mesmo quando não são consumidas automaticamente.
+Textos narrativos ficam em `components/ProfessionalSections.jsx`; `academicFormation`, `credentials` e `emphasisPoints` ficam em `data/profile.js`. Confirme formação e experiência antes de publicar. Teste `/#sobre`, credenciais e a marca APECOF. Mudanças curriculares podem exigir revisão do hero, cartão, metadata, OG e testes, mesmo quando não são consumidas automaticamente.
+
+Fatos confirmados nesta versão:
+
+- pós-graduação em Inteligência Artificial para Agentes da Lei, 360 horas, concluída em 2026;
+- pós-graduação em Análise de Dados, 360 horas, concluída em 2024;
+- especialização em Inteligência Artificial pela UTFPR em andamento;
+- graduação em Administração concluída em 2009;
+- curso de ChatGPT para Policiais e Agentes da Lei, 40 horas, concluído em 2024;
+- mais de 12 anos de experiência em investigação e análise técnica.
+
+O certificado e o histórico, por serem posteriores, confirmam a conclusão da pós-graduação em Inteligência Artificial para Agentes da Lei, embora o Lattes ainda apresente status antigo. Não altere “em andamento” para a especialização da UTFPR sem nova comprovação. Os documentos acadêmicos são apenas fontes de verificação: não copie PDFs/XML para `public/` ou para o repositório e não transcreva CPF, RG, data de nascimento, endereço, códigos, QR acadêmico, registros, notas ou nomes de professores.
 
 ## 11. Tratar o cargo público
 
@@ -148,9 +159,9 @@ Teste WhatsApp, ligação, e-mail, cartão e vCard em dispositivo apropriado. O 
 
 ## 17. Atualizar o cartão virtual
 
-**Página:** `app/cartao/page.js`; **interface:** `VirtualCard.jsx`; **dados:** `profile`, `virtualCardAreas` e `virtualCardComplement`.
+**Página:** `app/cartao/page.js`; **interface:** `VirtualCard.jsx`; **dados:** `profile`, `virtualCardAreas` e `virtualCardForensics`.
 
-Mantenha quatro áreas resumidas e o complemento coerentes com o posicionamento. Revise metadata específica, contatos, endereço exibido, QR, vCard e compartilhamento. O cartão não exibe APECOF. Teste em 390 px e desktop, inclusive sem Web Share API.
+Mantenha as quatro áreas principais e o bloco em largura total “Investigação e tecnologia forense”. O bloco deve ter destaque moderado, sem ícone, animação, CTA ou linguagem de contratação. Revise metadata específica, contatos, endereço exibido, QR, vCard e compartilhamento. O cartão não exibe APECOF. Teste em 390 px e desktop, inclusive sem Web Share API.
 
 ## 18. Validar QR Code e vCard
 
@@ -221,7 +232,7 @@ npm run test
 npm run build
 ```
 
-`npm run test` executa 13 testes Playwright e inicia o servidor na porta 3100. `npm run build` faz a verificação integrada do Next.js. Não existe script separado de typecheck ou cobertura.
+`npm run test` executa 14 testes Playwright e inicia o servidor na porta 3100. `npm run build` faz a verificação integrada do Next.js. Não existe script separado de typecheck ou cobertura.
 
 ## 32. Validar antes de publicar
 
@@ -231,7 +242,7 @@ npm run build
 - [ ] `/`, `/cartao`, QR, vCard, OG, manifest, robots e sitemap conferidos;
 - [ ] menu, teclado, foco e viewports revisados;
 - [ ] CSP e ausência de erros no console conferidas;
-- [ ] `git diff --check`, lint, 13 testes e build aprovados;
+- [ ] `git diff --check`, lint, 14 testes e build aprovados;
 - [ ] nenhum `.env`, segredo, `.next`, `node_modules` ou relatório incluído;
 - [ ] rollback identificado.
 
@@ -327,11 +338,12 @@ Antes do commit, revise o diff e desfaça apenas suas linhas pelo editor. Depois
 | Capacitações | `capacityModalities` | `CapacitySection`, hero, contato |
 | Temas de IA | `aiApplications` | seção, metadata, OG |
 | Soluções digitais | `digitalSolutionPoints` | seção, contato, aviso |
-| Conhecimentos | `knowledgeAreas` | seção e resumo do cartão |
+| Experiência/formação forense | `knowledgeAreas` | seção, ordem dos cards, cartão e E2E |
+| Formação acadêmica | `academicFormation` | trajetória, revisão curricular do hero e E2E |
 | Trajetória/credenciais | `ProfessionalSections.jsx`, listas | cargo público, APECOF, testes |
 | Hero | `HeroSection.jsx`, `heroHighlights` | metadata, OG, E2E |
 | Menu | `homeMenu` | IDs, Header, cartão e E2E |
-| Cartão | `VirtualCard.jsx`, `virtualCardAreas` | metadata, QR, vCard, compartilhar |
+| Cartão | `VirtualCard.jsx`, `virtualCardAreas`, `virtualCardForensics` | metadata, QR, vCard, compartilhar |
 | SEO/URL | layout e `site-url.js` | OG, sitemap, robots, QR, vCard |
 | Segurança | `next.config.mjs` | integrações, console e testes |
 

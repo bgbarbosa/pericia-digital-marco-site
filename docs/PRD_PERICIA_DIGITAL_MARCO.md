@@ -19,7 +19,7 @@
 
 O produto é uma presença profissional enxuta, destinada a apresentar serviços e facilitar contato. O posicionamento principal é Inteligência Artificial, ChatGPT e capacitações práticas — treinamentos, cursos, oficinas, palestras e mentorias — para profissionais e equipes.
 
-Soluções digitais personalizadas aparecem como oferta secundária. Perícia digital, computação forense, análise de dados, investigação digital e segurança da informação permanecem como conhecimentos complementares e elementos curriculares, sem disputar o protagonismo do posicionamento em IA.
+Soluções digitais personalizadas aparecem como oferta secundária. Perícia digital, investigação e tecnologia forense recebem uma seção própria de experiência e formação técnica, sem disputar o protagonismo do posicionamento em IA e sem caracterizar oferta comercial direta de serviços periciais.
 
 O site atende profissionais, equipes, organizações, gestores, educadores, profissionais do Direito e da segurança pública, estudantes e pessoas interessadas em IA ou soluções digitais. Sua proposta de valor é comunicar competências de forma clara, responsável e verificável, sem apresentar catálogo, agenda, preço ou promessa comercial inexistente.
 
@@ -34,7 +34,7 @@ O site atende profissionais, equipes, organizações, gestores, educadores, prof
 ### Secundários
 
 - apresentar soluções digitais personalizadas;
-- registrar trajetória, credenciais e conhecimentos complementares;
+- registrar trajetória, formação acadêmica, experiência forense e credenciais;
 - preservar independência institucional entre atuação profissional e cargo público.
 
 ### Técnicos e editoriais
@@ -49,8 +49,8 @@ O site atende profissionais, equipes, organizações, gestores, educadores, prof
 ## 4. Escopo implementado
 
 - home em página única, com hero e âncoras;
-- seções de capacitações, aplicações de IA, soluções digitais, conhecimentos complementares, trajetória, credenciais e contato;
-- cartão virtual reposicionado, com quatro áreas resumidas e texto complementar;
+- seções de capacitações, aplicações de IA, soluções digitais, experiência e formação forense, trajetória, credenciais e contato;
+- cartão virtual reposicionado, com quatro áreas resumidas e bloco de investigação e tecnologia forense;
 - links de WhatsApp, telefone, e-mail e Currículo Lattes;
 - QR Code SVG gerado localmente e vCard VCF gerado por Route Handlers;
 - compartilhamento pela Web Share API, com alternativa pela Clipboard API;
@@ -58,7 +58,7 @@ O site atende profissionais, equipes, organizações, gestores, educadores, prof
 - imagens Open Graph geradas por código, manifest, sitemap e robots;
 - páginas de erro global e 404;
 - CSP e cabeçalhos defensivos;
-- 13 testes E2E, lint, build e CI no GitHub Actions.
+- 14 testes E2E, lint, build e CI no GitHub Actions.
 
 ## 5. Escopo não encontrado
 
@@ -95,10 +95,10 @@ Esses itens não possuem procedimento operacional. Uma inclusão futura exige no
 | RF-002 | Exibir modalidades de capacitação | Implementado: `capacityModalities`, `CapacitySection` | Quatro modalidades renderizadas em `#capacitacoes` |
 | RF-003 | Exibir temas e aplicações de IA | Implementado: `aiApplications`, `AiApplicationsSection` | Seis temas renderizados em `#aplicacoes-ia` |
 | RF-004 | Exibir soluções digitais como oferta secundária | Implementado: `digitalSolutionPoints`, `DigitalSolutionsSection` | Quatro pontos em `#solucoes-digitais` |
-| RF-005 | Exibir conhecimentos complementares | Implementado: `knowledgeAreas`, `KnowledgeAreasSection` | Oito áreas em `#conhecimentos` |
+| RF-005 | Exibir experiência e formação em perícia, investigação e tecnologia forense | Implementado: `knowledgeAreas`, `KnowledgeAreasSection` | Título forense, texto de contexto e oito áreas ordenadas em `#conhecimentos`, sem CTA comercial |
 | RF-006 | Exibir trajetória, credenciais e associação | Implementado: `ProfessionalSections.jsx`, `profile.js` | Cargo aparece como informação curricular e APECOF na home |
 | RF-007 | Oferecer contato direto | Implementado: `ContactSection.jsx`, URLs derivadas | WhatsApp, `tel:` e `mailto:` funcionam sem coleta pelo site |
-| RF-008 | Oferecer cartão virtual | Implementado: `/cartao`, `VirtualCard.jsx` | Identidade, quatro áreas, complemento e contatos visíveis |
+| RF-008 | Oferecer cartão virtual | Implementado: `/cartao`, `VirtualCard.jsx` | Identidade, quatro áreas, bloco forense e contatos visíveis |
 | RF-009 | Gerar QR Code e vCard | Implementado: Route Handlers em `app/cartao/` | Respostas SVG/VCF válidas e alvo coerente com a URL |
 | RF-010 | Compartilhar cartão | Implementado: `ShareCardActions.jsx` | Web Share quando disponível; cópia como alternativa |
 | RF-011 | Manter SEO técnico | Implementado: layout, metadata, OG, manifest, sitemap, robots | Rotas respondem e canonical só aparece com URL pública |
@@ -113,7 +113,7 @@ Esses itens não possuem procedimento operacional. Uma inclusão futura exige no
 - **Acessibilidade:** HTML semântico, idioma `pt-BR`, foco visível, ARIA no menu e suporte a movimento reduzido.
 - **Compatibilidade:** navegadores atuais com fallback para compartilhamento; layout de 320 a 1440 px validado.
 - **Manutenibilidade:** JavaScript, App Router, dados estruturados e componentes por responsabilidade.
-- **Confiabilidade:** lint, 13 testes E2E, build e CI.
+- **Confiabilidade:** lint, 14 testes E2E, build e CI.
 - **SEO:** metadata e rotas de SEO dependentes de URL pública válida.
 - **Disponibilidade:** dependente do provedor futuro; SLA não definido.
 - **Escalabilidade editorial:** adequada ao site estático atual; não há CMS.
@@ -164,19 +164,33 @@ Todos os campos abaixo têm obrigatoriedade prática: sua remoção exige revisa
 | `capacityModalities` | array de `{title, text}` | treinamentos, cursos/oficinas, palestras e mentorias | `CapacitySection` |
 | `aiApplications` | array de `{title, text}` | seis aplicações de IA | `AiApplicationsSection` |
 | `digitalSolutionPoints` | array de `{title, text}` | quatro pontos de soluções digitais | `DigitalSolutionsSection` |
-| `knowledgeAreas` | array de `{title, text}` | conhecimentos complementares | `KnowledgeAreasSection` |
+| `knowledgeAreas` | array de `{title, text}` | oito áreas de experiência e formação técnica | `KnowledgeAreasSection` |
 | `specializationAreas` | alias de array | compatibilidade interna temporária | nenhum consumidor principal atual |
-| `heroHighlights` | array de strings | três destaques curtos | `HeroSection` |
+| `heroHighlights` | array de `{label, text}` | formação, aplicação e experiência | `HeroSection` |
 | `virtualCardAreas` | array de strings | quatro áreas resumidas | `VirtualCard` |
-| `virtualCardComplement` | string | formação complementar no cartão | `VirtualCard` |
+| `virtualCardForensics` | objeto `{title, text}` | experiência em investigação e tecnologia forense | `VirtualCard` |
+| `academicFormation` | array de strings | formações acadêmicas confirmadas e situação da UTFPR | `TrajectorySection` |
 | `emphasisPoints`, `credentials` | array de strings | valores e currículo | `CredentialsSection` |
 | `whatsappUrl`, `telephoneUrl`, `emailUrl` | strings derivadas | links de contato | home e cartão |
+
+### Fatos curriculares confirmados
+
+- pós-graduação lato sensu em Inteligência Artificial para Agentes da Lei, 360 horas, concluída em 2026;
+- pós-graduação em Análise de Dados, 360 horas, concluída em 2024;
+- especialização em Inteligência Artificial pela UTFPR em andamento;
+- graduação em Administração concluída em 2009;
+- curso de ChatGPT para Policiais e Agentes da Lei, 40 horas, concluído em 2024;
+- mais de 12 anos de experiência em investigação e análise técnica;
+- formação técnica em perícia digital, computação forense, dispositivos móveis, OSINT, imagem, áudio, vídeo, análise de dados e ferramentas forenses.
+
+O certificado e o histórico escolar, por serem posteriores, prevalecem sobre o status ainda desatualizado do Lattes para a pós-graduação em Inteligência Artificial para Agentes da Lei. A especialização da UTFPR permanece explicitamente **em andamento**.
 
 ## 12. Fontes de dados e fluxos
 
 | Tipo | Arquivo principal | Estrutura | Consumidores/observações |
 |---|---|---|---|
 | Dados profissionais | `data/profile.js` | objetos, arrays e URLs derivadas | home, cartão, handlers e metadata |
+| Formação acadêmica verificada | certificado, histórico e currículo fornecidos pelo titular | fontes externas ao repositório | somente fatos curriculares necessários foram transcritos |
 | Textos de posicionamento | `data/profile.js` e `components/PositioningSections.jsx` | dados + títulos introdutórios em JSX | home |
 | Trajetória e credenciais | `components/ProfessionalSections.jsx` + dados | texto editorial em JSX e listas | home |
 | Contato e aviso institucional | `components/ContactSection.jsx`, `components/Footer.jsx` | texto direto em JSX | home e rodapé |
@@ -199,7 +213,9 @@ Há duplicação deliberada de mensagens entre perfil, metadata, OG, cartão e r
 
 ## 14. Privacidade e segurança
 
-O site publica dados profissionais de contato definidos no código. Não há formulário, autenticação, banco, cookies próprios, analytics nem persistência em `localStorage` ou `sessionStorage`. O navegador só acessa serviços externos quando o visitante escolhe Lattes, WhatsApp, telefone, e-mail ou compartilhamento.
+O site publica dados profissionais de contato e fatos curriculares estritamente necessários. Não há formulário, autenticação, banco, cookies próprios, analytics nem persistência em `localStorage` ou `sessionStorage`. O navegador só acessa serviços externos quando o visitante escolhe Lattes, WhatsApp, telefone, e-mail ou compartilhamento.
+
+Os documentos acadêmicos foram usados apenas como fontes de verificação. PDFs, XML, certificados e históricos não foram copiados para o projeto. CPF, RG, data de nascimento, endereço residencial, códigos de validação, QR Code acadêmico, números de registro, notas, professores e outros identificadores desnecessários não foram incorporados ao site nem a esta documentação.
 
 `NEXT_PUBLIC_SITE_URL` é pública e não pode conter segredo. Segredos futuros devem ficar exclusivamente no servidor e na plataforma. A CSP restringe origens, objetos, frames e formulários; cabeçalhos defensivos são globais. Logs da plataforma ainda não foram auditados em produção.
 
@@ -220,13 +236,13 @@ A validação cobriu 320, 375, 390, 430, 768, 1024 e 1440 px, além de revisão 
 ## 17. Testes e qualidade
 
 - `npm run lint`: ESLint, sem script separado de typecheck;
-- `npm run test`: 13 testes Playwright, incluindo sete viewports, menu, âncoras, imagens, posicionamento, cartão, handlers, metadata e headers;
+- `npm run test`: 14 testes Playwright, incluindo sete viewports, menu, âncoras, imagens, posicionamento, formação, privacidade, cartão, handlers, metadata e headers;
 - `npm run build`: build de produção do Next.js;
 - CI: `npm ci`, auditorias, lint, Chromium, testes e build no GitHub Actions;
 - cobertura: não há relatório de cobertura nem testes unitários separados;
 - auditoria: `npm audit --omit=dev` e `npm audit` existem no CI, mas não são scripts do `package.json`.
 
-Na Etapa 1, lint, 13/13 testes e build foram aprovados. A Etapa 2 deve repeti-los após a documentação.
+Na validação deste ajuste, lint, 14/14 testes e build foram aprovados. O novo teste cobre experiência forense, formação acadêmica e ausência de dados sensíveis.
 
 ## 18. Build e deploy
 
@@ -280,7 +296,7 @@ Roadmap não é escopo implementado.
 - [ ] contatos, Lattes, cartão, compartilhar, QR e vCard validados;
 - [ ] responsividade e acessibilidade revisadas, inclusive em celular real;
 - [ ] canonical, OG, Twitter Card, manifest, sitemap e robots conferidos;
-- [ ] `git diff --check`, lint, 13 testes e build aprovados;
+- [ ] `git diff --check`, lint, 14 testes e build aprovados;
 - [ ] CSP e cabeçalhos verificados no ambiente publicado;
 - [ ] commit de rollback e deployment anterior identificados;
 - [ ] nenhuma funcionalidade ausente apresentada como disponível.

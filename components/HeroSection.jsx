@@ -52,13 +52,16 @@ export default function HeroSection({ highlights, profile }) {
             </div>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3 sm:gap-4 xl:gap-5">
-              {highlights.map((value) => (
+              {highlights.map((highlight) => (
                 <div
-                  key={value}
+                  key={highlight.label}
                   className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-left backdrop-blur xl:p-5"
                 >
-                  <p className="text-sm font-semibold leading-6 text-cyan-100 sm:text-base sm:leading-7 xl:text-[1.05rem]">
-                    {value}
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                    {highlight.label}
+                  </p>
+                  <p className="mt-2 text-sm font-semibold leading-6 text-cyan-100 sm:text-base sm:leading-7 xl:text-[1.05rem]">
+                    {highlight.text}
                   </p>
                 </div>
               ))}

@@ -9,7 +9,7 @@ export default function VirtualCard({
   profile,
   telephoneUrl,
   virtualCardAreas,
-  virtualCardComplement,
+  virtualCardForensics,
   whatsappUrl,
 }) {
   return (
@@ -57,9 +57,17 @@ export default function VirtualCard({
               ))}
             </ul>
 
-            <p className="mt-5 rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-sm leading-7 text-slate-300 sm:p-5">
-              {virtualCardComplement}
-            </p>
+            <div className="mt-5 rounded-2xl border border-cyan-400/25 bg-cyan-400/[0.06] p-4 sm:p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                Experiência e formação técnica
+              </p>
+              <h2 className="mt-2 text-lg font-semibold leading-7 text-cyan-100 sm:text-xl">
+                {virtualCardForensics.title}
+              </h2>
+              <p className="mt-2 text-sm leading-7 text-slate-300">
+                {virtualCardForensics.text}
+              </p>
+            </div>
 
             <div className="mt-7">
               <ShareCardActions

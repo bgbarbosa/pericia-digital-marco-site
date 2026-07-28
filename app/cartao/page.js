@@ -7,7 +7,7 @@ import {
   profile,
   telephoneUrl,
   virtualCardAreas,
-  virtualCardComplement,
+  virtualCardForensics,
   whatsappUrl,
 } from "@/data/profile";
 import {
@@ -51,7 +51,7 @@ export default function CardPage() {
         profile={profile}
         telephoneUrl={telephoneUrl}
         virtualCardAreas={virtualCardAreas}
-        virtualCardComplement={virtualCardComplement}
+        virtualCardForensics={virtualCardForensics}
         whatsappUrl={whatsappUrl}
       />
       <Footer />

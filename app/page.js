@@ -13,6 +13,7 @@ import {
   DigitalSolutionsSection,
 } from "@/components/PositioningSections";
 import {
+  academicFormation,
   aiApplications,
   capacityModalities,
   credentials,
@@ -36,7 +37,7 @@ export default function HomePage() {
       <AiApplicationsSection applications={aiApplications} />
       <DigitalSolutionsSection points={digitalSolutionPoints} />
       <KnowledgeAreasSection areas={knowledgeAreas} />
-      <TrajectorySection profile={profile} />
+      <TrajectorySection academicFormation={academicFormation} profile={profile} />
       <CredentialsSection
         credentials={credentials}
         emphasisPoints={emphasisPoints}

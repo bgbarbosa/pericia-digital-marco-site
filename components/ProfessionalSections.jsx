@@ -11,12 +11,14 @@ export function KnowledgeAreasSection({ areas }) {
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(8,145,178,0.06),transparent_45%)]" />
       <div className="mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8 xl:px-10">
-        <SectionTitle>Áreas de conhecimento complementar</SectionTitle>
+        <SectionTitle eyebrow="EXPERIÊNCIA E FORMAÇÃO TÉCNICA">
+          Perícia digital, investigação e tecnologia forense
+        </SectionTitle>
         <p className="mx-auto mt-5 max-w-5xl text-center text-base leading-8 text-slate-300 sm:text-lg sm:leading-9">
-          A formação e a trajetória profissional também abrangem análise de dados,
-          computação forense, perícia digital, investigação digital e outros temas
-          técnicos. Esses conhecimentos são apresentados como experiência, estudo e base
-          complementar para conteúdos educacionais e projetos tecnológicos.
+          A trajetória profissional reúne mais de 12 anos de experiência em investigação
+          e análise técnica, além de formação em análise de dados, perícia digital e
+          computação forense. Esses conhecimentos fortalecem uma abordagem prática e
+          interdisciplinar aplicada a capacitações, conteúdos e projetos tecnológicos.
         </p>
         <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-7">
           {areas.map((item) => (
@@ -39,7 +41,7 @@ export function KnowledgeAreasSection({ areas }) {
   );
 }
 
-export function TrajectorySection({ profile }) {
+export function TrajectorySection({ academicFormation, profile }) {
   return (
     <section id="sobre" className="scroll-mt-24 py-14 sm:py-16 md:py-18">
       <div className="mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8 xl:px-10">
@@ -57,12 +59,27 @@ export function TrajectorySection({ profile }) {
               informação curricular.
             </p>
             <p className="mt-4 text-base leading-8 text-slate-300 sm:text-lg sm:leading-9 xl:text-[1.2rem] xl:leading-10">
-              Possui pós-graduação em Análise de Dados, especialização em Inteligência
-              Artificial e formação complementar em perícia digital e computação forense.
-              Esses conhecimentos sustentam uma abordagem interdisciplinar voltada à
-              educação, à tecnologia e ao uso responsável de ferramentas digitais.
+              Sua formação abrange Inteligência Artificial, ChatGPT, engenharia de prompts,
+              análise de dados, perícia digital, computação forense, OSINT, dispositivos
+              móveis e análise de evidências eletrônicas.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-300 sm:text-lg sm:leading-9 xl:text-[1.2rem] xl:leading-10">
+              Essa combinação de experiência profissional e formação tecnológica sustenta
+              uma abordagem prática e interdisciplinar aplicada a capacitações, conteúdos
+              e projetos digitais.
             </p>
           </div>
+
+          <ul className="mt-7 grid gap-3 md:grid-cols-2" aria-label="Formação acadêmica">
+            {academicFormation.map((item) => (
+              <li
+                key={item}
+                className="rounded-2xl border border-white/10 bg-slate-900/55 px-4 py-4 text-base leading-7 text-slate-300 sm:px-5 xl:text-[1.03rem] xl:leading-8"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </Panel>
       </div>
     </section>

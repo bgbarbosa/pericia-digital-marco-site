@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 const description =
-  "Treinamentos, cursos, palestras e mentorias em Inteligência Artificial e ChatGPT, com foco prático, responsável e estratégico para profissionais e equipes, além de soluções digitais personalizadas.";
+  "Treinamentos, cursos, palestras e mentorias em Inteligência Artificial e ChatGPT, com foco prático e responsável para profissionais e equipes, além de soluções digitais e experiência em investigação, perícia digital e computação forense.";
 const siteName = "Marco Aurélio - Inteligência Artificial e Capacitação";
 const defaultTitle =
   "Marco Aurélio Pereira Barbosa - Inteligência Artificial e Capacitação";

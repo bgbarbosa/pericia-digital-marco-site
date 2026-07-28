@@ -107,32 +107,32 @@ export const digitalSolutionPoints = [
 
 export const knowledgeAreas = [
   {
-    title: "Análise de dados e organização da informação",
-    text: "Formação aplicada à estruturação, leitura, comparação e apresentação de dados e informações em contextos técnicos e profissionais.",
-  },
-  {
     title: "Perícia digital e evidências eletrônicas",
     text: "Estudo de métodos para identificar, preservar, organizar e analisar vestígios eletrônicos, com atenção à integridade, à cadeia de custódia e à documentação.",
-  },
-  {
-    title: "Computação forense",
-    text: "Conhecimento aplicado à análise de dados em discos rígidos, SSDs e servidores, com ênfase na organização de vestígios digitais e na recuperação de dados, quando tecnicamente viável.",
-  },
-  {
-    title: "Dispositivos móveis",
-    text: "Estudo técnico de procedimentos relacionados à extração, preservação, organização e análise de dados provenientes de smartphones e outros dispositivos móveis, com atenção à integridade dos vestígios e à documentação das etapas executadas.",
   },
   {
     title: "Investigação digital e OSINT",
     text: "Experiência e estudo de vestígios digitais, fontes abertas e indícios técnicos em ambientes digitais, com organização e registro das informações analisadas.",
   },
   {
+    title: "Computação forense",
+    text: "Conhecimento aplicado à análise de dados em discos rígidos, SSDs e servidores, com ênfase na organização de vestígios digitais e na recuperação de dados, quando tecnicamente viável.",
+  },
+  {
+    title: "Análise de dados e organização da informação",
+    text: "Formação aplicada à estruturação, leitura, comparação e apresentação de dados e informações em contextos técnicos e profissionais.",
+  },
+  {
+    title: "Dispositivos móveis",
+    text: "Estudo técnico de procedimentos relacionados à extração, preservação, organização e análise de dados provenientes de smartphones e outros dispositivos móveis, com atenção à integridade dos vestígios e à documentação das etapas executadas.",
+  },
+  {
     title: "Leitura técnica de documentos e laudos",
     text: "Estudo de temas relacionados à formulação de quesitos, leitura crítica de laudos, compreensão técnica do material examinado e análise de aspectos relevantes em contexto pericial.",
   },
   {
-    title: "Imagem, vídeo e metadados",
-    text: "Conhecimento aplicado à verificação de autenticidade, leitura de metadados, análise de edições, exame de CFTV e tratamento técnico voltado à melhor visualização de elementos relevantes.",
+    title: "Imagem, áudio, vídeo e metadados",
+    text: "Conhecimento aplicado à verificação de autenticidade, leitura de metadados, análise de edições, exame de CFTV e tratamento técnico de imagem, áudio e vídeo voltado à melhor compreensão de elementos relevantes.",
   },
   {
     title: "Segurança da informação",
@@ -143,9 +143,18 @@ export const knowledgeAreas = [
 export const specializationAreas = knowledgeAreas;
 
 export const heroHighlights = [
-  "ChatGPT e prompts",
-  "Produtividade com IA",
-  "Capacitações para profissionais e equipes",
+  {
+    label: "Formação",
+    text: "Pós-graduado em Inteligência Artificial",
+  },
+  {
+    label: "Aplicação",
+    text: "ChatGPT, engenharia de prompts e produtividade",
+  },
+  {
+    label: "Experiência",
+    text: "Mais de 12 anos em investigação e análise técnica",
+  },
 ];
 
 export const virtualCardAreas = [
@@ -155,8 +164,17 @@ export const virtualCardAreas = [
   "Soluções digitais personalizadas",
 ];
 
-export const virtualCardComplement =
-  "Formação e conhecimentos complementares em análise de dados, perícia digital e computação forense.";
+export const virtualCardForensics = {
+  title: "Investigação e tecnologia forense",
+  text: "Experiência em investigação, análise técnica e evidências digitais, com formação em perícia digital, computação forense e análise de dados.",
+};
+
+export const academicFormation = [
+  "Pós-graduado em Inteligência Artificial para Agentes da Lei, formação lato sensu de 360 horas concluída em 2026.",
+  "Pós-graduado em Análise de Dados, formação de 360 horas concluída em 2024.",
+  "Especialização em Inteligência Artificial pela Universidade Tecnológica Federal do Paraná - UTFPR, em andamento.",
+  "Graduado em Administração pela Universidade Anhanguera - Uniderp.",
+];
 
 export const emphasisPoints = [
   "Rigor técnico",
@@ -170,11 +188,10 @@ export const emphasisPoints = [
 export const credentials = [
   "Investigador da Polícia Civil do Mato Grosso do Sul",
   "Mais de 12 anos de experiência em investigação e análise técnica",
-  "Pós-graduação em Análise de Dados",
-  "Especialização em Inteligência Artificial",
+  "Curso de ChatGPT para Policiais e Agentes da Lei, 40 horas, concluído em 2024.",
   "Formação complementar em perícia digital e computação forense",
-  "Cursos em perícia mobile, IPED, ADB Forensics, Ávila Forensics, UFED e Cellebrite",
-  "Associado à Associação Nacional dos Peritos em Computação Forense - APECOF.",
+  "Cursos em perícia mobile, OSINT e forense na internet, IPED Forensics, ADB Forensics, Avilla Forensics, UFED e Cellebrite",
+  profile.association.statement,
 ];
 
 export const whatsappUrl = `https://wa.me/${profile.phone.digits}`;
