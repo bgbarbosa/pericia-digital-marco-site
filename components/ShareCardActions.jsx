@@ -35,8 +35,8 @@ export default function ShareCardActions({
 
   const shareCard = async () => {
     const shareData = {
-      title: `Cartão profissional — ${profileName}`,
-      text: "Cartão profissional de perícia digital e computação forense.",
+      title: `Cartão profissional - ${profileName}`,
+      text: "Cartão profissional de Inteligência Artificial, capacitação e soluções digitais.",
       url: window.location.href,
     };
 

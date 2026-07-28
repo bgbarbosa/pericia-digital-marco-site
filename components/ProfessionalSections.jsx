@@ -3,36 +3,21 @@ import Image from "next/image";
 import Panel from "@/components/Panel";
 import SectionTitle from "@/components/SectionTitle";
 
-export function DigitalForensicsSection() {
+export function KnowledgeAreasSection({ areas }) {
   return (
-    <section id="pericia-digital" className="relative scroll-mt-24 py-14 sm:py-16 md:py-18">
+    <section
+      id="conhecimentos"
+      className="relative scroll-mt-24 py-14 sm:py-16 md:py-18"
+    >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(8,145,178,0.06),transparent_45%)]" />
-      <div className="relative mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8 xl:px-10">
-        <SectionTitle>O que é Perícia Digital?</SectionTitle>
-        <Panel className="mt-8 sm:mt-9 md:p-10 xl:p-11">
-          <div className="border-l-4 border-cyan-400 pl-4 text-base leading-8 text-slate-300 sm:pl-6 sm:text-lg sm:leading-9 xl:text-[1.24rem] xl:leading-10">
-            <p>
-              A perícia digital é a aplicação de método técnico para identificar,
-              preservar, organizar e analisar vestígios eletrônicos com potencial de
-              relevância em contextos judiciais, administrativos e investigativos.
-            </p>
-            <p className="mt-4">
-              No contexto da computação forense e da análise de dispositivos eletrônicos,
-              o trabalho envolve atenção à integridade dos dados, à cadeia de custódia, à
-              rastreabilidade das etapas executadas e à leitura técnica do material examinado.
-            </p>
-          </div>
-        </Panel>
-      </div>
-    </section>
-  );
-}
-
-export function SpecializationSection({ areas }) {
-  return (
-    <section id="especializacao" className="scroll-mt-24 pb-14 sm:pb-16 md:pb-18">
       <div className="mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8 xl:px-10">
-        <SectionTitle>Áreas de Especialização</SectionTitle>
+        <SectionTitle>Áreas de conhecimento complementar</SectionTitle>
+        <p className="mx-auto mt-5 max-w-5xl text-center text-base leading-8 text-slate-300 sm:text-lg sm:leading-9">
+          A formação e a trajetória profissional também abrangem análise de dados,
+          computação forense, perícia digital, investigação digital e outros temas
+          técnicos. Esses conhecimentos são apresentados como experiência, estudo e base
+          complementar para conteúdos educacionais e projetos tecnológicos.
+        </p>
         <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-7">
           {areas.map((item) => (
             <Panel
@@ -56,28 +41,26 @@ export function SpecializationSection({ areas }) {
 
 export function TrajectorySection({ profile }) {
   return (
-    <section id="trajetoria" className="scroll-mt-24 py-14 sm:py-16 md:py-18">
+    <section id="sobre" className="scroll-mt-24 py-14 sm:py-16 md:py-18">
       <div className="mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8 xl:px-10">
-        <SectionTitle>Trajetória Profissional</SectionTitle>
+        <SectionTitle>Trajetória e formação</SectionTitle>
         <Panel className="mt-8 sm:mt-9 md:p-10 xl:p-11">
           <div className="border-l-4 border-cyan-400 pl-4 sm:pl-6">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 sm:text-sm xl:text-base">
               Apresentação profissional
             </p>
             <p className="mt-5 text-base leading-8 text-slate-300 sm:text-lg sm:leading-9 xl:text-[1.2rem] xl:leading-10">
-              <strong className="text-white">{profile.name}</strong> atua na área de
-              investigação, análise de dados e tecnologia forense, com experiência prática em
-              evidências digitais, cadeia de custódia e documentação técnica.
+              <strong className="text-white">{profile.name}</strong> reúne mais de 12 anos
+              de experiência em investigação, análise técnica, documentação e organização
+              de informações. Sua trajetória inclui atuação como Investigador da Polícia
+              Civil do Mato Grosso do Sul, apresentada neste site exclusivamente como
+              informação curricular.
             </p>
             <p className="mt-4 text-base leading-8 text-slate-300 sm:text-lg sm:leading-9 xl:text-[1.2rem] xl:leading-10">
-              Possui mais de 12 anos de experiência em investigação, análise técnica,
-              documentação de vestígios e organização de elementos probatórios em contextos
-              que exigem método, cadeia de custódia e rigor técnico.
-            </p>
-            <p className="mt-4 text-base leading-8 text-slate-300 sm:text-lg sm:leading-9 xl:text-[1.2rem] xl:leading-10">
-              Sua trajetória reúne experiência prática e formação complementar em análise de
-              dados, inteligência artificial, perícia digital e computação forense, com ênfase
-              em método, clareza e rigor técnico.
+              Possui pós-graduação em Análise de Dados, especialização em Inteligência
+              Artificial e formação complementar em perícia digital e computação forense.
+              Esses conhecimentos sustentam uma abordagem interdisciplinar voltada à
+              educação, à tecnologia e ao uso responsável de ferramentas digitais.
             </p>
           </div>
         </Panel>
@@ -88,7 +71,7 @@ export function TrajectorySection({ profile }) {
 
 export function CredentialsSection({ credentials, emphasisPoints, profile }) {
   return (
-    <section id="credenciais" className="scroll-mt-24 py-14 sm:py-16 md:py-18">
+    <section className="pb-14 sm:pb-16 md:pb-18">
       <div className="mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8 xl:px-10">
         <SectionTitle>Credenciais</SectionTitle>
         <Panel className="mt-8 sm:mt-9 md:p-10 xl:p-11">
@@ -139,8 +122,7 @@ export function CredentialsSection({ credentials, emphasisPoints, profile }) {
                 {profile.association.acronym}
               </p>
               <p className="mt-2 max-w-md text-base leading-8 text-slate-300 xl:text-[1.1rem] xl:leading-9">
-                {profile.association.name}, apresentada no site como referência institucional de
-                vinculação profissional.
+                {profile.association.statement}
               </p>
             </div>
           </Panel>

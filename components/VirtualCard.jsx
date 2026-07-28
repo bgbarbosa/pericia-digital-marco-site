@@ -7,8 +7,9 @@ export default function VirtualCard({
   displayAddress,
   emailUrl,
   profile,
-  specializationAreas,
   telephoneUrl,
+  virtualCardAreas,
+  virtualCardComplement,
   whatsappUrl,
 }) {
   return (
@@ -21,7 +22,7 @@ export default function VirtualCard({
               src={profile.image}
               alt={`Retrato profissional de ${profile.name}`}
               fill
-              priority
+              preload
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 430px"
             />
@@ -36,7 +37,7 @@ export default function VirtualCard({
 
           <div className="p-5 sm:p-8 lg:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 sm:text-sm">
-              Perícia digital e tecnologia forense
+              Inteligência Artificial aplicada
             </p>
             <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
               {profile.name}
@@ -45,34 +46,20 @@ export default function VirtualCard({
               {profile.title}
             </p>
 
-            <ul className="mt-6 grid gap-2 sm:grid-cols-2" aria-label="Principais áreas de atuação">
-              {specializationAreas.slice(0, 4).map((area) => (
+            <ul className="mt-6 grid gap-2 sm:grid-cols-2" aria-label="Principais áreas profissionais">
+              {virtualCardAreas.map((area) => (
                 <li
-                  key={area.title}
+                  key={area}
                   className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-6 text-slate-200"
                 >
-                  {area.title}
+                  {area}
                 </li>
               ))}
             </ul>
 
-            <div className="mt-6 grid gap-4 rounded-2xl border border-white/10 bg-slate-900/60 p-4 sm:grid-cols-[1fr_auto] sm:items-center sm:p-5">
-              <div>
-                <p className="text-sm font-semibold text-white">{profile.association.acronym}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">
-                  {profile.association.name}
-                </p>
-              </div>
-              <div className="relative h-20 w-20 justify-self-center overflow-hidden rounded-full bg-white sm:justify-self-end">
-                <Image
-                  src={profile.association.image}
-                  alt={`Logotipo da ${profile.association.acronym}`}
-                  fill
-                  className="object-contain p-2"
-                  sizes="80px"
-                />
-              </div>
-            </div>
+            <p className="mt-5 rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-sm leading-7 text-slate-300 sm:p-5">
+              {virtualCardComplement}
+            </p>
 
             <div className="mt-7">
               <ShareCardActions

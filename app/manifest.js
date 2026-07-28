@@ -2,7 +2,7 @@ import { profile } from "@/data/profile";
 
 export default function manifest() {
   return {
-    name: `${profile.name} — Perícia Digital`,
+    name: `${profile.name} - Inteligência Artificial e Capacitação`,
     short_name: "M.A.P.B",
     description: profile.introduction,
     start_url: "/",

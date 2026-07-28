@@ -1,11 +1,13 @@
 export const profile = {
   name: "Marco Aurélio Pereira Barbosa",
   initials: "M.A.P.B",
-  title: "Perícia Digital, Computação Forense e Evidências Digitais",
+  title: "Inteligência Artificial, capacitação e soluções digitais",
+  heroTitle:
+    "Treinamentos, cursos, palestras e mentorias em Inteligência Artificial",
   subtitle:
-    "Trajetória profissional voltada à investigação, análise técnica, cadeia de custódia e estudo aplicado de vestígios eletrônicos.",
+    "Capacitações práticas com foco em ChatGPT, engenharia de prompts, produtividade e uso responsável da Inteligência Artificial para profissionais e equipes.",
   introduction:
-    "Página institucional de apresentação profissional, formação complementar e áreas de conhecimento em tecnologia forense, perícia digital e análise de evidências eletrônicas.",
+    "O trabalho também abrange projetos, automações e soluções digitais personalizadas voltadas à organização, produtividade e análise de informações.",
   phone: {
     digits: "5567999398990",
     international: "+5567999398990",
@@ -19,17 +21,18 @@ export const profile = {
     acronym: "APECOF",
     name: "Associação Nacional dos Peritos em Computação Forense",
     image: "/apecof.jpeg",
+    statement:
+      "Associado à Associação Nacional dos Peritos em Computação Forense - APECOF.",
   },
 };
 
 export const homeMenu = [
   { label: "Início", href: "#inicio" },
-  { label: "Perícia Digital", href: "#pericia-digital" },
-  { label: "Especialização", href: "#especializacao" },
-  { label: "Trajetória", href: "#trajetoria" },
-  { label: "Credenciais", href: "#credenciais" },
+  { label: "Capacitações", href: "#capacitacoes" },
+  { label: "Soluções Digitais", href: "#solucoes-digitais" },
+  { label: "Conhecimentos", href: "#conhecimentos" },
+  { label: "Sobre", href: "#sobre" },
   { label: "Contato", href: "#contato" },
-  { label: "Cartão virtual", href: "/cartao" },
 ];
 
 export const cardMenu = homeMenu.map((item) => ({
@@ -37,32 +40,123 @@ export const cardMenu = homeMenu.map((item) => ({
   href: item.href.startsWith("#") ? `/${item.href}` : item.href,
 }));
 
-export const specializationAreas = [
+export const capacityModalities = [
   {
-    title: "Perícia Digital em Dispositivos Móveis",
+    title: "Treinamentos",
+    text: "Encontros práticos para profissionais e equipes, com conteúdos personalizados sobre ChatGPT, engenharia de prompts, produtividade, organização de informações e uso responsável da Inteligência Artificial.",
+  },
+  {
+    title: "Cursos e oficinas",
+    text: "Atividades estruturadas para introdução e aplicação de ferramentas de Inteligência Artificial. Ementas, carga horária, formato e disponibilidade são definidos conforme a necessidade e não constituem, neste momento, um catálogo permanente de cursos.",
+  },
+  {
+    title: "Palestras",
+    text: "Temas propostos para palestras incluem Inteligência Artificial no cotidiano profissional, ChatGPT na prática, oportunidades e riscos da IA, engenharia de prompts, produtividade, ética e uso seguro de ferramentas generativas. O recorte temático e o formato são definidos conforme o público e o evento.",
+  },
+  {
+    title: "Mentorias",
+    text: "Acompanhamento personalizado para uso de ferramentas de Inteligência Artificial, construção e melhoria de prompts, organização de fluxos de trabalho, produtividade, planejamento de projetos com IA e utilização responsável de ferramentas generativas.",
+  },
+];
+
+export const aiApplications = [
+  {
+    title: "ChatGPT na prática",
+    text: "Aplicação do ChatGPT em atividades de redação, revisão, síntese, planejamento e organização, sempre com análise crítica e validação humana dos resultados.",
+  },
+  {
+    title: "Engenharia de prompts",
+    text: "Construção e melhoria de instruções claras, com definição de contexto, objetivo, restrições e critérios de qualidade para obter respostas mais úteis.",
+  },
+  {
+    title: "Produtividade e fluxos de trabalho",
+    text: "Uso da Inteligência Artificial para apoiar rotinas profissionais, organizar etapas, estruturar documentos e tornar fluxos de trabalho mais claros e consistentes.",
+  },
+  {
+    title: "Automação de tarefas",
+    text: "Identificação de tarefas repetitivas que podem receber apoio de automações e ferramentas de IA, com supervisão adequada e respeito aos limites de cada contexto.",
+  },
+  {
+    title: "Análise e organização de informações",
+    text: "Apoio à classificação, comparação, síntese e apresentação de informações, preservando a rastreabilidade das fontes e a necessidade de conferência.",
+  },
+  {
+    title: "Uso responsável",
+    text: "Atenção à privacidade, à segurança, às limitações dos modelos, a possíveis vieses e à verificação das informações antes de sua utilização.",
+  },
+];
+
+export const digitalSolutionPoints = [
+  {
+    title: "Ferramentas sob medida",
+    text: "Recursos digitais definidos a partir do problema, do público e do fluxo de trabalho de cada projeto.",
+  },
+  {
+    title: "Automações",
+    text: "Apoio à organização e à execução de tarefas repetitivas, com regras e limites estabelecidos para cada contexto.",
+  },
+  {
+    title: "Protótipos e sistemas",
+    text: "Validação de possibilidades técnicas e desenvolvimento gradual de interfaces, integrações e aplicações.",
+  },
+  {
+    title: "Inteligência Artificial aplicada",
+    text: "Uso criterioso de recursos de IA em soluções que demandem análise, geração ou organização de informações.",
+  },
+];
+
+export const knowledgeAreas = [
+  {
+    title: "Análise de dados e organização da informação",
+    text: "Formação aplicada à estruturação, leitura, comparação e apresentação de dados e informações em contextos técnicos e profissionais.",
+  },
+  {
+    title: "Perícia digital e evidências eletrônicas",
+    text: "Estudo de métodos para identificar, preservar, organizar e analisar vestígios eletrônicos, com atenção à integridade, à cadeia de custódia e à documentação.",
+  },
+  {
+    title: "Computação forense",
+    text: "Conhecimento aplicado à análise de dados em discos rígidos, SSDs e servidores, com ênfase na organização de vestígios digitais e na recuperação de dados, quando tecnicamente viável.",
+  },
+  {
+    title: "Dispositivos móveis",
     text: "Estudo técnico de procedimentos relacionados à extração, preservação, organização e análise de dados provenientes de smartphones e outros dispositivos móveis, com atenção à integridade dos vestígios e à documentação das etapas executadas.",
   },
   {
-    title: "Computação Forense",
-    text: "Conhecimento aplicado à análise de dados em discos rígidos, SSDs e servidores, com ênfase em organização de vestígios digitais e recuperação de dados, quando tecnicamente viável.",
+    title: "Investigação digital e OSINT",
+    text: "Experiência e estudo de vestígios digitais, fontes abertas e indícios técnicos em ambientes digitais, com organização e registro das informações analisadas.",
   },
   {
-    title: "Estudos sobre atuação pericial e leitura crítica de laudos",
+    title: "Leitura técnica de documentos e laudos",
     text: "Estudo de temas relacionados à formulação de quesitos, leitura crítica de laudos, compreensão técnica do material examinado e análise de aspectos relevantes em contexto pericial.",
   },
   {
-    title: "Investigação Digital",
-    text: "Estudo de vestígios digitais relacionados a fraudes, vazamento de dados, concorrência desleal e apuração de indícios técnicos em ambientes digitais.",
-  },
-  {
-    title: "Imagem e Vídeo",
+    title: "Imagem, vídeo e metadados",
     text: "Conhecimento aplicado à verificação de autenticidade, leitura de metadados, análise de edições, exame de CFTV e tratamento técnico voltado à melhor visualização de elementos relevantes.",
   },
   {
-    title: "Parecer Técnico",
-    text: "Atuação voltada à produção de conteúdo técnico e interpretação de evidências digitais, dispositivos eletrônicos e viabilidade de análise de material apresentado.",
+    title: "Segurança da informação",
+    text: "Formação complementar sobre proteção de informações, análise de riscos, práticas seguras e uso responsável de recursos tecnológicos.",
   },
 ];
+
+export const specializationAreas = knowledgeAreas;
+
+export const heroHighlights = [
+  "ChatGPT e prompts",
+  "Produtividade com IA",
+  "Capacitações para profissionais e equipes",
+];
+
+export const virtualCardAreas = [
+  "Treinamentos e cursos",
+  "Palestras e mentorias",
+  "ChatGPT e engenharia de prompts",
+  "Soluções digitais personalizadas",
+];
+
+export const virtualCardComplement =
+  "Formação e conhecimentos complementares em análise de dados, perícia digital e computação forense.";
 
 export const emphasisPoints = [
   "Rigor técnico",
@@ -80,7 +174,7 @@ export const credentials = [
   "Especialização em Inteligência Artificial",
   "Formação complementar em perícia digital e computação forense",
   "Cursos em perícia mobile, IPED, ADB Forensics, Ávila Forensics, UFED e Cellebrite",
-  "Associado à APECOF",
+  "Associado à Associação Nacional dos Peritos em Computação Forense - APECOF.",
 ];
 
 export const whatsappUrl = `https://wa.me/${profile.phone.digits}`;

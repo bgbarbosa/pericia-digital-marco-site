@@ -2,7 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function Header({ menu, brandHref = "/", contactHref }) {
+export default function Header({
+  menu,
+  brandHref = "/",
+  contactHref,
+  contactLabel = "Falar sobre capacitação",
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const menuButtonRef = useRef(null);
   const firstLinkRef = useRef(null);
@@ -44,7 +49,7 @@ export default function Header({ menu, brandHref = "/", contactHref }) {
           M.A.P.B
         </a>
 
-        <nav className="hidden items-center gap-5 xl:flex 2xl:gap-8" aria-label="Navegação principal">
+        <nav className="hidden items-center gap-4 xl:flex 2xl:gap-7" aria-label="Navegação principal">
           {menu.map((item) => (
             <a
               key={item.href}
@@ -58,9 +63,9 @@ export default function Header({ menu, brandHref = "/", contactHref }) {
 
         <a
           href={contactHref}
-          className="hidden min-h-11 items-center rounded-2xl border border-cyan-400/35 bg-cyan-400/10 px-5 py-2.5 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20 focus-visible:outline-none 2xl:inline-flex 2xl:text-base"
+          className="hidden min-h-11 items-center whitespace-nowrap rounded-2xl border border-cyan-400/35 bg-cyan-400/10 px-4 py-2.5 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20 focus-visible:outline-none xl:inline-flex 2xl:px-5 2xl:text-base"
         >
-          Contato profissional
+          {contactLabel}
         </a>
 
         <button
@@ -117,7 +122,7 @@ export default function Header({ menu, brandHref = "/", contactHref }) {
               onClick={closeMenu}
               className="mt-5 inline-flex min-h-12 items-center justify-center rounded-xl bg-cyan-600 px-5 py-3 text-base font-semibold text-white transition hover:bg-cyan-500 focus-visible:outline-none"
             >
-              Contato profissional
+              {contactLabel}
             </a>
           </nav>
         </div>

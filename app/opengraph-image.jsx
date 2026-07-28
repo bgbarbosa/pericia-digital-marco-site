@@ -7,7 +7,7 @@ import { ImageResponse } from "next/og";
 import { profile } from "@/data/profile";
 import { displaySiteAddress } from "@/lib/site-url";
 
-export const alt = `${profile.name} — Perícia Digital e Computação Forense`;
+export const alt = `${profile.name} - Inteligência Artificial e Capacitação`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -37,13 +37,13 @@ export default async function OpenGraphImage() {
             textTransform: "uppercase",
           }}
         >
-          Perícia digital e tecnologia forense
+          Inteligência Artificial aplicada
         </div>
         <div style={{ display: "flex", marginTop: 22, fontSize: 56, fontWeight: 700, lineHeight: 1.05 }}>
           {profile.name}
         </div>
-        <div style={{ display: "flex", marginTop: 24, color: "#a5f3fc", fontSize: 31, lineHeight: 1.2 }}>
-          Perícia Digital, Computação Forense e Evidências Digitais
+        <div style={{ display: "flex", marginTop: 24, color: "#a5f3fc", fontSize: 29, lineHeight: 1.2 }}>
+          Treinamentos, cursos, palestras e mentorias em Inteligência Artificial
         </div>
         <div style={{ display: "flex", marginTop: 36, color: "#cbd5e1", fontSize: 22 }}>
           {displaySiteAddress()}

@@ -64,8 +64,8 @@ export default async function CardOpenGraphImage() {
         <div style={{ display: "flex", marginTop: 24, fontSize: 52, fontWeight: 700, lineHeight: 1.04 }}>
           {profile.name}
         </div>
-        <div style={{ display: "flex", marginTop: 22, color: "#a5f3fc", fontSize: 29, lineHeight: 1.22 }}>
-          Perícia Digital, Computação Forense e Evidências Digitais
+        <div style={{ display: "flex", marginTop: 22, color: "#a5f3fc", fontSize: 28, lineHeight: 1.22 }}>
+          Inteligência Artificial, capacitação e soluções digitais
         </div>
         <div style={{ display: "flex", marginTop: 34, color: "#cbd5e1", fontSize: 22 }}>
           {displaySiteAddress("/cartao")}

@@ -5,8 +5,9 @@ import {
   cardMenu,
   emailUrl,
   profile,
-  specializationAreas,
   telephoneUrl,
+  virtualCardAreas,
+  virtualCardComplement,
   whatsappUrl,
 } from "@/data/profile";
 import {
@@ -16,7 +17,7 @@ import {
 } from "@/lib/site-url";
 
 const cardDescription =
-  "Cartão profissional de Marco Aurélio Pereira Barbosa para contato e compartilhamento em dispositivos móveis.";
+  "Cartão profissional de Inteligência Artificial, capacitação e soluções digitais.";
 
 export const metadata = {
   title: "Cartão profissional",
@@ -48,8 +49,9 @@ export default function CardPage() {
         displayAddress={displaySiteAddress("/cartao")}
         emailUrl={emailUrl}
         profile={profile}
-        specializationAreas={specializationAreas}
         telephoneUrl={telephoneUrl}
+        virtualCardAreas={virtualCardAreas}
+        virtualCardComplement={virtualCardComplement}
         whatsappUrl={whatsappUrl}
       />
       <Footer />

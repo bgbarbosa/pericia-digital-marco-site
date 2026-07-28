@@ -6,15 +6,20 @@ export default function ContactSection({ emailUrl, profile, telephoneUrl, whatsa
     <section id="contato" className="scroll-mt-24 pb-16 pt-10 sm:pb-18 md:pb-20">
       <div className="mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8 xl:px-10">
         <SectionTitle>Contato</SectionTitle>
+        <p className="mx-auto mt-5 max-w-4xl text-center text-base leading-8 text-slate-300 sm:text-lg sm:leading-9">
+          Entre em contato para solicitar informações sobre capacitações, conversar sobre
+          uma palestra ou mentoria, ou apresentar uma necessidade relacionada a soluções
+          digitais. A disponibilidade, o formato e o escopo são definidos mediante
+          alinhamento prévio.
+        </p>
         <div className="mt-8 grid gap-4 sm:mt-9 sm:gap-6 md:grid-cols-3 xl:gap-7">
           <Panel>
             <h3 className="text-2xl font-semibold text-cyan-300 xl:text-[2.1rem]">
               Base profissional
             </h3>
             <p className="mt-5 text-base leading-8 text-slate-300 xl:text-[1.12rem] xl:leading-9">
-              {profile.city}
-              <br />
-              Contato profissional para informações institucionais, acadêmicas e técnicas.
+              {profile.city}, com contato para informações sobre conteúdos, capacitações e
+              projetos tecnológicos.
             </p>
           </Panel>
 

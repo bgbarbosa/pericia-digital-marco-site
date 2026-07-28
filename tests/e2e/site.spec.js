@@ -18,7 +18,7 @@ for (const viewport of viewports) {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /Perícia Digital, Computação Forense e Evidências Digitais/i,
+        name: /Treinamentos, cursos, palestras e mentorias em Inteligência Artificial/i,
       }),
     ).toBeVisible();
 
@@ -40,8 +40,8 @@ test("menu móvel é acessível, fecha por seleção e Escape", async ({ page })
   await expect(page.getByRole("navigation", { name: "Navegação móvel" })).toBeVisible();
   await expect(menuButton).toHaveAttribute("aria-expanded", "true");
 
-  await page.getByRole("link", { name: "Especialização", exact: true }).click();
-  await expect(page).toHaveURL(/#especializacao$/);
+  await page.getByRole("link", { name: "Capacitações", exact: true }).click();
+  await expect(page).toHaveURL(/#capacitacoes$/);
   await expect(page.getByRole("button", { name: "Abrir menu" })).toHaveAttribute(
     "aria-expanded",
     "false",
@@ -61,10 +61,11 @@ test("âncoras e imagens principais estão disponíveis", async ({ page }) => {
 
   for (const id of [
     "inicio",
-    "pericia-digital",
-    "especializacao",
-    "trajetoria",
-    "credenciais",
+    "capacitacoes",
+    "aplicacoes-ia",
+    "solucoes-digitais",
+    "conhecimentos",
+    "sobre",
     "contato",
   ]) {
     await expect(page.locator(`#${id}`)).toHaveCount(1);
@@ -80,6 +81,23 @@ test("âncoras e imagens principais estão disponíveis", async ({ page }) => {
   }
 });
 
+test("hero prioriza capacitações e preserva o cargo público como informação curricular", async ({
+  page,
+}) => {
+  await page.goto("/");
+
+  const hero = page.locator("#inicio");
+  const primaryCta = hero.getByRole("link", { name: "Conhecer capacitações" });
+
+  await expect(primaryCta).toHaveAttribute("href", "#capacitacoes");
+  await expect(hero.getByRole("link", { name: "Currículo Lattes" })).toHaveAttribute(
+    "href",
+    "https://lattes.cnpq.br/1970561249212557",
+  );
+  await expect(hero).not.toContainText("Investigador da Polícia Civil");
+  await expect(page.locator("#sobre")).toContainText("Investigador da Polícia Civil");
+});
+
 test("cartão virtual oferece contatos, QR Code, VCF e compartilhamento alternativo", async ({
   page,
 }) => {
@@ -93,6 +111,15 @@ test("cartão virtual oferece contatos, QR Code, VCF e compartilhamento alternat
   await page.goto("/cartao");
 
   await expect(page.getByRole("heading", { level: 1, name: /Marco Aurélio/i })).toBeVisible();
+  for (const area of [
+    "Treinamentos e cursos",
+    "Palestras e mentorias",
+    "ChatGPT e engenharia de prompts",
+    "Soluções digitais personalizadas",
+  ]) {
+    await expect(page.getByRole("listitem").filter({ hasText: area })).toHaveCount(1);
+  }
+  await expect(page.getByAltText(/Logotipo da APECOF/i)).toHaveCount(0);
   await expect(page.locator('a[href^="https://wa.me/"]')).toBeVisible();
   await expect(page.locator('a[href^="tel:"]')).toBeVisible();
   await expect(page.locator('a[href^="mailto:"]')).toBeVisible();
@@ -121,6 +148,9 @@ test("rotas auxiliares e metadados respondem corretamente", async ({ page, reque
   expect(vcf).toContain("TEL;TYPE=CELL:+5567999398990");
   expect(vcf).toContain("EMAIL;TYPE=INTERNET:marcobarbo@gmail.com");
   expect(vcf).toContain("URL:http://127.0.0.1:3100/");
+  expect(vcf).toContain(
+    "NOTE:Inteligência Artificial\\, capacitação e soluções digitais",
+  );
 
   const qrResponse = await request.get("/cartao/qr-code");
   expect(qrResponse.ok()).toBe(true);
@@ -132,6 +162,11 @@ test("rotas auxiliares e metadados respondem corretamente", async ({ page, reque
     const imageResponse = await request.get(imagePath);
     expect(imageResponse.ok()).toBe(true);
     expect(imageResponse.headers()["content-type"]).toContain("image/png");
+  }
+
+  for (const metadataPath of ["/manifest.webmanifest", "/robots.txt", "/sitemap.xml"]) {
+    const metadataResponse = await request.get(metadataPath);
+    expect(metadataResponse.ok()).toBe(true);
   }
 
   await page.goto("/cartao");

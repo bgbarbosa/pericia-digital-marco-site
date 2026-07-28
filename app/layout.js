@@ -22,19 +22,22 @@ const geistMono = Geist_Mono({
 });
 
 const description =
-  "Página profissional de Marco Aurélio Pereira Barbosa, com atuação em perícia digital, computação forense, evidências digitais, análise técnica e cadeia de custódia.";
+  "Treinamentos, cursos, palestras e mentorias em Inteligência Artificial e ChatGPT, com foco prático, responsável e estratégico para profissionais e equipes, além de soluções digitais personalizadas.";
+const siteName = "Marco Aurélio - Inteligência Artificial e Capacitação";
+const defaultTitle =
+  "Marco Aurélio Pereira Barbosa - Inteligência Artificial e Capacitação";
 
 export const metadata = {
   metadataBase,
   title: {
-    default: `${profile.name} — Perícia Digital e Computação Forense`,
+    default: defaultTitle,
     template: `%s | ${profile.name}`,
   },
   description,
-  applicationName: "Marco Aurélio — Perícia Digital",
+  applicationName: siteName,
   authors: [{ name: profile.name }],
   creator: profile.name,
-  category: "Tecnologia e perícia digital",
+  category: "Educação e tecnologia",
   alternates: hasPublicSiteUrl
     ? {
         canonical: publicAbsoluteUrl("/"),
@@ -43,14 +46,14 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    siteName: "Marco Aurélio — Perícia Digital",
-    title: `${profile.name} — Perícia Digital e Computação Forense`,
+    siteName,
+    title: defaultTitle,
     description,
     url: hasPublicSiteUrl ? publicAbsoluteUrl("/") : undefined,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} — Perícia Digital e Computação Forense`,
+    title: defaultTitle,
     description,
   },
   icons: {
