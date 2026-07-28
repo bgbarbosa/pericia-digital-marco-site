@@ -98,7 +98,7 @@ Esses itens não possuem procedimento operacional. Uma inclusão futura exige no
 | RF-005 | Exibir experiência e formação em perícia, investigação e tecnologia forense | Implementado: `knowledgeAreas`, `KnowledgeAreasSection` | Título forense, texto de contexto e oito áreas ordenadas em `#conhecimentos`, sem CTA comercial |
 | RF-006 | Exibir trajetória, credenciais e associação | Implementado: `ProfessionalSections.jsx`, `profile.js` | Cargo aparece como informação curricular e APECOF na home |
 | RF-007 | Oferecer contato direto | Implementado: `ContactSection.jsx`, URLs derivadas | WhatsApp, `tel:` e `mailto:` funcionam sem coleta pelo site |
-| RF-008 | Oferecer cartão virtual | Implementado: `/cartao`, `VirtualCard.jsx` | Identidade, quatro áreas, bloco forense e contatos visíveis |
+| RF-008 | Oferecer cartão virtual | Implementado: `/cartao`, `VirtualCard.jsx` | Identidade, e-mail escrito e clicável, quatro áreas, bloco forense e demais contatos visíveis |
 | RF-009 | Gerar QR Code e vCard | Implementado: Route Handlers em `app/cartao/` | Respostas SVG/VCF válidas e alvo coerente com a URL |
 | RF-010 | Compartilhar cartão | Implementado: `ShareCardActions.jsx` | Web Share quando disponível; cópia como alternativa |
 | RF-011 | Manter SEO técnico | Implementado: layout, metadata, OG, manifest, sitemap, robots | Rotas respondem e canonical só aparece com URL pública |

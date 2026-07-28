@@ -180,7 +180,15 @@ test("cartão virtual oferece contatos, QR Code, VCF e compartilhamento alternat
   await expect(page.getByAltText(/Logotipo da APECOF/i)).toHaveCount(0);
   await expect(page.locator('a[href^="https://wa.me/"]')).toBeVisible();
   await expect(page.locator('a[href^="tel:"]')).toBeVisible();
-  await expect(page.locator('a[href^="mailto:"]')).toBeVisible();
+  await expect(page.getByRole("link", { name: "Enviar e-mail", exact: true })).toBeVisible();
+  await expect(page.getByTestId("card-email-address")).toBeVisible();
+  await expect(page.getByTestId("card-email-address")).toHaveText(
+    /E-mail profissional:\s*marcobarbo@gmail\.com/i,
+  );
+  await expect(page.getByTestId("card-email-address")).toHaveAttribute(
+    "href",
+    "mailto:marcobarbo@gmail.com",
+  );
   await expect(page.getByTestId("download-vcf")).toHaveAttribute("href", "/cartao/contato.vcf");
 
   const qrCode = page.getByTestId("qr-code");

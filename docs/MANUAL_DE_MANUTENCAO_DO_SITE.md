@@ -161,7 +161,7 @@ Teste WhatsApp, ligação, e-mail, cartão e vCard em dispositivo apropriado. O 
 
 **Página:** `app/cartao/page.js`; **interface:** `VirtualCard.jsx`; **dados:** `profile`, `virtualCardAreas` e `virtualCardForensics`.
 
-Mantenha as quatro áreas principais e o bloco em largura total “Investigação e tecnologia forense”. O bloco deve ter destaque moderado, sem ícone, animação, CTA ou linguagem de contratação. Revise metadata específica, contatos, endereço exibido, QR, vCard e compartilhamento. O cartão não exibe APECOF. Teste em 390 px e desktop, inclusive sem Web Share API.
+Mantenha o e-mail profissional escrito e clicável abaixo do posicionamento, além das quatro áreas principais e do bloco em largura total “Investigação e tecnologia forense”. O e-mail deve continuar vindo de `profile.email` e `emailUrl`, sem duplicação manual. O bloco forense deve ter destaque moderado, sem ícone, animação, CTA ou linguagem de contratação. Revise metadata específica, contatos, endereço exibido, QR, vCard e compartilhamento. O cartão não exibe APECOF. Teste em 390 px e desktop, inclusive sem Web Share API.
 
 ## 18. Validar QR Code e vCard
 
