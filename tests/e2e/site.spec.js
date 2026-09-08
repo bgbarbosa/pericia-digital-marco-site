@@ -138,7 +138,17 @@ test("experiência forense e formação acadêmica são apresentadas sem dados s
   const hero = page.locator("#inicio");
   await expect(hero).toContainText("Pós-graduado em Inteligência Artificial");
   await expect(hero).toContainText("Mais de 12 anos em investigação e análise técnica");
+  await expect(hero).toContainText("Nova formação");
+  await expect(hero).toContainText(
+    "Detecção de Fotos e Vídeos gerados por Inteligência Artificial",
+  );
+  await expect(hero).toContainText("20h");
   await expect(hero).not.toContainText("Investigador da Polícia Civil");
+  await expect(
+    page.getByText(
+      /Curso de Detecção de Fotos e Vídeos gerados por Inteligência Artificial, 20 horas, concluído em 2026\./i,
+    ),
+  ).toBeVisible();
 
   const publicContent = page.locator("body");
   for (const sensitiveTerm of [
@@ -146,6 +156,7 @@ test("experiência forense e formação acadêmica são apresentadas sem dados s
     /(?:^|[\s:;,()])RG(?:$|[\s:;,().])/i,
     /data de nascimento/i,
     /código de validação/i,
+    /código de autenticidade/i,
     /número de registro acadêmico/i,
   ]) {
     await expect(publicContent).not.toContainText(sensitiveTerm);

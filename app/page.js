@@ -20,6 +20,7 @@ import {
   digitalSolutionPoints,
   emailUrl,
   emphasisPoints,
+  featuredTraining,
   heroHighlights,
   homeMenu,
   knowledgeAreas,
@@ -32,7 +33,11 @@ export default function HomePage() {
   return (
     <main className="min-h-screen overflow-x-clip bg-[#020817] text-slate-100 selection:bg-cyan-400/20">
       <Header menu={homeMenu} brandHref="#inicio" contactHref="#contato" />
-      <HeroSection highlights={heroHighlights} profile={profile} />
+      <HeroSection
+        featuredTraining={featuredTraining}
+        highlights={heroHighlights}
+        profile={profile}
+      />
       <CapacitySection modalities={capacityModalities} />
       <AiApplicationsSection applications={aiApplications} />
       <DigitalSolutionsSection points={digitalSolutionPoints} />

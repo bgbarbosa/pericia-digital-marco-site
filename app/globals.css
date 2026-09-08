@@ -37,6 +37,52 @@ a {
   background: rgb(34 211 238 / 25%);
 }
 
+.featured-training-card {
+  background:
+    radial-gradient(circle at 12% 50%, rgb(34 211 238 / 12%), transparent 34%),
+    linear-gradient(
+      135deg,
+      rgb(8 145 178 / 12%),
+      rgb(15 23 42 / 82%) 55%,
+      rgb(37 99 235 / 10%)
+    );
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 5%),
+    0 18px 50px rgb(2 132 199 / 8%);
+}
+
+.featured-training-badge {
+  background: conic-gradient(
+    from 20deg,
+    rgb(34 211 238),
+    rgb(56 189 248),
+    rgb(37 99 235),
+    rgb(14 165 233),
+    rgb(34 211 238)
+  );
+  box-shadow:
+    0 0 0 1px rgb(34 211 238 / 18%),
+    0 0 24px rgb(34 211 238 / 24%);
+  animation: featured-training-glow 5.2s ease-in-out infinite;
+}
+
+@keyframes featured-training-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgb(34 211 238 / 18%),
+      0 0 24px rgb(34 211 238 / 24%);
+    filter: saturate(0.95);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 1px rgb(96 165 250 / 28%),
+      0 0 36px rgb(37 99 235 / 32%);
+    filter: saturate(1.15);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

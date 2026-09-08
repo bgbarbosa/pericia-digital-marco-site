@@ -157,6 +157,13 @@ export const heroHighlights = [
   },
 ];
 
+export const featuredTraining = {
+  label: "Nova formação",
+  title: "Detecção de Fotos e Vídeos gerados por Inteligência Artificial",
+  workload: "20h",
+  completion: "Concluído • ago/2026",
+};
+
 export const virtualCardAreas = [
   "Treinamentos e cursos",
   "Palestras e mentorias",
@@ -188,6 +195,7 @@ export const emphasisPoints = [
 export const credentials = [
   "Investigador da Polícia Civil do Mato Grosso do Sul",
   "Mais de 12 anos de experiência em investigação e análise técnica",
+  "Curso de Detecção de Fotos e Vídeos gerados por Inteligência Artificial, 20 horas, concluído em 2026.",
   "Curso de ChatGPT para Policiais e Agentes da Lei, 40 horas, concluído em 2024.",
   "Formação complementar em perícia digital e computação forense",
   "Cursos em perícia mobile, OSINT e forense na internet, IPED Forensics, ADB Forensics, Avilla Forensics, UFED e Cellebrite",

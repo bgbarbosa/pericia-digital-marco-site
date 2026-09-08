@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function HeroSection({ highlights, profile }) {
+export default function HeroSection({ featuredTraining, highlights, profile }) {
   return (
     <section
       id="inicio"
@@ -66,6 +66,40 @@ export default function HeroSection({ highlights, profile }) {
                 </div>
               ))}
             </div>
+
+            {featuredTraining ? (
+              <aside
+                aria-label="Nova formação"
+                className="featured-training-card mt-5 rounded-[1.6rem] border border-cyan-300/25 p-4 text-left backdrop-blur sm:p-5 xl:p-6"
+              >
+                <div className="flex flex-col items-center gap-4 min-[420px]:flex-row sm:gap-5">
+                  <div className="featured-training-badge flex h-24 w-24 shrink-0 items-center justify-center rounded-full p-[2px] sm:h-28 sm:w-28">
+                    <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-slate-950/95 ring-1 ring-white/10">
+                      <span className="text-2xl font-bold leading-none text-white sm:text-3xl">
+                        {featuredTraining.workload}
+                      </span>
+                      <span className="mt-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-cyan-200 sm:text-[0.68rem]">
+                        curso
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="min-w-0 flex-1 text-center min-[420px]:text-left">
+                    <div className="flex flex-wrap items-center justify-center gap-2 min-[420px]:justify-start">
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-200 sm:text-sm">
+                        {featuredTraining.label}
+                      </p>
+                      <span className="rounded-full border border-sky-300/20 bg-sky-300/10 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-sky-100 sm:text-xs">
+                        {featuredTraining.completion}
+                      </span>
+                    </div>
+                    <p className="mt-2 text-base font-semibold leading-7 text-white sm:text-lg sm:leading-8 xl:text-xl">
+                      {featuredTraining.title}
+                    </p>
+                  </div>
+                </div>
+              </aside>
+            ) : null}
           </div>
 
           <div className="flex justify-center lg:justify-end">
