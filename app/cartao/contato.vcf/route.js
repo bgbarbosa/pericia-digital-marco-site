@@ -21,6 +21,8 @@ export async function GET(request) {
     `TEL;TYPE=CELL:${profile.phone.international}`,
     `EMAIL;TYPE=INTERNET:${profile.email}`,
     `URL:${siteUrl}`,
+    `URL:${profile.linkedin}`,
+    `URL:${profile.damaUniverse}`,
     `NOTE:${escapeVCard(profile.title)}`,
     "END:VCARD",
     "",

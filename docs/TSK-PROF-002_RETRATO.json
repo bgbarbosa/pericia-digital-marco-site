@@ -1,0 +1,7 @@
+{
+  "origem": "ChatGPT Image 19 de set. de 2026, 11_51_40.png",
+  "sha256_origem": "f86022123933ab55400fdd10643b8f7016ecaff05213f74f5f3e2d307addc2fc",
+  "derivado": "public/marco-barbosa.jpg",
+  "sha256_derivado": "c00ad08b2aeae8949f223da4c50605e25f94135137d5e6336df4a607b6722cfb",
+  "processamento": "sharp: auto orientação, largura máxima 900px sem ampliar, JPEG qualidade 86 mozjpeg. Sem alteração de feições."
+}

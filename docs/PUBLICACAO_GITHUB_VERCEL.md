@@ -1,3 +1,5 @@
+> Registro histórico anterior à TSK-PROF-002. Contatos, imagens e procedimentos aqui citados podem estar superados. Consulte data/profile.js e docs/TSK-PROF-002_RELATORIO.md para o estado atual. Este registro não autoriza publicação.
+
 # Publicação no GitHub e na Vercel
 
 Este manual prepara a publicação pelo Windows PowerShell. Ele não substitui a conferência dos nomes de conta, repositório, branch, projeto e domínio exibidos nos painéis.

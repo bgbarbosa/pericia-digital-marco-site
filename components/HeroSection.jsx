@@ -1,122 +1,88 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection({ featuredTraining, highlights, profile }) {
   return (
-    <section
-      id="inicio"
-      className="relative scroll-mt-24 overflow-hidden border-b border-white/10 pt-18"
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.12),transparent_42%),linear-gradient(90deg,rgba(2,6,23,1),rgba(3,16,37,0.98),rgba(2,6,23,1))]" />
-      <div className="absolute left-1/2 top-12 h-[360px] w-[360px] max-w-full -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl sm:h-[420px] sm:w-[420px]" />
-
-      <div className="relative mx-auto max-w-[1480px] px-4 py-9 sm:px-6 sm:py-12 lg:px-8 xl:px-10 xl:py-14">
-        <div className="grid gap-8 lg:grid-cols-[1.16fr_0.84fr] lg:items-center xl:gap-12">
-          <div className="max-w-[920px] text-center lg:text-left">
-            <p className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200 sm:px-5 sm:text-base xl:text-[1.05rem]">
-              {profile.name}
-            </p>
-
-            <h1 className="mt-5 text-[2.05rem] font-bold leading-[1.04] text-white min-[360px]:text-[2.35rem] sm:text-5xl md:text-6xl xl:text-[4.35rem]">
-              {profile.heroTitle}
-            </h1>
-
-            <p className="mx-auto mt-5 max-w-[860px] text-lg font-medium leading-snug text-cyan-300 min-[360px]:text-xl sm:text-2xl lg:mx-0 xl:text-[2.15rem]">
-              {profile.subtitle}
-            </p>
-
-            <p className="mx-auto mt-6 max-w-[900px] text-base leading-8 text-slate-300 sm:text-lg sm:leading-9 lg:mx-0 xl:text-[1.2rem] xl:leading-10">
-              {profile.introduction}
-            </p>
-
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4 lg:justify-start">
-              <a
-                href="#capacitacoes"
-                className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-cyan-600 px-7 py-3.5 text-base font-semibold text-white shadow-[0_0_30px_rgba(8,145,178,0.25)] transition hover:bg-cyan-500 focus-visible:outline-none"
-              >
-                Conhecer capacitações
-              </a>
-              <a
-                href={profile.lattes}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/15 px-7 py-3.5 text-base font-semibold text-slate-100 transition hover:bg-white/5 focus-visible:outline-none"
-              >
-                Currículo Lattes
-              </a>
-              <a
-                href="/cartao"
-                className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-cyan-400/25 bg-cyan-400/5 px-7 py-3.5 text-base font-semibold text-cyan-100 transition hover:bg-cyan-400/10 focus-visible:outline-none"
-              >
-                Abrir cartão virtual
-              </a>
-            </div>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-3 sm:gap-4 xl:gap-5">
-              {highlights.map((highlight) => (
-                <div
-                  key={highlight.label}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-left backdrop-blur xl:p-5"
-                >
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
-                    {highlight.label}
-                  </p>
-                  <p className="mt-2 text-sm font-semibold leading-6 text-cyan-100 sm:text-base sm:leading-7 xl:text-[1.05rem]">
-                    {highlight.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {featuredTraining ? (
-              <aside
-                aria-label="Nova formação"
-                className="featured-training-card mt-5 rounded-[1.6rem] border border-cyan-300/25 p-4 text-left backdrop-blur sm:p-5 xl:p-6"
-              >
-                <div className="flex flex-col items-center gap-4 min-[420px]:flex-row sm:gap-5">
-                  <div className="featured-training-badge flex h-24 w-24 shrink-0 items-center justify-center rounded-full p-[2px] sm:h-28 sm:w-28">
-                    <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-slate-950/95 ring-1 ring-white/10">
-                      <span className="text-2xl font-bold leading-none text-white sm:text-3xl">
-                        {featuredTraining.workload}
-                      </span>
-                      <span className="mt-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-cyan-200 sm:text-[0.68rem]">
-                        curso
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="min-w-0 flex-1 text-center min-[420px]:text-left">
-                    <div className="flex flex-wrap items-center justify-center gap-2 min-[420px]:justify-start">
-                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-200 sm:text-sm">
-                        {featuredTraining.label}
-                      </p>
-                      <span className="rounded-full border border-sky-300/20 bg-sky-300/10 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-sky-100 sm:text-xs">
-                        {featuredTraining.completion}
-                      </span>
-                    </div>
-                    <p className="mt-2 text-base font-semibold leading-7 text-white sm:text-lg sm:leading-8 xl:text-xl">
-                      {featuredTraining.title}
-                    </p>
-                  </div>
-                </div>
-              </aside>
-            ) : null}
+    <section id="inicio" className="hero-section border-b border-white/10">
+      <div className="hero-grid mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="hero-intro">
+          <p className="text-lg font-semibold text-cyan-200">
+            {profile.displayName}
+          </p>
+          <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+            {profile.heroTitle}
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
+            {profile.subtitle}
+          </p>
+        </div>
+        <div className="hero-portrait relative mx-auto overflow-hidden rounded-[2rem] border border-cyan-300/25">
+          <Image
+            src={profile.image}
+            alt={`Retrato profissional de ${profile.name}`}
+            fill
+            preload
+            className="object-cover object-top"
+            sizes="(max-width: 767px) 160px, (max-width: 1023px) 240px, 360px"
+          />
+        </div>
+        <div className="hero-actions">
+          <div className="flex flex-wrap gap-3">
+            <a className="action-primary" href="#capacitacoes">
+              Conhecer capacitações
+            </a>
+            <a className="action-secondary" href="#contato">
+              Entrar em contato
+            </a>
           </div>
-
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative h-[360px] w-full max-w-[340px] overflow-hidden rounded-[1.7rem] border border-cyan-400/15 bg-gradient-to-b from-white/10 to-white/5 shadow-[0_0_50px_rgba(8,145,178,0.12)] sm:h-[500px] sm:max-w-[420px] md:rounded-[2rem] xl:h-[580px] xl:max-w-[470px]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_42%)]" />
-              <Image
-                src={profile.image}
-                alt={`Retrato profissional de ${profile.name}`}
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 420px, 470px"
-                preload
-              />
-              <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent sm:h-44" />
-            </div>
+          <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1">
+            <a
+              className="text-link"
+              href={profile.lattes}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Currículo Lattes ↗
+            </a>
+            <Link className="text-link" href="/cartao">
+              Abrir cartão virtual →
+            </Link>
           </div>
         </div>
+        <div className="hero-highlights grid gap-3 sm:grid-cols-3">
+          {highlights.map((item) => (
+            <Link className="linked-panel" href={item.href} key={item.label}>
+              <h2 className="text-sm font-semibold text-cyan-300">
+                {item.label} <span aria-hidden="true">→</span>
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-slate-200">
+                {item.text}
+              </p>
+            </Link>
+          ))}
+        </div>
+        {featuredTraining && (
+          <Link
+            href={featuredTraining.href}
+            aria-label={`${featuredTraining.label}: ${featuredTraining.title}`}
+            className="hero-featured featured-training-card linked-panel flex items-center gap-4"
+          >
+            <span className="featured-training-badge flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-xl font-bold text-slate-950">
+              {featuredTraining.workload}
+            </span>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-cyan-200">
+                {featuredTraining.label} →
+              </p>
+              <p className="mt-1 font-semibold text-white">
+                {featuredTraining.title}
+              </p>
+              <p className="mt-1 text-sm text-slate-300">
+                {featuredTraining.completion}
+              </p>
+            </div>
+          </Link>
+        )}
       </div>
     </section>
   );

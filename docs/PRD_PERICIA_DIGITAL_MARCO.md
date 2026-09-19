@@ -1,3 +1,5 @@
+> Registro histórico anterior à TSK-PROF-002. Contatos, imagens e procedimentos aqui citados podem estar superados. Consulte data/profile.js e docs/TSK-PROF-002_RELATORIO.md para o estado atual. Este registro não autoriza publicação.
+
 # PRD — Site profissional de Marco Aurélio Pereira Barbosa
 
 ## 1. Identificação do produto

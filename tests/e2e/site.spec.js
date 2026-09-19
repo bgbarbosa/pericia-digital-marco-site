@@ -18,7 +18,7 @@ for (const viewport of viewports) {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /Treinamentos, cursos, palestras e mentorias em Inteligência Artificial/i,
+        name: /Inteligência Artificial aplicada à prática profissional/i,
       }),
     ).toBeVisible();
 
@@ -103,6 +103,7 @@ test("experiência forense e formação acadêmica são apresentadas sem dados s
 }) => {
   await page.goto("/");
 
+  await page.goto("/experiencia");
   const knowledgeSection = page.locator("#conhecimentos");
   await expect(
     knowledgeSection.getByRole("heading", {
@@ -126,7 +127,8 @@ test("experiência forense e formação acadêmica são apresentadas sem dados s
     "Segurança da informação",
   ]);
 
-  const aboutSection = page.locator("#sobre");
+  await page.goto("/formacao");
+  const aboutSection = page.locator("main");
   await expect(aboutSection).toContainText(
     "Pós-graduado em Inteligência Artificial para Agentes da Lei",
   );
@@ -135,15 +137,17 @@ test("experiência forense e formação acadêmica são apresentadas sem dados s
   );
   await expect(page.getByText(/Curso de ChatGPT para Policiais e Agentes da Lei/)).toBeVisible();
 
+  await page.goto("/");
   const hero = page.locator("#inicio");
   await expect(hero).toContainText("Pós-graduado em Inteligência Artificial");
   await expect(hero).toContainText("Mais de 12 anos em investigação e análise técnica");
-  await expect(hero).toContainText("Nova formação");
+  await expect(hero).toContainText("Formação em destaque");
   await expect(hero).toContainText(
     "Detecção de Fotos e Vídeos gerados por Inteligência Artificial",
   );
   await expect(hero).toContainText("20h");
   await expect(hero).not.toContainText("Investigador da Polícia Civil");
+  await page.goto("/formacao");
   await expect(
     page.getByText(
       /Curso de Detecção de Fotos e Vídeos gerados por Inteligência Artificial, 20 horas, concluído em 2026\./i,
@@ -194,11 +198,11 @@ test("cartão virtual oferece contatos, QR Code, VCF e compartilhamento alternat
   await expect(page.getByRole("link", { name: "Enviar e-mail", exact: true })).toBeVisible();
   await expect(page.getByTestId("card-email-address")).toBeVisible();
   await expect(page.getByTestId("card-email-address")).toHaveText(
-    /E-mail profissional:\s*marcobarbo@gmail\.com/i,
+    /E-mail profissional:\s*marcobarbosa@damauniverse\.com\.br/i,
   );
   await expect(page.getByTestId("card-email-address")).toHaveAttribute(
     "href",
-    "mailto:marcobarbo@gmail.com",
+    "mailto:marcobarbosa@damauniverse.com.br",
   );
   await expect(page.getByTestId("download-vcf")).toHaveAttribute("href", "/cartao/contato.vcf");
 
@@ -222,8 +226,8 @@ test("rotas auxiliares e metadados respondem corretamente", async ({ page, reque
   expect(vcfResponse.headers()["content-type"]).toContain("text/vcard");
   const vcf = await vcfResponse.text();
   expect(vcf).toContain("FN:Marco Aurélio Pereira Barbosa");
-  expect(vcf).toContain("TEL;TYPE=CELL:+5567999398990");
-  expect(vcf).toContain("EMAIL;TYPE=INTERNET:marcobarbo@gmail.com");
+  expect(vcf).toContain("TEL;TYPE=CELL:+5567992368049");
+  expect(vcf).toContain("EMAIL;TYPE=INTERNET:marcobarbosa@damauniverse.com.br");
   expect(vcf).toContain("URL:http://127.0.0.1:3100/");
   expect(vcf).toContain(
     "NOTE:Inteligência Artificial\\, capacitação e soluções digitais",

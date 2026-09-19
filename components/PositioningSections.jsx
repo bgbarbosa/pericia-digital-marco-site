@@ -1,10 +1,11 @@
+import Link from "next/link";
 import Panel from "@/components/Panel";
 import SectionTitle from "@/components/SectionTitle";
 
 const sectionContainer =
   "mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8 xl:px-10";
 const cardClass =
-  "transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.045]";
+  "";
 
 function EditorialCards({ items }) {
   return (
@@ -35,12 +36,12 @@ export function CapacitySection({ modalities }) {
         </p>
         <EditorialCards items={modalities} />
         <div className="mt-8 text-center sm:mt-10">
-          <a
-            href="#contato"
-            className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-cyan-600 px-7 py-3.5 text-base font-semibold text-white transition hover:bg-cyan-500 focus-visible:outline-none"
+          <Link
+            href="/#contato"
+            className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-cyan-600 px-7 py-3.5 text-base font-semibold text-white transition hover:bg-cyan-500 focus-visible:outline-cyan-200"
           >
             Solicitar informações sobre capacitações
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -93,12 +94,12 @@ export function DigitalSolutionsSection({ points }) {
           aplicável.
         </p>
         <div className="mt-7 text-center">
-          <a
-            href="#contato"
-            className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-7 py-3.5 text-base font-semibold text-cyan-100 transition hover:bg-cyan-400/20 focus-visible:outline-none"
+          <Link
+            href="/#contato"
+            className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-7 py-3.5 text-base font-semibold text-cyan-100 transition hover:bg-cyan-400/20 focus-visible:outline-cyan-200"
           >
             Apresentar uma necessidade
-          </a>
+          </Link>
         </div>
       </div>
     </section>

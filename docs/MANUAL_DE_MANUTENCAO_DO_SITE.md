@@ -100,7 +100,7 @@ Use `{ title, text }`, preserve linguagem responsável e destaque validação hu
 
 **Principal:** `digitalSolutionPoints`; **componente:** `DigitalSolutionsSection`.
 
-Cada item usa `{ title, text }`. Soluções digitais são oferta secundária; não anuncie produto, disponibilidade ou integração que não exista. Valide `/#solucoes-digitais`, aviso institucional, contato e textos de metadata. A redação final desta oferta é uma pendência institucional antes da produção.
+Cada item usa `{ title, text }`. Soluções digitais são oferta secundária; não anuncie produto, disponibilidade ou integração que não exista. Valide `/#solucoes-digitais`, aviso institucional, contato e textos de metadata. A redação existente está preservada na publicação autorizada pelo proprietário.
 
 ## 9. Adicionar ou atualizar experiência e formação forense
 
@@ -117,7 +117,7 @@ Textos narrativos ficam em `components/ProfessionalSections.jsx`; `academicForma
 Fatos confirmados nesta versão:
 
 - pós-graduação em Inteligência Artificial para Agentes da Lei, 360 horas, concluída em 2026;
-- pós-graduação em Análise de Dados, 360 horas, concluída em 2024;
+- pós-graduação em Análise de Dados pela Faculdade FaCiencia, 360 horas, período de 2023 a 2024, concluída;
 - especialização em Inteligência Artificial pela UTFPR em andamento;
 - graduação em Administração concluída em 2009;
 - curso de ChatGPT para Policiais e Agentes da Lei, 40 horas, concluído em 2024;
@@ -133,7 +133,7 @@ O cargo público deve permanecer como informação curricular em trajetória/cre
 
 **Principal:** `profile.association` e `public/apecof.jpeg`. A associação aparece na área de credenciais da home; foi removida do cartão.
 
-Atualize `acronym`, `name`, `image` e `statement` em conjunto. Confirme autorização, identidade visual e texto institucional. Teste a home e verifique que o cartão continua sem o logotipo, salvo novo requisito aprovado. APECOF não é referência bibliográfica nem endosso automático.
+Preserve `acronym`, `name`, `image` e `statement`, o logotipo existente e sua apresentação responsiva. A associação foi confirmada pelo proprietário em 19/09/2026 e não requer nova autorização. Alterações futuras só devem ocorrer mediante solicitação expressa. Teste a home e verifique que o cartão continua sem o logotipo, salvo novo requisito aprovado. APECOF não é referência bibliográfica nem endosso automático.
 
 ## 13. Alterar a home e sua ordem
 
@@ -175,7 +175,7 @@ Com `npm run dev` ativo, abra no navegador `/cartao/qr-code` e `/cartao/contato.
 
 ## 20. Adicionar ou trocar imagens
 
-Retrato: `public/marco.jpeg`; APECOF: `public/apecof.jpeg`. Confirme direito de uso, proporção, compressão e remoção de EXIF/GPS quando aplicável. `next/image` é usado na interface; as imagens OG leem o retrato pelo sistema de arquivos. Se renomear, atualize `profile.image` e ambos os arquivos OG. Teste carregamento, enquadramento, texto alternativo e build.
+Retrato: `public/marco-barbosa.jpg`; APECOF: `public/apecof.jpeg`. Confirme direito de uso, proporção, compressão e remoção de EXIF/GPS quando aplicável. `next/image` é usado na interface; as imagens OG leem o retrato pelo sistema de arquivos. Se renomear, atualize `profile.image` e ambos os arquivos OG. Teste carregamento, enquadramento, texto alternativo e build.
 
 ## 21. Alterar favicon e ícones
 
@@ -236,7 +236,7 @@ npm run build
 
 ## 32. Validar antes de publicar
 
-- [ ] três pendências institucionais aprovadas: soluções digitais, aviso e APECOF;
+- [ ] conteúdo institucional preservado conforme autorização; associação APECOF confirmada pelo proprietário em 19/09/2026;
 - [ ] domínio, Vercel e branch de produção confirmados;
 - [ ] nome, conteúdo, contatos, imagens e Lattes conferidos;
 - [ ] `/`, `/cartao`, QR, vCard, OG, manifest, robots e sitemap conferidos;
@@ -392,3 +392,15 @@ Antes do commit, revise o diff e desfaça apenas suas linhas pelo editor. Depois
 Não há procedimento operacional atual para cadastrar programa, publicar download de programa, publicar atualização, criar post de blog, cadastrar referência, publicar vídeo, alterar analytics, alterar banner de cookies ou enviar formulário.
 
 Para **cada uma** dessas capacidades vale a mesma regra: esta capacidade não existe na implementação atual. Sua inclusão requer novo escopo, definição de modelo de dados, rotas, componentes, metadados, sitemap, segurança e testes. Não crie entidade, arquivo ou exemplo fictício que pareça funcionalidade publicada.
+
+## Atualização operacional — TSK-PROF-002 (19/09/2026)
+
+Esta seção prevalece sobre exemplos históricos anteriores deste manual. Há seis páginas públicas; aprofundamentos em `app/formacao`, `app/aplicacoes`, `app/experiencia` e `app/formacao/deteccao-imagens-ia`. A home mantém resumos e âncoras compatíveis.
+
+Contatos e retrato: `data/profile.js`. Ambas as rotas `opengraph-image.jsx` leem `profile.image`. Preserve o PNG original e registre novos derivados no manifesto do retrato.
+
+Dados de eventos/demonstrações aprovados: `data/public-content.js`; contratos em `TSK-PROF-002_PENDENCIAS.md`. Nunca coloque rascunhos ou imagens restritas em `public`, nas props de Client Components ou nesses arrays. Os componentes de apresentação ficam em `ApprovedContent.jsx`; filtros em `lib/public-content.js`.
+
+Navegação interna: mesma aba. Menu móvel usa diálogo modal nativo, com foco isolado, Escape e restauração de rolagem. Testes existentes foram preservados e adaptados à realocação de conteúdo. Testes novos: `tests/e2e/consolidated.spec.js`.
+
+Validação e resultados efetivos: `TSK-PROF-002_RELATORIO.md`. Conteúdo confirmado e campos opcionais: `TSK-PROF-002_PENDENCIAS.md`. Nenhum questionário é necessário para a entrega atual.

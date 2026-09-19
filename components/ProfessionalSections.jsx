@@ -25,7 +25,7 @@ export function KnowledgeAreasSection({ areas }) {
             <Panel
               as="article"
               key={item.title}
-              className="transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.045]"
+              className=""
             >
               <h3 className="text-xl font-semibold leading-snug text-cyan-300 sm:text-2xl xl:text-[1.82rem]">
                 {item.title}

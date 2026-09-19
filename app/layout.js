@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 
 const description =
   "Treinamentos, cursos, palestras e mentorias em Inteligência Artificial e ChatGPT, com foco prático e responsável para profissionais e equipes, além de soluções digitais e experiência em investigação, perícia digital e computação forense.";
-const siteName = "Marco Aurélio - Inteligência Artificial e Capacitação";
+const siteName = "Marco Barbosa - Inteligência Artificial e Capacitação";
 const defaultTitle =
   "Marco Aurélio Pereira Barbosa - Inteligência Artificial e Capacitação";
 
@@ -71,6 +71,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="pt-BR"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-slate-950 text-slate-100">{children}</body>

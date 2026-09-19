@@ -1,6 +1,6 @@
 # Site Profissional — Marco Aurélio Pereira Barbosa
 
-Site institucional de apresentação profissional voltado à Perícia Digital, Computação Forense e Evidências Digitais. O projeto inclui uma página principal responsiva e um cartão virtual próprio para compartilhamento em celulares e aplicativos como o WhatsApp.
+Site profissional de Marco Barbosa voltado à Inteligência Artificial, ChatGPT, capacitações e soluções digitais. Perícia digital e computação forense integram sua formação complementar. O projeto inclui uma página principal responsiva e um cartão virtual próprio para compartilhamento em celulares e aplicativos como o WhatsApp.
 
 ## Recursos
 
@@ -50,7 +50,7 @@ data/profile.js
 lib/site-url.js
 public/
 ├── apecof.jpeg
-└── marco.jpeg
+└── marco-barbosa.jpg
 tests/e2e/site.spec.js
 .github/workflows/ci.yml
 ```
@@ -73,9 +73,9 @@ Copie `.env.example` para `.env.local` durante o desenvolvimento, se precisar de
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-Na Vercel, `NEXT_PUBLIC_SITE_URL` deve receber a URL pública real, incluindo `https://`. Não há domínio definitivo configurado no repositório.
+Na Vercel, `NEXT_PUBLIC_SITE_URL` deve receber a URL pública real, incluindo `https://`. O domínio atual de referência é `https://pericia-digital-marco-site.vercel.app/`, usado como fallback público.
 
-A mesma fonte de URL é usada em canonical, sitemap, compartilhamento, QR Code e vCard. Em previews da Vercel, o projeto pode usar a URL informada automaticamente pela plataforma. Em desenvolvimento, o fallback é `http://localhost:3000`.
+A mesma fonte de URL é usada em canonical, sitemap, compartilhamento, QR Code e vCard. Em previews da Vercel, o projeto pode usar a URL informada automaticamente pela plataforma. Sem variável configurada, o fallback público é `https://pericia-digital-marco-site.vercel.app/`. Para QR/VCF apontarem para o servidor local, defina `NEXT_PUBLIC_SITE_URL` explicitamente antes de iniciar o servidor.
 
 ## Instalação e execução
 
@@ -136,11 +136,11 @@ Se a Web Share API não estiver disponível, o botão de compartilhamento copia 
 
 O projeto não deve incluir senhas, tokens, chaves, arquivos `.env` reais, documentos sigilosos ou dados pessoais de terceiros. `.next`, `node_modules`, relatórios de teste e `.vercel` permanecem ignorados.
 
-As imagens `public/marco.jpeg` e `public/apecof.jpeg` fazem parte do conteúdo autorizado deste projeto. Elas não possuem metadados EXIF ou GPS.
+O retrato derivado `public/marco-barbosa.jpg` é usado na home, no cartão e nas duas imagens sociais. A imagem PNG original permanece preservada. Conversão e hashes: `docs/TSK-PROF-002_RETRATO.json`.
 
 ## Git e publicação
 
-A branch de trabalho preparada é `fix/producao-mobile-cartao`. O repositório não possui remoto configurado e nenhum push ou deploy foi executado.
+A atualização TSK-PROF-002 foi preparada na branch `codex/TSK-PROF-002-atualizacao-consolidada`. Em 19/09/2026, o proprietário autorizou commit, envio ao GitHub e verificação da publicação no Vercel. O remoto de produção usa `master`; o envio deve ser normal, sem reescrita de histórico.
 
 O manual completo para criar o repositório no GitHub, enviar a branch, importar na Vercel, configurar variável e domínio está em:
 
@@ -152,10 +152,19 @@ O manual completo para criar o repositório no GitHub, enviar a branch, importar
 
 Campo Grande/MS
 
-E-mail: [marcobarbo@gmail.com](mailto:marcobarbo@gmail.com)
+E-mail: [marcobarbosa@damauniverse.com.br](mailto:marcobarbosa@damauniverse.com.br)
 
 Currículo Lattes: <https://lattes.cnpq.br/1970561249212557>
 
 ## Licença e uso
 
 Este projeto possui finalidade institucional e autoral. A reprodução, adaptação ou redistribuição deve respeitar a autoria e eventuais restrições aplicáveis às imagens e ao conteúdo.
+
+## Atualização consolidada — 19/09/2026
+
+Páginas: `/formacao`, `/aplicacoes`, `/experiencia` e `/formacao/deteccao-imagens-ia`. Links internos abrem na mesma aba.
+
+- [Relatório de implementação e validação](docs/TSK-PROF-002_RELATORIO.md)
+- [Conteúdo confirmado e complementos opcionais](docs/TSK-PROF-002_PENDENCIAS.md)
+- Telefone: (67) 99236-8049; e-mail: marcobarbosa@damauniverse.com.br.
+- LinkedIn e Dama Universe são centralizados em `data/profile.js`.

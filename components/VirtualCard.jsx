@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import Panel from "@/components/Panel";
@@ -17,17 +18,17 @@ export default function VirtualCard({
       <div className="absolute left-1/2 top-24 h-72 w-72 max-w-full -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
       <Panel className="relative overflow-hidden border-cyan-400/15 bg-slate-950/80 p-0 sm:p-0 md:p-0 xl:p-0">
         <div className="grid lg:grid-cols-[0.78fr_1.22fr]">
-          <div className="relative min-h-[390px] overflow-hidden border-b border-white/10 lg:min-h-[680px] lg:border-b-0 lg:border-r">
+          <div className="relative h-[170px] w-[136px] mx-auto mt-5 rounded-2xl overflow-hidden border-b border-white/10 lg:mx-5 lg:mt-8 lg:h-[450px] lg:w-auto lg:rounded-2xl lg:border lg:border-white/10">
             <Image
               src={profile.image}
               alt={`Retrato profissional de ${profile.name}`}
               fill
               preload
               className="object-cover object-top"
-              sizes="(max-width: 1024px) 100vw, 430px"
+              sizes="(max-width: 1023px) 136px, 335px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-cyan-950/15" />
-            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
+            <div className="hidden absolute inset-x-0 bottom-0 p-5 sm:p-7 lg:block">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">
                 Cartão profissional digital
               </p>
@@ -39,23 +40,65 @@ export default function VirtualCard({
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 sm:text-sm">
               Inteligência Artificial aplicada
             </p>
-            <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+            <h1 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">
               {profile.name}
             </h1>
-            <p className="mt-4 text-lg font-medium leading-8 text-cyan-200 sm:text-xl">
+            <p className="mt-4 text-base font-medium leading-7 text-cyan-200 sm:text-lg">
               {profile.title}
             </p>
 
             <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-primary mt-4 w-full"
+            >
+              Conversar pelo WhatsApp {profile.phone.display}
+            </a>
+            <a
               href={emailUrl}
               data-testid="card-email-address"
-              className="mt-4 inline-flex max-w-full flex-col rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.06] focus-visible:outline-none sm:flex-row sm:items-center sm:gap-2"
+              className="mt-4 inline-flex max-w-full flex-col rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.06] focus-visible:outline-cyan-200 sm:flex-row sm:items-center sm:gap-2"
             >
-              <span className="font-semibold text-cyan-300">E-mail profissional:</span>
+              <span className="font-semibold text-cyan-300">
+                E-mail profissional:
+              </span>
               <span className="break-all text-slate-200">{profile.email}</span>
             </a>
 
-            <ul className="mt-6 grid gap-2 sm:grid-cols-2" aria-label="Principais áreas profissionais">
+            <div className="mt-7">
+              <ShareCardActions
+                emailUrl={emailUrl}
+                profileName={profile.name}
+                telephoneUrl={telephoneUrl}
+              />
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              <a
+                className="text-link"
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn ↗
+              </a>
+              <a
+                className="text-link"
+                href={profile.damaUniverse}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Dama Universe ↗
+              </a>
+              <Link className="text-link" href="/">
+                Acessar site principal →
+              </Link>
+            </div>
+            <ul
+              className="mt-6 grid gap-2 sm:grid-cols-2"
+              aria-label="Principais áreas profissionais"
+            >
               {virtualCardAreas.map((area) => (
                 <li
                   key={area}
@@ -70,21 +113,12 @@ export default function VirtualCard({
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
                 Experiência e formação técnica
               </p>
-              <h2 className="mt-2 text-lg font-semibold leading-7 text-cyan-100 sm:text-xl">
+              <h2 className="mt-2 text-lg font-semibold leading-7 text-cyan-100 sm:text-lg">
                 {virtualCardForensics.title}
               </h2>
               <p className="mt-2 text-sm leading-7 text-slate-300">
                 {virtualCardForensics.text}
               </p>
-            </div>
-
-            <div className="mt-7">
-              <ShareCardActions
-                emailUrl={emailUrl}
-                profileName={profile.name}
-                telephoneUrl={telephoneUrl}
-                whatsappUrl={whatsappUrl}
-              />
             </div>
 
             <div className="mt-6 flex flex-col items-center gap-3 rounded-2xl border border-cyan-400/15 bg-cyan-400/[0.04] p-5 text-center sm:flex-row sm:text-left">
@@ -98,10 +132,12 @@ export default function VirtualCard({
                 data-testid="qr-code"
               />
               <div>
-                <h2 className="text-lg font-semibold text-white">Aponte a câmera do celular</h2>
+                <h2 className="text-lg font-semibold text-white">
+                  Aponte a câmera do celular
+                </h2>
                 <p className="mt-1 text-sm leading-6 text-slate-300">
-                  O QR Code abre este cartão na URL configurada para o site ou, durante os
-                  testes, no endereço atual.
+                  Use a câmera do celular para abrir e guardar este cartão
+                  profissional.
                 </p>
               </div>
             </div>

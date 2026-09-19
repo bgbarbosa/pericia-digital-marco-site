@@ -1,22 +1,25 @@
 export const profile = {
   name: "Marco Aurélio Pereira Barbosa",
+  displayName: "Marco Barbosa",
+  linkedin: "https://www.linkedin.com/in/marco-aur%C3%A9lio-barbosa-79850926a/",
+  damaUniverse: "https://damauniverse.com.br",
   initials: "M.A.P.B",
   title: "Inteligência Artificial, capacitação e soluções digitais",
   heroTitle:
-    "Treinamentos, cursos, palestras e mentorias em Inteligência Artificial",
+    "Inteligência Artificial aplicada à prática profissional",
   subtitle:
-    "Capacitações práticas com foco em ChatGPT, engenharia de prompts, produtividade e uso responsável da Inteligência Artificial para profissionais e equipes.",
+    "Treinamentos, cursos, palestras e mentorias em ChatGPT, engenharia de prompts e produtividade para profissionais e equipes.",
   introduction:
     "O trabalho também abrange projetos, automações e soluções digitais personalizadas voltadas à organização, produtividade e análise de informações.",
   phone: {
-    digits: "5567999398990",
-    international: "+5567999398990",
-    display: "(67) 99939-8990",
+    digits: "5567992368049",
+    international: "+5567992368049",
+    display: "(67) 99236-8049",
   },
-  email: "marcobarbo@gmail.com",
+  email: "marcobarbosa@damauniverse.com.br",
   city: "Campo Grande/MS",
   lattes: "https://lattes.cnpq.br/1970561249212557",
-  image: "/marco.jpeg",
+  image: "/marco-barbosa.jpg",
   association: {
     acronym: "APECOF",
     name: "Associação Nacional dos Peritos em Computação Forense",
@@ -29,9 +32,9 @@ export const profile = {
 export const homeMenu = [
   { label: "Início", href: "#inicio" },
   { label: "Capacitações", href: "#capacitacoes" },
-  { label: "Soluções Digitais", href: "#solucoes-digitais" },
-  { label: "Conhecimentos", href: "#conhecimentos" },
-  { label: "Sobre", href: "#sobre" },
+  { label: "Aplicações de IA", href: "#aplicacoes-ia" },
+  { label: "Experiência", href: "/experiencia" },
+  { label: "Formação e trajetória", href: "#sobre" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -47,11 +50,11 @@ export const capacityModalities = [
   },
   {
     title: "Cursos e oficinas",
-    text: "Atividades estruturadas para introdução e aplicação de ferramentas de Inteligência Artificial. Ementas, carga horária, formato e disponibilidade são definidos conforme a necessidade e não constituem, neste momento, um catálogo permanente de cursos.",
+    text: "Para quem busca aprender de forma estruturada: introdução ao uso de IA, exercícios de escrita, revisão e organização de informações. Oficinas dão espaço à prática orientada e à discussão das atividades.",
   },
   {
     title: "Palestras",
-    text: "Temas propostos para palestras incluem Inteligência Artificial no cotidiano profissional, ChatGPT na prática, oportunidades e riscos da IA, engenharia de prompts, produtividade, ética e uso seguro de ferramentas generativas. O recorte temático e o formato são definidos conforme o público e o evento.",
+    text: "Para públicos de eventos e encontros profissionais: exposição e discussão sobre IA no cotidiano, ChatGPT, oportunidades, riscos, ética e uso seguro. O tema é recortado de acordo com o público.",
   },
   {
     title: "Mentorias",
@@ -145,20 +148,24 @@ export const specializationAreas = knowledgeAreas;
 export const heroHighlights = [
   {
     label: "Formação",
+    href: "/formacao",
     text: "Pós-graduado em Inteligência Artificial",
   },
   {
     label: "Aplicação",
+    href: "/aplicacoes",
     text: "ChatGPT, engenharia de prompts e produtividade",
   },
   {
     label: "Experiência",
+    href: "/experiencia",
     text: "Mais de 12 anos em investigação e análise técnica",
   },
 ];
 
 export const featuredTraining = {
-  label: "Nova formação",
+  label: "Formação em destaque",
+  href: "/formacao/deteccao-imagens-ia",
   title: "Detecção de Fotos e Vídeos gerados por Inteligência Artificial",
   workload: "20h",
   completion: "Concluído • ago/2026",
@@ -178,7 +185,7 @@ export const virtualCardForensics = {
 
 export const academicFormation = [
   "Pós-graduado em Inteligência Artificial para Agentes da Lei, formação lato sensu de 360 horas concluída em 2026.",
-  "Pós-graduado em Análise de Dados, formação de 360 horas concluída em 2024.",
+  "Pós-graduação em Análise de Dados pela Faculdade FaCiencia, 360 horas, período de 2023 a 2024, concluída.",
   "Especialização em Inteligência Artificial pela Universidade Tecnológica Federal do Paraná - UTFPR, em andamento.",
   "Graduado em Administração pela Universidade Anhanguera - Uniderp.",
 ];

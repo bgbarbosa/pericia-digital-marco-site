@@ -6,6 +6,16 @@ export default function sitemap() {
   }
 
   return [
+    ...[
+      "/formacao",
+      "/aplicacoes",
+      "/experiencia",
+      "/formacao/deteccao-imagens-ia",
+    ].map((path) => ({
+      url: publicAbsoluteUrl(path),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    })),
     {
       url: publicAbsoluteUrl("/"),
       changeFrequency: "monthly",

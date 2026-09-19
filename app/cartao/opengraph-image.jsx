@@ -7,12 +7,12 @@ import { ImageResponse } from "next/og";
 import { profile } from "@/data/profile";
 import { displaySiteAddress } from "@/lib/site-url";
 
-export const alt = `Cartão profissional de ${profile.name}`;
+export const alt = `Cartão profissional de ${profile.displayName}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function CardOpenGraphImage() {
-  const photo = await readFile(join(process.cwd(), "public", "marco.jpeg"), "base64");
+  const photo = await readFile(join(process.cwd(), "public", profile.image.slice(1)), "base64");
 
   return new ImageResponse(
     <div
@@ -42,7 +42,7 @@ export default async function CardOpenGraphImage() {
           alt=""
           width={360}
           height={510}
-          style={{ objectFit: "cover", objectPosition: "top" }}
+          style={{ objectFit: "cover", objectPosition: "top", borderRadius: 32 }}
         />
       </div>
       <div style={{ display: "flex", flex: 1, flexDirection: "column", paddingLeft: 58 }}>
@@ -62,7 +62,7 @@ export default async function CardOpenGraphImage() {
           Cartão profissional
         </div>
         <div style={{ display: "flex", marginTop: 24, fontSize: 52, fontWeight: 700, lineHeight: 1.04 }}>
-          {profile.name}
+          {profile.displayName}
         </div>
         <div style={{ display: "flex", marginTop: 22, color: "#a5f3fc", fontSize: 28, lineHeight: 1.22 }}>
           Inteligência Artificial, capacitação e soluções digitais

@@ -5,7 +5,7 @@ export default function Footer() {
         © 2026 Marco Aurélio Pereira Barbosa <span aria-hidden="true">•</span> Inteligência
         Artificial, capacitação e soluções digitais
       </p>
-      <p className="mx-auto mt-4 max-w-5xl text-xs leading-6 text-slate-500 sm:text-sm sm:leading-7">
+      <p className="mx-auto mt-4 max-w-5xl text-xs leading-6 text-slate-400 sm:text-sm sm:leading-7">
         Site profissional de caráter pessoal, educacional e tecnológico. As opiniões,
         conteúdos e projetos apresentados não constituem manifestação institucional nem
         representam órgão público, associação profissional ou entidade à qual o titular
@@ -13,7 +13,7 @@ export default function Footer() {
       </p>
       <a
         href="/cartao"
-        className="mt-4 inline-flex min-h-11 items-center justify-center rounded-xl px-4 py-2 font-semibold text-cyan-300 transition hover:bg-cyan-400/10 hover:text-cyan-200 focus-visible:outline-none"
+        className="mt-4 inline-flex min-h-11 items-center justify-center rounded-xl px-4 py-2 font-semibold text-cyan-300 transition hover:bg-cyan-400/10 hover:text-cyan-200 focus-visible:outline-cyan-200"
       >
         Abrir cartão virtual
       </a>

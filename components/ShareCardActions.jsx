@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 async function copyText(value) {
   if (navigator.clipboard?.writeText) {
@@ -16,24 +15,32 @@ async function copyText(value) {
   textArea.style.opacity = "0";
   document.body.appendChild(textArea);
   textArea.select();
-  document.execCommand("copy");
-  textArea.remove();
+  try {
+    if (!document.execCommand("copy")) throw new Error("Cópia indisponível");
+  } finally {
+    textArea.remove();
+  }
 }
 
 export default function ShareCardActions({
   emailUrl,
   profileName,
   telephoneUrl,
-  whatsappUrl,
 }) {
   const [status, setStatus] = useState("");
 
   const copyCardUrl = async (message = "Link do cartão copiado.") => {
-    await copyText(window.location.href);
-    setStatus(message);
+    setStatus("");
+    try {
+      await copyText(window.location.href);
+      setStatus(message);
+    } catch {
+      setStatus("Não foi possível copiar. Copie o endereço pela barra do navegador.");
+    }
   };
 
   const shareCard = async () => {
+    setStatus("");
     const shareData = {
       title: `Cartão profissional - ${profileName}`,
       text: "Cartão profissional de Inteligência Artificial, capacitação e soluções digitais.",
@@ -49,35 +56,20 @@ export default function ShareCardActions({
       await navigator.share(shareData);
       setStatus("Cartão compartilhado.");
     } catch (error) {
-      if (error?.name !== "AbortError") {
+      if (error?.name === "AbortError") {
+        setStatus("Compartilhamento cancelado.");
+      } else {
         await copyCardUrl("Não foi possível abrir o compartilhamento. Link copiado.");
       }
     }
   };
 
   const buttonClass =
-    "inline-flex min-h-12 items-center justify-center rounded-xl border border-white/10 px-4 py-3 text-center text-sm font-semibold text-slate-100 transition hover:border-cyan-400/30 hover:bg-cyan-400/10 focus-visible:outline-none sm:text-base";
+    "inline-flex min-h-12 items-center justify-center rounded-xl border border-white/10 px-4 py-3 text-center text-sm font-semibold text-slate-100 transition hover:border-cyan-400/30 hover:bg-cyan-400/10 focus-visible:outline-cyan-200 sm:text-base";
 
   return (
     <div>
       <div className="grid gap-3 sm:grid-cols-2">
-        <Link href="/" className={`${buttonClass} bg-cyan-600 hover:bg-cyan-500`}>
-          Acessar site principal
-        </Link>
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={buttonClass}
-        >
-          Conversar pelo WhatsApp
-        </a>
-        <a href={telephoneUrl} className={buttonClass}>
-          Ligar
-        </a>
-        <a href={emailUrl} className={buttonClass}>
-          Enviar e-mail
-        </a>
         <a
           href="/cartao/contato.vcf"
           download
@@ -92,6 +84,12 @@ export default function ShareCardActions({
         <button type="button" onClick={() => copyCardUrl()} className={buttonClass} data-testid="copy-card">
           Copiar endereço do cartão
         </button>
+        <a href={telephoneUrl} className={buttonClass}>
+          Ligar
+        </a>
+        <a href={emailUrl} className={buttonClass}>
+          Enviar e-mail
+        </a>
         <a
           href="/cartao/opengraph-image"
           target="_blank"
