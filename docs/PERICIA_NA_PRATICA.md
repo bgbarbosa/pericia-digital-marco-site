@@ -48,6 +48,20 @@ Reserva: o leitor web retornou erro interno para o texto consolidado do [Ajuste 
 
 As datas de 21/08/2025 do [SWGDE 18-F-003 v2.0](https://www.swgde.org/documents/published-complete-listing/18-f-003-2/) e do [SWGDE 17-V-002 v1.4](https://www.swgde.org/documents/published-complete-listing/17-v-002-1-4/) correspondem à identificação de versão no rodapé das páginas, distinta das datas intermediárias do histórico de revisão. Não há motivo confirmado para modificá-las.
 
+## Layout e contatos — revisão local posterior
+
+As melhorias posteriores ao baseline `d69b587` são locais e aguardam auditoria e autorização específica para publicação. A autorização histórica acima não se estende a este lote.
+
+A home e o cabeçalho compartilham largura máxima de 1280 px e margens laterais de 16–32 px. Espaçamentos e preenchimentos vêm das variáveis de `.home-page`, em `app/globals.css`. As associações ficam abaixo dos dois cards de formação, com logos inteiros e equilibrados. Os estilos de leitura dos artigos mantêm sua organização própria.
+
+O menu central em `data/profile.js` começa por Início e Perícia na Prática. O cabeçalho usa uma container query em `rem` para acomodar também texto ampliado; o diálogo móvel mantém foco e restaura a rolagem. O card da coleção é um único link, com foco visível e uma transição de cor por opacidade de 14 segundos, desativada em `prefers-reduced-motion: reduce`.
+
+`lib/practice-contact.js` monta as URLs de WhatsApp e e-mail a partir de `whatsappUrl` e `emailUrl`, derivados de `profile`. O título de cada artigo compõe a mensagem, o assunto e o corpo. Nome e profissão são linhas opcionais da mensagem: não há formulário, validação, captura automática, persistência ou envio pelo site. O visitante pode editar ou apagar o texto no WhatsApp e decidir se deseja enviá-lo.
+
+`CopyEmailButton.jsx` é a pequena fronteira cliente do contato dos artigos. Tenta a Clipboard API após o clique e, se indisponível ou recusada, usa seleção temporária e `execCommand("copy")`. A seleção temporária é removida e o foco é restaurado; a confirmação com `role="status"` só anuncia sucesso real. Se ambos os métodos falharem, orienta a cópia manual do endereço visível. O `mailto:` depende do aplicativo configurado e não envia e-mail automaticamente nem exige provedor específico.
+
+Os cenários de navegação, contato, cópia e layout estão em `tests/e2e/layout-contact.spec.js`. Artigos, imagens, datas, dependências e controles da exceção `braces` permanecem fora das alterações deste lote.
+
 ## Validação no Windows
 
 Na pasta do projeto, com Node.js 24.x e as dependências instaladas:

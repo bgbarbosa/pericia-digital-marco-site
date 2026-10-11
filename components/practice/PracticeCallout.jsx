@@ -4,16 +4,14 @@ import styles from "./Practice.module.css";
 
 export default function PracticeCallout() {
   return (
-    <section className="content-section" aria-labelledby="pratica-chamada">
-      <div className={styles.callout}>
+    <section className="content-section practice-callout-section" aria-labelledby="pratica-chamada">
+      <Link className={styles.callout} href={practiceCollection.basePath} aria-labelledby="pratica-chamada" aria-describedby="pratica-chamada-resumo">
         <div>
           <h2 id="pratica-chamada">{practiceCollection.title}</h2>
-          <p>{practiceCollection.subtitle}</p>
+          <p id="pratica-chamada-resumo">{practiceCollection.subtitle}</p>
         </div>
-        <Link className="action-primary" href={practiceCollection.basePath}>
-          Explorar os quatro artigos <span aria-hidden="true"> →</span>
-        </Link>
-      </div>
+        <span className={styles.calloutArrow} aria-hidden="true">→</span>
+      </Link>
     </section>
   );
 }

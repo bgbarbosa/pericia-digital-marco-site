@@ -39,9 +39,9 @@ export const profile = {
 
 export const homeMenu = [
   { label: "Início", href: "#inicio" },
+  { label: "Perícia na Prática", href: "/pericia-na-pratica" },
   { label: "Capacitações", href: "#capacitacoes" },
   { label: "Aplicações de IA", href: "#aplicacoes-ia" },
-  { label: "Perícia na Prática", href: "/pericia-na-pratica" },
   { label: "Experiência", href: "/experiencia" },
   { label: "Formação e trajetória", href: "#sobre" },
   { label: "Contato", href: "#contato" },

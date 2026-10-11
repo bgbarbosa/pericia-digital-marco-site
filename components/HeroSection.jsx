@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function HeroSection({ featuredTraining, highlights, profile }) {
   return (
     <section id="inicio" className="hero-section border-b border-white/10">
-      <div className="hero-grid mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="hero-grid site-container">
         <div className="hero-intro">
           <p className="text-lg font-semibold text-cyan-200">
             {profile.displayName}
@@ -23,7 +23,7 @@ export default function HeroSection({ featuredTraining, highlights, profile }) {
             fill
             preload
             className="object-contain"
-            sizes="(max-width: 767px) 240px, (max-width: 1023px) 300px, 420px"
+            sizes="(max-width: 767px) 320px, (max-width: 1023px) 35vw, 420px"
           />
         </div>
         <div className="hero-actions">

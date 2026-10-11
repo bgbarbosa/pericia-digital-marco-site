@@ -5,7 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ArticleCards from "@/components/practice/ArticleCards";
 import ArticleBody from "@/components/practice/ArticleBody";
-import { cardMenu, emailUrl, whatsappUrl } from "@/data/profile";
+import CopyEmailButton from "@/components/practice/CopyEmailButton";
+import { practiceEmailUrl, practiceWhatsAppUrl } from "@/lib/practice-contact";
+import { cardMenu, profile } from "@/data/profile";
 import { articleOutline, findArticle, practiceArticles, practiceCollection, practiceMetadata } from "@/lib/practice-articles";
 import styles from "@/components/practice/Practice.module.css";
 
@@ -25,11 +27,12 @@ export default async function PracticeArticlePage({ params }) {
   const article = findArticle((await params).slug);
   if (!article) notFound();
   const related = article.relatedSlugs.map(findArticle).filter(Boolean);
-  const contactUrl = `${whatsappUrl}?text=${encodeURIComponent(`Olá, Marco. Li o artigo “${article.title}” e gostaria de conversar sobre uma questão técnica e os materiais disponíveis.`)}`;
+  const contactUrl = practiceWhatsAppUrl(article.title);
+  const emailContactUrl = practiceEmailUrl(article.title);
 
   return (
     <main className={styles.shell}>
-      <Header menu={cardMenu} contactHref="#contato-artigo" contactLabel="Contato profissional" />
+      <Header menu={cardMenu} contactHref={contactUrl} contactLabel="Conversar pelo WhatsApp" />
       <article
         className={`${styles.container} ${styles.article}`}
         style={{ "--article-accent": article.theme.accent, "--article-tint": article.theme.tint }}
@@ -66,9 +69,14 @@ export default async function PracticeArticlePage({ params }) {
           <p>Converse sobre a questão técnica e os materiais disponíveis.</p>
           <div className={styles.contactActions}>
             <a className="action-primary" href={contactUrl} target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp</a>
-            <a className="action-secondary" href={emailUrl}>Enviar e-mail</a>
-            <Link className="text-link" href="/cartao">Abrir cartão profissional</Link>
+            <a className="action-secondary" href={emailContactUrl}>Enviar e-mail</a>
           </div>
+          <p className={styles.contactNote}>No WhatsApp, você pode editar a mensagem antes de enviar. Nome e profissão são opcionais.</p>
+          <div className={styles.emailContact}>
+            <a className={styles.emailAddress} href={emailContactUrl}>{profile.email}</a>
+            <CopyEmailButton email={profile.email} />
+          </div>
+          <p className={styles.contactNote}>O link de e-mail abre o aplicativo configurado no seu dispositivo. Você também pode copiar o endereço e usá-lo no serviço de sua preferência.</p>
         </section>
       </article>
       <section className={`${styles.container} ${styles.related}`} aria-labelledby="outras-leituras">

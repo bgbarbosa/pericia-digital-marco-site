@@ -121,10 +121,10 @@ for (const width of [390, 1440]) {
         expect((await request.get(href)).status()).toBe(200);
         await expect(page.locator(`section[aria-labelledby="outras-leituras"] a[href="${href}"]`)).toHaveCount(2);
       }
-      const whatsapp = new URL(await page.getByRole("link", { name: "Conversar pelo WhatsApp" }).getAttribute("href"));
+      const whatsapp = new URL(await page.locator("#contato-artigo").getByRole("link", { name: "Conversar pelo WhatsApp" }).getAttribute("href"));
       expect(whatsapp.origin + whatsapp.pathname).toBe("https://wa.me/5567992368049");
       expect(whatsapp.searchParams.get("text")).toContain(article.title);
-      await expect(page.getByRole("link", { name: "Enviar e-mail" })).toHaveAttribute("href", "mailto:marcobarbosa@damauniverse.com.br");
+      await expect(page.getByRole("link", { name: "Enviar e-mail" })).toHaveAttribute("href", /^mailto:marcobarbosa@damauniverse\.com\.br\?subject=/);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       expect(errors).toEqual([]);
       await page.getByRole("link", { name: "← Voltar à coleção Perícia na Prática" }).click();

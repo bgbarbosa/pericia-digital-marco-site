@@ -10,9 +10,9 @@ export default function ContactSection({
   return (
     <section
       id="contato"
-      className="scroll-mt-24 pb-16 pt-10 sm:pb-18 md:pb-20"
+      className="home-section home-contact"
     >
-      <div className="mx-auto max-w-[1480px] px-4 sm:px-6 lg:px-8 xl:px-10">
+      <div className="site-container">
         <SectionTitle>Contato</SectionTitle>
         <p className="mx-auto mt-5 max-w-4xl text-center text-base leading-8 text-slate-300 sm:text-lg sm:leading-9">
           Entre em contato para solicitar informações sobre capacitações,
@@ -20,8 +20,8 @@ export default function ContactSection({
           necessidade relacionada a soluções digitais. A disponibilidade, o
           formato e o escopo são definidos mediante alinhamento prévio.
         </p>
-        <div className="mt-8 grid gap-4 sm:mt-9 sm:gap-6 md:grid-cols-3 xl:gap-7">
-          <Panel>
+        <div className="contact-grid">
+          <Panel className="home-card">
             <h3 className="text-2xl font-semibold text-cyan-300 xl:text-[2.1rem]">
               Base profissional
             </h3>
@@ -31,7 +31,7 @@ export default function ContactSection({
             </p>
           </Panel>
 
-          <Panel>
+          <Panel className="home-card">
             <h3 className="text-2xl font-semibold text-cyan-300 xl:text-[2.1rem]">
               WhatsApp e telefone
             </h3>
@@ -53,19 +53,19 @@ export default function ContactSection({
             </div>
           </Panel>
 
-          <Panel>
+          <Panel className="home-card">
             <h3 className="text-2xl font-semibold text-cyan-300 xl:text-[2.1rem]">
               E-mail
             </h3>
             <a
               href={emailUrl}
-              className="mt-5 inline-flex min-h-12 w-full items-center justify-center break-all rounded-xl border border-white/10 px-4 py-3 text-center font-semibold text-white transition hover:bg-white/5 hover:text-cyan-300 focus-visible:outline-cyan-200"
+              className="contact-email mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-white/10 px-4 py-3 text-center font-semibold text-white transition hover:bg-white/5 hover:text-cyan-300 focus-visible:outline-cyan-200"
             >
               {profile.email}
             </a>
           </Panel>
         </div>
-        <div className="mt-5 flex flex-wrap justify-center gap-5">
+        <div className="contact-links">
           <a
             className="text-link"
             href={profile.linkedin}

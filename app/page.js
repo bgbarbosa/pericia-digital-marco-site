@@ -29,7 +29,7 @@ export default function HomePage() {
       ]
     : homeMenu;
   return (
-    <main className="min-h-screen bg-[#020817] text-slate-100">
+    <main className="home-page min-h-screen bg-[#020817] text-slate-100">
       <Header menu={menu} brandHref="#inicio" contactHref="#contato" />
       <HeroSection
         featuredTraining={featuredTraining}
@@ -95,7 +95,6 @@ export default function HomePage() {
             <Link className="text-link" href="/formacao">
               Consultar formação completa →
             </Link>
-            <CredentialsAffiliations profile={profile} />
           </article>
           <article id="conhecimentos" className="detail-panel">
             <h3>Forma de trabalho</h3>
@@ -109,6 +108,7 @@ export default function HomePage() {
             </Link>
           </article>
         </div>
+        <CredentialsAffiliations profile={profile} />
       </section>
       <ContactSection
         emailUrl={emailUrl}

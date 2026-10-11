@@ -12,6 +12,7 @@ export default function Header({
   const menuButtonRef = useRef(null);
   const firstLinkRef = useRef(null);
   const dialogRef = useRef(null);
+  const externalContact = /^https?:\/\//.test(contactHref ?? "");
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -21,16 +22,16 @@ export default function Header({
     document.body.style.overflow = "hidden";
     dialog.showModal();
     firstLinkRef.current?.focus();
-    const desktop = window.matchMedia("(min-width: 1280px)");
-    const resize = () => {
-      if (desktop.matches) setIsOpen(false);
-    };
-    desktop.addEventListener("change", resize);
+    const triggerIsVisible = () => trigger && getComputedStyle(trigger).display !== "none";
+    const resize = new ResizeObserver(() => {
+      if (!triggerIsVisible()) setIsOpen(false);
+    });
+    resize.observe(trigger);
     return () => {
       dialog.close();
       document.body.style.overflow = previousOverflow;
-      desktop.removeEventListener("change", resize);
-      if (!desktop.matches) trigger?.focus();
+      resize.disconnect();
+      if (triggerIsVisible()) trigger.focus();
     };
   }, [isOpen]);
 
@@ -52,8 +53,8 @@ export default function Header({
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-cyan-400/10 bg-slate-950/90 backdrop-blur-xl">
-      <div className="mx-auto flex min-h-18 max-w-[1480px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 xl:px-10">
+    <header className="site-header fixed inset-x-0 top-0 z-50 border-b border-cyan-400/10 bg-slate-950/90 backdrop-blur-xl">
+      <div className="site-container header-inner">
         <a
           href={brandHref}
           className="shrink-0 font-mono text-[15px] font-bold tracking-normal text-cyan-300 transition hover:text-cyan-200 focus-visible:outline-cyan-200 sm:text-base sm:tracking-normal"
@@ -63,14 +64,14 @@ export default function Header({
         </a>
 
         <nav
-          className="hidden min-w-0 items-center gap-3 xl:flex 2xl:gap-5"
+          className="header-navigation"
           aria-label="Navegação principal"
         >
           {menu.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap text-sm font-semibold text-slate-300 transition hover:text-cyan-300 focus-visible:outline-cyan-200 2xl:text-base"
+              className="header-nav-link font-semibold text-slate-300 transition hover:text-cyan-300 focus-visible:outline-cyan-200"
             >
               {item.label}
             </a>
@@ -79,7 +80,9 @@ export default function Header({
 
         <a
           href={contactHref}
-          className="hidden min-h-11 items-center whitespace-nowrap rounded-2xl border border-cyan-400/35 bg-cyan-400/10 px-4 py-2.5 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20 focus-visible:outline-cyan-200 xl:inline-flex 2xl:px-5 2xl:text-base"
+          target={externalContact ? "_blank" : undefined}
+          rel={externalContact ? "noopener noreferrer" : undefined}
+          className="header-contact action-secondary border-cyan-400/35 bg-cyan-400/10 text-cyan-100 transition hover:bg-cyan-400/20 focus-visible:outline-cyan-200"
         >
           {contactLabel}
         </a>
@@ -87,7 +90,7 @@ export default function Header({
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-400/10 p-2.5 text-cyan-100 transition hover:bg-cyan-400/20 focus-visible:outline-cyan-200 xl:hidden"
+          className="header-menu-button min-h-11 min-w-11 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-400/10 p-2.5 text-cyan-100 transition hover:bg-cyan-400/20 focus-visible:outline-cyan-200"
           aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -146,6 +149,8 @@ export default function Header({
             ))}
             <a
               href={contactHref}
+              target={externalContact ? "_blank" : undefined}
+              rel={externalContact ? "noopener noreferrer" : undefined}
               onClick={closeMenu}
               className="action-primary"
             >
