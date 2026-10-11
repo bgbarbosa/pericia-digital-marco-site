@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" width="1200" height="960" role="img" aria-labelledby="quadro-02-titulo quadro-02-descricao" focusable="false" xml:lang="pt-BR">
+<title id="quadro-02-titulo">Contratação eletrônica: documento, assinatura e autenticação</title>
+<desc id="quadro-02-descricao">Documento: Qual arquivo e qual versão correspondem à contratação discutida? Assinatura: Qual mecanismo foi usado e qual conteúdo está abrangido? Autenticação: Que meio foi usado para acessar a conta ou confirmar uma etapa? Cada elemento responde a uma pergunta diferente.</desc>
+<rect width="1200" height="960" fill="#F7F4EE"/>
+<g aria-hidden="true" font-family="Arial, Helvetica, sans-serif" fill="#15273A">
+<text x="64" y="64" font-size="28" font-weight="700" letter-spacing="2" fill="#685078">QUADRO DE LEITURA</text>
+<text x="64" y="126" font-size="52" font-weight="700">Contratação eletrônica</text>
+<path d="M64 155H1136" fill="none" stroke="#CBC7BF" stroke-width="1.5"/>
+<rect x="64" y="185" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 207V347" fill="none" stroke="#685078" stroke-width="4"/>
+<g transform="translate(104 232)" fill="none" stroke="#685078" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4h29l14 14v41H10z"/><path d="M39 4v15h14M20 31h23M20 42h23M20 51h15"/></g>
+<text x="210" y="240" font-size="43" font-weight="700">Documento</text>
+<text x="210" y="295" font-size="36">Qual arquivo e qual versão correspondem</text>
+<text x="210" y="338" font-size="36">à contratação discutida?</text>
+<rect x="64" y="387" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 409V549" fill="none" stroke="#685078" stroke-width="4"/>
+<g transform="translate(104 434)" fill="none" stroke="#685078" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 42 42 12l10 10-30 30-14 4zM36 18l10 10M8 62h48"/></g>
+<text x="210" y="442" font-size="43" font-weight="700">Assinatura</text>
+<text x="210" y="497" font-size="36">Qual mecanismo foi usado e qual</text>
+<text x="210" y="540" font-size="36">conteúdo está abrangido?</text>
+<rect x="64" y="589" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 611V751" fill="none" stroke="#685078" stroke-width="4"/>
+<g transform="translate(104 636)" fill="none" stroke="#685078" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="29" width="43" height="31" rx="4"/><path d="M20 29V16a12.5 12.5 0 0 1 25 0v13"/><circle cx="32.5" cy="43" r="3"/><path d="M32.5 46v6"/></g>
+<text x="210" y="644" font-size="43" font-weight="700">Autenticação</text>
+<text x="210" y="699" font-size="36">Que meio foi usado para acessar a conta</text>
+<text x="210" y="742" font-size="36">ou confirmar uma etapa?</text>
+<path d="M64 804H120" fill="none" stroke="#685078" stroke-width="3"/>
+<text x="64" y="849" font-size="36" font-weight="700">Cada elemento responde a uma pergunta diferente.</text>
+</g>
+</svg>

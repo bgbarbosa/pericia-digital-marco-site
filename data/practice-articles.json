@@ -1,0 +1,261 @@
+{
+  "schemaVersion": "1.0",
+  "collection": {
+    "title": "Perícia na Prática",
+    "titleStatus": "aprovado_pelo_usuario",
+    "subtitle": "Aplicações, exemplos e situações concretas.",
+    "audience": "Advogados",
+    "introduction": "Mensagens, documentos, imagens e dados: quatro leituras para compreender possibilidades e limites da análise técnica.",
+    "launchMode": "conjunto",
+    "publishTogether": true,
+    "publicationDate": "2026-10-11",
+    "publicationStatus": "publicado",
+    "orderMeaning": "ordem_de_leitura",
+    "preparedAt": "2026-10-11",
+    "author": "Marco Barbosa",
+    "brand": "Dama Universe",
+    "whatsappUrl": "https://wa.me/5567992368049",
+    "basePath": "/pericia-na-pratica",
+    "publicUrl": "https://pericia-digital-marco-site.vercel.app/pericia-na-pratica"
+  },
+  "articles": [
+    {
+      "id": "C-2026-10-01-ARTIGO",
+      "order": 1,
+      "slug": "mensagens-whatsapp-alem-do-print",
+      "title": "Mensagens de WhatsApp em disputa",
+      "subtitle": "O que a análise técnica pode esclarecer além do print",
+      "category": "Mensagens e dispositivos",
+      "excerpt": "Quando uma conversa é apresentada apenas em capturas, pode ser necessário esclarecer seu contexto, sua sequência e a relação com outros registros. Entenda como a análise técnica pode organizar essas perguntas, quais materiais merecem consideração e que resultados podem apoiar a avaliação do caso.",
+      "metaDescription": "Entenda como a análise técnica de mensagens pode esclarecer contexto, sequência e divergências além do print, com resultados proporcionais aos dados disponíveis.",
+      "bodyMarkdown": "## A pergunta começa no ponto controvertido\n\nEm uma disputa contratual, uma investigação criminal ou um conflito familiar, mensagens podem integrar a discussão sobre o que ocorreu. O conteúdo visível de uma captura é um ponto de partida. A necessidade de exame depende da dúvida concreta: falta contexto, existem versões diferentes ou os horários parecem incompatíveis com outros documentos?\n\nUma boa pergunta delimita o trabalho. Em vez de pedir genericamente que se analise todo o celular, pode ser mais útil identificar qual conversa, qual período e qual afirmação precisam ser confrontados com os registros disponíveis. Esse recorte também ajuda a avaliar se os materiais recebidos permitem responder à questão.\n\n## Um exemplo hipotético de divergência sobre prazo\n\nImagine uma discussão sobre a entrega de um serviço. Uma parte apresenta três capturas para sustentar que determinado prazo foi aceito. A outra afirma que o diálogo continha uma condição que não aparece nos trechos apresentados.\n\nNesse cenário fictício, a tarefa técnica pode começar por examinar o conjunto disponível: quais trechos foram apresentados, se existem registros anteriores ou posteriores pertinentes e se há documentos que ajudem a contextualizar a negociação. O exemplo não antecipa que uma das partes esteja certa. Ele mostra por que a pergunta sobre o contexto pode ser mais precisa que uma acusação genérica de manipulação.\n\n## O que pode ser esclarecido além do conteúdo visível\n\nA análise pode comparar materiais que representam a mesma comunicação, organizar sua sequência e registrar convergências ou diferenças. Isso permite separar o que foi observado do que depende de informação adicional.\n\nUma captura, uma exportação e uma aquisição técnica são materiais com características distintas. A captura registra uma apresentação visual. Uma exportação organiza informações conforme os recursos empregados. Uma aquisição técnica documentada busca obter dados por métodos compatíveis com o dispositivo e o objeto do exame. O SWGDE descreve métodos de aquisição com quantidades e tipos de dados variáveis; a existência de uma extração não significa acesso irrestrito a todo conteúdo. [SWGDE 18-F-003, v2.0, 21/08/2025, seção 6](https://www.swgde.org/documents/published-complete-listing/18-f-003-2/).\n\nNa prática, vale relacionar cada pergunta à fonte que poderia respondê-la. Se a dúvida é sobre a sequência, é preciso examinar os registros pertinentes ao intervalo. Se envolve divergência entre versões apresentadas, o ponto de partida é identificar exatamente quais materiais serão comparados. O alcance depende do que foi preservado e do acesso legítimo ao conteúdo.\n\n## Materiais que ajudam a delimitar a avaliação\n\nUm levantamento inicial pode relacionar as capturas recebidas, arquivos exportados já existentes, anexos mencionados, documentos associados à negociação e informações sobre como o material foi obtido. Se houver dispositivo, backup ou exame anterior disponível, sua pertinência também pode ser avaliada.\n\nConvém distinguir o material recebido diretamente de uma fonte daquele que passou por encaminhamentos ou transformações. A documentação da origem e das intervenções ajuda a compreender o que está sendo examinado. O SWGDE destaca o registro do estado do dispositivo, das interações e das mudanças decorrentes da coleta. [SWGDE 18-F-003, v2.0, 21/08/2025, seção 4.1](https://www.swgde.org/documents/published-complete-listing/18-f-003-2/).\n\nEsse levantamento não exige manipular o aparelho para produzir uma nova prova. O passo inicial pode ser descrever o que já existe e solicitar orientação para sua preservação. A decisão sobre obtenção de dados adicionais deve considerar o objeto, as condições do material e os limites de acesso aplicáveis.\n\n## Perguntas que transformam a dúvida em exame\n\nOs exemplos abaixo são propostas de recorte técnico. Eles precisam ser ajustados ao material e à questão discutida.\n\n| Pergunta | Contribuição técnica possível |\n| --- | --- |\n| Os trechos apresentados permitem compreender a sequência pertinente ao fato? | Organizar os registros disponíveis e indicar lacunas de contexto. |\n| Há correspondência entre os materiais apresentados como parte da mesma conversa? | Comparar conteúdo e referências disponíveis, documentando convergências e diferenças. |\n| Os horários foram interpretados de maneira comparável às demais fontes? | Explicitar as referências temporais e os limites da comparação. |\n| Quais afirmações encontram apoio no material efetivamente examinado? | Relacionar observações às perguntas e separar resultados de hipóteses. |\n\n## Como os resultados podem apoiar a atuação do advogado\n\nUma entrega técnica útil pode apresentar a relação dos materiais examinados, a sequência relevante, as diferenças identificadas e as respostas sustentadas pelos registros. Também pode indicar qual ponto não foi possível esclarecer e por qual motivo.\n\nA documentação faz parte desse resultado. O NIST descreve o relatório como uma síntese dos procedimentos, observações e inferências, em que a saída automática de uma ferramenta integra um trabalho mais amplo de interpretação. [NIST SP 800-101 Rev. 1, 2014, seção 7](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-101r1.pdf).\n\nPara o advogado, essa organização pode orientar pedidos de esclarecimento, formulação de perguntas técnicas e avaliação do alcance dos documentos. No exemplo do prazo, o benefício seria compreender quais registros sustentam a leitura da negociação e quais lacunas impedem uma conclusão mais abrangente. A interpretação jurídica considera esses esclarecimentos junto aos demais elementos do caso.\n\n## O alcance acompanha os dados disponíveis\n\nNem todo vestígio é encontrado, e o significado de certos registros pode mudar conforme o software que os produziu. A revisão científica do NIST sobre investigação digital identifica essas limitações. [NISTIR 8354, 2022, resumo oficial](https://www.nist.gov/publications/digital-investigation-techniques-nist-scientific-foundation-review).\n\nPor isso, a ausência de uma mensagem no conjunto examinado não permite afirmar, sem fundamento adicional, que ela nunca existiu. Da mesma forma, relacionar uma mensagem a uma conta ou a um dispositivo não esclarece automaticamente quem executou cada ação.\n\nO primeiro passo é formular a dúvida central em uma frase, indicar o período relevante e relacionar os materiais disponíveis. Com esse ponto de partida, torna-se possível avaliar uma contribuição técnica dirigida ao problema, com respostas proporcionais ao que os registros efetivamente sustentam.\n\n## Referências\n\n- SWGDE. Best Practices for Mobile Device Evidence Collection & Preservation Handling and Acquisition. 18-F-003, v2.0, 21/08/2025. Seções 4.1 e 6. https://www.swgde.org/documents/published-complete-listing/18-f-003-2/\n- NIST. Guidelines on Mobile Device Forensics. SP 800-101 Rev. 1, 2014. Seção 7, utilizada para os princípios de documentação e relato. https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-101r1.pdf\n- NIST. Digital Investigation Techniques: A NIST Scientific Foundation Review. NISTIR 8354, 2022. Resumo oficial. https://www.nist.gov/publications/digital-investigation-techniques-nist-scientific-foundation-review",
+      "author": "Marco Barbosa",
+      "brand": "Dama Universe",
+      "publicationDate": "2026-10-11",
+      "publicationStatus": "publicado",
+      "launchMode": "conjunto",
+      "coverPath": "/pericia-na-pratica/01-capa.png",
+      "coverAlt": "Ilustração conceitual de um celular com tela vazia e balões de conversa translúcidos em camadas sobre fundo azul-marinho, representando o contexto de mensagens digitais.",
+      "diagramPath": "/pericia-na-pratica/01-quadro-visual.svg",
+      "diagramAlt": "Quadro conceitual sobre contexto, sequência e origem de mensagens digitais, conforme as perguntas apresentadas no artigo.",
+      "diagramCaption": "Síntese conceitual de perguntas sobre mensagens digitais; não representa uma conversa real nem um resultado de exame.",
+      "diagramAfterHeading": "O que pode ser esclarecido além do conteúdo visível",
+      "pullQuote": "Uma boa pergunta delimita o trabalho.",
+      "pullQuoteAfterHeading": "A pergunta começa no ponto controvertido",
+      "readerQuestions": [
+        "Qual conversa e qual período precisam ser examinados?",
+        "Os trechos disponíveis mostram a sequência pertinente?",
+        "Há diferenças entre os materiais apresentados?"
+      ],
+      "relatedSlugs": [
+        "contratacao-eletronica-contestada-analise-tecnica",
+        "horario-cameras-cftv-cronologia-fatos",
+        "nfe-danfe-analise-tecnica-divergencias"
+      ],
+      "editorialChanges": [],
+      "diagramMobile": {
+        "title": "Mensagens digitais",
+        "items": [
+          {
+            "title": "Contexto",
+            "description": "Quais trechos anteriores e posteriores ajudam a compreender a conversa?"
+          },
+          {
+            "title": "Sequência",
+            "description": "Como os registros disponíveis se ordenam no período relevante?"
+          },
+          {
+            "title": "Origem",
+            "description": "De onde veio cada material e como foi obtido ou transformado?"
+          }
+        ],
+        "note": "O alcance depende do material disponível."
+      },
+      "theme": {
+        "accent": "#0E6A76",
+        "tint": "#E5F3F3"
+      },
+      "publicUrl": "https://pericia-digital-marco-site.vercel.app/pericia-na-pratica/mensagens-whatsapp-alem-do-print",
+      "coverCaption": "Ilustração conceitual."
+    },
+    {
+      "id": "C-2026-10-02-ARTIGO",
+      "order": 2,
+      "slug": "contratacao-eletronica-contestada-analise-tecnica",
+      "title": "Contratação eletrônica contestada",
+      "subtitle": "Como examinar o documento e os registros do procedimento",
+      "category": "Documentos e assinaturas",
+      "excerpt": "Quando a contratação é discutida, o arquivo apresentado e os registros do procedimento ajudam a delimitar questões sobre assinatura, integridade e autenticação. Entenda quais materiais podem ser examinados, como formular perguntas úteis e por que os resultados técnicos precisam ser interpretados dentro do contexto do caso.",
+      "metaDescription": "Saiba como arquivos, assinaturas e registros de autenticação podem esclarecer uma contratação eletrônica contestada e quais limites observar.",
+      "bodyMarkdown": "## Uma situação que pede perguntas específicas\n\nImagine este cenário hipotético: uma pessoa contesta uma cobrança e não reconhece a contratação. A outra parte apresenta um PDF com registros de assinatura. O advogado precisa compreender o que esse material demonstra e quais dúvidas permanecem.\n\nA controvérsia pode envolver a versão do documento, o procedimento de autenticação ou as circunstâncias do aceite. Cada questão pede uma investigação diferente. A análise técnica começa por definir qual dessas dúvidas será examinada e quais materiais permitem enfrentá-la.\n\n## Começar pelo arquivo eletrônico\n\nO arquivo assinado, preservado no formato recebido, é um material central. Uma imagem de assinatura ou um selo visível na página não realiza a verificação criptográfica. O [Guia de Boas Práticas do ITI](https://validar.iti.gov.br/guia.html), na seção sobre elementos visuais, distingue essa aparência dos dados de assinatura existentes no arquivo.\n\nConvém reunir também versões anteriormente recebidas, anexos relacionados e informações sobre a obtenção do material. Como proposta de organização, pode-se registrar quem disponibilizou cada arquivo, quando foi recebido e a qual versão da contratação ele corresponde. Isso ajuda a evitar que documentos semelhantes sejam tratados como idênticos antes de uma comparação.\n\n## O que a assinatura permite verificar\n\nConforme a tecnologia utilizada, o exame pode verificar a assinatura, o certificado associado e a integridade do conteúdo abrangido. O [ITI descreve o alcance do VALIDAR](https://validar.iti.gov.br/sobre.html) como a verificação técnica de assinaturas das infraestruturas atendidas, incluindo ICP-Brasil e assinaturas avançadas do gov.br. Essa ferramenta possui um objeto definido; seu resultado deve ser lido com esse alcance.\n\nPara o advogado, a contribuição consiste em obter informações verificadas sobre o arquivo. Uma pergunta útil é: qual mecanismo de assinatura foi identificado, qual conteúdo foi abrangido e, quando houver certificado, a quem ele está associado?\n\n## Ler o histórico da contratação\n\nA trilha de auditoria, quando existente, reúne registros do procedimento. Sua análise deve considerar os campos efetivamente fornecidos e a relação deles com o documento examinado.\n\nComo exemplo específico, a [documentação da Clicksign](https://ajuda.clicksign.com/article/230-log-presente-nos-documentos-assinados) informa que seu log apresenta dados como nomes, e-mails, endereços IP, métodos de autenticação, datas e horários. O fornecedor também explica que seu próprio certificado indica a procedência do documento na plataforma.\n\nEsse detalhe muda a pergunta do exame: o certificado identificado pertence à plataforma ou à pessoa apontada como signatária? A presença do certificado da plataforma não deve ser descrita como assinatura com certificado pessoal do contratante. O funcionamento documentado pela Clicksign tampouco deve ser presumido em outro serviço.\n\n## Autenticação, pessoa e consentimento\n\nÉ necessário entender qual mecanismo foi utilizado: senha, código de confirmação ou outro recurso registrado. A [NIST SP 800-63B-4, seção 1](https://pages.nist.gov/800-63-4/sp800-63b/introduction/), explica a autenticação digital em termos de demonstração de controle dos meios associados à conta. A publicação também reconhece limites relacionados ao compartilhamento de credenciais.\n\nA aplicação dessa distinção ao caso exige cautela: um registro de autenticação precisa ser interpretado junto aos demais elementos disponíveis. Ele não deve ser transformado, por simplificação, em uma narrativa completa sobre a pessoa que executou cada ato.\n\nO mesmo raciocínio orienta o tratamento do consentimento. A análise pode esclarecer o procedimento documentado e suas inconsistências; a apreciação jurídica considera esses resultados e as outras circunstâncias relevantes. Essa separação preserva a utilidade de ambas as avaliações.\n\n## Perguntas que organizam o exame\n\nO quadro abaixo propõe recortes de trabalho. A possibilidade de resposta depende dos materiais efetivamente disponíveis.\n\n| Pergunta | Contribuição técnica possível |\n| --- | --- |\n| O arquivo apresentado corresponde à versão discutida? | Comparar os arquivos recebidos e documentar diferenças relevantes. |\n| Quais mecanismos de assinatura estão documentados? | Identificar o mecanismo empregado e, quando aplicável, o certificado, o conteúdo abrangido e o resultado da verificação. |\n| Como o procedimento foi registrado? | Relacionar eventos, mecanismos de autenticação e documentos, apontando lacunas. |\n| O que significa cada horário? | Distinguir eventos e referências temporais antes de organizar a sequência. |\n\n## Dar significado aos horários\n\nQuando a sequência dos atos é relevante, vale perguntar a que evento cada horário se refere. Um ponto concreto é o carimbo do tempo: o [ITI esclarece](https://www.gov.br/iti/pt-br/acesso-a-informacao/perguntas-frequentes/carimbo-do-tempo), nas perguntas 1 e 2, que ele fornece evidência da existência da informação naquele momento, sem representar necessariamente a data de criação do documento.\n\nPor isso, uma proposta de exame pode incluir a identificação das referências temporais disponíveis e sua relação com os atos discutidos. O benefício é construir uma cronologia com significados explícitos.\n\n## Resultados úteis, com alcance definido\n\nOs [termos do VALIDAR](https://www.gov.br/iti/pt-br/termo-de-uso-e-politica-de-privacidade-validar), em “Descrição do serviço” e “Resultados obtidos”, explicam que a ferramenta não verifica a veracidade das declarações do documento e admite resultado indeterminado. Portanto, a resposta do validador não deve ser convertida automaticamente em conclusão sobre fraude, consentimento ou validade integral da contratação.\n\nUm resultado técnico útil pode confirmar uma correspondência, explicar uma divergência ou indicar exatamente qual informação falta. Para isso, a conclusão deve relacionar cada resposta ao material examinado, ao procedimento empregado e ao limite encontrado.\n\n### Três perguntas para iniciar a avaliação\n\n1. Qual arquivo e qual versão correspondem à contratação discutida, e quais elementos sustentam essa correspondência?\n2. Quais mecanismos de assinatura e autenticação estão documentados, e o que seus registros permitem concluir?\n3. Quais divergências ou lacunas permanecem, e quais materiais adicionais seriam necessários para esclarecê-las?\n\nPara começar, vale escrever a dúvida central em uma frase e relacionar os documentos disponíveis. Esse recorte ajuda a definir um trabalho técnico objetivo, com esclarecimentos verificáveis e conclusões proporcionais às evidências examinadas.\n\n## Referências\n\nFontes primárias consultadas em 09/10/2026; links nas seções correspondentes:\n\n- ITI. Guia de Boas Práticas do VALIDAR. Seção “Elementos visuais não garantem integridade”.\n- ITI. Sobre o VALIDAR. Versão 2.4.\n- Clicksign. O que é o Log presente nos documentos assinados? Composição e finalidade do log; descrição restrita ao produto.\n- NIST. SP 800-63B-4: Digital Identity Guidelines — Authentication and Authenticator Management. Julho de 2025, seção 1.\n- ITI. Carimbo do Tempo. Perguntas 1–2; atualização: 02/06/2021.\n- ITI. Termo de uso e política de privacidade — VALIDAR. Versão indicada: 25/05/2023; publicação: 15/09/2023.",
+      "author": "Marco Barbosa",
+      "brand": "Dama Universe",
+      "publicationDate": "2026-10-11",
+      "publicationStatus": "publicado",
+      "launchMode": "conjunto",
+      "coverPath": "/pericia-na-pratica/02-capa.png",
+      "coverAlt": "Ilustração conceitual de documentos abstratos entre camadas de vidro, com pontos luminosos discretos que representam registros de etapas de uma contratação.",
+      "diagramPath": "/pericia-na-pratica/02-quadro-visual.svg",
+      "diagramAlt": "Quadro conceitual que distingue documento, assinatura e autenticação na análise de uma contratação eletrônica.",
+      "diagramCaption": "Síntese conceitual de aspectos da contratação eletrônica; não representa contrato real nem confirma autoria ou consentimento.",
+      "diagramAfterHeading": "Autenticação, pessoa e consentimento",
+      "pullQuote": "Um resultado técnico útil pode confirmar uma correspondência, explicar uma divergência ou indicar exatamente qual informação falta.",
+      "pullQuoteAfterHeading": "O que a assinatura permite verificar",
+      "readerQuestions": [
+        "Qual arquivo e qual versão estão em discussão?",
+        "Quais mecanismos de assinatura e autenticação foram documentados?",
+        "Quais divergências ou lacunas precisam ser esclarecidas?"
+      ],
+      "relatedSlugs": [
+        "mensagens-whatsapp-alem-do-print",
+        "horario-cameras-cftv-cronologia-fatos",
+        "nfe-danfe-analise-tecnica-divergencias"
+      ],
+      "editorialChanges": [],
+      "diagramMobile": {
+        "title": "Contratação eletrônica",
+        "items": [
+          {
+            "title": "Documento",
+            "description": "Qual arquivo e qual versão correspondem à contratação discutida?"
+          },
+          {
+            "title": "Assinatura",
+            "description": "Qual mecanismo foi usado e qual conteúdo está abrangido?"
+          },
+          {
+            "title": "Autenticação",
+            "description": "Que meio foi usado para acessar a conta ou confirmar uma etapa?"
+          }
+        ],
+        "note": "Cada elemento responde a uma pergunta diferente."
+      },
+      "theme": {
+        "accent": "#685078",
+        "tint": "#F1EDF5"
+      },
+      "publicUrl": "https://pericia-digital-marco-site.vercel.app/pericia-na-pratica/contratacao-eletronica-contestada-analise-tecnica",
+      "coverCaption": "Ilustração conceitual."
+    },
+    {
+      "id": "C-2026-10-03-ARTIGO",
+      "order": 3,
+      "slug": "horario-cameras-cftv-cronologia-fatos",
+      "title": "Horários de câmeras e cronologia dos fatos",
+      "subtitle": "Como compreender e comparar as referências de uma gravação",
+      "category": "Imagens e cronologia",
+      "excerpt": "O horário mostrado em uma gravação precisa ser compreendido antes de orientar a cronologia de um conflito. Conheça as perguntas que ajudam a examinar relógios, arquivos e referências independentes, os materiais pertinentes e os limites de uma análise técnica voltada a esclarecer a sequência dos acontecimentos.",
+      "metaDescription": "Entenda como contextualizar o horário de câmeras, comparar registros e reconhecer os limites da análise técnica na cronologia dos fatos.",
+      "bodyMarkdown": "## Quando alguns minutos mudam a interpretação\n\nUma discussão jurídica pode depender de saber se uma entrada ocorreu antes de determinada comunicação, quanto tempo separou dois acontecimentos ou se registros diferentes se referem à mesma sequência. Nesses contextos, é natural recorrer ao horário que aparece no vídeo. A pergunta seguinte merece igual atenção: o que foi verificado sobre esse horário?\n\nPara o advogado, delimitar essa dúvida ajuda a formular um pedido de análise útil. O objetivo pode ser avaliar uma aparente contradição, identificar o material complementar necessário ou compreender até onde a documentação permite situar um acontecimento.\n\n## Horário exibido, tempo do arquivo e momento do evento\n\nConvém distinguir três informações: a marcação apresentada na imagem ou pelo reprodutor; os campos temporais associados ao arquivo, como o início de sua exportação; e o momento do acontecimento que se pretende estabelecer. O NISTIR 8161r1 trata separadamente o início da gravação e o início da exportação. Um dado sobre a criação do arquivo exportado, portanto, precisa ser interpretado segundo sua função. [NISTIR 8161r1, abril/2019, §§ 3.3 e 4.1.2](https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8161r1.pdf).\n\nTambém existe o tempo de reprodução: a posição de uma imagem dentro do vídeo. O SWGDE explica que o programa utilizado pode influenciar a apresentação temporal e as informações visíveis. Essa posição, por si, não estabelece uma hora do dia. [SWGDE 19-V-002, v1.0, 17/09/2020, §§ 4 e 6.2](https://www.swgde.org/documents/published-complete-listing/19-v-002-swgde-core-technical-concepts-for-time-based-analysis-of-digital-video-files/).\n\n## O que a análise pode acrescentar\n\nUma questão central é a diferença entre o relógio do gravador e uma referência confiável. O NIST descreve a comparação de leituras correspondentes no tempo para determinar esse desvio, chamado de offset. O fuso adotado também precisa ser identificado para que horários expressem uma referência temporal comparável. [NISTIR 8161r1, abril/2019, §§ 3.3–3.4](https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8161r1.pdf).\n\nÉ preciso justificar o período ao qual uma diferença pode ser aplicada. Pesquisa sobre interpretação de registros temporais discute mudanças no relógio e variações de seu funcionamento. Como consequência metodológica, uma medição posterior não demonstra, sozinha, que o mesmo desvio existia durante toda a gravação. [Vanini e colaboradores, 2024, resumo e § 1.1](https://dfrws.org/wp-content/uploads/2024/07/Was-the-clock-correct-Exploring-timestamp-interp_2024_Forensic-Science-Inte.pdf).\n\nNa aplicação ao problema jurídico, proponha perguntas delimitadas: a divergência ainda existe depois de contextualizar as referências? É possível ordenar os eventos sem atribuir um minuto exato? Há dados suficientes para comparar os trechos relevantes? Uma resposta que explicite a incerteza ajuda o advogado a decidir se precisa solicitar esclarecimentos adicionais.\n\n## Materiais que merecem consideração\n\nConforme a situação e a disponibilidade, o levantamento pode abranger:\n\n- Arquivo exportado do sistema e preservado para exame, com identificação de sua origem e do período abrangido.\n- Reprodutor associado ao formato, quando necessário, e identificação do programa utilizado na visualização.\n- Informações do gravador, configurações pertinentes, registros de funcionamento e documentação da conferência de seu relógio, quando existentes.\n- Referências independentes relacionadas aos eventos que se pretende comparar.\n\nO SWGDE recomenda documentar dados do sistema, relógio e registros disponíveis, e observa que certos formatos proprietários utilizam um reprodutor associado. [SWGDE 17-V-002, v1.4, 21/08/2025, §§ 10–11](https://www.swgde.org/documents/published-complete-listing/17-v-002-1-4/).\n\nO pedido deve explicar o propósito de cada comparação. Por exemplo, se a dúvida envolve entrada e saída, qual intervalo interessa e qual acontecimento deverá ser relacionado a ele? Solicitar material com essa delimitação favorece uma análise focada e permite identificar lacunas sem presumir que todo dado desejado exista.\n\n## Exemplo hipotético: duas referências para uma entrada\n\nImagine que um vídeo mostre uma entrada às 14h32 e um registro de portaria indique 14h28. Esses números, sem contexto, deixam abertas perguntas diferentes: os registros descrevem o mesmo evento? Ambos expressam a mesma referência de horário? O lançamento da portaria corresponde à entrada ou a outra etapa?\n\nNesse exemplo fictício, a tarefa técnica seria examinar as informações disponíveis e os critérios da comparação. O resultado poderia sustentar uma relação temporal, apontar incompatibilidades ou permanecer limitado pela falta de referências. A utilidade está em definir o que precisa ser examinado antes de usar a divergência como argumento.\n\n## Três perguntas técnicas úteis\n\nAs formulações abaixo são exemplos educativos, ajustáveis ao objeto do exame:\n\n| Pergunta | Contribuição esperada |\n|---|---|\n| Qual é a origem da marcação temporal utilizada na comparação? | Explicitar o significado do dado e a referência adotada. |\n| Há elementos que permitam avaliar o relógio do sistema no período relevante? | Delimitar o fundamento e o alcance de eventual ajuste interpretativo. |\n| Que sequência os registros sustentam, considerando suas incertezas? | Apresentar convergências, divergências e pontos que permanecem abertos. |\n\n## Limites que precisam acompanhar a conclusão\n\nNão há um procedimento único de análise temporal aplicável a todos os formatos de vídeo. O SWGDE também alerta que conversões podem afetar a reprodução. Assim, não cabe prometer corrigir qualquer gravação ou atribuir precisão apenas porque um programa mostra segundos e quadros. [SWGDE 19-V-002, v1.0, 17/09/2020, §§ 3 e 6.1–6.2](https://www.swgde.org/documents/published-complete-listing/19-v-002-swgde-core-technical-concepts-for-time-based-analysis-of-digital-video-files/).\n\nA apresentação dos resultados deve indicar o material examinado, o critério utilizado, as hipóteses necessárias e a dúvida que permaneceu. Uma estimativa não deve aparecer como medição exata. Uma conclusão relativa a certo intervalo não deve ser estendida a períodos que não foram examinados.\n\nO valor dessa abordagem para a atuação jurídica está em tornar a cronologia compreensível e verificável. Antes de perguntar apenas “qual é a hora correta?”, convém perguntar: quais informações permitem situar esse evento e com que grau de precisão? Essa formulação abre espaço para uma contribuição técnica concreta, compatível com os limites do material.\n\n## Referências\n\n1. SWGDE. Best Practices for Data Acquisition from Digital Video Recorders. 17-V-002, v1.4, 21/08/2025. Seções 10–11. https://www.swgde.org/documents/published-complete-listing/17-v-002-1-4/\n2. NIST. Recommendation: Closed Circuit Television (CCTV) Digital Video Export Profile — Level 0 (Revision 1). NISTIR 8161r1, abril/2019. Seções 3.3–3.4 e 4.1.2. https://doi.org/10.6028/NIST.IR.8161r1\n3. SWGDE. Core Technical Concepts for Time-Based Analysis of Digital Video Files. 19-V-002, v1.0, 17/09/2020. Seções 3–4 e 6.1–6.2. https://www.swgde.org/documents/published-complete-listing/19-v-002-swgde-core-technical-concepts-for-time-based-analysis-of-digital-video-files/\n4. Vanini, C.; Hargreaves, C. J.; van Beek, H.; Breitinger, F. Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction. Forensic Science International: Digital Investigation, 49, 301759, 2024. Resumo e seção 1.1. https://dfrws.org/wp-content/uploads/2024/07/Was-the-clock-correct-Exploring-timestamp-interp_2024_Forensic-Science-Inte.pdf",
+      "author": "Marco Barbosa",
+      "brand": "Dama Universe",
+      "publicationDate": "2026-10-11",
+      "publicationStatus": "publicado",
+      "launchMode": "conjunto",
+      "coverPath": "/pericia-na-pratica/03-capa.png",
+      "coverAlt": "Ilustração conceitual de uma câmera, aros de relógio sem horário indicado e placas translúcidas de vídeo, representando o exame de referências temporais.",
+      "diagramPath": "/pericia-na-pratica/03-quadro-visual.svg",
+      "diagramAlt": "Quadro conceitual que compara horário na imagem, dados do arquivo e registro independente para contextualizar referências temporais.",
+      "diagramCaption": "Síntese conceitual de referências temporais; não representa gravação real nem determina o horário de um fato.",
+      "diagramAfterHeading": "O que a análise pode acrescentar",
+      "pullQuote": "Uma estimativa não deve aparecer como medição exata.",
+      "pullQuoteAfterHeading": "Três perguntas técnicas úteis",
+      "readerQuestions": [
+        "Qual é a origem da marcação temporal?",
+        "Há referências sobre o relógio no período relevante?",
+        "Que sequência os registros sustentam?"
+      ],
+      "relatedSlugs": [
+        "mensagens-whatsapp-alem-do-print",
+        "contratacao-eletronica-contestada-analise-tecnica",
+        "nfe-danfe-analise-tecnica-divergencias"
+      ],
+      "editorialChanges": [],
+      "diagramMobile": {
+        "title": "Referências de horário",
+        "items": [
+          {
+            "title": "Horário na imagem",
+            "description": "Que relógio ou recurso gerou a marcação apresentada?"
+          },
+          {
+            "title": "Dados do arquivo",
+            "description": "A qual evento se refere cada campo: gravação, exportação ou outro processo?"
+          },
+          {
+            "title": "Registro independente",
+            "description": "A fonte descreve o mesmo evento e usa uma referência temporal comparável?"
+          }
+        ],
+        "note": "Comparar horários exige compreender o que cada registro representa."
+      },
+      "theme": {
+        "accent": "#94641F",
+        "tint": "#FBF2DF"
+      },
+      "publicUrl": "https://pericia-digital-marco-site.vercel.app/pericia-na-pratica/horario-cameras-cftv-cronologia-fatos",
+      "coverCaption": "Ilustração conceitual."
+    },
+    {
+      "id": "C-2026-10-04-ARTIGO",
+      "order": 4,
+      "slug": "nfe-danfe-analise-tecnica-divergencias",
+      "title": "NF-e e DANFE na análise de divergências",
+      "subtitle": "Como comparar arquivos e registros em uma discussão documental",
+      "category": "Documentos fiscais e dados",
+      "excerpt": "DANFE, XML e autorização de uso representam aspectos diferentes de uma nota fiscal eletrônica. Em discussões empresariais e tributárias, a análise técnica pode comparar arquivos, campos e registros para esclarecer divergências. O objetivo é organizar o problema documental, reconhecer o alcance dos resultados e formular perguntas úteis para o caso.",
+      "metaDescription": "Entenda como a análise técnica pode comparar NF-e, DANFE e relatórios para esclarecer divergências, com limites contábeis, tributários e jurídicos.",
+      "bodyMarkdown": "## Antes de interpretar a diferença, identifique os materiais\n\nUma discussão sobre uma cobrança, uma entrega ou um lançamento pode começar com uma aparente contradição entre documentos. Um arquivo apresenta determinada informação; outro, associado à mesma operação, exibe algo diferente. Para o advogado, a pergunta inicial é concreta: estamos comparando materiais equivalentes, referentes ao mesmo documento e obtidos nas mesmas condições?\n\nEssa delimitação orienta o trabalho técnico. Ela permite escolher o que precisa ser examinado e evita que uma diferença de apresentação seja tratada, antecipadamente, como uma conclusão sobre o negócio ou sobre a conduta de alguém.\n\n## NF-e, XML e DANFE: funções que precisam ser distinguidas\n\nA NF-e é um documento de existência digital. Seu arquivo utiliza o padrão XML, que organiza as informações em uma estrutura própria. A autorização de uso integra o processo de emissão, mas é uma resposta específica da administração tributária. Essas características estão previstas no [Ajuste SINIEF 07/05, cláusulas primeira, terceira e sétima](https://www.confaz.fazenda.gov.br/legislacao/ajustes/2005/AJ007_05).\n\nO DANFE é a representação gráfica simplificada que auxilia a consulta e o acompanhamento da mercadoria. A chave de acesso nele indicada permite relacioná-lo à NF-e. A [SEFAZ/RN explica essa função auxiliar](https://www.sefaz.rn.gov.br/postagem/nfe-danfe/).\n\nPor isso, conferir apenas a aparência da impressão ou a existência de um código visual deixa perguntas em aberto. A comparação deve alcançar o arquivo e os registros pertinentes à dúvida.\n\n## Um cenário hipotético\n\nImagine uma discussão empresarial em que são apresentados um DANFE em PDF, um arquivo XML e um relatório extraído de um sistema. O advogado percebe diferenças na descrição apresentada e no total do relatório. Nenhuma conclusão foi estabelecida sobre a causa.\n\nUma investigação técnica começaria verificando a correspondência entre os documentos. Depois, distinguiria a informação contida na nota da informação calculada pelo relatório. Também identificaria os materiais ausentes e as condições necessárias para ampliar o exame.\n\n## O que a comparação pode esclarecer\n\nO manual técnico do DANFE relaciona seus campos às informações correspondentes no XML. Essa relação oferece um ponto de partida para comparar identificação e conteúdo, observadas as especificações aplicáveis ao documento examinado. Referência: [MOC 7.0, Anexo II, seção 3.1](https://www.confaz.fazenda.gov.br/legislacao/arquivo-manuais/moc7-anexo-ii-manual-especificacoes-tecnicas-danfe-codigo-barras.pdf).\n\n| Pergunta | Possível contribuição da análise |\n| --- | --- |\n| Os materiais se referem à mesma NF-e? | Comparar chave de acesso, número, série e identificação dos envolvidos no documento. |\n| Onde está a diferença? | Localizar os campos afetados e distinguir conteúdo da nota, apresentação visual e cálculo derivado. |\n| O arquivo permite verificar a assinatura? | Delimitar os elementos disponíveis para examinar sua integridade e a assinatura associada. |\n| Há registros relacionados à nota? | Organizar os eventos disponibilizados e a relação deles com a questão investigada. |\n| O relatório usa os mesmos critérios? | Conferir base, período, filtros, fórmulas e agrupamentos utilizados. |\n\nO quadro reúne possibilidades de exame, e não resultados assegurados. A resposta pode confirmar correspondências, demonstrar diferenças ou indicar que o conjunto recebido é insuficiente.\n\n## Assinatura, autorização e eventos têm alcances próprios\n\nA assinatura do arquivo e os registros de autorização merecem verificações próprias; um elemento impresso não substitui esse exame. O Ajuste SINIEF também prevê eventos relacionados à nota, como cancelamento, carta de correção e manifestações do destinatário. É pertinente verificar quais estão disponíveis e a que documento se vinculam. Referência: [cláusulas sexta, sétima e décima quinta-A](https://www.confaz.fazenda.gov.br/legislacao/ajustes/2005/AJ007_05).\n\nA autorização decorre de regras formais e não convalida as informações tributárias da NF-e. Portanto, sua existência, isoladamente, não confirma todos os fatos da operação real. Esse limite está expresso na [cláusula quarta, § 3º, I](https://www.confaz.fazenda.gov.br/legislacao/ajustes/2005/AJ007_05).\n\n## Quais materiais podem ser pertinentes\n\nConforme a dúvida, o levantamento pode considerar o XML disponibilizado legitimamente, o DANFE apresentado, os protocolos e eventos acessíveis, além dos relatórios e informações sobre sua geração. Documentos comerciais relacionados podem ajudar a delimitar o objeto, quando incluídos no escopo.\n\nÉ útil documentar a origem de cada material, a data de obtenção, as versões recebidas e os critérios empregados na comparação. Se determinada fonte não estiver disponível, essa falta deve aparecer no resultado. A ausência de um registro no conjunto examinado, por si só, não demonstra que ele nunca existiu.\n\n## Quando a divergência está no relatório\n\nUm relatório pode reunir várias notas ou aplicar cálculos próprios. Antes de compará-lo com uma NF-e, convém perguntar quais registros ele inclui e como produz o resultado. A documentação do [Microsoft Power BI](https://learn.microsoft.com/pt-br/power-bi/transform-model/desktop-tutorial-create-measures) mostra que filtros, agrupamentos e fórmulas influenciam os valores exibidos.\n\nA atualização também importa: no modo de importação, o modelo utiliza uma cópia dos dados de determinado momento. Mudanças na origem precisam ser incorporadas para aparecer nos resultados, conforme a [documentação de atualização da Microsoft](https://learn.microsoft.com/pt-br/power-bi/connect-data/refresh-data).\n\nEsses exemplos sustentam uma possibilidade técnica, não uma explicação automática para toda divergência. O sistema efetivamente utilizado precisa ser compreendido.\n\n## Três perguntas técnicas para delimitar o exame\n\n1. Os arquivos e registros disponibilizados correspondem à mesma NF-e, e quais elementos sustentam essa correspondência?\n2. Em quais campos ou etapas de geração surgem diferenças, e quais hipóteses podem ser verificadas com o material disponível?\n3. Quais conclusões são sustentadas pelos exames e quais dependem de documentos adicionais ou de avaliação contábil e tributária?\n\nUma análise bem delimitada ajuda a transformar uma discordância documental em questões verificáveis. Divergência não comprova fraude por si só. A contribuição da tecnologia e da análise de dados consiste em esclarecer os materiais e o método de comparação; a interpretação contábil, tributária e jurídica deve considerar suas próprias competências e o contexto da demanda.\n\n## Referências\n\n- CONFAZ. Ajuste SINIEF 07/05. Texto consolidado consultado em 09/10/2026. Cláusulas primeira, terceira, quarta, quinta, sexta, sétima e décima quinta-A. https://www.confaz.fazenda.gov.br/legislacao/ajustes/2005/AJ007_05\n- SEFAZ/RN. O DANFE da NF-e. Atualização de 05/09/2024. https://www.sefaz.rn.gov.br/postagem/nfe-danfe/\n- CONFAZ. Manual de Orientação do Contribuinte 7.0. Anexo II. Novembro de 2020, seção 3.1, sobre correspondência de campos. https://www.confaz.fazenda.gov.br/legislacao/arquivo-manuais/moc7-anexo-ii-manual-especificacoes-tecnicas-danfe-codigo-barras.pdf\n- Microsoft Learn. Criar suas próprias medidas no Power BI Desktop. https://learn.microsoft.com/pt-br/power-bi/transform-model/desktop-tutorial-create-measures\n- Microsoft Learn. Atualizar dados no Power BI. Seção sobre modelos de importação. https://learn.microsoft.com/pt-br/power-bi/connect-data/refresh-data\n",
+      "author": "Marco Barbosa",
+      "brand": "Dama Universe",
+      "publicationDate": "2026-10-11",
+      "publicationStatus": "publicado",
+      "launchMode": "conjunto",
+      "coverPath": "/pericia-na-pratica/04-capa.png",
+      "coverAlt": "Ilustração conceitual de um documento branco e um arquivo digital translúcido, ligados por elementos abstratos de comparação de campos, sem dados fiscais reais.",
+      "diagramPath": "/pericia-na-pratica/04-quadro-visual.svg",
+      "diagramAlt": "Quadro conceitual que distingue XML da NF-e, DANFE e relatório derivado na comparação de materiais e critérios.",
+      "diagramCaption": "Síntese conceitual da comparação documental; não reproduz nota fiscal real nem constitui conclusão contábil ou tributária.",
+      "diagramAfterHeading": "O que a comparação pode esclarecer",
+      "pullQuote": "Uma análise bem delimitada ajuda a transformar uma discordância documental em questões verificáveis.",
+      "pullQuoteAfterHeading": "Quando a divergência está no relatório",
+      "readerQuestions": [
+        "Os materiais correspondem à mesma NF-e?",
+        "Em quais campos ou etapas surgem diferenças?",
+        "Quais pontos dependem de avaliação contábil ou tributária?"
+      ],
+      "relatedSlugs": [
+        "mensagens-whatsapp-alem-do-print",
+        "contratacao-eletronica-contestada-analise-tecnica",
+        "horario-cameras-cftv-cronologia-fatos"
+      ],
+      "editorialChanges": [
+        "Correção da localização normativa do limite da autorização de uso: cláusula quarta, § 3º, I, do Ajuste SINIEF 07/05, com inclusão da cláusula quarta nas referências. Sem alteração de mérito; versões anteriores preservadas."
+      ],
+      "diagramMobile": {
+        "title": "Documentos fiscais",
+        "items": [
+          {
+            "title": "XML da NF-e",
+            "description": "Arquivo digital com informações organizadas em campos."
+          },
+          {
+            "title": "DANFE",
+            "description": "Representação gráfica simplificada relacionada à NF-e pela chave de acesso."
+          },
+          {
+            "title": "Relatório derivado",
+            "description": "Confira a base, o período, os filtros e os critérios de cálculo."
+          }
+        ],
+        "note": "Identifique as fontes antes de interpretar a divergência."
+      },
+      "theme": {
+        "accent": "#276B59",
+        "tint": "#EAF3EE"
+      },
+      "publicUrl": "https://pericia-digital-marco-site.vercel.app/pericia-na-pratica/nfe-danfe-analise-tecnica-divergencias",
+      "coverCaption": "Ilustração conceitual."
+    }
+  ]
+}

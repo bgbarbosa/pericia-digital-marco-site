@@ -56,14 +56,14 @@ export default function Header({
       <div className="mx-auto flex min-h-18 max-w-[1480px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 xl:px-10">
         <a
           href={brandHref}
-          className="font-mono text-[15px] font-bold tracking-normal text-cyan-300 transition hover:text-cyan-200 focus-visible:outline-cyan-200 sm:text-base sm:tracking-normal"
+          className="shrink-0 font-mono text-[15px] font-bold tracking-normal text-cyan-300 transition hover:text-cyan-200 focus-visible:outline-cyan-200 sm:text-base sm:tracking-normal"
           aria-label="Ir para o início"
         >
           Marco Barbosa
         </a>
 
         <nav
-          className="hidden items-center gap-4 xl:flex 2xl:gap-7"
+          className="hidden min-w-0 items-center gap-3 xl:flex 2xl:gap-5"
           aria-label="Navegação principal"
         >
           {menu.map((item) => (

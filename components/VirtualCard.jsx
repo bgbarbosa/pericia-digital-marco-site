@@ -18,17 +18,18 @@ export default function VirtualCard({
       <div className="absolute left-1/2 top-24 h-72 w-72 max-w-full -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
       <Panel className="relative overflow-hidden border-cyan-400/15 bg-slate-950/80 p-0 sm:p-0 md:p-0 xl:p-0">
         <div className="grid lg:grid-cols-[0.78fr_1.22fr]">
-          <div className="relative h-[170px] w-[136px] mx-auto mt-5 rounded-2xl overflow-hidden border-b border-white/10 lg:mx-5 lg:mt-8 lg:h-[450px] lg:w-auto lg:rounded-2xl lg:border lg:border-white/10">
-            <Image
-              src={profile.image}
-              alt={`Retrato profissional de ${profile.name}`}
-              fill
-              preload
-              className="object-cover object-top"
-              sizes="(max-width: 1023px) 136px, 335px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-cyan-950/15" />
-            <div className="hidden absolute inset-x-0 bottom-0 p-5 sm:p-7 lg:block">
+          <div className="mx-auto mt-5 w-[240px] max-w-full self-start overflow-hidden rounded-2xl border border-white/10 lg:mx-5 lg:mt-8 lg:w-auto">
+            <div className="relative aspect-[3/2]">
+              <Image
+                src={profile.image}
+                alt={`Retrato profissional de ${profile.name}`}
+                fill
+                preload
+                className="object-contain"
+                sizes="(max-width: 1023px) 240px, 335px"
+              />
+            </div>
+            <div className="hidden p-5 lg:block">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">
                 Cartão profissional digital
               </p>

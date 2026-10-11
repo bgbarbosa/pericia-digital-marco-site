@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" width="1200" height="960" role="img" aria-labelledby="quadro-01-titulo quadro-01-descricao" focusable="false" xml:lang="pt-BR">
+<title id="quadro-01-titulo">Mensagens digitais: contexto, sequência e origem</title>
+<desc id="quadro-01-descricao">Contexto: Quais trechos anteriores e posteriores ajudam a compreender a conversa? Sequência: Como os registros disponíveis se ordenam no período relevante? Origem: De onde veio cada material e como foi obtido ou transformado? O alcance depende do material disponível.</desc>
+<rect width="1200" height="960" fill="#F7F4EE"/>
+<g aria-hidden="true" font-family="Arial, Helvetica, sans-serif" fill="#15273A">
+<text x="64" y="64" font-size="28" font-weight="700" letter-spacing="2" fill="#0E6A76">QUADRO DE LEITURA</text>
+<text x="64" y="126" font-size="52" font-weight="700">Mensagens digitais</text>
+<path d="M64 155H1136" fill="none" stroke="#CBC7BF" stroke-width="1.5"/>
+<rect x="64" y="185" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 207V347" fill="none" stroke="#0E6A76" stroke-width="4"/>
+<g transform="translate(104 232)" fill="none" stroke="#0E6A76" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h46v29H27L14 48V37H6z"/><path d="M23 47h21l12 10V24"/><path d="M16 18h27M16 26h20"/></g>
+<text x="210" y="240" font-size="43" font-weight="700">Contexto</text>
+<text x="210" y="295" font-size="36">Quais trechos anteriores e posteriores</text>
+<text x="210" y="338" font-size="36">ajudam a compreender a conversa?</text>
+<rect x="64" y="387" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 409V549" fill="none" stroke="#0E6A76" stroke-width="4"/>
+<g transform="translate(104 434)" fill="none" stroke="#0E6A76" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="4"/><circle cx="9" cy="32" r="4"/><circle cx="9" cy="52" r="4"/><path d="M22 12h34M22 32h26M22 52h34"/></g>
+<text x="210" y="442" font-size="43" font-weight="700">Sequência</text>
+<text x="210" y="497" font-size="36">Como os registros disponíveis se ordenam</text>
+<text x="210" y="540" font-size="36">no período relevante?</text>
+<rect x="64" y="589" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 611V751" fill="none" stroke="#0E6A76" stroke-width="4"/>
+<g transform="translate(104 636)" fill="none" stroke="#0E6A76" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5h31l13 13v37H7z"/><path d="M38 5v14h13M17 29h24M17 38h18"/><circle cx="49" cy="51" r="10"/></g>
+<text x="210" y="644" font-size="43" font-weight="700">Origem</text>
+<text x="210" y="699" font-size="36">De onde veio cada material e como</text>
+<text x="210" y="742" font-size="36">foi obtido ou transformado?</text>
+<path d="M64 804H120" fill="none" stroke="#0E6A76" stroke-width="3"/>
+<text x="64" y="849" font-size="36" font-weight="700">O alcance depende do material disponível.</text>
+</g>
+</svg>

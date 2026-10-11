@@ -1,9 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import CredentialsAffiliations from "@/components/CredentialsAffiliations";
+import PracticeCallout from "@/components/practice/PracticeCallout";
 import { CapacitySection } from "@/components/PositioningSections";
 import { TrajectoryEvents } from "@/components/ApprovedContent";
 import { trajectoryEntries } from "@/data/public-content";
@@ -35,6 +36,7 @@ export default function HomePage() {
         highlights={heroHighlights}
         profile={profile}
       />
+      <PracticeCallout />
       <CapacitySection modalities={capacityModalities} />
       <section id="aplicacoes-ia" className="content-section">
         <h2>Aplicações de IA e soluções digitais</h2>
@@ -82,7 +84,7 @@ export default function HomePage() {
           Polícia Civil do Mato Grosso do Sul é apresentado exclusivamente como
           informação curricular.
         </p>
-        <div className="detail-grid">
+        <div className="detail-grid credentials-layout">
           <article className="detail-panel">
             <h3>Formação e credenciais</h3>
             <p>
@@ -93,23 +95,7 @@ export default function HomePage() {
             <Link className="text-link" href="/formacao">
               Consultar formação completa →
             </Link>
-            <div className="mt-5 flex flex-col items-center rounded-[1.6rem] border border-white/10 bg-slate-900/60 p-5 text-center sm:p-6 xl:p-7">
-              <div className="relative h-32 w-32 overflow-hidden rounded-full border border-white/10 bg-slate-950 sm:h-36 sm:w-36 xl:h-40 xl:w-40">
-                <Image
-                  src={profile.association.image}
-                  alt={`Logotipo da ${profile.association.acronym}`}
-                  fill
-                  className="object-contain p-3"
-                  sizes="160px"
-                />
-              </div>
-              <p className="mt-4 text-xl font-semibold text-white sm:text-[1.35rem] xl:text-[1.45rem]">
-                {profile.association.acronym}
-              </p>
-              <p className="mt-2 max-w-md text-base leading-8 text-slate-300 xl:text-[1.1rem] xl:leading-9">
-                {profile.association.statement}
-              </p>
-            </div>
+            <CredentialsAffiliations profile={profile} />
           </article>
           <article id="conhecimentos" className="detail-panel">
             <h3>Forma de trabalho</h3>

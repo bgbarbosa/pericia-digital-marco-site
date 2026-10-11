@@ -51,8 +51,8 @@ export default async function OpenGraphImage() {
       </div>
       <div
         style={{
-          width: 350,
-          height: 500,
+          width: 480,
+          height: 320,
           display: "flex",
           overflow: "hidden",
           borderRadius: 34,
@@ -61,11 +61,11 @@ export default async function OpenGraphImage() {
         }}
       >
         <img
-          src={`data:image/jpeg;base64,${photo}`}
+          src={`data:${profile.imageType};base64,${photo}`}
           alt=""
-          width={350}
-          height={500}
-          style={{ objectFit: "cover", objectPosition: "top", borderRadius: 32 }}
+          width={480}
+          height={320}
+          style={{ objectFit: "contain", borderRadius: 32 }}
         />
       </div>
     </div>,

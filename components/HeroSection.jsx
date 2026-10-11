@@ -22,8 +22,8 @@ export default function HeroSection({ featuredTraining, highlights, profile }) {
             alt={`Retrato profissional de ${profile.name}`}
             fill
             preload
-            className="object-cover object-top"
-            sizes="(max-width: 767px) 160px, (max-width: 1023px) 240px, 360px"
+            className="object-contain"
+            sizes="(max-width: 767px) 240px, (max-width: 1023px) 300px, 420px"
           />
         </div>
         <div className="hero-actions">

@@ -1,0 +1,391 @@
+.shell {
+  min-height: 100vh;
+  background: #fbfaf6;
+  color: #15273a;
+}
+.shell > footer {
+  background: #020817;
+}
+.container {
+  width: min(100% - 2rem, 1120px);
+  margin-inline: auto;
+}
+.callout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid #67e8f94d;
+  border-radius: 1.4rem;
+  background: linear-gradient(115deg, #0e749026, #0f172a);
+}
+.callout p {
+  margin-top: 0.5rem;
+}
+.collectionIntro {
+  padding-block: 6.5rem 3rem;
+  background: radial-gradient(ellipse at 90% 20%, #0e749030, transparent 65%), #020817;
+  color: #f8fafc;
+}
+.eyebrow,
+.category {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.eyebrow {
+  margin-top: 2rem;
+  color: #67e8f9;
+}
+.collectionIntro h1 {
+  margin-top: 0.75rem;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+.collectionSubtitle {
+  margin-top: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  line-height: 1.5;
+}
+.introduction {
+  max-width: 65ch;
+  margin-top: 1rem;
+  color: #cbd5e1;
+  line-height: 1.85;
+}
+.collectionBody {
+  padding-block: 2.5rem 3rem;
+}
+.collectionByline {
+  margin-bottom: 1.5rem;
+  color: #465970;
+}
+.cards,
+.relatedGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+.card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d8dfdf;
+  border-radius: 1.4rem;
+  background: #fff;
+}
+.cardImage {
+  width: 100%;
+  height: auto;
+}
+.cardText {
+  padding: clamp(1.25rem, 2vw, 1.75rem);
+}
+.category {
+  color: var(--article-accent, #0e6a76);
+}
+.card h2,
+.card h3 {
+  margin-top: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.card :is(h2, h3) a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.cardSubtitle {
+  margin-top: 0.75rem;
+  color: #42556b;
+  line-height: 1.6;
+}
+.cardExcerpt {
+  margin-top: 1rem;
+  line-height: 1.8;
+}
+.readLink,
+.backLink {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.5rem;
+  color: #075e70;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+.readLink {
+  margin-top: 1rem;
+}
+.collectionContact {
+  margin-top: 2rem;
+}
+.article {
+  padding-top: 6.5rem;
+}
+.articleHeader {
+  margin-block: 1.75rem;
+}
+.articleHeader h1 {
+  max-width: 28ch;
+  margin-top: 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.13;
+}
+.subtitle {
+  margin-top: 1rem;
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  line-height: 1.6;
+  color: #465970;
+}
+.byline {
+  margin-block: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.excerpt {
+  max-width: 85ch;
+  border-left: 3px solid var(--article-accent);
+  padding-left: 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.85;
+}
+.cover img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+.cover figcaption,
+.diagram figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #465970;
+}
+.readingLayout {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+.toc {
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid #d8dfdf;
+  border-radius: 1rem;
+  background: #fff;
+}
+.toc > p {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.toc ol {
+  list-style: none;
+}
+.toc a {
+  display: block;
+  padding-block: 0.65rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #075e70;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.tocSubheading {
+  padding-left: 1rem;
+}
+.prose {
+  min-width: 0;
+  max-width: 76ch;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+.prose section + section {
+  margin-top: 2.5rem;
+}
+.prose :is(h2, h3),
+.contact {
+  scroll-margin-top: 7rem;
+}
+.prose h2,
+.prose h3,
+.related > h2,
+.contact h2 {
+  font-weight: 700;
+  line-height: 1.35;
+}
+.prose h2 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+}
+.prose h3 {
+  margin-block: 1.5rem 1rem;
+  font-size: 1.2rem;
+}
+.prose p + p,
+.prose ul,
+.prose ol {
+  margin-top: 1.2rem;
+}
+.prose :is(ul, ol) {
+  padding-left: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+.prose ul {
+  list-style: disc;
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose li + li {
+  margin-top: 0.75rem;
+}
+.prose a {
+  color: #075e70;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+}
+.prose table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-block: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.prose :is(th, td) {
+  padding: 0.75rem;
+  border: 1px solid #c9d3d6;
+  vertical-align: top;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.prose th {
+  background: var(--article-tint);
+  font-weight: 700;
+}
+.prose tbody tr:nth-child(even) {
+  background: #f0f3f2;
+}
+.pullQuote {
+  margin-block: 2rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--article-accent);
+  background: var(--article-tint);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+.diagram {
+  margin-block: 2rem;
+}
+.diagramImage {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+.diagramMobile {
+  padding: 1.25rem;
+  border: 1px solid #d8dfdf;
+  border-top: 4px solid var(--article-accent);
+  border-radius: 0.8rem;
+  background: var(--article-tint);
+}
+.diagramMobile h3 {
+  margin-top: 0;
+}
+.diagramMobile dl > div {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #15273a29;
+}
+.diagramMobile dt {
+  font-weight: 700;
+}
+.diagramMobile dd {
+  margin-top: 0.3rem;
+}
+.diagramNote {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+.contact {
+  margin-block: 3rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 1.4rem;
+  background: #0b1424;
+  color: #f8fafc;
+}
+.contact h2,
+.related > h2 {
+  font-size: 1.6rem;
+}
+.contact p {
+  margin-top: 0.75rem;
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.related {
+  padding-bottom: 3rem;
+}
+.related > h2 {
+  margin-bottom: 1.5rem;
+}
+.related > .backLink {
+  margin-top: 1.5rem;
+}
+.article :is(a, h2, h3):focus-visible,
+.card a:focus-visible,
+.related > a:focus-visible {
+  outline-color: #0e7490;
+}
+.contact a:focus-visible {
+  outline-color: #67e8f9;
+}
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .relatedGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .diagramImage {
+    display: block;
+  }
+  .diagramMobile {
+    display: none;
+  }
+}
+@media (min-width: 1100px) {
+  .readingLayout {
+    grid-template-columns: 250px minmax(0, 1fr);
+  }
+  .toc {
+    position: sticky;
+    top: 6rem;
+    max-height: calc(100dvh - 7rem);
+    overflow-y: auto;
+  }
+}
+@media (max-width: 420px) {
+  .prose :is(th, td) {
+    padding: 0.5rem;
+  }
+  .contactActions > a {
+    flex: 1 1 100%;
+  }
+}

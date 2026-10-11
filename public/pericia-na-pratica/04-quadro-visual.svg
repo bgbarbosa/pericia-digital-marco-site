@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" width="1200" height="960" role="img" aria-labelledby="quadro-04-titulo quadro-04-descricao" focusable="false" xml:lang="pt-BR">
+<title id="quadro-04-titulo">Documentos fiscais: XML da NF-e, DANFE e relatório derivado</title>
+<desc id="quadro-04-descricao">XML da NF-e: Arquivo digital com informações organizadas em campos. DANFE: Representação gráfica simplificada relacionada à NF-e pela chave de acesso. Relatório derivado: Confira a base, o período, os filtros e os critérios de cálculo. Identifique as fontes antes de interpretar a divergência.</desc>
+<rect width="1200" height="960" fill="#F7F4EE"/>
+<g aria-hidden="true" font-family="Arial, Helvetica, sans-serif" fill="#15273A">
+<text x="64" y="64" font-size="28" font-weight="700" letter-spacing="2" fill="#276B59">QUADRO DE LEITURA</text>
+<text x="64" y="126" font-size="52" font-weight="700">Documentos fiscais</text>
+<path d="M64 155H1136" fill="none" stroke="#CBC7BF" stroke-width="1.5"/>
+<rect x="64" y="185" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 207V347" fill="none" stroke="#276B59" stroke-width="4"/>
+<g transform="translate(104 232)" fill="none" stroke="#276B59" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 17-16 15 16 15M43 17l16 15-16 15M37 10 28 54"/></g>
+<text x="210" y="240" font-size="43" font-weight="700">XML da NF-e</text>
+<text x="210" y="295" font-size="36">Arquivo digital com informações</text>
+<text x="210" y="338" font-size="36">organizadas em campos.</text>
+<rect x="64" y="387" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 409V549" fill="none" stroke="#276B59" stroke-width="4"/>
+<g transform="translate(104 434)" fill="none" stroke="#276B59" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h46v55H9zM18 16h28M18 27h18M18 39h28M18 48h21"/></g>
+<text x="210" y="442" font-size="43" font-weight="700">DANFE</text>
+<text x="210" y="497" font-size="36">Representação gráfica simplificada</text>
+<text x="210" y="540" font-size="36">relacionada à NF-e pela chave de acesso.</text>
+<rect x="64" y="589" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 611V751" fill="none" stroke="#276B59" stroke-width="4"/>
+<g transform="translate(104 636)" fill="none" stroke="#276B59" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="54" height="47" rx="2"/><path d="M5 23h54M23 23v32M42 23v32M5 39h54"/></g>
+<text x="210" y="644" font-size="43" font-weight="700">Relatório derivado</text>
+<text x="210" y="699" font-size="36">Confira a base, o período, os filtros</text>
+<text x="210" y="742" font-size="36">e os critérios de cálculo.</text>
+<path d="M64 804H120" fill="none" stroke="#276B59" stroke-width="3"/>
+<text x="64" y="849" font-size="36" font-weight="700">Identifique as fontes antes de interpretar</text>
+<text x="64" y="892" font-size="36" font-weight="700">a divergência.</text>
+</g>
+</svg>

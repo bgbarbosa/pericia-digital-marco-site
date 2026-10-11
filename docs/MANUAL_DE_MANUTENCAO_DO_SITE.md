@@ -404,3 +404,13 @@ Dados de eventos/demonstrações aprovados: `data/public-content.js`; contratos 
 Navegação interna: mesma aba. Menu móvel usa diálogo modal nativo, com foco isolado, Escape e restauração de rolagem. Testes existentes foram preservados e adaptados à realocação de conteúdo. Testes novos: `tests/e2e/consolidated.spec.js`.
 
 Validação e resultados efetivos: `TSK-PROF-002_RELATORIO.md`. Conteúdo confirmado e campos opcionais: `TSK-PROF-002_PENDENCIAS.md`. Nenhum questionário é necessário para a entrega atual.
+
+## Atualização local — Perícia na Prática
+
+Para a nova coleção, prevalecem os procedimentos de `PERICIA_NA_PRATICA.md`. A fonte editorial única é `data/practice-articles.json`; as cinco novas rotas usam `/pericia-na-pratica`. A home mantém IA como apresentação principal e recebe uma chamada para os quatro artigos.
+
+AI Brasil fica em `profile.community`, junto à APECOF na home. O retrato ativo é `public/marco-barbosa-profissional.jpg`, centralizado em `profile.image`; o PNG original e as imagens anteriores são preservados. O formato das imagens embutidas em Open Graph acompanha `profile.imageType`. O manifesto `PERICIA_NA_PRATICA_INTEGRIDADE.json` registra os hashes.
+
+A publicação foi autorizada para 11/10/2026, com envio de `HEAD` para `origin/master` e deployment automático no projeto Vercel existente `marcopericia`. A coleção e os quatro artigos registram essa data, estado `publicado` e URLs na origem `https://pericia-digital-marco-site.vercel.app`; `preparedAt` permanece apenas como registro de preparação. A conclusão externa depende do commit remoto, do CI e do conteúdo público confirmados no relatório de entrega. A suíte nova é `tests/e2e/practice.spec.js`; `npm run test` também executa `tests/unit/audit-dev-allowlist.test.mjs`. Os totais executados devem ser consultados no relatório, sem reutilizar contagens históricas.
+
+O gate `npm audit --omit=dev` exige zero vulnerabilidades. `node scripts/audit-dev-allowlist.mjs` admite somente a exceção de desenvolvimento descrita em `EXCECAO_AUDITORIA_BRACES.md`, válida até 11/11/2026 em America/Cuiaba. `npm audit` puro continua retornando saída 1 por esse aviso; a exceção deve ser retirada assim que houver correção compatível.

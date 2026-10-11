@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" width="1200" height="960" role="img" aria-labelledby="quadro-03-titulo quadro-03-descricao" focusable="false" xml:lang="pt-BR">
+<title id="quadro-03-titulo">Câmeras: horário na imagem, dados do arquivo e registro independente</title>
+<desc id="quadro-03-descricao">Horário na imagem: Que relógio ou recurso gerou a marcação apresentada? Dados do arquivo: A qual evento se refere cada campo: gravação, exportação ou outro processo? Registro independente: A fonte descreve o mesmo evento e usa uma referência temporal comparável? Comparar horários exige compreender o que cada registro representa.</desc>
+<rect width="1200" height="960" fill="#F7F4EE"/>
+<g aria-hidden="true" font-family="Arial, Helvetica, sans-serif" fill="#15273A">
+<text x="64" y="64" font-size="28" font-weight="700" letter-spacing="2" fill="#94641F">QUADRO DE LEITURA</text>
+<text x="64" y="126" font-size="52" font-weight="700">Referências de horário</text>
+<path d="M64 155H1136" fill="none" stroke="#CBC7BF" stroke-width="1.5"/>
+<rect x="64" y="185" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 207V347" fill="none" stroke="#94641F" stroke-width="4"/>
+<g transform="translate(104 232)" fill="none" stroke="#94641F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="27"/><path d="M32 5v7M32 52v7M5 32h7M52 32h7"/><circle cx="32" cy="32" r="2"/></g>
+<text x="210" y="240" font-size="43" font-weight="700">Horário na imagem</text>
+<text x="210" y="295" font-size="36">Que relógio ou recurso gerou</text>
+<text x="210" y="338" font-size="36">a marcação apresentada?</text>
+<rect x="64" y="387" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 409V549" fill="none" stroke="#94641F" stroke-width="4"/>
+<g transform="translate(104 434)" fill="none" stroke="#94641F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4h29l14 14v41H10z"/><path d="M39 4v15h14M21 30h20M21 39h12M21 48h20"/></g>
+<text x="210" y="442" font-size="43" font-weight="700">Dados do arquivo</text>
+<text x="210" y="497" font-size="36">A qual evento se refere cada campo:</text>
+<text x="210" y="540" font-size="36">gravação, exportação ou outro processo?</text>
+<rect x="64" y="589" width="1072" height="184" fill="#FCFAF7" stroke="#D9D5CD" stroke-width="1.2"/>
+<path d="M64 611V751" fill="none" stroke="#94641F" stroke-width="4"/>
+<g transform="translate(104 636)" fill="none" stroke="#94641F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="39" height="48" rx="2"/><path d="M14 18h21M14 29h15M14 40h16"/><circle cx="50" cy="48" r="11"/></g>
+<text x="210" y="644" font-size="43" font-weight="700">Registro independente</text>
+<text x="210" y="699" font-size="36">A fonte descreve o mesmo evento</text>
+<text x="210" y="742" font-size="36">e usa uma referência temporal comparável?</text>
+<path d="M64 804H120" fill="none" stroke="#94641F" stroke-width="3"/>
+<text x="64" y="849" font-size="36" font-weight="700">Comparar horários exige compreender</text>
+<text x="64" y="892" font-size="36" font-weight="700">o que cada registro representa.</text>
+</g>
+</svg>

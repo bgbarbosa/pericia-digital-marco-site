@@ -1,0 +1,104 @@
+{
+  "scope": "Integridade do conteúdo e das imagens da atualização com publicação autorizada em 11/10/2026.",
+  "sourcePackageSha256": "EED4EA1D77F366E3B4FCE914A853F9F27D1A19324840DE12305838C018A606A9",
+  "singleContentSource": "data/practice-articles.json",
+  "contentChecks": [
+    {
+      "slug": "mensagens-whatsapp-alem-do-print",
+      "markdownSha256": "41854FA2F235DB88E4F595A7887B86C09248A8C42EE9B48AEB973C1E7A51F5BC",
+      "bodyMarkdownSha256": "ECEC375C695D1A7646A4D97E6E069AA5ADB21AAA3D6AD7CDA6D9C7880980D870",
+      "bodyMatchesMarkdown": true,
+      "visualPositionsChecked": true
+    },
+    {
+      "slug": "contratacao-eletronica-contestada-analise-tecnica",
+      "markdownSha256": "3344DBA92A6367AEBF81B996EF0C8FD0A4D35061F82DC85C2F01324AF6133C84",
+      "bodyMarkdownSha256": "2F25438BCC9704EA91E644E67EDFCB765D7637A29AED70C4ACE00595C3E85F28",
+      "bodyMatchesMarkdown": true,
+      "visualPositionsChecked": true
+    },
+    {
+      "slug": "horario-cameras-cftv-cronologia-fatos",
+      "markdownSha256": "E017C7217C8ACF49DDB342090C3EA7172C2067F444029BFAD15B28DAA53D9FF9",
+      "bodyMarkdownSha256": "801282840C4FCACDE26877F41ADADD617CED536E41FF8571B46FA586C39F0C21",
+      "bodyMatchesMarkdown": true,
+      "visualPositionsChecked": true
+    },
+    {
+      "slug": "nfe-danfe-analise-tecnica-divergencias",
+      "markdownSha256": "35C69A4DC231BD82E0945ECC53AFCD690F126DA814FCDFD5005325B9A0626E2B",
+      "bodyMarkdownSha256": "67568890918ACCA8E404C77A7A6BC32EED325C4C6F9B50075FAC436DEF5FE5AE",
+      "bodyMatchesMarkdown": true,
+      "visualPositionsChecked": true
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/pericia-na-pratica/01-capa.png",
+      "source": "ZIP: imagens\\01-capa.png",
+      "sha256": "4A2C435CBB7E01D6D30B4B017A151DD985C4B3B6742C7C26A28E1A5D369807AB",
+      "unchangedCopy": true
+    },
+    {
+      "path": "public/pericia-na-pratica/01-quadro-visual.svg",
+      "source": "ZIP: imagens\\01-quadro-visual.svg",
+      "sha256": "5FF6949A1D693359A44798CCE011B5089B9BD46590F7AE35A4672987CC8029D0",
+      "unchangedCopy": true
+    },
+    {
+      "path": "public/pericia-na-pratica/02-capa.png",
+      "source": "ZIP: imagens\\02-capa.png",
+      "sha256": "7CD9E60B4647C6673031C0AB2DCC758DF5563DF3B67195978012A292C981BA2A",
+      "unchangedCopy": true
+    },
+    {
+      "path": "public/pericia-na-pratica/02-quadro-visual.svg",
+      "source": "ZIP: imagens\\02-quadro-visual.svg",
+      "sha256": "2288BAC4052B47B4FD88167A108B31305F193D693CDDBA6329FF643745E5C600",
+      "unchangedCopy": true
+    },
+    {
+      "path": "public/pericia-na-pratica/03-capa.png",
+      "source": "ZIP: imagens\\03-capa.png",
+      "sha256": "B440087362D635A84D55D762A7C1B8CAF71A85AC704E33848E83B8840DB3F538",
+      "unchangedCopy": true
+    },
+    {
+      "path": "public/pericia-na-pratica/03-quadro-visual.svg",
+      "source": "ZIP: imagens\\03-quadro-visual.svg",
+      "sha256": "45D3B1FC197F78E6BCF45F3A7E16B43898ACB02476D36FD280F011215716C3C0",
+      "unchangedCopy": true
+    },
+    {
+      "path": "public/pericia-na-pratica/04-capa.png",
+      "source": "ZIP: imagens\\04-capa.png",
+      "sha256": "D76A13110733DBC79AF45C0D698A3C849CD57DCD3FCD34E51A1517C24E275E00",
+      "unchangedCopy": true
+    },
+    {
+      "path": "public/pericia-na-pratica/04-quadro-visual.svg",
+      "source": "ZIP: imagens\\04-quadro-visual.svg",
+      "sha256": "DE5234BDE368C87F8D3007CF1CF04E3D25A74015FE1153EFC2D7F778854CB28E",
+      "unchangedCopy": true
+    },
+    {
+      "path": "public/ai-brasil-comunidade.png",
+      "sha256": "7FB58E0D6D1A73709C2D2B2344EC7124598416CA40C53060625AB0F46D9C0BE1",
+      "unchangedCopy": true
+    },
+    {
+      "path": "public/marco-barbosa-profissional-original.png",
+      "sha256": "47A10D3E95BF66A859D3F44E03B90CEFC6664ADCFD3C9B499B73E93F1AE42427",
+      "unchangedCopy": true
+    },
+    {
+      "path": "public/marco-barbosa-profissional.jpg",
+      "source": "public/marco-barbosa-profissional-original.png",
+      "sha256": "442FEE3845EF2B6582EF0479115997119A7F18F0A974E15A6A1F92AD381B0590",
+      "width": 1536,
+      "height": 1024,
+      "format": "jpeg",
+      "transformation": "PNG para JPEG, quality=90, chromaSubsampling=4:4:4, mozjpeg=true; sem redimensionamento, recorte, retoque ou IA; metadados não copiados."
+    }
+  ]
+}

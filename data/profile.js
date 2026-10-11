@@ -19,7 +19,15 @@ export const profile = {
   email: "marcobarbosa@damauniverse.com.br",
   city: "Campo Grande/MS",
   lattes: "https://lattes.cnpq.br/1970561249212557",
-  image: "/marco-barbosa.jpg",
+  image: "/marco-barbosa-profissional.jpg",
+  imageType: "image/jpeg",
+  community: {
+    name: "AI Brasil",
+    image: "/ai-brasil-comunidade.png",
+    title: "Membro da comunidade AI Brasil",
+    statement:
+      "Atualização contínua e troca de conhecimentos em inteligência artificial que fortalecem minha atuação em análise de dados, computação forense e desenvolvimento de soluções.",
+  },
   association: {
     acronym: "APECOF",
     name: "Associação Nacional dos Peritos em Computação Forense",
@@ -33,6 +41,7 @@ export const homeMenu = [
   { label: "Início", href: "#inicio" },
   { label: "Capacitações", href: "#capacitacoes" },
   { label: "Aplicações de IA", href: "#aplicacoes-ia" },
+  { label: "Perícia na Prática", href: "/pericia-na-pratica" },
   { label: "Experiência", href: "/experiencia" },
   { label: "Formação e trajetória", href: "#sobre" },
   { label: "Contato", href: "#contato" },

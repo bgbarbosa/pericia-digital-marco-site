@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import practiceContent from "../../data/practice-articles.json";
 import {
   approvedTrajectory,
   approvedDemonstrations,
@@ -223,7 +224,11 @@ test("sitemap, âncoras e ausência de rotas de rascunho", async ({
   const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
     (match) => new URL(match[1]).pathname,
   );
-  expect(urls.sort()).toEqual([...routes].sort());
+  expect(urls.sort()).toEqual([
+    ...routes,
+    practiceContent.collection.basePath,
+    ...practiceContent.articles.map(({ slug }) => `${practiceContent.collection.basePath}/${slug}`),
+  ].sort());
   for (const route of routes) {
     await page.goto(route);
     for (const href of await page
