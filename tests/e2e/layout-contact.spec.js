@@ -28,7 +28,12 @@ for (const width of widths) {
       if (mobile) await trigger.click();
       const navigation = page.getByRole("navigation", { name: mobile ? "Navegação móvel" : "Navegação principal" });
       const links = navigation.getByRole("link");
-      expect((await links.allTextContents()).slice(0, homeMenu.length)).toEqual(homeMenu.map(({ label }) => label));
+      const whatsappContact = route === collection || route.startsWith(`${collection}/`);
+      const expectedLabels = homeMenu
+        .filter(({ label }) => whatsappContact || label !== "Contato")
+        .map(({ label }) => label);
+      if (mobile) expectedLabels.push(whatsappContact ? "Conversar pelo WhatsApp" : "Contato");
+      expect((await links.allTextContents()).map((label) => label.trim())).toEqual(expectedLabels);
       expect(homeMenu.slice(0, 2).map(({ label }) => label)).toEqual(["Início", "Perícia na Prática"]);
       for (const link of await links.all()) {
         const box = await link.boundingBox();
@@ -103,6 +108,8 @@ test("card integral é um único link com foco, hover e ativação pelas bordas"
     await expect(card).toHaveAttribute("href", collection);
     await expect(card).toHaveAttribute("aria-describedby", "pratica-chamada-resumo");
     await card.scrollIntoViewIfNeeded();
+    await page.mouse.move(0, 0);
+    await expect.poll(() => card.evaluate((element) => getComputedStyle(element).borderColor)).not.toBe("rgb(165, 243, 252)");
     const originalBorder = await card.evaluate((element) => getComputedStyle(element).borderColor);
     await card.hover();
     await expect.poll(() => card.evaluate((element) => getComputedStyle(element).borderColor)).not.toBe(originalBorder);

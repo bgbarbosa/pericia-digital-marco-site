@@ -13,6 +13,7 @@ export default function Header({
   const firstLinkRef = useRef(null);
   const dialogRef = useRef(null);
   const externalContact = /^https?:\/\//.test(contactHref ?? "");
+  const navigationItems = menu.filter((item) => item.label !== contactLabel);
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -67,7 +68,7 @@ export default function Header({
           className="header-navigation"
           aria-label="Navegação principal"
         >
-          {menu.map((item) => (
+          {navigationItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -136,7 +137,7 @@ export default function Header({
             aria-label="Navegação móvel"
             className="mt-5 flex flex-col gap-3"
           >
-            {menu.map((item, index) => (
+            {navigationItems.map((item, index) => (
               <a
                 ref={index === 0 ? firstLinkRef : undefined}
                 key={item.href}

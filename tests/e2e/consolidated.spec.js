@@ -69,31 +69,17 @@ for (const width of [320, 390, 768, 1440]) {
   }
 }
 
-test("cards levam ao conteúdo prometido na mesma aba", async ({ page }) => {
+test("destaque da formação leva ao conteúdo na mesma aba", async ({ page }) => {
   await page.goto("/");
-  for (const [name, path] of [
-    [/^Formação .*Pós/, "/#formacao-card"],
-    [/^Aplicação .*ChatGPT/, "/aplicacoes"],
-    [/^Experiência .*Mais/, "/#experiencia-card"],
-    [/^Formação em destaque:/, "/formacao/deteccao-imagens-ia"],
-  ]) {
-    const link = page.locator("#inicio").getByRole("link", { name });
-    await expect(link).toHaveAttribute("href", path);
-    await expect(link).not.toHaveAttribute("target", "_blank");
-    await page.keyboard.press("Tab");
-    await link.focus();
-    expect(await link.evaluate((el) => getComputedStyle(el).outlineStyle)).toBe(
-      "solid",
-    );
-    await page.keyboard.press("Enter");
-    await expect(page).toHaveURL(new RegExp(`${path}$`));
-    if (path.includes("-card")) {
-      await expect(page.locator(path.slice(1))).toHaveAttribute("open", "");
-      await page.goto("/");
-    } else {
-      await page.getByRole("link", { name: "← Voltar à página inicial" }).click();
-    }
-  }
+  const link = page.locator("#inicio").getByRole("link", { name: /^Formação em destaque:/ });
+  await expect(link).toHaveAttribute("href", "/formacao/deteccao-imagens-ia");
+  await expect(link).not.toHaveAttribute("target", "_blank");
+  await page.keyboard.press("Tab");
+  await link.focus();
+  expect(await link.evaluate((el) => getComputedStyle(el).outlineStyle)).toBe("solid");
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/\/formacao\/deteccao-imagens-ia$/);
+  await page.getByRole("link", { name: "← Voltar à página inicial" }).click();
 });
 
 test("menu isola foco, restaura rolagem e responde à largura", async ({

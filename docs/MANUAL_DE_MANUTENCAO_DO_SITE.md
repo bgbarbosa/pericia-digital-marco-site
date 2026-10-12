@@ -415,6 +415,6 @@ A publicação foi autorizada para 11/10/2026, com envio de `HEAD` para `origin/
 
 O gate `npm audit --omit=dev` exige zero vulnerabilidades. `node scripts/audit-dev-allowlist.mjs` admite somente a exceção de desenvolvimento descrita em `EXCECAO_AUDITORIA_BRACES.md`, válida até 11/11/2026 em America/Cuiaba. `npm audit` puro continua retornando saída 1 por esse aviso; a exceção deve ser retirada assim que houver correção compatível.
 
-## Alteração local posterior — contato e navegação
+## Fluxo atual — contato e navegação
 
-O fluxo local atual está em [`CONTATO_E_NAVEGACAO_LOCAL.md`](CONTATO_E_NAVEGACAO_LOCAL.md) e prevalece sobre as instruções antigas de `mailto:`, âncoras de aplicações na home e páginas gerais de formação/experiência. Não há autorização de publicação para esta alteração.
+O fluxo atual está em [`CONTATO_E_NAVEGACAO_LOCAL.md`](CONTATO_E_NAVEGACAO_LOCAL.md) e prevalece sobre as instruções antigas de `mailto:`, âncoras de aplicações na home e páginas gerais de formação/experiência. Toda nova publicação exige autorização explícita e validação do lote correspondente.

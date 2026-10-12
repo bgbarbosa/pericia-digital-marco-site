@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function HeroSection({ featuredTraining, highlights, profile }) {
+export default function HeroSection({ featuredTraining, profile }) {
   return (
     <section id="inicio" className="hero-section border-b border-white/10">
       <div className="hero-grid site-container">
@@ -48,18 +48,6 @@ export default function HeroSection({ featuredTraining, highlights, profile }) {
               Abrir cartão virtual →
             </Link>
           </div>
-        </div>
-        <div className="hero-highlights grid gap-3 sm:grid-cols-3">
-          {highlights.map((item) => (
-            <a className="linked-panel" href={item.href} key={item.label}>
-              <h2 className="text-sm font-semibold text-cyan-300">
-                {item.label} <span aria-hidden="true">→</span>
-              </h2>
-              <p className="mt-2 text-sm leading-6 text-slate-200">
-                {item.text}
-              </p>
-            </a>
-          ))}
         </div>
         {featuredTraining && (
           <Link

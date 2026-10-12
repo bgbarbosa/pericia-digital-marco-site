@@ -1,7 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
+import { DamaDetail, ToolDetail } from "@/components/ApplicationTopicContent";
 import DetailPage from "@/components/DetailPage";
 import { applicationTopics } from "@/data/applications";
+import { profile } from "@/data/profile";
 import { pageMetadata } from "@/lib/page-metadata";
 
 export const metadata = pageMetadata(
@@ -14,21 +15,32 @@ export default function Page() {
   return (
     <DetailPage
       title="Aplicações de IA e soluções digitais"
-      intro="Tecnologia pode apoiar a organização, a análise e a execução de tarefas. O ponto de partida é compreender a necessidade e os limites do material disponível."
+      intro="Convido você a conhecer o Dama Universe, site que criei para apresentar aplicações de inteligência artificial e soluções digitais. Ali, projetos, ferramentas e conteúdos mostram possibilidades de uso da tecnologia a partir de necessidades concretas."
     >
       <section className="content-section">
-        <h2>Explore as duas propostas</h2>
-        <p>Os exemplos são didáticos: mostram possibilidades de aplicação, sem representar clientes, trabalhos contratados ou resultados assegurados.</p>
+        <a className="action-primary" href={profile.damaUniverse} target="_blank" rel="noopener noreferrer">Conhecer o Dama Universe ↗</a>
+        <div className="application-intro">
+          <h2>Explore as propostas</h2>
+          <p>Abra os cards para conhecer cada tema. Os exemplos são didáticos: mostram possibilidades de aplicação, sem representar clientes, trabalhos contratados ou resultados assegurados.</p>
+        </div>
         <div className="application-grid">
           {applicationTopics.map((topic, index) => (
-            <Link className="application-card" href={`/aplicacoes/${topic.slug}`} key={topic.slug}>
-              <Image src={topic.image} alt={topic.imageAlt} width={720} height={440} unoptimized loading={index === 0 ? "eager" : "lazy"} sizes="(max-width: 767px) 100vw, 50vw" />
-              <span className="application-card-body">
-                <span className="application-card-title">{topic.title}</span>
-                <span>{topic.description}</span>
-                <span className="application-card-action" aria-hidden="true">Conhecer o tema →</span>
-              </span>
-            </Link>
+            <details className="application-card" key={topic.slug}>
+              <summary aria-controls={`${topic.slug}-conteudo`}>
+                <Image src={topic.image} alt={topic.imageAlt} width={720} height={440} unoptimized loading={index === 0 ? "eager" : "lazy"} sizes="(max-width: 767px) 100vw, 50vw" />
+                <span className="application-card-body">
+                  <span className="application-card-title">{topic.title}</span>
+                  <span>{topic.description}</span>
+                  <span className="application-card-action" aria-hidden="true">
+                    <span className="when-closed">Conhecer o tema ↓</span>
+                    <span className="when-open">Recolher conteúdo ↑</span>
+                  </span>
+                </span>
+              </summary>
+              <div id={`${topic.slug}-conteudo`} className="application-card-content">
+                {topic.slug === "dama-universe" ? <DamaDetail /> : <ToolDetail />}
+              </div>
+            </details>
           ))}
         </div>
       </section>

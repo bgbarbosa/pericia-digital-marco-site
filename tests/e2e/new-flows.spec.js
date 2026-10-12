@@ -18,7 +18,7 @@ async function mockTurnstile(page) {
   );
 }
 
-test("menu e cartões de aplicações navegam na mesma aba e retornam à visão geral", async ({ page }) => {
+test("aplicações convidam ao Dama Universe e os cartões abrem e recolhem", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/");
   const menu = page.getByRole("navigation", { name: "Navegação principal" });
@@ -28,21 +28,36 @@ test("menu e cartões de aplicações navegam na mesma aba e retornam à visão 
   await expect(page.locator("#aplicacoes-ia, #solucoes-digitais")).toHaveCount(0);
   await menu.getByRole("link", { name: "Aplicações de IA" }).click();
   await expect(page).toHaveURL(`${origin}/aplicacoes`);
+  await expect(page.locator(".detail-heading")).toContainText("site que criei");
+  await expect(page.getByRole("link", { name: "Conhecer o Dama Universe" })).toHaveAttribute("href", profile.damaUniverse);
   for (const topic of applicationTopics) {
-    const card = page.locator(`.application-card[href="/aplicacoes/${topic.slug}"]`);
+    const card = page.locator(".application-card").filter({ has: page.getByText(topic.title, { exact: true }) });
     await expect(card).toBeVisible();
     await expect(card.getByRole("img")).toHaveAttribute("alt", topic.imageAlt);
-    await expect(card.locator("a, button, input")).toHaveCount(0);
-    await card.click({ position: { x: 12, y: 12 } });
+    await expect(card).not.toHaveAttribute("open", "");
+    await card.locator("summary").click({ position: { x: 12, y: 12 } });
+    await expect(card).toHaveAttribute("open", "");
+    await expect(card.locator(".application-card-content h2").first()).toBeVisible();
+    await expect(page).toHaveURL(`${origin}/aplicacoes`);
+    await card.locator("summary").focus();
+    await page.keyboard.press("Enter");
+    await expect(card).not.toHaveAttribute("open", "");
+    await page.goto(`/aplicacoes/${topic.slug}`);
     await expect(page).toHaveURL(`${origin}/aplicacoes/${topic.slug}`);
     await expect(page.locator("h1")).toHaveText(topic.title);
-    await page.getByRole("link", { name: "← Voltar a Aplicações de IA" }).first().click();
+    const backLink = page.getByRole("link", { name: "← Voltar a Aplicações de IA" });
+    await expect(backLink).toHaveCount(1);
+    await expect(page.getByRole("link", { name: "← Voltar à página inicial" })).toHaveCount(0);
+    await backLink.click();
     await expect(page).toHaveURL(`${origin}/aplicacoes`);
   }
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator(".application-card").first().locator("summary").click();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   expect((await page.goto("/aplicacoes/tema-inexistente")).status()).toBe(404);
 });
 
-test("cartões de formação e experiência abrem por mouse, teclado e destaque", async ({ page }) => {
+test("cartões de formação e experiência abrem por mouse, teclado e link direto", async ({ page }) => {
   await page.goto("/");
   const formation = page.locator("#formacao-card");
   const experience = page.locator("#experiencia-card");
@@ -56,7 +71,7 @@ test("cartões de formação e experiência abrem por mouse, teclado e destaque"
   await experience.locator("summary").focus();
   await page.keyboard.press("Space");
   await expect(experience).toHaveAttribute("open", "");
-  await page.locator("#inicio").getByRole("link", { name: /^Formação .*Pós/ }).click();
+  await page.goto("/#formacao-card");
   await expect(page).toHaveURL(`${origin}/#formacao-card`);
   await expect(formation).toHaveAttribute("open", "");
   const oldFormation = await page.request.get("/formacao", { maxRedirects: 0 });

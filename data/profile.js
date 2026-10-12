@@ -151,24 +151,6 @@ export const knowledgeAreas = [
 
 export const specializationAreas = knowledgeAreas;
 
-export const heroHighlights = [
-  {
-    label: "Formação",
-    href: "/#formacao-card",
-    text: "Pós-graduado em Inteligência Artificial",
-  },
-  {
-    label: "Aplicação",
-    href: "/aplicacoes",
-    text: "ChatGPT, engenharia de prompts e produtividade",
-  },
-  {
-    label: "Experiência",
-    href: "/#experiencia-card",
-    text: "Mais de 12 anos em investigação e análise técnica",
-  },
-];
-
 export const featuredTraining = {
   label: "Formação em destaque",
   href: "/formacao/deteccao-imagens-ia",

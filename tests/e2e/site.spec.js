@@ -56,6 +56,27 @@ test("menu móvel é acessível, fecha por seleção e Escape", async ({ page })
   );
 });
 
+test("menu exibe uma única opção de contato quando o atalho tem o mesmo nome", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+
+  for (const route of ["/", "/aplicacoes/da-necessidade-a-ferramenta", "/contato"]) {
+    await page.goto(route);
+    await page.getByRole("button", { name: "Abrir menu" }).click();
+    const mobileMenu = page.getByRole("navigation", { name: "Navegação móvel" });
+    await expect(mobileMenu.getByRole("link", { name: "Contato", exact: true })).toHaveCount(1);
+  }
+
+  await page.goto("/pericia-na-pratica");
+  await page.getByRole("button", { name: "Abrir menu" }).click();
+  const mobileMenu = page.getByRole("navigation", { name: "Navegação móvel" });
+  await expect(mobileMenu.getByRole("link", { name: "Contato", exact: true })).toHaveCount(1);
+  await expect(mobileMenu.getByRole("link", { name: "Conversar pelo WhatsApp" })).toHaveCount(1);
+
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/");
+  await expect(page.locator(".site-header").getByRole("link", { name: "Contato", exact: true })).toHaveCount(1);
+});
+
 test("âncoras e imagens principais estão disponíveis", async ({ page }) => {
   await page.goto("/");
 
@@ -121,8 +142,6 @@ test("experiência forense e formação acadêmica são apresentadas sem dados s
 
   await page.goto("/");
   const hero = page.locator("#inicio");
-  await expect(hero).toContainText("Pós-graduado em Inteligência Artificial");
-  await expect(hero).toContainText("Mais de 12 anos em investigação e análise técnica");
   await expect(hero).toContainText("Formação em destaque");
   await expect(hero).toContainText(
     "Detecção de Fotos e Vídeos gerados por Inteligência Artificial",

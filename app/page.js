@@ -12,7 +12,6 @@ import { approvedTrajectory } from "@/lib/public-content";
 import {
   capacityModalities,
   featuredTraining,
-  heroHighlights,
   homeMenu,
   profile,
   telephoneUrl,
@@ -32,7 +31,6 @@ export default function HomePage() {
       <Header menu={menu} brandHref="#inicio" contactHref="/contato" contactLabel="Contato" />
       <HeroSection
         featuredTraining={featuredTraining}
-        highlights={heroHighlights}
         profile={profile}
       />
       <PracticeCallout />

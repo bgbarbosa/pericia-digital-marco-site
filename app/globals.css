@@ -186,7 +186,7 @@ a {
 .hero-grid {
   display: grid;
   gap: 1.25rem;
-  grid-template-areas: "intro" "portrait" "actions" "highlights" "featured";
+  grid-template-areas: "intro" "portrait" "actions" "featured";
 }
 .hero-intro {
   grid-area: intro;
@@ -199,9 +199,6 @@ a {
 }
 .hero-actions {
   grid-area: actions;
-}
-.hero-highlights {
-  grid-area: highlights;
 }
 .hero-featured {
   grid-area: featured;
@@ -251,7 +248,7 @@ a {
   }
   .hero-grid {
     grid-template-columns: minmax(0, 1fr) 300px;
-    grid-template-areas: "intro portrait" "actions portrait" "highlights highlights" "featured featured";
+    grid-template-areas: "intro portrait" "actions portrait" "featured featured";
     align-items: center;
   }
   .hero-portrait {
@@ -504,15 +501,6 @@ main {
 .home-page .hero-portrait {
   width: min(100%, 320px);
 }
-.home-page .hero-highlights {
-  gap: var(--grid-space);
-}
-.home-page .hero-highlights .linked-panel {
-  padding: 1.25rem;
-}
-.home-page .hero-highlights :is(h2, p) {
-  font-size: 1rem;
-}
 .home-page .hero-featured {
   flex-wrap: wrap;
   padding: 1.25rem;
@@ -646,28 +634,35 @@ main {
 .editorial-copy h3 { margin-top: 2rem; }
 .editorial-copy .editorial-list li { margin-top: 0.7rem; line-height: 1.75; color: #cbd5e1; }
 .editorial-copy a { max-width: 100%; }
+.application-intro { margin-top: clamp(2.5rem, 5vw, 4rem); }
 .application-grid {
   display: grid;
   gap: 1.5rem;
   margin-top: 1.75rem;
 }
 .application-card {
-  display: flex;
   min-width: 0;
-  flex-direction: column;
   overflow: hidden;
   border: 1px solid #67e8f94a;
   border-radius: 1.4rem;
   background: #0b1b30;
   transition: border-color .15s, background .15s;
 }
-.application-card:hover,
-.application-card:focus-visible { border-color: #67e8f9; background: #102742; }
-.application-card img { display: block; width: 100%; height: auto; aspect-ratio: 18 / 11; object-fit: cover; }
+.application-card[open] { border-color: #67e8f9; }
+.application-card > summary { display: flex; height: 100%; flex-direction: column; cursor: pointer; list-style: none; }
+.application-card[open] > summary { height: auto; }
+.application-card > summary::-webkit-details-marker { display: none; }
+.application-card > summary:hover { background: #102742; }
+.application-card > summary:focus-visible { outline: 3px solid #67e8f9; outline-offset: -4px; }
+.application-card img { display: block; width: 100%; height: clamp(12rem, 28vw, 19rem); object-fit: cover; }
 .application-card-body { display: flex; flex: 1; flex-direction: column; gap: 0.75rem; padding: clamp(1.25rem, 2vw, 1.75rem); color: #cbd5e1; line-height: 1.7; }
 .application-card-title { color: #f8fafc; font-size: 1.35rem; font-weight: 700; line-height: 1.35; }
-.application-card-action { margin-top: auto; color: #67e8f9; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
-.application-back { padding-block: .5rem; }
+.application-card-action { margin-top: auto; color: #67e8f9; font-weight: 700; }
+.application-card-action .when-open { display: none; }
+.application-card[open] .application-card-action .when-open { display: inline; }
+.application-card[open] .application-card-action .when-closed { display: none; }
+.application-card-content { border-top: 1px solid #67e8f94a; }
+.application-card-content > .content-section { padding: clamp(1.25rem, 3vw, 2.5rem); }
 .contact-page-content { display: grid; gap: 1.5rem; align-items: start; }
 .contact-page-aside,
 .contact-form-card { min-width: 0; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid #ffffff2b; border-radius: 1.4rem; background: #0b1b30; }
@@ -764,6 +759,8 @@ main {
 .course-limits { border-top: 1px solid #ffffff18; }
 @media (min-width: 768px) {
   .application-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .application-card[open] { grid-column: 1 / -1; }
+  .application-card[open] > summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .contact-page-content { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); }
   .contact-form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .course-example-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
