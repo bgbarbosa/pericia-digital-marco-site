@@ -5,7 +5,7 @@ import { cardMenu } from "@/data/profile";
 export default function DetailPage({ title, intro, children }) {
   return (
     <main className="min-h-screen bg-[#020817] text-slate-100">
-      <Header menu={cardMenu} contactHref="/#contato" />
+      <Header menu={cardMenu} contactHref="/contato" contactLabel="Contato" />
       <div className="detail-heading">
         <Link className="text-link" href="/#inicio">
           ← Voltar à página inicial
@@ -15,7 +15,7 @@ export default function DetailPage({ title, intro, children }) {
       </div>
       {children}
       <div className="content-section">
-        <Link className="action-secondary" href="/#contato">
+        <Link className="action-secondary" href="/contato">
           Entrar em contato
         </Link>
       </div>

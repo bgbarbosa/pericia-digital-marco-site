@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+  <title id="title">Projeto autoral Dama Universe</title>
+  <desc id="desc">Uma central reúne representações de programa, conteúdo e referência em torno de um núcleo digital.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#06152b"/><stop offset="1" stop-color="#172a53"/></linearGradient><linearGradient id="line" x2="1" y2="1"><stop stop-color="#22d3ee"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+  <rect width="720" height="440" fill="url(#bg)"/>
+  <circle cx="360" cy="220" r="165" fill="none" stroke="#67e8f9" stroke-width="2" opacity=".22"/>
+  <g stroke="url(#line)" stroke-width="3" fill="none"><path d="M250 173 145 105M470 173l105-68M250 267l-105 68M470 267l105 68"/></g>
+  <g fill="#0c2b43" stroke="#67e8f9" stroke-width="3"><rect x="250" y="130" width="220" height="180" rx="27"/><rect x="75" y="55" width="140" height="100" rx="17"/><rect x="505" y="55" width="140" height="100" rx="17"/><rect x="75" y="285" width="140" height="100" rx="17"/><rect x="505" y="285" width="140" height="100" rx="17"/></g>
+  <g fill="#e0f7ff" font-family="Arial,sans-serif" text-anchor="middle"><text x="360" y="208" font-size="26" font-weight="700">Dama</text><text x="360" y="242" font-size="26" font-weight="700">Universe</text><text x="145" y="114" font-size="16">Programas</text><text x="575" y="114" font-size="16">Conteúdos</text><text x="145" y="344" font-size="16">Referências</text><text x="575" y="344" font-size="16">Registros</text></g>
+</svg>

@@ -40,8 +40,8 @@ test("menu móvel é acessível, fecha por seleção e Escape", async ({ page })
   await expect(page.getByRole("navigation", { name: "Navegação móvel" })).toBeVisible();
   await expect(menuButton).toHaveAttribute("aria-expanded", "true");
 
-  await page.getByRole("link", { name: "Capacitações", exact: true }).click();
-  await expect(page).toHaveURL(/#capacitacoes$/);
+  await page.getByRole("link", { name: "Início", exact: true }).click();
+  await expect(page).toHaveURL(/#inicio$/);
   await expect(page.getByRole("button", { name: "Abrir menu" })).toHaveAttribute(
     "aria-expanded",
     "false",
@@ -62,9 +62,8 @@ test("âncoras e imagens principais estão disponíveis", async ({ page }) => {
   for (const id of [
     "inicio",
     "capacitacoes",
-    "aplicacoes-ia",
-    "solucoes-digitais",
-    "conhecimentos",
+    "formacao-card",
+    "experiencia-card",
     "sobre",
     "contato",
   ]) {
@@ -103,36 +102,19 @@ test("experiência forense e formação acadêmica são apresentadas sem dados s
 }) => {
   await page.goto("/");
 
-  await page.goto("/experiencia");
-  const knowledgeSection = page.locator("#conhecimentos");
-  await expect(
-    knowledgeSection.getByRole("heading", {
-      level: 2,
-      name: "Perícia digital, investigação e tecnologia forense",
-    }),
-  ).toBeVisible();
-  await expect(knowledgeSection).toContainText(
-    "A trajetória profissional reúne mais de 12 anos de experiência em investigação e análise técnica",
-  );
-  await expect(knowledgeSection).not.toContainText("Áreas de conhecimento complementar");
+  const experience = page.locator("#experiencia-card");
+  await experience.locator("summary").click();
+  await expect(experience).toHaveAttribute("open", "");
+  await expect(experience).toContainText("Áreas de conhecimento complementar");
+  await expect(experience.locator(".expanded-list li")).toHaveCount(8);
 
-  await expect(knowledgeSection.locator("article h3").allTextContents()).resolves.toEqual([
-    "Perícia digital e evidências eletrônicas",
-    "Investigação digital e OSINT",
-    "Computação forense",
-    "Análise de dados e organização da informação",
-    "Dispositivos móveis",
-    "Leitura técnica de documentos e laudos",
-    "Imagem, áudio, vídeo e metadados",
-    "Segurança da informação",
-  ]);
-
-  await page.goto("/formacao");
-  const aboutSection = page.locator("main");
-  await expect(aboutSection).toContainText(
+  const formation = page.locator("#formacao-card");
+  await formation.locator("summary").click();
+  await expect(formation).toHaveAttribute("open", "");
+  await expect(formation).toContainText(
     "Pós-graduado em Inteligência Artificial para Agentes da Lei",
   );
-  await expect(aboutSection).toContainText(
+  await expect(formation).toContainText(
     "Especialização em Inteligência Artificial pela Universidade Tecnológica Federal do Paraná - UTFPR, em andamento.",
   );
   await expect(page.getByText(/Curso de ChatGPT para Policiais e Agentes da Lei/)).toBeVisible();
@@ -147,7 +129,8 @@ test("experiência forense e formação acadêmica são apresentadas sem dados s
   );
   await expect(hero).toContainText("20h");
   await expect(hero).not.toContainText("Investigador da Polícia Civil");
-  await page.goto("/formacao");
+  await page.goto("/#formacao-card");
+  await expect(page.locator("#formacao-card")).toHaveAttribute("open", "");
   await expect(
     page.getByText(
       /Curso de Detecção de Fotos e Vídeos gerados por Inteligência Artificial, 20 horas, concluído em 2026\./i,
@@ -202,7 +185,7 @@ test("cartão virtual oferece contatos, QR Code, VCF e compartilhamento alternat
   );
   await expect(page.getByTestId("card-email-address")).toHaveAttribute(
     "href",
-    "mailto:marcobarbosa@damauniverse.com.br",
+    "/contato",
   );
   await expect(page.getByTestId("download-vcf")).toHaveAttribute("href", "/cartao/contato.vcf");
 

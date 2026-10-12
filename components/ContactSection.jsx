@@ -2,11 +2,12 @@ import Panel from "@/components/Panel";
 import SectionTitle from "@/components/SectionTitle";
 
 export default function ContactSection({
-  emailUrl,
   profile,
   telephoneUrl,
   whatsappUrl,
 }) {
+  const [local, domain] = profile.email.split("@");
+  const dot = domain.indexOf(".");
   return (
     <section
       id="contato"
@@ -58,10 +59,11 @@ export default function ContactSection({
               E-mail
             </h3>
             <a
-              href={emailUrl}
+              href="/contato"
+              aria-label={`Escrever para ${profile.email} pelo formulário`}
               className="contact-email mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-white/10 px-4 py-3 text-center font-semibold text-white transition hover:bg-white/5 hover:text-cyan-300 focus-visible:outline-cyan-200"
             >
-              {profile.email}
+              <span>{local}@</span><span>{domain.slice(0, dot + 1)}</span><span>{domain.slice(dot + 1)}</span>
             </a>
           </Panel>
         </div>

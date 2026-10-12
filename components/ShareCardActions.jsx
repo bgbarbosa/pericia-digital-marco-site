@@ -23,7 +23,7 @@ async function copyText(value) {
 }
 
 export default function ShareCardActions({
-  emailUrl,
+  contactHref,
   profileName,
   telephoneUrl,
 }) {
@@ -87,7 +87,7 @@ export default function ShareCardActions({
         <a href={telephoneUrl} className={buttonClass}>
           Ligar
         </a>
-        <a href={emailUrl} className={buttonClass}>
+        <a href={contactHref} className={buttonClass}>
           Enviar e-mail
         </a>
         <a

@@ -8,9 +8,10 @@ import {
 const routes = [
   "/",
   "/cartao",
-  "/formacao",
   "/aplicacoes",
-  "/experiencia",
+  "/aplicacoes/da-necessidade-a-ferramenta",
+  "/aplicacoes/dama-universe",
+  "/contato",
   "/formacao/deteccao-imagens-ia",
 ];
 for (const width of [320, 390, 768, 1440]) {
@@ -71,9 +72,9 @@ for (const width of [320, 390, 768, 1440]) {
 test("cards levam ao conteúdo prometido na mesma aba", async ({ page }) => {
   await page.goto("/");
   for (const [name, path] of [
-    [/^Formação .*Pós/, "/formacao"],
+    [/^Formação .*Pós/, "/#formacao-card"],
     [/^Aplicação .*ChatGPT/, "/aplicacoes"],
-    [/^Experiência .*Mais/, "/experiencia"],
+    [/^Experiência .*Mais/, "/#experiencia-card"],
     [/^Formação em destaque:/, "/formacao/deteccao-imagens-ia"],
   ]) {
     const link = page.locator("#inicio").getByRole("link", { name });
@@ -86,7 +87,12 @@ test("cards levam ao conteúdo prometido na mesma aba", async ({ page }) => {
     );
     await page.keyboard.press("Enter");
     await expect(page).toHaveURL(new RegExp(`${path}$`));
-    await page.getByRole("link", { name: "← Voltar à página inicial" }).click();
+    if (path.includes("-card")) {
+      await expect(page.locator(path.slice(1))).toHaveAttribute("open", "");
+      await page.goto("/");
+    } else {
+      await page.getByRole("link", { name: "← Voltar à página inicial" }).click();
+    }
   }
 });
 
@@ -134,9 +140,7 @@ test("contatos e retrato centralizados; contato móvel vem antes dos complemento
       page.locator('a[href="https://wa.me/5567992368049"]'),
     ).toHaveCount(1);
     await expect(page.locator('a[href="tel:+5567992368049"]')).toHaveCount(1);
-    await expect(
-      page.locator('a[href="mailto:marcobarbosa@damauniverse.com.br"]').first(),
-    ).toBeVisible();
+    await expect(route === "/" ? page.locator(".contact-email") : page.getByTestId("card-email-address")).toHaveAttribute("href", "/contato");
     await expect(page.getByAltText(/^Retrato profissional/)).toHaveAttribute(
       "src",
       /marco-barbosa/,
@@ -308,11 +312,11 @@ test("texto ampliado e redução de movimento", async ({ page }) => {
 
 
 test("resumo FaCiencia confirmado e associação APECOF preservada", async ({ page }) => {
-  await page.goto("/formacao");
+  await page.goto("/#formacao-card");
   await expect(page.getByRole("list", { name: "Formação acadêmica" })).toContainText(
     "Pós-graduação em Análise de Dados pela Faculdade FaCiencia, 360 horas, período de 2023 a 2024, concluída.",
   );
-  await expect(page.getByText("Associado à Associação Nacional dos Peritos em Computação Forense - APECOF.")).toBeVisible();
+  await expect(page.getByTestId("apecof-membership")).toContainText("Associado à Associação Nacional dos Peritos em Computação Forense - APECOF.");
   await page.goto("/");
   const logo = page.getByRole("img", { name: "Logotipo da APECOF" });
   await expect(logo).toBeVisible();

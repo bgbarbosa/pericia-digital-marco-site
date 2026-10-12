@@ -40,11 +40,8 @@ export const profile = {
 export const homeMenu = [
   { label: "Início", href: "#inicio" },
   { label: "Perícia na Prática", href: "/pericia-na-pratica" },
-  { label: "Capacitações", href: "#capacitacoes" },
-  { label: "Aplicações de IA", href: "#aplicacoes-ia" },
-  { label: "Experiência", href: "/experiencia" },
-  { label: "Formação e trajetória", href: "#sobre" },
-  { label: "Contato", href: "#contato" },
+  { label: "Aplicações de IA", href: "/aplicacoes" },
+  { label: "Contato", href: "/contato" },
 ];
 
 export const cardMenu = homeMenu.map((item) => ({
@@ -55,19 +52,19 @@ export const cardMenu = homeMenu.map((item) => ({
 export const capacityModalities = [
   {
     title: "Treinamentos",
-    text: "Encontros práticos para profissionais e equipes, com conteúdos personalizados sobre ChatGPT, engenharia de prompts, produtividade, organização de informações e uso responsável da Inteligência Artificial.",
+    text: "Encontros práticos adaptados à rotina de profissionais e equipes. Podemos trabalhar o uso do ChatGPT para organizar informações, criar instruções claras e conferir respostas. Exemplo: usar uma tarefa do dia a dia para montar e testar um roteiro de trabalho.",
   },
   {
     title: "Cursos e oficinas",
-    text: "Para quem busca aprender de forma estruturada: introdução ao uso de IA, exercícios de escrita, revisão e organização de informações. Oficinas dão espaço à prática orientada e à discussão das atividades.",
+    text: "Aprendizado em etapas, com explicações simples e exercícios acompanhados. Um curso introdutório pode abordar conceitos básicos de IA, uso responsável do ChatGPT, criação de prompts e revisão de textos. Nas oficinas, os participantes colocam esses conhecimentos em prática.",
   },
   {
     title: "Palestras",
-    text: "Para públicos de eventos e encontros profissionais: exposição e discussão sobre IA no cotidiano, ChatGPT, oportunidades, riscos, ética e uso seguro. O tema é recortado de acordo com o público.",
+    text: "Apresentações para eventos e equipes, com exemplos de como a IA pode apoiar o trabalho. O tema pode incluir oportunidades, limites, privacidade e cuidados com respostas automáticas, com espaço para perguntas do público.",
   },
   {
     title: "Mentorias",
-    text: "Acompanhamento personalizado para uso de ferramentas de Inteligência Artificial, construção e melhoria de prompts, organização de fluxos de trabalho, produtividade, planejamento de projetos com IA e utilização responsável de ferramentas generativas.",
+    text: "Acompanhamento individual ou de equipes a partir de uma necessidade concreta. Definimos um objetivo, testamos ferramentas de IA e ajustamos prompts e formas de trabalho. Exemplo: organizar uma rotina de pesquisa, escrita ou análise de informações.",
   },
 ];
 
@@ -157,7 +154,7 @@ export const specializationAreas = knowledgeAreas;
 export const heroHighlights = [
   {
     label: "Formação",
-    href: "/formacao",
+    href: "/#formacao-card",
     text: "Pós-graduado em Inteligência Artificial",
   },
   {
@@ -167,7 +164,7 @@ export const heroHighlights = [
   },
   {
     label: "Experiência",
-    href: "/experiencia",
+    href: "/#experiencia-card",
     text: "Mais de 12 anos em investigação e análise técnica",
   },
 ];

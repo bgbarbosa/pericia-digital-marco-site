@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="760" viewBox="0 0 640 760">
+  <title>Dois caminhos conceituais para conteúdo visual</title>
+  <rect width="640" height="760" rx="28" fill="#071325"/>
+  <circle cx="563" cy="64" r="120" fill="#10334a" opacity=".5"/>
+  <text x="40" y="59" fill="#f8fafc" font-family="Arial,sans-serif" font-size="31" font-weight="700">Dois caminhos</text>
+  <text x="40" y="88" fill="#a8c5d6" font-family="Arial,sans-serif" font-size="18">Ilustração conceitual • sem material de caso</text>
+
+  <rect x="30" y="120" width="580" height="276" rx="24" fill="#0c2638" stroke="#4dd9ee" stroke-width="2"/>
+  <text x="58" y="166" fill="#88ecf8" font-family="Arial,sans-serif" font-size="27" font-weight="700">Conteúdo sintético</text>
+  <text x="58" y="196" fill="#d4e8f0" font-family="Arial,sans-serif" font-size="18">Produção por sistema computacional</text>
+  <rect x="58" y="225" width="202" height="122" rx="18" fill="#123a4a" stroke="#53cce2"/>
+  <circle cx="97" cy="263" r="9" fill="#67e8f9"/>
+  <circle cx="124" cy="263" r="9" fill="#67e8f9" opacity=".55"/>
+  <circle cx="151" cy="263" r="9" fill="#67e8f9" opacity=".28"/>
+  <text x="82" y="316" fill="#f8fafc" font-family="Arial,sans-serif" font-size="23" font-weight="700">Sistema</text>
+  <path d="M274 286h64m-17-17 17 17-17 17" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="354" y="225" width="226" height="122" rx="18" fill="#16344c" stroke="#53cce2"/>
+  <path d="M384 300l40-43 29 28 29-37 65 52" fill="none" stroke="#a5f3fc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="501" cy="258" r="11" fill="#67e8f9"/>
+  <text x="392" y="332" fill="#f8fafc" font-family="Arial,sans-serif" font-size="20" font-weight="700">Imagem criada</text>
+
+  <rect x="30" y="421" width="580" height="305" rx="24" fill="#30271e" stroke="#f6b967" stroke-width="2"/>
+  <text x="58" y="467" fill="#fbd38d" font-family="Arial,sans-serif" font-size="27" font-weight="700">Conteúdo alterado</text>
+  <text x="58" y="497" fill="#eee0d0" font-family="Arial,sans-serif" font-size="18">Mudança em registro preexistente</text>
+  <rect x="58" y="531" width="150" height="135" rx="16" fill="#4a3b2e" stroke="#efc58b"/>
+  <circle cx="96" cy="570" r="12" fill="#f8d69b"/>
+  <path d="M77 620l34-34 24 23 26-30 25 41" fill="none" stroke="#f6ce97" stroke-width="4" stroke-linejoin="round"/>
+  <text x="84" y="651" fill="#fff8ed" font-family="Arial,sans-serif" font-size="19" font-weight="700">Registro</text>
+  <path d="M218 598h33m-12-12 12 12-12 12" fill="none" stroke="#f6b967" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="260" y="531" width="136" height="135" rx="16" fill="#4a3b2e" stroke="#efc58b"/>
+  <path d="M302 618l55-57m-18-4 18 4-4 18" fill="none" stroke="#f6ce97" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="288" y="651" fill="#fff8ed" font-family="Arial,sans-serif" font-size="19" font-weight="700">Mudança</text>
+  <path d="M405 598h27m-12-12 12 12-12 12" fill="none" stroke="#f6b967" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="440" y="531" width="140" height="135" rx="16" fill="#4a3b2e" stroke="#efc58b"/>
+  <path d="M465 611l25-25 22 19 22-36 23 42" fill="none" stroke="#f6ce97" stroke-width="4" stroke-linejoin="round"/>
+  <text x="458" y="651" fill="#fff8ed" font-family="Arial,sans-serif" font-size="19" font-weight="700">Resultado</text>
+</svg>

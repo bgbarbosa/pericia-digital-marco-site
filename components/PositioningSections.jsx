@@ -23,6 +23,25 @@ function EditorialCards({ items }) {
   );
 }
 
+function CapacityCards({ items }) {
+  return (
+    <div className="capacity-grid mt-8 grid gap-4 sm:mt-10 sm:gap-6 md:grid-cols-2 xl:gap-7">
+      {items.map((item, index) => {
+        const contentId = `capacitacao-${index + 1}-conteudo`;
+        return (
+          <details className="capacity-card" key={item.title}>
+            <summary aria-controls={contentId}>
+              <h3>{item.title}</h3>
+              <span className="capacity-card-indicator" aria-hidden="true">+</span>
+            </summary>
+            <p id={contentId} className="capacity-card-content">{item.text}</p>
+          </details>
+        );
+      })}
+    </div>
+  );
+}
+
 export function CapacitySection({ modalities }) {
   return (
     <section id="capacitacoes" className="home-section">
@@ -33,10 +52,10 @@ export function CapacitySection({ modalities }) {
           aplicação e os objetivos de aprendizagem. Os temas, formatos e a disponibilidade
           são definidos mediante alinhamento prévio.
         </p>
-        <EditorialCards items={modalities} />
+        <CapacityCards items={modalities} />
         <div className="section-action">
           <Link
-            href="/#contato"
+            href="/contato?tipo=Capacita%C3%A7%C3%B5es"
             className="action-primary"
           >
             Solicitar informações sobre capacitações
@@ -94,7 +113,7 @@ export function DigitalSolutionsSection({ points }) {
         </p>
         <div className="mt-7 text-center">
           <Link
-            href="/#contato"
+            href="/contato?tipo=Solu%C3%A7%C3%B5es+digitais"
             className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-7 py-3.5 text-base font-semibold text-cyan-100 transition hover:bg-cyan-400/20 focus-visible:outline-cyan-200"
           >
             Apresentar uma necessidade

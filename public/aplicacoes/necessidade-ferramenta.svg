@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+  <title id="title">Da necessidade à ferramenta</title>
+  <desc id="desc">Três etapas conectadas: pergunta, análise e ferramenta revisada.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#06152b"/><stop offset="1" stop-color="#113955"/></linearGradient><linearGradient id="glow" x2="1" y2="1"><stop stop-color="#22d3ee"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+  <rect width="720" height="440" fill="url(#bg)"/>
+  <circle cx="620" cy="72" r="170" fill="#22d3ee" opacity=".06"/>
+  <path d="M70 220h580" stroke="#67e8f9" stroke-width="3" stroke-dasharray="8 12" opacity=".55"/>
+  <g fill="#0f243b" stroke="url(#glow)" stroke-width="3">
+    <rect x="60" y="130" width="170" height="180" rx="24"/><rect x="275" y="130" width="170" height="180" rx="24"/><rect x="490" y="130" width="170" height="180" rx="24"/>
+  </g>
+  <g fill="none" stroke="#a5f3fc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="145" cy="196" r="29"/><path d="m165 218 22 22M330 208l21 19 37-42M538 186h73v50h-73zM550 253h50"/>
+  </g>
+  <g fill="#d9f7ff" font-family="Arial,sans-serif" font-size="17" font-weight="700" text-anchor="middle"><text x="145" y="282">Necessidade</text><text x="360" y="282">Análise</text><text x="575" y="282">Ferramenta</text></g>
+</svg>

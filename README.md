@@ -168,3 +168,7 @@ Páginas: `/formacao`, `/aplicacoes`, `/experiencia` e `/formacao/deteccao-image
 - [Conteúdo confirmado e complementos opcionais](docs/TSK-PROF-002_PENDENCIAS.md)
 - Telefone: (67) 99236-8049; e-mail: marcobarbosa@damauniverse.com.br.
 - LinkedIn e Dama Universe são centralizados em `data/profile.js`.
+
+## Alteração local posterior
+
+O formulário de `/contato`, os cartões expansíveis de formação e experiência e as duas páginas de aplicações estão documentados em [`docs/CONTATO_E_NAVEGACAO_LOCAL.md`](docs/CONTATO_E_NAVEGACAO_LOCAL.md). Esta seção prevalece sobre as rotas e o fluxo de e-mail descritos acima.

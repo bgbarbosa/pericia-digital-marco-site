@@ -1,5 +1,6 @@
 import { publicAbsoluteUrl, publicSiteUrl } from "@/lib/site-url";
 import { articlePath, practiceArticles, practiceCollection } from "@/lib/practice-articles";
+import { applicationTopics } from "@/data/applications";
 
 export default function sitemap() {
   if (!publicSiteUrl) {
@@ -8,9 +9,9 @@ export default function sitemap() {
 
   return [
     ...[
-      "/formacao",
       "/aplicacoes",
-      "/experiencia",
+      ...applicationTopics.map(({ slug }) => `/aplicacoes/${slug}`),
+      "/contato",
       "/formacao/deteccao-imagens-ia",
       practiceCollection.basePath,
       ...practiceArticles.map(({ slug }) => articlePath(slug)),

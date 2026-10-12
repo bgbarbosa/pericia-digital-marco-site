@@ -31,7 +31,7 @@ export default function HeroSection({ featuredTraining, highlights, profile }) {
             <a className="action-primary" href="#capacitacoes">
               Conhecer capacitações
             </a>
-            <a className="action-secondary" href="#contato">
+            <a className="action-secondary" href="/contato">
               Entrar em contato
             </a>
           </div>
@@ -51,14 +51,14 @@ export default function HeroSection({ featuredTraining, highlights, profile }) {
         </div>
         <div className="hero-highlights grid gap-3 sm:grid-cols-3">
           {highlights.map((item) => (
-            <Link className="linked-panel" href={item.href} key={item.label}>
+            <a className="linked-panel" href={item.href} key={item.label}>
               <h2 className="text-sm font-semibold text-cyan-300">
                 {item.label} <span aria-hidden="true">→</span>
               </h2>
               <p className="mt-2 text-sm leading-6 text-slate-200">
                 {item.text}
               </p>
-            </Link>
+            </a>
           ))}
         </div>
         {featuredTraining && (

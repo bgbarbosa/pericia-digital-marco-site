@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ArticleCards from "@/components/practice/ArticleCards";
 import ArticleBody from "@/components/practice/ArticleBody";
 import CopyEmailButton from "@/components/practice/CopyEmailButton";
-import { practiceEmailUrl, practiceWhatsAppUrl } from "@/lib/practice-contact";
+import { practiceContactUrl, practiceWhatsAppUrl } from "@/lib/practice-contact";
 import { cardMenu, profile } from "@/data/profile";
 import { articleOutline, findArticle, practiceArticles, practiceCollection, practiceMetadata } from "@/lib/practice-articles";
 import styles from "@/components/practice/Practice.module.css";
@@ -28,7 +28,7 @@ export default async function PracticeArticlePage({ params }) {
   if (!article) notFound();
   const related = article.relatedSlugs.map(findArticle).filter(Boolean);
   const contactUrl = practiceWhatsAppUrl(article.title);
-  const emailContactUrl = practiceEmailUrl(article.title);
+  const articleContactUrl = practiceContactUrl(article.title);
 
   return (
     <main className={styles.shell}>
@@ -69,14 +69,14 @@ export default async function PracticeArticlePage({ params }) {
           <p>Converse sobre a questão técnica e os materiais disponíveis.</p>
           <div className={styles.contactActions}>
             <a className="action-primary" href={contactUrl} target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp</a>
-            <a className="action-secondary" href={emailContactUrl}>Enviar e-mail</a>
+            <Link className="action-secondary" href={articleContactUrl}>Enviar e-mail</Link>
           </div>
           <p className={styles.contactNote}>No WhatsApp, você pode editar a mensagem antes de enviar. Nome e profissão são opcionais.</p>
           <div className={styles.emailContact}>
-            <a className={styles.emailAddress} href={emailContactUrl}>{profile.email}</a>
+            <Link className={styles.emailAddress} href={articleContactUrl}>{profile.email}</Link>
             <CopyEmailButton email={profile.email} />
           </div>
-          <p className={styles.contactNote}>O link de e-mail abre o aplicativo configurado no seu dispositivo. Você também pode copiar o endereço e usá-lo no serviço de sua preferência.</p>
+          <p className={styles.contactNote}>O link abre o formulário de contato com o assunto deste artigo preenchido. Você também pode copiar o endereço e usá-lo no serviço de sua preferência.</p>
         </section>
       </article>
       <section className={`${styles.container} ${styles.related}`} aria-labelledby="outras-leituras">

@@ -5,11 +5,12 @@ const usesHttpsInProduction =
 
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com${isDevelopment ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' blob: data:",
   "font-src 'self' data:",
   `connect-src 'self'${isDevelopment ? " ws: wss:" : ""}`,
+  "frame-src https://challenges.cloudflare.com",
   "worker-src 'self' blob:",
   "manifest-src 'self'",
   "object-src 'none'",

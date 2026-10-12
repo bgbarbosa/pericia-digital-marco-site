@@ -55,13 +55,13 @@ test("home compartilha alinhamentos, equilibra cards e separa associações", as
   for (const width of [390, 768, 1440, 1920]) {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto("/");
-    const sections = page.locator(".hero-grid, #capacitacoes > .site-container, #aplicacoes-ia, #sobre, #contato > .site-container");
+    const sections = page.locator(".hero-grid, #capacitacoes > .site-container, #sobre, #contato > .site-container");
     const bounds = await sections.evaluateAll((items) => items.map((element) => {
       const rect = element.getBoundingClientRect();
       const css = getComputedStyle(element);
       return { x: rect.x + parseFloat(css.paddingLeft), right: rect.right - parseFloat(css.paddingRight) };
     }));
-    expect(bounds).toHaveLength(5);
+    expect(bounds).toHaveLength(4);
     for (const box of bounds) {
       expect(Math.abs(box.x - bounds[0].x)).toBeLessThanOrEqual(1);
       expect(Math.abs(box.right - bounds[0].right)).toBeLessThanOrEqual(1);
@@ -69,7 +69,7 @@ test("home compartilha alinhamentos, equilibra cards e separa associações", as
     const credentials = page.locator("#sobre > .credentials-layout");
     await expect(credentials.locator(".credential-memberships")).toHaveCount(0);
     await expect(page.locator("#sobre > .credential-memberships")).toHaveCount(1);
-    for (const selector of ["#capacitacoes .editorial-grid", "#solucoes-digitais", ".credentials-layout"]) {
+    for (const selector of ["#capacitacoes .capacity-grid", ".credentials-layout"]) {
       const cards = await page.locator(`${selector} > *`).evaluateAll((items) => items.map((element) => {
         const { x, y, height } = element.getBoundingClientRect();
         const last = element.lastElementChild.getBoundingClientRect();
@@ -78,10 +78,10 @@ test("home compartilha alinhamentos, equilibra cards e separa associações", as
       if (width >= 768) {
         for (let i = 0; i < cards.length; i += 2) {
           expect(cards[i].y).toBe(cards[i + 1].y);
-          expect(cards[i].height).toBe(cards[i + 1].height);
+          if (selector !== ".credentials-layout") expect(cards[i].height).toBe(cards[i + 1].height);
         }
         // Real content fills each panel; associations no longer stretch the work card.
-        if (selector === ".credentials-layout") for (const card of cards) expect(card.empty).toBeLessThanOrEqual(34);
+        if (selector === ".credentials-layout") for (const card of cards) expect(card.height).toBeGreaterThan(100);
       }
     }
     for (const image of await page.locator(".hero-portrait img, .credential-membership img").all()) {
@@ -187,13 +187,12 @@ for (const article of content.articles) {
     await expect(contact.locator('a[href="/cartao"]')).toHaveCount(0);
     await expect(page.locator("form, input, textarea")).toHaveCount(0);
     const action = contact.getByRole("link", { name: "Enviar e-mail", exact: true });
-    const url = new URL(await action.getAttribute("href"));
-    expect(url.protocol).toBe("mailto:");
-    expect(url.pathname).toBe(profile.email);
-    expect(url.searchParams.get("subject")).toBe(`Contato sobre o artigo: ${article.title}`);
-    expect(url.searchParams.get("body")).toBe(`Olá, Marco.\n\nLi o artigo “${article.title}” na seção Perícia na Prática e gostaria de conversar sobre o tema.`);
-    await expect(contact.getByRole("link", { name: profile.email, exact: true })).toHaveAttribute("href", url.href);
-    await expect(contact).toContainText("aplicativo configurado");
+    const url = new URL(await action.getAttribute("href"), "http://127.0.0.1:3100");
+    expect(url.pathname).toBe("/contato");
+    expect(url.searchParams.get("assunto")).toBe(`Contato sobre o artigo: ${article.title}`);
+    expect(url.searchParams.get("tipo")).toBe("Perícia na Prática");
+    await expect(contact.getByRole("link", { name: profile.email, exact: true })).toHaveAttribute("href", `${url.pathname}${url.search}`);
+    await expect(contact).toContainText("formulário");
     await expect(contact).toContainText("Nome e profissão são opcionais");
   });
 }

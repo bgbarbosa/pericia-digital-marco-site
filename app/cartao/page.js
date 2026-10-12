@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import VirtualCard from "@/components/VirtualCard";
 import {
   cardMenu,
-  emailUrl,
   profile,
   telephoneUrl,
   virtualCardAreas,
@@ -44,10 +43,9 @@ export const metadata = {
 export default function CardPage() {
   return (
     <main className="min-h-screen overflow-x-clip bg-[#020817] text-slate-100">
-      <Header menu={cardMenu} brandHref="/" contactHref="/#contato" />
+      <Header menu={cardMenu} brandHref="/" contactHref="/contato" contactLabel="Contato" />
       <VirtualCard
         displayAddress={displaySiteAddress("/cartao")}
-        emailUrl={emailUrl}
         profile={profile}
         telephoneUrl={telephoneUrl}
         virtualCardAreas={virtualCardAreas}

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="840" viewBox="0 0 640 840">
+  <title>Fluxo conceitual de análise de conteúdo visual</title>
+  <rect width="640" height="840" rx="28" fill="#071325"/>
+  <circle cx="68" cy="782" r="155" fill="#123a4a" opacity=".35"/>
+  <text x="40" y="58" fill="#f8fafc" font-family="Arial,sans-serif" font-size="31" font-weight="700">Fluxo de análise</text>
+  <text x="40" y="88" fill="#a8c5d6" font-family="Arial,sans-serif" font-size="18">Perguntas que orientam uma conclusão limitada</text>
+  <path d="M320 126v610" fill="none" stroke="#4a93a9" stroke-width="5" stroke-dasharray="9 12"/>
+
+  <rect x="53" y="117" width="534" height="116" rx="22" fill="#0d293d" stroke="#4dd9ee" stroke-width="2"/>
+  <circle cx="106" cy="175" r="30" fill="#0e7490"/>
+  <text x="97" y="185" fill="#fff" font-family="Arial,sans-serif" font-size="27" font-weight="700">1</text>
+  <text x="158" y="164" fill="#e8fbff" font-family="Arial,sans-serif" font-size="27" font-weight="700">Origem</text>
+  <text x="158" y="198" fill="#bdd8e4" font-family="Arial,sans-serif" font-size="19">Onde surgiu o conteúdo?</text>
+
+  <rect x="53" y="255" width="534" height="116" rx="22" fill="#0d293d" stroke="#4dd9ee" stroke-width="2"/>
+  <circle cx="106" cy="313" r="30" fill="#0e7490"/>
+  <text x="97" y="323" fill="#fff" font-family="Arial,sans-serif" font-size="27" font-weight="700">2</text>
+  <text x="158" y="302" fill="#e8fbff" font-family="Arial,sans-serif" font-size="27" font-weight="700">Contexto</text>
+  <text x="158" y="336" fill="#bdd8e4" font-family="Arial,sans-serif" font-size="19">O que a legenda afirma?</text>
+
+  <rect x="53" y="393" width="534" height="116" rx="22" fill="#0d293d" stroke="#4dd9ee" stroke-width="2"/>
+  <circle cx="106" cy="451" r="30" fill="#0e7490"/>
+  <text x="97" y="461" fill="#fff" font-family="Arial,sans-serif" font-size="27" font-weight="700">3</text>
+  <text x="158" y="440" fill="#e8fbff" font-family="Arial,sans-serif" font-size="27" font-weight="700">Arquivo disponível</text>
+  <text x="158" y="474" fill="#bdd8e4" font-family="Arial,sans-serif" font-size="19">Qual versão pode ser examinada?</text>
+
+  <rect x="53" y="531" width="534" height="116" rx="22" fill="#0d293d" stroke="#4dd9ee" stroke-width="2"/>
+  <circle cx="106" cy="589" r="30" fill="#0e7490"/>
+  <text x="97" y="599" fill="#fff" font-family="Arial,sans-serif" font-size="27" font-weight="700">4</text>
+  <text x="158" y="578" fill="#e8fbff" font-family="Arial,sans-serif" font-size="27" font-weight="700">Comparação</text>
+  <text x="158" y="612" fill="#bdd8e4" font-family="Arial,sans-serif" font-size="19">Há outras fontes?</text>
+
+  <rect x="53" y="669" width="534" height="116" rx="22" fill="#342a20" stroke="#f6b967" stroke-width="2"/>
+  <circle cx="106" cy="727" r="30" fill="#a86920"/>
+  <text x="97" y="737" fill="#fff" font-family="Arial,sans-serif" font-size="27" font-weight="700">5</text>
+  <text x="158" y="716" fill="#fff5df" font-family="Arial,sans-serif" font-size="27" font-weight="700">Conclusão limitada</text>
+  <text x="158" y="750" fill="#ead7b8" font-family="Arial,sans-serif" font-size="19">O que os dados permitem dizer?</text>
+</svg>

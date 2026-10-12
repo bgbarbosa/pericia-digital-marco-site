@@ -62,6 +62,10 @@ O menu central em `data/profile.js` começa por Início e Perícia na Prática. 
 
 Os cenários de navegação, contato, cópia e layout estão em `tests/e2e/layout-contact.spec.js`. Artigos, imagens, datas, dependências e controles da exceção `braces` permanecem fora das alterações deste lote.
 
+## Alteração local posterior — contato dos artigos
+
+O fluxo de e-mail dos quatro artigos aponta para `/contato` com assunto e tipo contextualizados; o `mailto:` descrito acima é histórico. O botão de copiar endereço e os links de WhatsApp permanecem. A configuração e os limites de validação constam em [`CONTATO_E_NAVEGACAO_LOCAL.md`](CONTATO_E_NAVEGACAO_LOCAL.md).
+
 ## Validação no Windows
 
 Na pasta do projeto, com Node.js 24.x e as dependências instaladas:

@@ -6,7 +6,6 @@ import ShareCardActions from "@/components/ShareCardActions";
 
 export default function VirtualCard({
   displayAddress,
-  emailUrl,
   profile,
   telephoneUrl,
   virtualCardAreas,
@@ -57,7 +56,7 @@ export default function VirtualCard({
               Conversar pelo WhatsApp {profile.phone.display}
             </a>
             <a
-              href={emailUrl}
+              href="/contato"
               data-testid="card-email-address"
               className="mt-4 inline-flex max-w-full flex-col rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.06] focus-visible:outline-cyan-200 sm:flex-row sm:items-center sm:gap-2"
             >
@@ -69,7 +68,7 @@ export default function VirtualCard({
 
             <div className="mt-7">
               <ShareCardActions
-                emailUrl={emailUrl}
+                contactHref="/contato"
                 profileName={profile.name}
                 telephoneUrl={telephoneUrl}
               />
