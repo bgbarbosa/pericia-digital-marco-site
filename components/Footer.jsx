@@ -1,6 +1,12 @@
+import BrandLogo from "@/components/BrandLogo";
+
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 px-4 py-8 text-center text-sm text-slate-400 sm:text-[15px] xl:text-base">
+      <div className="mb-5 flex flex-col items-center gap-1">
+        <BrandLogo placement="footer" />
+        <a className="text-link" href="/perfil">Perfil e currículo</a>
+      </div>
       <p>
         © 2026 Marco Aurélio Pereira Barbosa <span aria-hidden="true">•</span> Inteligência
         Artificial, capacitação e soluções digitais

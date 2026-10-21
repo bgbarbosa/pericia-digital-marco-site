@@ -28,7 +28,7 @@ export default function HomePage() {
     : homeMenu;
   return (
     <main className="home-page min-h-screen bg-[#020817] text-slate-100">
-      <Header menu={menu} brandHref="#inicio" contactHref="/contato" contactLabel="Contato" />
+      <Header menu={menu} contactHref="/contato" contactLabel="Contato" />
       <HeroSection
         featuredTraining={featuredTraining}
         profile={profile}

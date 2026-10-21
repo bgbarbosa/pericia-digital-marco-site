@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Panel from "@/components/Panel";
+import BrandLogo from "@/components/BrandLogo";
 import ShareCardActions from "@/components/ShareCardActions";
 
 export default function VirtualCard({
@@ -37,6 +38,7 @@ export default function VirtualCard({
           </div>
 
           <div className="p-5 sm:p-8 lg:p-10">
+            <BrandLogo placement="card" />
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 sm:text-sm">
               Inteligência Artificial aplicada
             </p>
@@ -91,6 +93,7 @@ export default function VirtualCard({
               >
                 Dama Universe ↗
               </a>
+              <Link className="text-link" href="/perfil">Perfil e currículo →</Link>
               <Link className="text-link" href="/">
                 Acessar site principal →
               </Link>

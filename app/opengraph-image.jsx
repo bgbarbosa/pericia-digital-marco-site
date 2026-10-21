@@ -14,6 +14,8 @@ export const contentType = "image/png";
 export default async function OpenGraphImage() {
   const photo = await readFile(join(process.cwd(), "public", profile.image.slice(1)), "base64");
 
+  const logo = await readFile(join(process.cwd(), "public/marca/marco-barbosa-logo-oficial.jpg"), "base64");
+
   return new ImageResponse(
     <div
       style={{
@@ -25,6 +27,7 @@ export default async function OpenGraphImage() {
         color: "white",
         padding: "58px 66px",
         fontFamily: "Arial, sans-serif",
+        position: "relative",
       }}
     >
       <div style={{ display: "flex", flex: 1, flexDirection: "column", paddingRight: 54 }}>
@@ -68,6 +71,7 @@ export default async function OpenGraphImage() {
           style={{ objectFit: "contain", borderRadius: 32 }}
         />
       </div>
+      <img src={`data:image/jpeg;base64,${logo}`} alt="" width={240} height={80} style={{ position: "absolute", top: 16, right: 50, objectFit: "contain" }} />
     </div>,
     size,
   );

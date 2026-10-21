@@ -43,7 +43,7 @@ export const metadata = {
 export default function CardPage() {
   return (
     <main className="min-h-screen overflow-x-clip bg-[#020817] text-slate-100">
-      <Header menu={cardMenu} brandHref="/" contactHref="/contato" contactLabel="Contato" />
+      <Header menu={cardMenu} contactHref="/contato" contactLabel="Contato" />
       <VirtualCard
         displayAddress={displaySiteAddress("/cartao")}
         profile={profile}

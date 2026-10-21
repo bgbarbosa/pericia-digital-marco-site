@@ -1,0 +1,47 @@
+.page { min-height: 100vh; background: radial-gradient(ellipse at 90% 5%, #0e749022, transparent 28%), #020817; color: #e2e8f0; }
+.hero, .section, .index { max-width: 1200px; margin: auto; padding-inline: clamp(20px, 4vw, 48px); }
+.hero { display: grid; gap: 2.5rem; align-items: center; padding-block: 9rem 3.5rem; }
+.eyebrow { color: #67e8f9 !important; font-size: .78rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.hero h1 { margin-top: 1.25rem; color: #f8fafc; font-size: clamp(3rem, 6.2vw, 5.5rem); font-weight: 750; line-height: 1.04; letter-spacing: -.04em; text-wrap: balance; }
+.hero h1 span { color: #67e8f9; text-shadow: 0 2px #0e7490, 0 5px 18px #22d3ee28; }
+.fullName { color: #e2e8f0; font-size: 1.05rem; font-weight: 600; }
+.hero p, .section p { margin-top: 1rem; color: #cbd5e1; line-height: 1.85; }
+.hero .lead { margin-top: 1.6rem; font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.6; }
+.lead strong { color: #f8fafc; }
+.actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 1.75rem; }
+.identity { min-width: 0; padding: 1.25rem; border: 1px solid #67e8f940; border-radius: 1.8rem; background: linear-gradient(145deg, #10233c, #020817 60%); box-shadow: 8px 12px 0 #061324, 0 25px 70px #0008, inset 0 1px #ffffff18; }
+.logo { display: block; width: 100%; height: auto; border-radius: .9rem; }
+.portrait { margin: 1.25rem auto 0; max-width: 370px; overflow: hidden; border: 1px solid #67e8f930; border-radius: 1rem; }
+.portrait img { display: block; width: 100%; height: auto; object-fit: contain; }
+.identity p { text-align: center; font-size: .85rem; line-height: 1.8; color: #a5f3fc; }
+.index { display: flex; flex-wrap: wrap; gap: .4rem 1rem; padding-block: 1rem; border-block: 1px solid #ffffff1f; }
+.index a { display: inline-flex; align-items: center; min-height: 44px; padding: .5rem; color: #a5f3fc; font-size: .9rem; text-decoration: underline; text-underline-offset: 5px; }
+.section { padding-block: clamp(2.5rem, 5vw, 4.5rem); scroll-margin-top: 6rem; overflow-wrap: anywhere; }
+.section + .section { border-top: 1px solid #ffffff13; }
+.section h2 { margin-top: .8rem; max-width: 28ch; color: #f8fafc; font-size: clamp(1.8rem, 3.5vw, 2.65rem); font-weight: 700; line-height: 1.2; text-wrap: balance; }
+.section h2 span { color: #67e8f9; }
+.section h3 { color: #f8fafc; font-size: 1.13rem; font-weight: 650; line-height: 1.5; }
+.columns, .grid { display: grid; gap: 1.5rem; margin-top: 2rem; }
+.highlight, .practice, .professional, .technology { min-width: 0; padding: clamp(1.25rem, 2.5vw, 2rem); border: 1px solid #ffffff24; border-radius: 1.2rem; background: linear-gradient(135deg, #0b2034, #0a1222); box-shadow: inset 0 1px #ffffff08; }
+.practice { display: flex; flex-direction: column; }
+.practice > a { align-self: flex-start; margin-top: auto; padding-top: 1rem; }
+.number { margin-bottom: 1rem; color: #67e8f9; font-size: 2.2rem; font-weight: 750; text-shadow: 2px 2px #155e75; }
+.timeline { display: grid; gap: 0; margin-top: 2rem; padding-left: 1.25rem; border-left: 1px solid #22d3ee66; }
+.timeline li { display: grid; gap: .6rem; padding: 0 0 2rem 1rem; position: relative; }
+.timeline li::before { content: ""; position: absolute; left: -1.6rem; top: .5rem; width: .65rem; height: .65rem; border-radius: 50%; background: #67e8f9; box-shadow: 0 0 15px #22d3ee88; }
+.timeline p { margin-top: .35rem; }
+.period { color: #67e8f9; font-weight: 650; }
+.timeline .status { color: #a5f3fc; font-size: .9rem; }
+.professional { margin-top: 1rem; }
+.section .note { font-size: .87rem; color: #a8bdd0; line-height: 1.75; }
+.training { display: grid; gap: 0 2rem; margin-top: 2rem; }
+.training li { min-width: 0; padding-block: 1.3rem; border-bottom: 1px solid #ffffff1c; }
+.training p { margin-top: .5rem; }
+.training span { display: block; margin-top: .35rem; color: #67e8f9; font-size: .9rem; }
+.technology { margin-top: 2rem; }
+.technology dl { display: grid; gap: 1.5rem; margin-top: 1.3rem; }
+.technology dt { color: #67e8f9; font-weight: 600; }
+.technology dd { margin-top: .5rem; color: #cbd5e1; line-height: 1.8; }
+.contact { margin-bottom: 2rem; }
+@media (min-width: 768px) { .hero { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 3rem; } .columns, .grid, .training { grid-template-columns: repeat(2, minmax(0, 1fr)); } .timeline li { grid-template-columns: 150px minmax(0, 1fr); } .technology dl { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .actions > a { flex: 1 1 100%; } .identity { margin-right: 8px; } }

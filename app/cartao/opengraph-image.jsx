@@ -14,6 +14,8 @@ export const contentType = "image/png";
 export default async function CardOpenGraphImage() {
   const photo = await readFile(join(process.cwd(), "public", profile.image.slice(1)), "base64");
 
+  const logo = await readFile(join(process.cwd(), "public/marca/marco-barbosa-logo-oficial.jpg"), "base64");
+
   return new ImageResponse(
     <div
       style={{
@@ -25,6 +27,7 @@ export default async function CardOpenGraphImage() {
         color: "white",
         padding: "58px 68px",
         fontFamily: "Arial, sans-serif",
+        position: "relative",
       }}
     >
       <div
@@ -71,6 +74,7 @@ export default async function CardOpenGraphImage() {
           {displaySiteAddress("/cartao")}
         </div>
       </div>
+      <img src={`data:image/jpeg;base64,${logo}`} alt="" width={240} height={80} style={{ position: "absolute", top: 16, right: 50, objectFit: "contain" }} />
     </div>,
     size,
   );

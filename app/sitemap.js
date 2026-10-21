@@ -12,6 +12,7 @@ export default function sitemap() {
       "/aplicacoes",
       ...applicationTopics.map(({ slug }) => `/aplicacoes/${slug}`),
       "/contato",
+      "/perfil",
       "/formacao/deteccao-imagens-ia",
       practiceCollection.basePath,
       ...practiceArticles.map(({ slug }) => articlePath(slug)),

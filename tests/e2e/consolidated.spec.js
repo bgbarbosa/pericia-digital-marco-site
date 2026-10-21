@@ -215,6 +215,7 @@ test("sitemap, âncoras e ausência de rotas de rascunho", async ({
     (match) => new URL(match[1]).pathname,
   );
   expect(urls.sort()).toEqual([
+    "/perfil",
     ...routes,
     practiceContent.collection.basePath,
     ...practiceContent.articles.map(({ slug }) => `${practiceContent.collection.basePath}/${slug}`),

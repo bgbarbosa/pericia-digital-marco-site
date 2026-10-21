@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { profile } from "@/data/profile";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function Header({
   menu,
-  brandHref = "/",
   contactHref,
   contactLabel = "Falar sobre capacitação",
 }) {
@@ -57,13 +57,7 @@ export default function Header({
   return (
     <header className="site-header fixed inset-x-0 top-0 z-50 border-b border-cyan-400/10 bg-slate-950/90 backdrop-blur-xl">
       <div className="site-container header-inner">
-        <a
-          href={brandHref}
-          className="shrink-0 font-mono text-[15px] font-bold tracking-normal text-cyan-300 transition hover:text-cyan-200 focus-visible:outline-cyan-200 sm:text-base sm:tracking-normal"
-          aria-label="Ir para o início"
-        >
-          Marco Barbosa
-        </a>
+        <BrandLogo placement="header" />
 
         <nav
           className="header-navigation"

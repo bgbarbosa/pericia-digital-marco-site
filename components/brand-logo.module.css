@@ -1,0 +1,10 @@
+.link { display: inline-flex; flex: 0 1 auto; align-items: center; justify-content: center; max-width: 100%; border-radius: .65rem; background: #020817; transition: box-shadow .2s; }
+.link:hover { box-shadow: 0 0 22px #22d3ee26, inset 0 -1px #67e8f970; }
+.image { display: block; width: 100%; height: auto; object-fit: contain; }
+.header { width: 240px; flex-shrink: 1; height: 52px; overflow: hidden; }
+/* Amplia o arquivo completo dentro da moldura, cortando apenas margens de fundo.
+   O monograma, o nome e o desenho original permanecem inteiros. */
+.header .image { width: 290px; max-width: none; flex-shrink: 0; }
+.card { width: 320px; margin-bottom: 1rem; border: 1px solid #67e8f935; box-shadow: 0 12px 30px #0005; }
+.footer { width: 210px; }
+@media (max-width: 374px) { .header { width: 210px; } .header .image { width: 260px; } }
