@@ -29,7 +29,9 @@ test("aplicações convidam ao Dama Universe e os cartões abrem e recolhem", as
   await menu.getByRole("link", { name: "Aplicações de IA" }).click();
   await expect(page).toHaveURL(`${origin}/aplicacoes`);
   await expect(page.locator(".detail-heading")).toContainText("site que criei");
-  await expect(page.getByRole("link", { name: "Conhecer o Dama Universe" })).toHaveAttribute("href", profile.damaUniverse);
+  await expect(page.getByRole("region", { name: "Projetos e ferramentas autorais" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Conhecer o projeto", exact: true })).toHaveAttribute("href", `${profile.damaUniverse}/programas/dama-gestor-rh`);
+  await expect(page.getByRole("link", { name: "Conhecer o assistente", exact: true })).toHaveAttribute("href", `${profile.damaUniverse}/gpts#especialista-em-escrita-e-revisao`);
   for (const topic of applicationTopics) {
     const card = page.locator(".application-card").filter({ has: page.getByText(topic.title, { exact: true }) });
     await expect(card).toBeVisible();

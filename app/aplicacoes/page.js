@@ -2,8 +2,8 @@ import Image from "next/image";
 import { DamaDetail, ToolDetail } from "@/components/ApplicationTopicContent";
 import DetailPage from "@/components/DetailPage";
 import { applicationTopics } from "@/data/applications";
-import { profile } from "@/data/profile";
 import { pageMetadata } from "@/lib/page-metadata";
+import SelectedDamaTools from "@/components/SelectedDamaTools";
 
 export const metadata = pageMetadata(
   "Aplicações de IA e soluções digitais",
@@ -18,7 +18,7 @@ export default function Page() {
       intro="Convido você a conhecer o Dama Universe, site que criei para apresentar aplicações de inteligência artificial e soluções digitais. Ali, projetos, ferramentas e conteúdos mostram possibilidades de uso da tecnologia a partir de necessidades concretas."
     >
       <section className="content-section">
-        <a className="action-primary" href={profile.damaUniverse} target="_blank" rel="noopener noreferrer">Conhecer o Dama Universe ↗</a>
+        <SelectedDamaTools />
         <div className="application-intro">
           <h2>Explore as propostas</h2>
           <p>Abra os cards para conhecer cada tema. Os exemplos são didáticos: mostram possibilidades de aplicação, sem representar clientes, trabalhos contratados ou resultados assegurados.</p>

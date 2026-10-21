@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { profile } from "@/data/profile";
 
 export default function Header({
   menu,
@@ -79,6 +80,8 @@ export default function Header({
           ))}
         </nav>
 
+        <a className="header-cross-link text-link" href={profile.damaUniverse} target="_blank" rel="noopener noreferrer">Dama Universe <span aria-hidden="true">↗︎</span></a>
+
         <a
           href={contactHref}
           target={externalContact ? "_blank" : undefined}
@@ -148,6 +151,13 @@ export default function Header({
                 {item.label}
               </a>
             ))}
+            <a
+              href={profile.damaUniverse}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+              className="action-secondary justify-start border-cyan-400/35 text-cyan-200"
+            >Dama Universe <span aria-hidden="true">↗︎</span></a>
             <a
               href={contactHref}
               target={externalContact ? "_blank" : undefined}

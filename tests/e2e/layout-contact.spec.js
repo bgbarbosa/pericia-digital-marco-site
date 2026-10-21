@@ -32,7 +32,7 @@ for (const width of widths) {
       const expectedLabels = homeMenu
         .filter(({ label }) => whatsappContact || label !== "Contato")
         .map(({ label }) => label);
-      if (mobile) expectedLabels.push(whatsappContact ? "Conversar pelo WhatsApp" : "Contato");
+      if (mobile) expectedLabels.push("Dama Universe ↗︎", whatsappContact ? "Conversar pelo WhatsApp" : "Contato");
       expect((await links.allTextContents()).map((label) => label.trim())).toEqual(expectedLabels);
       expect(homeMenu.slice(0, 2).map(({ label }) => label)).toEqual(["Início", "Perícia na Prática"]);
       for (const link of await links.all()) {
