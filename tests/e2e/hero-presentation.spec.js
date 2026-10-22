@@ -22,7 +22,8 @@ for (const width of [320, 360, 390, 768, 1024, 1440, 1920]) {
     await expect(hero.locator(".hero-subtitle")).toHaveText(subtitle);
     await expect(hero.locator(".hero-audience")).toHaveText(audience);
     await expect(hero.locator(".hero-audience")).toBeVisible();
-    await expect(hero.locator(".hero-intro > p").first()).toHaveText("Marco Barbosa");
+    await expect(hero.locator(".hero-intro").getByText("Marco Barbosa", { exact: true })).toHaveCount(0);
+    await expect(hero.locator(".hero-intro > h1:first-child")).toHaveText(title);
     await expect(hero.getByRole("link", { name: "Conhecer capacitações" })).toHaveCount(0);
     const group = hero.getByRole("group", { name: "Acessos profissionais" });
     await expect(group.getByRole("link")).toHaveCount(3);

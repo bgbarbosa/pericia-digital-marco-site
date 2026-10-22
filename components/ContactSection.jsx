@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Panel from "@/components/Panel";
 import SectionTitle from "@/components/SectionTitle";
 
@@ -67,23 +68,26 @@ export default function ContactSection({
             </a>
           </Panel>
         </div>
-        <div className="contact-links">
+        <div className="contact-link-grid" role="group" aria-label="Mais acessos profissionais">
           <a
-            className="text-link"
+            className="contact-link-card"
             href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
           >
-            LinkedIn profissional ↗
+            LinkedIn profissional <span aria-hidden="true">↗</span>
           </a>
           <a
-            className="text-link"
+            className="contact-link-card"
             href={profile.damaUniverse}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Dama Universe ↗
+            Dama Universe <span aria-hidden="true">↗</span>
           </a>
+          <Link className="contact-link-card" href="/perfil">
+            Perfil e currículo <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </section>

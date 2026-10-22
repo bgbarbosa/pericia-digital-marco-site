@@ -53,7 +53,7 @@ export default function HomePage() {
         telephoneUrl={telephoneUrl}
         whatsappUrl={whatsappUrl}
       />
-      <Footer />
+      <Footer showProfileLink={false} />
     </main>
   );
 }

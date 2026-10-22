@@ -469,7 +469,7 @@ main {
   line-height: 1.8;
   text-align: left;
 }
-.home-page :is(.detail-grid, .editorial-grid, .contact-grid) {
+.home-page :is(.detail-grid, .editorial-grid, .contact-grid, .contact-link-grid) {
   display: grid;
   gap: var(--grid-space);
   margin-top: 1.5rem;
@@ -621,11 +621,33 @@ main {
 .home-contact {
   padding-bottom: calc(var(--section-space) + 1rem);
 }
-.contact-links {
+.contact-link-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+.contact-link-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  margin-top: 1rem;
+  min-width: 0;
+  min-height: 64px;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #ffffff1f;
+  border-radius: 1.4rem;
+  background: #ffffff08;
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color .18s, background-color .18s;
+}
+.contact-link-card > span { flex-shrink: 0; color: #67e8f9; }
+.contact-link-card:hover,
+.contact-link-card:focus-visible {
+  border-color: #67e8f980;
+  background: #0f2036;
 }
 .contact-email {
   flex-wrap: wrap;
@@ -867,7 +889,8 @@ main {
     grid-template-columns: minmax(0, 1fr) clamp(320px, 32vw, 420px);
     column-gap: 2rem;
   }
-  .contact-grid {
+  .contact-grid,
+  .contact-link-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .credential-logo {

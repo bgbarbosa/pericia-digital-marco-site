@@ -6,10 +6,7 @@ export default function HeroSection({ featuredTraining, profile }) {
     <section id="inicio" className="hero-section border-b border-white/10">
       <div className="hero-grid site-container">
         <div className="hero-intro">
-          <p className="text-lg font-semibold text-cyan-200">
-            {profile.displayName}
-          </p>
-          <h1 className="hero-title mt-3 font-bold text-white">
+          <h1 className="hero-title font-bold text-white">
             {profile.heroTitle}
           </h1>
           <p className="hero-subtitle mt-4 text-base text-slate-300 sm:text-lg">
