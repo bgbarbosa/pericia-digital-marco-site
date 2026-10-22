@@ -137,7 +137,7 @@ test("menu, chamada da home e foco de teclado abrem a coleção", async ({ page 
   for (const width of [320, 390, 1024, 1280, 1440, 1920]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
-    await expect(page.locator("#inicio h1")).toHaveText("Inteligência Artificial aplicada à prática profissional");
+    await expect(page.locator("#inicio h1")).toHaveText("Inteligência Artificial, perícia digital e desenvolvimento de software");
     if (width < 1280) await page.getByRole("button", { name: "Abrir menu" }).click();
     const navigation = page.getByRole("navigation", { name: width < 1280 ? "Navegação móvel" : "Navegação principal" });
     const link = navigation.getByRole("link", { name: "Perícia na Prática", exact: true });

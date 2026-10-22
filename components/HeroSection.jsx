@@ -9,12 +9,13 @@ export default function HeroSection({ featuredTraining, profile }) {
           <p className="text-lg font-semibold text-cyan-200">
             {profile.displayName}
           </p>
-          <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="hero-title mt-3 font-bold text-white">
             {profile.heroTitle}
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
+          <p className="hero-subtitle mt-4 text-base text-slate-300 sm:text-lg">
             {profile.subtitle}
           </p>
+          <p className="hero-audience">{profile.heroAudience}</p>
         </div>
         <div className="hero-portrait relative mx-auto overflow-hidden rounded-[2rem] border border-cyan-300/25">
           <Image
@@ -26,28 +27,21 @@ export default function HeroSection({ featuredTraining, profile }) {
             sizes="(max-width: 767px) 320px, (max-width: 1023px) 35vw, 420px"
           />
         </div>
-        <div className="hero-actions">
-          <div className="flex flex-wrap gap-3">
-            <a className="action-primary" href="#capacitacoes">
-              Conhecer capacitações
-            </a>
-            <a className="action-secondary" href="/contato">
-              Entrar em contato
-            </a>
-          </div>
-          <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1">
-            <a
-              className="text-link"
-              href={profile.lattes}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Currículo Lattes ↗
-            </a>
-            <Link className="text-link" href="/cartao">
-              Abrir cartão virtual →
-            </Link>
-          </div>
+        <div className="hero-actions" role="group" aria-label="Acessos profissionais">
+          <Link className="hero-action-card hero-action-card-primary" href="/contato">
+            Entrar em contato
+          </Link>
+          <a
+            className="hero-action-card"
+            href={profile.lattes}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Currículo Lattes <span aria-hidden="true">↗</span>
+          </a>
+          <Link className="hero-action-card" href="/cartao">
+            Abrir cartão virtual <span aria-hidden="true">→</span>
+          </Link>
         </div>
         {featuredTraining && (
           <Link

@@ -18,7 +18,7 @@ for (const viewport of viewports) {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /Inteligência Artificial aplicada à prática profissional/i,
+        name: "Inteligência Artificial, perícia digital e desenvolvimento de software",
       }),
     ).toBeVisible();
 
@@ -101,15 +101,16 @@ test("âncoras e imagens principais estão disponíveis", async ({ page }) => {
   }
 });
 
-test("hero prioriza capacitações e preserva o cargo público como informação curricular", async ({
+test("hero apresenta os três acessos e preserva o cargo público como informação curricular", async ({
   page,
 }) => {
   await page.goto("/");
 
   const hero = page.locator("#inicio");
-  const primaryCta = hero.getByRole("link", { name: "Conhecer capacitações" });
+  const primaryCta = hero.getByRole("link", { name: "Entrar em contato", exact: true });
 
-  await expect(primaryCta).toHaveAttribute("href", "#capacitacoes");
+  await expect(primaryCta).toHaveAttribute("href", "/contato");
+  await expect(hero.getByRole("link", { name: "Conhecer capacitações" })).toHaveCount(0);
   await expect(hero.getByRole("link", { name: "Currículo Lattes" })).toHaveAttribute(
     "href",
     "https://lattes.cnpq.br/1970561249212557",

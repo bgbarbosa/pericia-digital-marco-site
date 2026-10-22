@@ -6,9 +6,10 @@ export const profile = {
   initials: "M.A.P.B",
   title: "Inteligência Artificial, capacitação e soluções digitais",
   heroTitle:
-    "Inteligência Artificial aplicada à prática profissional",
+    "Inteligência Artificial, perícia digital e desenvolvimento de software",
   subtitle:
-    "Treinamentos, cursos, palestras e mentorias em ChatGPT, engenharia de prompts e produtividade para profissionais e equipes.",
+    "Consultoria tecnológica, análise de dados, automação e capacitação em IA, com foco em necessidades concretas e escopo definido para cada projeto.",
+  heroAudience: "Para pessoas, empresas e profissionais do Direito.",
   introduction:
     "O trabalho também abrange projetos, automações e soluções digitais personalizadas voltadas à organização, produtividade e análise de informações.",
   phone: {

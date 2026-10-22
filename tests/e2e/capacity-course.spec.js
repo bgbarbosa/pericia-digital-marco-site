@@ -13,7 +13,7 @@ for (const width of [390, 1440]) {
     await expect(navigation.getByRole("link", { name: "Capacitações", exact: true })).toHaveCount(0);
     if (width < 1280) await page.keyboard.press("Escape");
     await expect(page.locator("#capacitacoes h2")).toHaveText("Capacitações em Inteligência Artificial");
-    await expect(page.locator("#inicio").getByRole("link", { name: "Conhecer capacitações" })).toHaveAttribute("href", "#capacitacoes");
+    await expect(page.locator("#inicio").getByRole("link", { name: "Conhecer capacitações" })).toHaveCount(0);
     const cards = page.locator("#capacitacoes .capacity-card");
     await expect(cards).toHaveCount(4);
     for (const [index, item] of capacityModalities.entries()) {
