@@ -21,6 +21,13 @@ Decisão do titular nesta solicitação, em 21/10/2026: a imagem fornecida com o
 - No cabeçalho, a moldura CSS reduz apenas margens de fundo; o monograma e o nome permanecem visíveis. Nas demais aplicações, a imagem completa é exibida.
 - Fonte recebida: `codex-clipboard-bbfa6eac-5f3a-4246-a664-a0d96590f6ab.jpg`. O arquivo recebido não foi alterado.
 
+### Renderização da marca compartilhada — 21/10/2026
+
+- `BrandLogo` utiliza a matriz JPEG existente com `unoptimized`, preservando seus bytes e evitando a sequência JPEG → WebP → otimização de qualidade 75. O derivado WebP permanece preservado para os usos existentes.
+- A configuração anterior declarava `sizes="240px"`, embora a imagem no cabeçalho tivesse 290 px no CSS (260 px abaixo de 375 px de viewport). Em densidade 1x o navegador selecionava um recurso de 256 px, ampliado para 290 px. Em 2x selecionava 640 px; havia pixels suficientes, mas a recompressão ainda afetava bordas finas.
+- A entrega direta usa os 1600 × 533 px da matriz, sem `srcset` ou `sizes` artificiais. As dimensões CSS, proporções e moldura existentes permanecem, incluindo apenas o recorte das margens de fundo no cabeçalho. Não são aplicados filtros de nitidez, redesenho ou ampliação da matriz.
+- O custo é a transferência da matriz de 90.594 bytes, reutilizada por cabeçalho, cartão e rodapé. A imagem continua raster e conserva o brilho artístico original; a alteração reduz perdas da entrega, sem recuperar detalhes inexistentes na fonte.
+
 ## Arquivo de referência no Drive
 
 Conta proprietária conferida: `marcobarbosa@damauniverse.com.br`.

@@ -74,7 +74,7 @@ export default function Header({
           ))}
         </nav>
 
-        <a className="header-cross-link text-link" href={profile.damaUniverse} target="_blank" rel="noopener noreferrer">Dama Universe <span aria-hidden="true">↗︎</span></a>
+        <a className="header-cross-link header-ecosystem-card" href={profile.damaUniverse} target="_blank" rel="noopener noreferrer">Dama Universe <span aria-hidden="true">↗︎</span></a>
 
         <a
           href={contactHref}
@@ -150,7 +150,7 @@ export default function Header({
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="action-secondary justify-start border-cyan-400/35 text-cyan-200"
+              className="header-ecosystem-card self-start"
             >Dama Universe <span aria-hidden="true">↗︎</span></a>
             <a
               href={contactHref}
