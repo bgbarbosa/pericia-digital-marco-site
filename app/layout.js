@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 
 const description =
   "Treinamentos, cursos, palestras e mentorias em Inteligência Artificial e ChatGPT, com foco prático e responsável para profissionais e equipes, além de soluções digitais e experiência em investigação, perícia digital e computação forense.";
-const siteName = "Marco Barbosa - Inteligência Artificial e Capacitação";
+const applicationName = "Marco Barbosa - Inteligência Artificial e Capacitação";
 const defaultTitle =
   "Marco Aurélio Pereira Barbosa - Inteligência Artificial e Capacitação";
 
@@ -34,7 +34,7 @@ export const metadata = {
     template: `%s | ${profile.name}`,
   },
   description,
-  applicationName: siteName,
+  applicationName,
   authors: [{ name: profile.name }],
   creator: profile.name,
   category: "Educação e tecnologia",
@@ -46,7 +46,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    siteName,
+    siteName: profile.displayName,
     title: defaultTitle,
     description,
     url: hasPublicSiteUrl ? publicAbsoluteUrl("/") : undefined,
