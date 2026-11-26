@@ -34,7 +34,7 @@ for (const width of widths) {
         .map(({ label }) => label);
       if (mobile) expectedLabels.push("Dama Universe ↗︎", whatsappContact ? "Conversar pelo WhatsApp" : "Contato");
       expect((await links.allTextContents()).map((label) => label.trim())).toEqual(expectedLabels);
-      expect(homeMenu.slice(0, 2).map(({ label }) => label)).toEqual(["Início", "Perícia na Prática"]);
+      expect(homeMenu.slice(0, 3).map(({ label }) => label)).toEqual(["Início", "Áreas da Perícia", "Universo Forense"]);
       for (const link of await links.all()) {
         const box = await link.boundingBox();
         expect(box.height).toBeGreaterThanOrEqual(44);
@@ -101,7 +101,7 @@ test("card integral é um único link com foco, hover e ativação pelas bordas"
   for (const position of [{ x: 8, y: 8 }, { x: "right", y: "bottom" }]) {
     await page.goto("/");
     const region = page.locator('section[aria-labelledby="pratica-chamada"]');
-    const card = region.getByRole("link", { name: "Perícia na Prática", exact: true });
+    const card = region.getByRole("link", { name: "Universo Forense", exact: true });
     await expect(region.locator("a")).toHaveCount(1);
     await expect(card.locator("a, button, input")).toHaveCount(0);
     await expect(region).not.toContainText(/Explorar|quatro artigos/i);

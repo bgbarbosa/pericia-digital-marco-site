@@ -1,0 +1,416 @@
+{
+  "schemaVersion": "1.0",
+  "technicalFields": [
+    {
+      "id": "mobile",
+      "icon": "smartphone",
+      "title": "Perícia digital em celulares e dispositivos móveis",
+      "description": "Análise, extração, organização e interpretação de informações armazenadas em smartphones, tablets e outros dispositivos móveis.",
+      "possibilities": [
+        "Conversas, mensagens e registros de chamadas",
+        "Fotografias, vídeos, áudios e documentos armazenados",
+        "Histórico de utilização de aplicativos",
+        "Registros de navegação na internet",
+        "Dados de localização e deslocamento disponíveis",
+        "Backups e informações sincronizadas",
+        "Vestígios de arquivos e informações excluídas, quando tecnicamente recuperáveis",
+        "Análise de dados provenientes de extrações realizadas anteriormente"
+      ],
+      "application": "Esclarecimento de fatos em processos criminais, conflitos familiares, relações comerciais, fraudes, ameaças e controvérsias envolvendo comunicações digitais."
+    },
+    {
+      "id": "mensagens",
+      "icon": "message",
+      "title": "Análise de WhatsApp e outras comunicações digitais",
+      "description": "Exame técnico de conversas, mensagens, arquivos compartilhados e registros associados a aplicativos de comunicação, como WhatsApp, Telegram e outras plataformas.",
+      "possibilities": [
+        "Verificação da consistência de capturas de tela",
+        "Comparação entre conversas apresentadas e registros disponíveis",
+        "Identificação de possíveis lacunas, exclusões ou divergências",
+        "Análise da sequência cronológica das mensagens",
+        "Contextualização de diálogos apresentados parcialmente",
+        "Exame de arquivos, áudios, imagens e documentos compartilhados",
+        "Avaliação da possibilidade de recuperação de mensagens excluídas",
+        "Análise de elementos técnicos relacionados à origem das comunicações"
+      ],
+      "application": "Processos envolvendo acordos comerciais, negociações, ameaças, assédio, cobranças, conflitos trabalhistas, familiares e questionamentos sobre a autenticidade ou o contexto das mensagens."
+    },
+    {
+      "id": "computadores",
+      "icon": "monitor",
+      "title": "Computação forense em computadores e mídias de armazenamento",
+      "description": "Exame de informações digitais presentes em computadores, notebooks, discos rígidos, SSDs, cartões de memória, pendrives e outras mídias.",
+      "possibilities": [
+        "Identificação e organização de arquivos relevantes",
+        "Análise de registros de criação, acesso e modificação de arquivos",
+        "Histórico de navegação e utilização de sistemas",
+        "Pesquisa de vestígios de documentos excluídos",
+        "Comparação entre arquivos e suas diferentes versões",
+        "Análise de registros de atividades disponíveis",
+        "Identificação de possíveis vestígios de transferência ou cópia de informações"
+      ],
+      "application": "Conflitos empresariais, vazamento de informações, concorrência desleal, uso indevido de documentos e controvérsias envolvendo arquivos eletrônicos."
+    },
+    {
+      "id": "documentos",
+      "icon": "file",
+      "title": "Análise de documentos digitais, metadados e assinaturas eletrônicas",
+      "description": "Exame de arquivos eletrônicos, como documentos PDF, planilhas, arquivos de texto, contratos e outros registros digitais. Os metadados são informações associadas aos arquivos que, dependendo de sua natureza e preservação, podem fornecer elementos relevantes sobre seu histórico.",
+      "possibilities": [
+        "Datas registradas de criação e modificação",
+        "Informações sobre autoria declarada e programas utilizados",
+        "Comparação entre diferentes versões de documentos",
+        "Identificação de possíveis alterações e inconsistências",
+        "Análise de propriedades e estrutura dos arquivos",
+        "Verificação de integridade digital",
+        "Avaliação de registros relacionados a assinaturas e contratações eletrônicas, conforme a complexidade"
+      ],
+      "application": "Questionamentos sobre contratos, documentos contestados, comprovantes eletrônicos, arquivos supostamente adulterados e divergências relacionadas à produção ou alteração de documentos."
+    },
+    {
+      "id": "imagens",
+      "icon": "image",
+      "title": "Análise forense de fotografias e imagens",
+      "description": "Exame técnico de fotografias, capturas de tela e outros arquivos de imagem, considerando suas características, origem e informações associadas.",
+      "possibilities": [
+        "Análise de metadados e informações do arquivo",
+        "Pesquisa de indícios de edição ou manipulação",
+        "Comparação entre imagens e diferentes versões",
+        "Avaliação de informações relacionadas à data e localização, quando disponíveis",
+        "Análise de características técnicas de resolução e qualidade",
+        "Tratamento técnico para melhorar a visualização de elementos existentes",
+        "Avaliação preliminar de suspeitas de manipulação digital ou geração artificial de imagens"
+      ],
+      "application": "Processos envolvendo fotografias contestadas, acidentes, danos materiais, fraudes documentais e registros visuais utilizados como evidências."
+    },
+    {
+      "id": "audios",
+      "icon": "audio",
+      "title": "Análise técnica de áudios e gravações",
+      "description": "Exame de gravações digitais, mensagens de voz, registros de conversas e outros arquivos sonoros, conforme a complexidade técnica do material.",
+      "possibilities": [
+        "Exame das características técnicas do arquivo",
+        "Pesquisa de possíveis indícios de cortes, edições ou descontinuidades",
+        "Tratamento de áudio para melhoria da inteligibilidade, quando viável",
+        "Transcrição e organização cronológica de gravações",
+        "Comparação entre diferentes versões de um mesmo áudio",
+        "Análise de informações associadas ao arquivo"
+      ],
+      "application": "Processos envolvendo ameaças, negociações, acordos verbais, assédio, relações contratuais e gravações cujo conteúdo ou integridade seja questionado."
+    },
+    {
+      "id": "videos",
+      "icon": "video",
+      "title": "Análise de vídeos e sistemas de monitoramento",
+      "description": "Exame de arquivos de vídeo provenientes de celulares, câmeras de segurança, sistemas de CFTV e outros equipamentos de gravação.",
+      "possibilities": [
+        "Exame de vídeos quadro a quadro",
+        "Extração e organização de imagens relevantes",
+        "Reconstrução da sequência dos acontecimentos registrados",
+        "Comparação entre gravações de diferentes câmeras",
+        "Análise de datas, horários e duração dos registros",
+        "Pesquisa de possíveis cortes, alterações ou inconsistências",
+        "Tratamento técnico para melhorar a visualização de elementos registrados"
+      ],
+      "application": "Acidentes de trânsito, conflitos, ocorrências em estabelecimentos comerciais, danos materiais, furtos e controvérsias envolvendo acontecimentos registrados por câmeras."
+    },
+    {
+      "id": "osint",
+      "icon": "globe",
+      "title": "Investigação digital e inteligência de fontes abertas (OSINT)",
+      "description": "Pesquisa, organização, preservação e correlação de informações disponíveis em fontes abertas e outras fontes legitimamente acessíveis.",
+      "possibilities": [
+        "Pesquisa de informações publicamente disponíveis na internet",
+        "Análise de publicações em redes sociais",
+        "Exame de perfis, páginas e anúncios suspeitos",
+        "Pesquisa de informações públicas sobre sites e domínios",
+        "Identificação de possíveis vínculos entre informações digitais",
+        "Contextualização de registros e publicações disponíveis",
+        "Cruzamento de informações provenientes de diferentes fontes"
+      ],
+      "application": "Fraudes eletrônicas, golpes, perfis falsos, uso indevido de identidade, publicações ofensivas, conflitos comerciais e esclarecimento de vínculos entre acontecimentos digitais."
+    },
+    {
+      "id": "fraudes",
+      "icon": "shield",
+      "title": "Análise de fraudes eletrônicas e transações digitais",
+      "description": "Avaliação de registros, comunicações, documentos e informações digitais relacionados a suspeitas de fraude.",
+      "possibilities": [
+        "Organização de evidências relacionadas a golpes virtuais",
+        "Análise de mensagens utilizadas em possíveis fraudes",
+        "Exame de comprovantes e registros eletrônicos",
+        "Reconstrução da sequência de operações e acontecimentos",
+        "Avaliação de registros de acesso e utilização de contas, quando disponíveis",
+        "Cruzamento entre comunicações, documentos e registros de transações",
+        "Identificação de inconsistências que possam merecer esclarecimento técnico"
+      ],
+      "application": "Golpes envolvendo PIX, falsas centrais de atendimento, fraudes em compras pela internet, transações contestadas, contratações não reconhecidas e uso indevido de contas digitais."
+    },
+    {
+      "id": "emails",
+      "icon": "mail",
+      "title": "Análise de e-mails e registros eletrônicos de comunicação",
+      "description": "Exame de mensagens eletrônicas, seus anexos, cabeçalhos e informações técnicas associadas.",
+      "possibilities": [
+        "Avaliação de informações relacionadas à origem das mensagens",
+        "Análise de datas, horários e registros de transmissão disponíveis",
+        "Exame de cabeçalhos e anexos",
+        "Pesquisa de indícios de falsificação ou inconsistências",
+        "Comparação entre mensagens e arquivos apresentados",
+        "Reconstrução de sequências de comunicação eletrônica"
+      ],
+      "application": "Conflitos empresariais, negociações contratuais, fraudes, notificações eletrônicas e controvérsias relacionadas ao envio ou recebimento de informações."
+    },
+    {
+      "id": "geolocalizacao",
+      "icon": "pin",
+      "title": "Geolocalização e reconstrução de deslocamentos",
+      "description": "Análise de registros digitais que possam conter informações relacionadas à localização geográfica de dispositivos ou acontecimentos, considerando sua disponibilidade, precisão e origem.",
+      "possibilities": [
+        "Exame de registros de localização disponíveis",
+        "Análise de coordenadas associadas a fotografias e outros arquivos",
+        "Organização de informações sobre possíveis deslocamentos",
+        "Comparação entre registros geográficos e horários",
+        "Cruzamento de informações de diferentes fontes digitais",
+        "Representação geográfica de acontecimentos relevantes"
+      ],
+      "application": "Esclarecimento de divergências relacionadas a locais, horários, deslocamentos e compatibilidade entre relatos e registros digitais."
+    },
+    {
+      "id": "dados",
+      "icon": "network",
+      "title": "Análise de dados e reconstrução de cronologias digitais",
+      "description": "Organização, processamento e cruzamento de grandes volumes de informações provenientes de diferentes fontes. O objetivo é transformar dados dispersos em informações estruturadas, permitindo uma compreensão mais ampla dos acontecimentos e dos possíveis relacionamentos entre os elementos examinados.",
+      "possibilities": [
+        "Processamento de grandes volumes de mensagens e documentos",
+        "Identificação de informações relevantes em extrações extensas",
+        "Cruzamento entre comunicações, documentos e registros",
+        "Identificação de padrões, vínculos e inconsistências",
+        "Construção de linhas do tempo",
+        "Elaboração de gráficos, diagramas e mapas de relacionamentos",
+        "Organização de informações para facilitar a compreensão do material técnico"
+      ],
+      "application": "Processos complexos, investigações com grande quantidade de dados, fraudes, conflitos empresariais e análise de acontecimentos que envolvam diversas fontes de informação."
+    },
+    {
+      "id": "integridade",
+      "icon": "lock",
+      "title": "Integridade das evidências digitais e cadeia de custódia",
+      "description": "Avaliação dos procedimentos relacionados à obtenção, preservação, armazenamento, processamento e documentação de evidências digitais.",
+      "possibilities": [
+        "Exame da documentação relacionada à obtenção dos dados",
+        "Verificação de integridade por meio de funções hash, quando aplicável",
+        "Comparação entre arquivos originais e cópias",
+        "Avaliação da rastreabilidade dos procedimentos realizados",
+        "Identificação de possíveis lacunas na documentação técnica",
+        "Exame dos métodos utilizados para preservação e processamento das informações",
+        "Avaliação das limitações decorrentes da forma como o material foi obtido"
+      ],
+      "application": "Processos nos quais existam questionamentos sobre a integridade, confiabilidade, preservação ou metodologia empregada na produção de evidências digitais."
+    },
+    {
+      "id": "laudos",
+      "icon": "clipboard",
+      "title": "Análise de laudos periciais, pareceres técnicos e quesitos",
+      "description": "Estudo e interpretação de documentos técnicos relacionados à perícia digital e à computação forense.",
+      "possibilities": [
+        "Leitura crítica de laudos periciais",
+        "Avaliação da metodologia empregada",
+        "Análise de relatórios de extração de celulares e computadores",
+        "Identificação de inconsistências, limitações e questões não esclarecidas",
+        "Verificação da correspondência entre dados examinados e conclusões apresentadas",
+        "Identificação de pontos que possam justificar exames complementares",
+        "Apoio técnico à formulação de quesitos periciais",
+        "Fundamentação técnica para elaboração de pareceres, quando cabível"
+      ],
+      "application": "Auxílio à compreensão de questões técnicas relevantes, à avaliação de elementos apresentados nos autos e à identificação de pontos que mereçam esclarecimentos especializados."
+    },
+    {
+      "id": "ia",
+      "icon": "cpu",
+      "title": "Inteligência artificial e tecnologia aplicadas à análise de evidências",
+      "description": "Utilização de conhecimentos em inteligência artificial, desenvolvimento de sistemas e análise de dados como recursos complementares ao trabalho técnico.",
+      "possibilities": [
+        "Classificação e organização de grandes volumes de informações",
+        "Pesquisa e localização de conteúdos relevantes",
+        "Processamento e transcrição de áudios",
+        "Organização de documentos e comunicações",
+        "Identificação de padrões e relacionamentos",
+        "Desenvolvimento de soluções específicas para processamento de informações",
+        "Apoio à identificação de inconsistências",
+        "Estruturação de dados para análise técnica e revisão humana"
+      ],
+      "application": "A inteligência artificial é um recurso auxiliar e não substitui a análise especializada, a validação dos resultados ou a responsabilidade pelas conclusões técnicas."
+    }
+  ],
+  "lawAreas": [
+    {
+      "id": "criminal",
+      "icon": "scale",
+      "title": "Direito Criminal",
+      "summary": "Extrações de celulares, conversas, cronologias, cadeia de custódia e leitura crítica de laudos.",
+      "intro": "Quando um processo contém relatórios de extração, mensagens, imagens, registros de localização ou gravações, a análise técnica pode ajudar a contextualizar os vestígios e identificar questões que mereçam esclarecimento.",
+      "questions": [
+        "Uma conversa apresentada nos autos está completa ou foi retirada de contexto?",
+        "Existem dados relevantes na extração que ainda não foram examinados?",
+        "Os registros de horários e locais são compatíveis entre si?",
+        "A metodologia do exame e a preservação do material foram devidamente documentadas?"
+      ],
+      "technicalIds": [
+        "mobile",
+        "mensagens",
+        "audios",
+        "videos",
+        "geolocalizacao",
+        "dados",
+        "integridade",
+        "laudos",
+        "osint",
+        "fraudes",
+        "imagens",
+        "computadores",
+        "ia"
+      ]
+    },
+    {
+      "id": "familia",
+      "icon": "users",
+      "title": "Direito de Família",
+      "summary": "Comunicações, cronologias, documentos, imagens e registros digitais relevantes.",
+      "intro": "Em conflitos familiares, mensagens, áudios, documentos eletrônicos e outros registros podem ajudar a compreender o contexto de acontecimentos, desde que o acesso seja legítimo e a intimidade das pessoas seja respeitada.",
+      "questions": [
+        "Os diálogos apresentados permitem compreender a sequência e o contexto das comunicações?",
+        "Há divergências entre registros, datas e arquivos disponíveis?",
+        "As imagens ou gravações apresentam questões técnicas que precisam de esclarecimento?"
+      ],
+      "technicalIds": [
+        "mensagens",
+        "mobile",
+        "documentos",
+        "imagens",
+        "audios",
+        "videos",
+        "dados",
+        "integridade",
+        "laudos"
+      ]
+    },
+    {
+      "id": "trabalhista",
+      "icon": "briefcase",
+      "title": "Direito Trabalhista",
+      "summary": "Comunicações profissionais, registros de atividades, assédio e divergências de horários.",
+      "intro": "Em relações de trabalho, comunicações profissionais, registros de sistemas e documentos podem ser examinados para contextualizar alegações sobre atividades, horários e interações.",
+      "questions": [
+        "As mensagens registram comunicações fora do expediente?",
+        "Os horários e eventos registrados nas fontes disponíveis são compatíveis?",
+        "Existem divergências entre documentos, mensagens e registros de atividades?"
+      ],
+      "technicalIds": [
+        "mensagens",
+        "emails",
+        "documentos",
+        "computadores",
+        "audios",
+        "videos",
+        "dados",
+        "integridade",
+        "laudos",
+        "ia"
+      ]
+    },
+    {
+      "id": "empresarial",
+      "icon": "building",
+      "title": "Direito Empresarial",
+      "summary": "Documentos corporativos, comunicações, vazamentos de informações e fraudes internas.",
+      "intro": "Nos litígios empresariais, registros de sistemas, arquivos, comunicações e transações podem conter vestígios relacionados à circulação de informações e à sequência de eventos.",
+      "questions": [
+        "Há vestígios disponíveis de transferência, cópia ou alteração de arquivos?",
+        "Quais divergências podem ser observadas entre versões de documentos?",
+        "Registros de acesso, comunicações e transações são compatíveis com os acontecimentos relatados?"
+      ],
+      "technicalIds": [
+        "computadores",
+        "documentos",
+        "emails",
+        "mensagens",
+        "fraudes",
+        "osint",
+        "dados",
+        "integridade",
+        "laudos",
+        "ia"
+      ]
+    },
+    {
+      "id": "bancario",
+      "icon": "bank",
+      "title": "Direito Bancário e do Consumidor",
+      "summary": "Golpes via PIX, operações não reconhecidas, comprovantes e contratações eletrônicas.",
+      "intro": "Fraudes e contratações contestadas podem envolver mensagens, comprovantes, e-mails e registros fornecidos pelas plataformas ou instituições. A análise desses materiais pode esclarecer aspectos técnicos da sequência dos fatos.",
+      "questions": [
+        "Quais registros disponíveis ajudam a reconstruir a sequência de uma operação contestada?",
+        "Há inconsistências em comprovantes, comunicações ou documentos?",
+        "Os registros permitem contextualizar uma contratação ou acesso contestado sem presumir a autoria humana?"
+      ],
+      "technicalIds": [
+        "fraudes",
+        "mensagens",
+        "emails",
+        "documentos",
+        "osint",
+        "mobile",
+        "dados",
+        "integridade",
+        "laudos"
+      ]
+    },
+    {
+      "id": "civil",
+      "icon": "file",
+      "title": "Direito Civil e Contratual",
+      "summary": "Negociações, acordos, contratos, documentos e registros de comunicações eletrônicas.",
+      "intro": "Em controvérsias cíveis e contratuais, mensagens, arquivos e documentos digitais podem trazer informações relevantes sobre a sequência de negociações, versões de documentos e eventos registrados.",
+      "questions": [
+        "As comunicações apresentadas são compatíveis com os demais registros da negociação?",
+        "Quais diferenças podem ser observadas entre versões de um contrato digital?",
+        "Há elementos técnicos sobre a origem e integridade de um arquivo contestado?"
+      ],
+      "technicalIds": [
+        "mensagens",
+        "documentos",
+        "emails",
+        "imagens",
+        "audios",
+        "videos",
+        "dados",
+        "integridade",
+        "laudos",
+        "osint"
+      ]
+    },
+    {
+      "id": "transito",
+      "icon": "car",
+      "title": "Direito de Trânsito e Responsabilidade Civil",
+      "summary": "Vídeos de câmeras, fotografias, localização e sequência de acontecimentos.",
+      "intro": "Imagens, vídeos de CFTV e registros de localização podem ajudar a contextualizar acidentes, danos e outros acontecimentos. A análise digital não substitui perícia de engenharia de acidentes ou outros exames especializados.",
+      "questions": [
+        "Os vídeos disponíveis permitem organizar a sequência visual dos acontecimentos?",
+        "Existem divergências entre os horários das câmeras e outros registros?",
+        "Quais elementos registrados nas imagens podem ser examinados ou melhor visualizados?"
+      ],
+      "technicalIds": [
+        "videos",
+        "imagens",
+        "geolocalizacao",
+        "mobile",
+        "dados",
+        "integridade",
+        "laudos",
+        "audios"
+      ]
+    }
+  ]
+}

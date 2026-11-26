@@ -1,6 +1,7 @@
 import { publicAbsoluteUrl, publicSiteUrl } from "@/lib/site-url";
 import { articlePath, practiceArticles, practiceCollection } from "@/lib/practice-articles";
 import { applicationTopics } from "@/data/applications";
+import { guidePath } from "@/lib/forensics";
 
 export default function sitemap() {
   if (!publicSiteUrl) {
@@ -10,6 +11,7 @@ export default function sitemap() {
   return [
     ...[
       "/aplicacoes",
+      guidePath,
       ...applicationTopics.map(({ slug }) => `/aplicacoes/${slug}`),
       "/contato",
       "/perfil",

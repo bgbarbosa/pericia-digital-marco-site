@@ -1,0 +1,140 @@
+{
+  "home": {
+    "eyebrow": "Evidências digitais · Prática jurídica",
+    "title": "Perícia Digital e Computação Forense aplicadas ao Direito.",
+    "lead": "Além do conteúdo visível, informações digitais podem ajudar a esclarecer a origem, o contexto e a sequência dos acontecimentos.",
+    "context": "Conheça as possibilidades de análise de celulares, conversas, documentos, imagens, áudios, vídeos, registros de sistemas e laudos periciais — com metodologia, responsabilidade e respeito aos limites de cada evidência.",
+    "indicators": [
+      "7 ramos do Direito",
+      "15 campos de conhecimento",
+      "Integridade e metodologia"
+    ],
+    "instruction": "Selecione seu ramo do Direito para conhecer exemplos de aplicação e os campos técnicos relacionados.",
+    "guideShortcut": "Ver conteúdo completo",
+    "notice": "Importante: as possibilidades apresentadas dependem do material disponível, do acesso legítimo, da metodologia, dos recursos técnicos e da complexidade do exame. Não representam garantia de recuperação de dados, identificação de autoria ou conclusão pericial.",
+    "guideCard": {
+      "title": "Guia completo de Perícia Digital",
+      "summary": "Conheça todos os 15 campos técnicos, possibilidades de exame e aplicações jurídicas."
+    }
+  },
+  "universoForense": {
+    "title": "Universo Forense",
+    "description": "Artigos, aplicações práticas, notícias e novidades sobre Perícia Digital e Computação Forense.",
+    "existingPath": "/pericia-na-pratica"
+  },
+  "guide": {
+    "title": "Perícia Digital na Prática Jurídica",
+    "description": "Guia completo de campos de conhecimento, exemplos de análise técnica e aplicações das evidências digitais nos processos.",
+    "technicalHeading": "Na prática, os principais campos de conhecimento abrangem:",
+    "introduction": [
+      {
+        "type": "h2",
+        "text": "Perícia Digital e Computação Forense aplicadas ao Direito",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "A atuação técnica é voltada à Perícia Digital e à Computação Forense, áreas que utilizam métodos, técnicas e ferramentas especializadas para identificar, preservar, examinar, correlacionar e interpretar informações digitais presentes em celulares, computadores, aplicativos, documentos eletrônicos, sistemas e outros dispositivos.",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "Com a crescente utilização da tecnologia nas relações pessoais, profissionais e comerciais, as evidências digitais passaram a desempenhar um papel relevante no esclarecimento de fatos e controvérsias judiciais e extrajudiciais.",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "Além das informações imediatamente visíveis, dispositivos e arquivos digitais podem conter registros técnicos capazes de contribuir para a compreensão da origem, do contexto e da sequência dos acontecimentos.",
+        "emphasis": false
+      }
+    ],
+    "closing": [
+      {
+        "type": "h2",
+        "text": "Como esse conhecimento pode ajudar na área jurídica?",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "Em muitos processos judiciais, as evidências digitais são apresentadas na forma de capturas de tela, documentos eletrônicos, fotografias, gravações, vídeos ou relatórios extensos de extração de dados.",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "Entretanto, a simples visualização desse material nem sempre é suficiente para compreender todas as informações que ele pode oferecer.",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "Uma avaliação técnica pode auxiliar na investigação de questões como:",
+        "emphasis": false
+      },
+      {
+        "type": "list",
+        "items": [
+          "A conversa apresentada está completa ou foi retirada de contexto?",
+          "Existem divergências entre as mensagens apresentadas e os registros disponíveis?",
+          "Um documento eletrônico apresenta indícios de alterações?",
+          "Uma fotografia contém informações relevantes sobre sua origem?",
+          "Uma gravação apresenta indícios de edição ou descontinuidade?",
+          "Os horários registrados em diferentes fontes são compatíveis?",
+          "Existem vestígios de informações que foram excluídas?",
+          "Os dados analisados permitem reconstruir a sequência dos acontecimentos?",
+          "A metodologia empregada em determinado exame foi devidamente documentada?",
+          "As conclusões de um laudo são compatíveis com os elementos técnicos apresentados?",
+          "Existem informações relevantes em uma extração de dados que ainda não foram examinadas?"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Essas questões podem surgir em diferentes áreas do Direito, incluindo processos criminais, cíveis, trabalhistas, empresariais, consumeristas, contratuais e familiares.",
+        "emphasis": false
+      },
+      {
+        "type": "h3",
+        "text": "Formação e abordagem multidisciplinar",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "A formação profissional reúne conhecimentos em Computação Forense, Perícia Digital, Investigação Digital, Administração, Análise de Dados, Inteligência Artificial e desenvolvimento de soluções tecnológicas.",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "Essa combinação permite uma abordagem multidisciplinar, considerando não apenas os aspectos técnicos dos dispositivos e arquivos, mas também a organização, o relacionamento e a interpretação das informações.",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "Associado à APECOF — Associação Nacional dos Peritos em Computação Forense, entidade voltada à integração, capacitação e desenvolvimento dos profissionais dessa especialidade.",
+        "emphasis": false
+      },
+      {
+        "type": "h3",
+        "text": "Compromisso com a responsabilidade técnica",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "Cada análise depende das características do material disponível, da forma de obtenção das informações, da autorização de acesso, dos recursos técnicos necessários e da complexidade do exame.",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "O trabalho técnico deve respeitar a integridade das evidências, a confidencialidade das informações, a metodologia aplicada e os limites das conclusões possíveis.",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "Mais do que examinar dispositivos ou arquivos, a proposta consiste em transformar informações digitais complexas em conhecimento técnico claro, organizado e fundamentado.",
+        "emphasis": false
+      },
+      {
+        "type": "p",
+        "text": "O objetivo é contribuir para o esclarecimento dos fatos, permitindo que as informações digitais sejam compreendidas em sua real dimensão técnica e probatória.",
+        "emphasis": true
+      }
+    ]
+  }
+}

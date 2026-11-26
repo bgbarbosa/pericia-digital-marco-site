@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0",
   "collection": {
-    "title": "Perícia na Prática",
+    "title": "Universo Forense",
     "titleStatus": "aprovado_pelo_usuario",
-    "subtitle": "Aplicações, exemplos e situações concretas.",
+    "subtitle": "Artigos, aplicações práticas, notícias e novidades sobre Perícia Digital e Computação Forense.",
     "audience": "Advogados",
     "introduction": "Mensagens, documentos, imagens e dados: quatro leituras para compreender possibilidades e limites da análise técnica.",
     "launchMode": "conjunto",

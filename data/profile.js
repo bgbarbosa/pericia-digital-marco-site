@@ -40,7 +40,8 @@ export const profile = {
 
 export const homeMenu = [
   { label: "Início", href: "#inicio" },
-  { label: "Perícia na Prática", href: "/pericia-na-pratica" },
+  { label: "Áreas da Perícia", href: "/areas-da-pericia" },
+  { label: "Universo Forense", href: "/pericia-na-pratica" },
   { label: "Aplicações de IA", href: "/aplicacoes" },
   { label: "Contato", href: "/contato" },
 ];

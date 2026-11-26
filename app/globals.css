@@ -414,6 +414,10 @@ main {
   white-space: nowrap;
   font-size: 0.875rem;
 }
+.header-nav-link[aria-current="page"],
+.mobile-dialog nav a[aria-current="page"] {
+  color: #67e8f9;
+}
 .header-contact {
   flex-shrink: 0;
   font-size: 0.875rem;
@@ -583,7 +587,7 @@ main {
   min-width: 0;
 }
 .home-page .practice-callout-section {
-  padding-block: 1.75rem 0.75rem;
+  padding-block: 1.6rem 0.75rem;
 }
 .home-page .credentials-layout {
   grid-template-columns: minmax(0, 1fr);

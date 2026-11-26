@@ -216,6 +216,7 @@ test("sitemap, âncoras e ausência de rotas de rascunho", async ({
   );
   expect(urls.sort()).toEqual([
     "/perfil",
+    "/areas-da-pericia",
     ...routes,
     practiceContent.collection.basePath,
     ...practiceContent.articles.map(({ slug }) => `${practiceContent.collection.basePath}/${slug}`),

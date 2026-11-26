@@ -1,0 +1,94 @@
+<svg viewBox="0 0 510 366" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+<defs>
+<linearGradient id="hero-bg" x2="1" y2="1">
+<stop stop-color="#0d253d"/>
+<stop offset="1" stop-color="#071426"/>
+</linearGradient>
+<radialGradient id="halo">
+<stop stop-color="#24bddb" stop-opacity=".2"/>
+<stop offset="1" stop-color="#24bddb" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="device" x2="1" y2="1">
+<stop stop-color="#173a50"/>
+<stop offset="1" stop-color="#071323"/>
+</linearGradient>
+<pattern id="hero-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+<path d="M24 0H0V24" stroke="#4bb5d1" stroke-opacity=".09" fill="none"/>
+</pattern>
+</defs>
+<rect x="13" y="12" width="484" height="337" rx="25" fill="url(#hero-bg)" stroke="#29475f"/>
+<rect x="14" y="13" width="482" height="335" rx="24" fill="url(#hero-grid)"/>
+<ellipse cx="275" cy="174" rx="205" ry="158" fill="url(#halo)"/>
+<g fill="none" stroke="#67e8f9" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="4 5">
+<path d="M126 105h56l43 36M362 84h-54l-36 57M362 216h-48l-35-25M131 226h50l39-34M251 234v36"/>
+</g>
+<g fill="#67e8f9">
+<circle cx="182" cy="105" r="3"/>
+<circle cx="308" cy="84" r="3"/>
+<circle cx="181" cy="226" r="3"/>
+<circle cx="314" cy="216" r="3"/>
+</g>
+<g fill="none" stroke="#74cfe8" stroke-width="1.15" stroke-linecap="round">
+  <g transform="translate(58 154)" opacity=".68">
+<path d="M0 0h39l7 7-7 7H0Zm7 5h26m-26 4h19"/>
+<path d="M0 16h21" opacity=".45"/>
+</g>
+  <g transform="translate(381 141)" opacity=".65">
+<path d="M0 0h45m-45 5h29m-29 5h36"/>
+<circle cx="43" cy="10" r="2" fill="#67e8f9"/>
+</g>
+  <path d="M167 55h25l12 12h38m75 177h22l10 12h16M152 253h28l10 9h24" opacity=".43"/>
+  <path d="M162 56h8m145 188h7m-173 9h7" stroke-width="2"/>
+</g>
+<g transform="translate(47 64)">
+<rect width="98" height="83" rx="15" fill="#0a192c" stroke="#3d637d"/>
+<rect x="20" y="20" width="58" height="40" rx="8" stroke="#67e8f9" fill="#102d43"/>
+<path d="M25 61v7l12-8" stroke="#67e8f9" fill="#102d43"/>
+<path d="M31 32h35M31 42h22M31 50h29" stroke="#9cdaed" stroke-width="2" stroke-linecap="round"/>
+<circle cx="76" cy="19" r="6" fill="#67e8f9" fill-opacity=".8"/>
+</g>
+<g transform="translate(357 45)">
+<rect width="101" height="83" rx="15" fill="#0a192c" stroke="#3d637d"/>
+<path d="M29 17h28l15 15v34H29Z" fill="#102d43" stroke="#67e8f9" stroke-width="1.8"/>
+<path d="M57 17v15h15M37 42h25m-25 9h19" stroke="#9cdaed" fill="none" stroke-width="2" stroke-linecap="round"/>
+</g>
+<g transform="translate(38 189)">
+<rect width="113" height="73" rx="15" fill="#0a192c" stroke="#3d637d"/>
+<g stroke="#67e8f9" stroke-width="2" stroke-linecap="round">
+<path d="M18 37v-5m8 12V25m9 24V19m9 23V27m9 20V23m9 26V17m9 25V28m9 18V23m9 15v-3"/>
+</g>
+</g>
+<g transform="translate(356 184)">
+<rect width="104" height="81" rx="15" fill="#0a192c" stroke="#3d637d"/>
+<rect x="19" y="20" width="66" height="41" rx="6" fill="#102d43" stroke="#67e8f9" stroke-width="1.5"/>
+<path d="m46 31 14 9-14 9Z" fill="#67e8f9" fill-opacity=".85"/>
+<path d="M28 67h48m-40-3v6m30-6v6" stroke="#5fb4d2" stroke-opacity=".65" stroke-linecap="round"/>
+<path d="M27 26h8m34 29h8" stroke="#9cdaed" stroke-width="1.6"/>
+</g>
+<g transform="translate(195 76)">
+<rect x="0" y="0" width="111" height="167" rx="18" fill="url(#device)" stroke="#6ae0f4" stroke-width="2"/>
+<rect x="9" y="14" width="93" height="134" rx="9" fill="#07172a" stroke="#34576e"/>
+<path d="M43 8h25M45 157h21" stroke="#6ae0f4" stroke-linecap="round" stroke-width="2"/>
+<circle cx="55" cy="72" r="34" stroke="#67e8f9" stroke-opacity=".28" fill="#67e8f90b"/>
+<circle cx="55" cy="72" r="25" stroke="#67e8f9" stroke-width="2" fill="#10374a"/>
+<path d="M73 90l17 17" stroke="#67e8f9" stroke-width="6" stroke-linecap="round"/>
+<path d="m42 72 9 9 17-19" stroke="#a5f3fc" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g transform="translate(67 278)">
+<rect width="376" height="48" rx="11" fill="#071426" stroke="#32516a"/>
+<path d="M42 15v3m15-3v3m15-3v3m15-3v3m32-3v3m16-3v3m16-3v3m16-3v3m32-3v3m16-3v3m16-3v3m16-3v3m32-3v3m16-3v3m16-3v3m16-3v3" stroke="#65bdd8" opacity=".64"/>
+<path d="M26 24H350" stroke="#335b74" stroke-width="2"/>
+<path d="M26 24H272" stroke="#67e8f9" stroke-opacity=".7" stroke-width="2"/>
+<g fill="#092235" stroke="#67e8f9" stroke-width="2">
+<circle cx="27" cy="24" r="5"/>
+<circle cx="103" cy="24" r="5"/>
+<circle cx="184" cy="24" r="5"/>
+<circle cx="270" cy="24" r="5"/>
+<circle cx="350" cy="24" r="5"/>
+</g>
+</g>
+<g font-family="Arial, sans-serif" font-size="10" letter-spacing="2.3" fill="#8ba6b9">
+<text x="33" y="33">VESTÍGIOS DIGITAIS</text>
+<text x="255" y="342" text-anchor="middle">IDENTIFICAR · PRESERVAR · ANALISAR</text>
+</g>
+</svg>

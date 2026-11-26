@@ -13,8 +13,8 @@ const allRoutes = ["/", "/cartao", basePath, ...content.articles.map(articlePath
 const normalize = (value) => value.replace(/\s+/g, " ").trim();
 
 test("fonte editorial única e integridade dos quatro textos e onze imagens", () => {
-  expect(content.collection.title).toBe("Perícia na Prática");
-  expect(content.collection.subtitle).toBe("Aplicações, exemplos e situações concretas.");
+  expect(content.collection.title).toBe("Universo Forense");
+  expect(content.collection.subtitle).toBe("Artigos, aplicações práticas, notícias e novidades sobre Perícia Digital e Computação Forense.");
   expect(content.collection.publicationStatus).toBe("publicado");
   expect(content.collection.publicationDate).toBe(publicationDate);
   expect(content.collection.publicUrl).toBe(`${publicOrigin}${basePath}`);
@@ -42,7 +42,7 @@ for (const width of [320, 390, 768, 1440]) {
   test(`coleção com quatro leituras disponíveis em ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     expect((await page.goto(basePath)).status()).toBe(200);
-    await expect(page.locator("h1")).toHaveText("Perícia na Prática");
+    await expect(page.locator("h1")).toHaveText("Universo Forense");
     await expect(page.getByText(content.collection.subtitle, { exact: true })).toBeVisible();
     for (const article of content.articles) {
       const card = page.locator("article").filter({ has: page.getByRole("heading", { name: article.title, exact: true }) });
@@ -127,7 +127,7 @@ for (const width of [390, 1440]) {
       await expect(page.getByRole("link", { name: "Enviar e-mail" })).toHaveAttribute("href", /^\/contato\?assunto=/);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       expect(errors).toEqual([]);
-      await page.getByRole("link", { name: "← Voltar à coleção Perícia na Prática" }).click();
+      await page.getByRole("link", { name: "← Voltar à coleção Universo Forense" }).click();
       await expect(page).toHaveURL(new RegExp(`${basePath}$`));
     });
   }
@@ -140,7 +140,7 @@ test("menu, chamada da home e foco de teclado abrem a coleção", async ({ page 
     await expect(page.locator("#inicio h1")).toHaveText("Inteligência Artificial, perícia digital e desenvolvimento de software");
     if (width < 1280) await page.getByRole("button", { name: "Abrir menu" }).click();
     const navigation = page.getByRole("navigation", { name: width < 1280 ? "Navegação móvel" : "Navegação principal" });
-    const link = navigation.getByRole("link", { name: "Perícia na Prática", exact: true });
+    const link = navigation.getByRole("link", { name: "Universo Forense", exact: true });
     await expect(link).toBeVisible();
     const bounds = await link.boundingBox();
     expect(bounds.x + bounds.width).toBeLessThanOrEqual(width);

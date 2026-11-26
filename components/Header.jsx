@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { profile } from "@/data/profile";
 import BrandLogo from "@/components/BrandLogo";
 
@@ -14,7 +15,14 @@ export default function Header({
   const firstLinkRef = useRef(null);
   const dialogRef = useRef(null);
   const externalContact = /^https?:\/\//.test(contactHref ?? "");
+  const pathname = usePathname();
   const navigationItems = menu.filter((item) => item.label !== contactLabel);
+  const currentPage = (href) => {
+    if (!href || href === "#trajetoria-atuacao") return undefined;
+    const path = href.split("#")[0] || "/";
+    return pathname === path || (path !== "/" && pathname.startsWith(`${path}/`))
+      ? "page" : undefined;
+  };
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -67,6 +75,7 @@ export default function Header({
             <a
               key={item.href}
               href={item.href}
+              aria-current={currentPage(item.href)}
               className="header-nav-link font-semibold text-slate-300 transition hover:text-cyan-300 focus-visible:outline-cyan-200"
             >
               {item.label}
@@ -78,6 +87,7 @@ export default function Header({
 
         <a
           href={contactHref}
+          aria-current={externalContact ? undefined : currentPage(contactHref)}
           target={externalContact ? "_blank" : undefined}
           rel={externalContact ? "noopener noreferrer" : undefined}
           className="header-contact action-secondary border-cyan-400/35 bg-cyan-400/10 text-cyan-100 transition hover:bg-cyan-400/20 focus-visible:outline-cyan-200"
@@ -139,6 +149,7 @@ export default function Header({
                 ref={index === 0 ? firstLinkRef : undefined}
                 key={item.href}
                 href={item.href}
+                aria-current={currentPage(item.href)}
                 onClick={closeMenu}
                 className="action-secondary justify-start"
               >
@@ -154,6 +165,7 @@ export default function Header({
             >Dama Universe <span aria-hidden="true">↗︎</span></a>
             <a
               href={contactHref}
+              aria-current={externalContact ? undefined : currentPage(contactHref)}
               target={externalContact ? "_blank" : undefined}
               rel={externalContact ? "noopener noreferrer" : undefined}
               onClick={closeMenu}

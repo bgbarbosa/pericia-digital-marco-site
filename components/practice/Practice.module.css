@@ -14,12 +14,12 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  padding: clamp(24px, 3vw, 36px);
+  gap: clamp(.5rem, 2vw, 1.5rem);
+  padding: clamp(18px, 3vw, 36px);
   border: 1px solid #67e8f980;
   border-radius: 1.4rem;
   background: linear-gradient(115deg, #07344a, #101c3a);
@@ -36,11 +36,24 @@
   pointer-events: none;
 }
 .callout > div {
-  flex: 1 1 14rem;
+  display: flex;
+  align-items: center;
+  gap: clamp(.75rem, 2vw, 1.25rem);
   min-width: 0;
 }
+.calloutIcon {
+  display: grid;
+  place-items: center;
+  width: clamp(46px, 5vw, 64px);
+  aspect-ratio: 1;
+  flex: none;
+  border-radius: .9rem;
+  border: 1px solid #67e8f94d;
+  background: #67e8f90a;
+}
+.calloutIcon img { max-width: 70%; height: auto; }
 .callout p {
-  margin-top: 0.75rem;
+  margin-top: 0.35rem;
 }
 .calloutArrow {
   flex-shrink: 0;
@@ -56,15 +69,17 @@
   outline: 3px solid #a5f3fc;
   outline-offset: 5px;
 }
+@media (max-width: 30rem) {
+  .callout > div { align-items: flex-start; }
+  .calloutArrow { font-size: 1.5rem; }
+}
 @keyframes callout-color {
   0%, 100% { opacity: 0.15; }
   50% { opacity: 0.85; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .callout::before {
-    animation: none;
-    opacity: 0.5;
-  }
+  .callout { transition: none; }
+  .callout::before { animation: none; opacity: 0; }
 }
 .collectionIntro {
   padding-block: 6.5rem 3rem;

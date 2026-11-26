@@ -28,7 +28,7 @@ jobs:
         run: npm audit --omit=dev
 
       - name: Auditar todas as dependências
-        run: node scripts/audit-dev-allowlist.mjs
+        run: npm audit --audit-level=info
 
       - name: Verificar código
         run: npm run lint

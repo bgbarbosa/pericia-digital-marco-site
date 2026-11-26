@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import CredentialsAffiliations from "@/components/CredentialsAffiliations";
 import FormationExperience from "@/components/FormationExperience";
 import PracticeCallout from "@/components/practice/PracticeCallout";
+import ForensicsHomeSection from "@/components/forensics/ForensicsHomeSection";
 import { CapacitySection } from "@/components/PositioningSections";
 import { TrajectoryEvents } from "@/components/ApprovedContent";
 import { trajectoryEntries } from "@/data/public-content";
@@ -33,6 +34,7 @@ export default function HomePage() {
         featuredTraining={featuredTraining}
         profile={profile}
       />
+      <ForensicsHomeSection />
       <PracticeCallout />
       <CapacitySection modalities={capacityModalities} />
       <TrajectoryEvents entries={trajectoryEntries} />
