@@ -253,6 +253,19 @@ test("rotas auxiliares e metadados respondem corretamente", async ({ page, reque
     expect(metadataResponse.ok()).toBe(true);
   }
 
+  await page.goto("/");
+  await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute("content", "Marco Barbosa");
+  const website = page.locator('script[type="application/ld+json"]');
+  await expect(website).toHaveCount(1);
+  expect(JSON.parse(await website.textContent())).toMatchObject({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "http://127.0.0.1:3100/#website",
+    url: "http://127.0.0.1:3100/",
+    name: "Marco Barbosa",
+    alternateName: "Marco Aurélio Pereira Barbosa",
+  });
+
   await page.goto("/cartao");
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
     "content",

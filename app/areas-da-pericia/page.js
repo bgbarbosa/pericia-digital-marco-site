@@ -2,22 +2,35 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import ForensicsIcon from "@/components/forensics/ForensicsIcon";
 import GuideFieldNavigation from "@/components/forensics/GuideFieldNavigation";
 import styles from "@/components/forensics/Forensics.module.css";
 import { cardMenu } from "@/data/profile";
 import { areaPath, fieldAnchor, guide, guidePath, lawAreas, lawChoices, technicalFields } from "@/lib/forensics";
 import { pageMetadata } from "@/lib/page-metadata";
+import { publicAbsoluteUrl } from "@/lib/site-url";
 
 const homeAreas = "/#pericia-aplicada";
 const branchOptions = lawChoices.map(({ id, title }) => ({ title, href: areaPath(id) }));
 const areaTitle = (area) => `${area.title} — possibilidades de análise digital`;
+const homeLabel = "Início";
+const guideLabel = "Perícia digital aplicada ao Direito";
+const guideImage = publicAbsoluteUrl(`${guidePath}/opengraph-image`);
+const guideBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: homeLabel, item: publicAbsoluteUrl("/") },
+    { "@type": "ListItem", position: 2, name: guideLabel, item: publicAbsoluteUrl(guidePath) },
+  ],
+};
 
 export async function generateMetadata({ searchParams }) {
   const query = await searchParams;
   const area = lawAreas.find(({ id }) => id === query.area);
   return {
-    ...pageMetadata(area ? areaTitle(area) : guide.title, area?.summary ?? guide.description, guidePath),
+    ...pageMetadata(area ? areaTitle(area) : guide.title, area?.summary ?? guide.description, guidePath, { images: [guideImage] }),
     ...(query.area !== undefined ? { robots: { index: false, follow: true } } : {}),
   };
 }
@@ -93,15 +106,16 @@ export default async function ForensicsGuidePage({ searchParams }) {
 
   return (
     <main className={styles.guide}>
+      {areaId === undefined && <JsonLd data={guideBreadcrumb} />}
       <Header menu={cardMenu} contactHref="/contato" contactLabel="Contato" />
       <section id="guia-topo" className={styles.detailHero} aria-labelledby="guide-title">
         <div className="site-container">
           <nav aria-label="Caminho da página" className={styles.breadcrumb}>
-            <Link href="/">Início</Link><ForensicsIcon name="chevron" />
+            <Link href="/">{homeLabel}</Link><ForensicsIcon name="chevron" />
             {area ? (
-              <><Link href={guidePath}>Perícia digital aplicada ao Direito</Link><ForensicsIcon name="chevron" />
+              <><Link href={guidePath}>{guideLabel}</Link><ForensicsIcon name="chevron" />
                 <span aria-current="page">{area.title}</span></>
-            ) : <span aria-current="page">Perícia digital aplicada ao Direito</span>}
+            ) : <span aria-current="page">{guideLabel}</span>}
           </nav>
           <div className={styles.detailHeroGrid}>
             <div>

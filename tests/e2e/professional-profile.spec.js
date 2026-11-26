@@ -58,6 +58,9 @@ test("currículo mantém os bytes originais e perfil entra no sitemap e SEO", as
   await expect(page).toHaveTitle(/Perfil e currículo de Marco Barbosa/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "http://127.0.0.1:3100/perfil");
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", /Perfil e currículo/);
+  const portraitUrl = "http://127.0.0.1:3100/marco-barbosa-profissional.jpg";
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", portraitUrl);
+  await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute("content", portraitUrl);
   await expect(page.locator("#person")).toBeVisible();
   const jsonLd = page.locator('script[type="application/ld+json"]');
   await expect(jsonLd).toHaveCount(1);
@@ -70,7 +73,8 @@ test("currículo mantém os bytes originais e perfil entra no sitemap e SEO", as
       name: "Marco Aurélio Pereira Barbosa",
       alternateName: "Marco Barbosa",
       url: "http://127.0.0.1:3100/perfil",
-      image: "http://127.0.0.1:3100/marco-barbosa-profissional.jpg",
+      image: portraitUrl,
+      sameAs: ["https://lattes.cnpq.br/1970561249212557"],
     },
   });
   const collection = page.getByRole("article").filter({ has: page.getByRole("heading", { name: "Universo Forense" }) });

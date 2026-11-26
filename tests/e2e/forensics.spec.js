@@ -32,6 +32,7 @@ test("uma única seção na home encaminha para os sete recortes e o guia comple
     await expect(page).toHaveURL(new RegExp(`${path}\\?area=${area.id}$`));
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, follow");
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `http://127.0.0.1:3100${path}`);
+    await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(0);
     await expect(fields(page)).toHaveCount(area.technicalIds.length);
     expect(await idsOnPage(page)).toEqual(allIds.filter((id) => area.technicalIds.includes(id.slice(5))));
     for (const question of area.questions) await expect(page.getByText(question, { exact: true })).toBeVisible();
@@ -75,6 +76,28 @@ test("guia preserva cada campo e os textos aprovados, inclusive no fallback", as
   const sitemap = await (await request.get("/sitemap.xml")).text();
   expect(sitemap).toContain(`${path}</loc>`);
   expect(sitemap).not.toContain("?area=");
+
+  await page.goto(path);
+  const trail = page.getByRole("navigation", { name: "Caminho da página" });
+  await expect(trail.getByRole("link", { name: "Início" })).toHaveAttribute("href", "/");
+  await expect(trail.locator('[aria-current="page"]')).toHaveText("Perícia digital aplicada ao Direito");
+  const jsonLd = page.locator('script[type="application/ld+json"]');
+  await expect(jsonLd).toHaveCount(1);
+  expect(JSON.parse(await jsonLd.textContent())).toMatchObject({
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Início", item: "http://127.0.0.1:3100/" },
+      { "@type": "ListItem", position: 2, name: "Perícia digital aplicada ao Direito", item: `http://127.0.0.1:3100${path}` },
+    ],
+  });
+  const socialImage = `${path}/opengraph-image`;
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", new RegExp(`${socialImage}(\\?|$)`));
+  await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute("content", new RegExp(`${socialImage}(\\?|$)`));
+  const image = await request.get(socialImage);
+  expect(image.ok()).toBe(true);
+  expect(image.headers()["content-type"]).toContain("image/png");
+  const png = await image.body();
+  expect([png.readUInt32BE(16), png.readUInt32BE(20)]).toEqual([1200, 630]);
 });
 
 for (const width of [390, 768, 1024, 1280, 1440]) {

@@ -12,7 +12,8 @@ import { profilePath, profilePerson } from "@/lib/profile-identity";
 import { publicAbsoluteUrl } from "@/lib/site-url";
 import styles from "./profile.module.css";
 
-export const metadata = pageMetadata("Perfil e currículo de Marco Barbosa", "Conheça a trajetória, formação, capacitações e projetos autorais de Marco Aurélio Pereira Barbosa, criador do Dama Universe.", profilePath);
+const portraitUrl = publicAbsoluteUrl(profile.image);
+export const metadata = pageMetadata("Perfil e currículo de Marco Barbosa", "Conheça a trajetória, formação, capacitações e projetos autorais de Marco Aurélio Pereira Barbosa, criador do Dama Universe.", profilePath, { images: [portraitUrl] });
 
 export default function ProfessionalProfilePage() {
   return (
@@ -21,7 +22,7 @@ export default function ProfessionalProfilePage() {
         "@context": "https://schema.org",
         "@type": "ProfilePage",
         "@id": profilePerson.url,
-        mainEntity: { ...profilePerson, image: publicAbsoluteUrl(profile.image) },
+        mainEntity: { ...profilePerson, image: portraitUrl, sameAs: [profile.lattes] },
       }} />
       <Header menu={cardMenu} contactHref="/contato" contactLabel="Contato" />
       <section id="person" className={styles.hero} aria-labelledby="profile-title">

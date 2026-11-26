@@ -2,6 +2,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import JsonLd from "@/components/JsonLd";
 import CredentialsAffiliations from "@/components/CredentialsAffiliations";
 import FormationExperience from "@/components/FormationExperience";
 import PracticeCallout from "@/components/practice/PracticeCallout";
@@ -10,6 +11,7 @@ import { CapacitySection } from "@/components/PositioningSections";
 import { TrajectoryEvents } from "@/components/ApprovedContent";
 import { trajectoryEntries } from "@/data/public-content";
 import { approvedTrajectory } from "@/lib/public-content";
+import { publicAbsoluteUrl } from "@/lib/site-url";
 import {
   capacityModalities,
   featuredTraining,
@@ -18,6 +20,16 @@ import {
   telephoneUrl,
   whatsappUrl,
 } from "@/data/profile";
+
+const homeUrl = publicAbsoluteUrl("/");
+const website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${homeUrl}#website`,
+  url: homeUrl,
+  name: profile.displayName,
+  alternateName: profile.name,
+};
 
 export default function HomePage() {
   const menu = approvedTrajectory(trajectoryEntries).length
@@ -29,6 +41,7 @@ export default function HomePage() {
     : homeMenu;
   return (
     <main className="home-page min-h-screen bg-[#020817] text-slate-100">
+      <JsonLd data={website} />
       <Header menu={menu} contactHref="/contato" contactLabel="Contato" />
       <HeroSection
         featuredTraining={featuredTraining}
