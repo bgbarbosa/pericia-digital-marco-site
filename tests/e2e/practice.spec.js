@@ -202,6 +202,7 @@ test("novo retrato sem recorte na home, cartão e imagens sociais JPEG/PNG", asy
 });
 
 test("metadados e sitemap usam as cinco rotas e a data real de publicação", async ({ page, request }) => {
+  const authorUrl = "http://127.0.0.1:3100/perfil";
   for (const article of [null, ...content.articles]) {
     const route = article ? articlePath(article) : basePath;
     await page.goto(route);
@@ -212,8 +213,28 @@ test("metadados e sitemap usam as cinco rotas e a data real de publicação", as
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", `http://127.0.0.1:3100${(article || content.articles[0]).coverPath}`);
     await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute("content", (article || content.articles[0]).coverAlt);
     const publishedTime = page.locator('meta[property="article:published_time"]');
-    if (article) await expect(publishedTime).toHaveAttribute("content", publicationDate);
-    else await expect(publishedTime).toHaveCount(0);
+    const jsonLd = page.locator('script[type="application/ld+json"]');
+    await expect(page.locator('link[rel="author"]')).toHaveAttribute("href", authorUrl);
+    const byline = page.locator("p").filter({ hasText: /^Por Marco Barbosa · Dama Universe$/ });
+    await expect(byline.getByRole("link", { name: article?.author || content.collection.author, exact: true }))
+      .toHaveAttribute("href", "/perfil");
+    if (article) {
+      await expect(publishedTime).toHaveAttribute("content", publicationDate);
+      await expect(page.locator('meta[property="article:author"]')).toHaveAttribute("content", authorUrl);
+      await expect(jsonLd).toHaveCount(1);
+      expect(JSON.parse(await jsonLd.textContent())).toMatchObject({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        mainEntityOfPage: `http://127.0.0.1:3100${route}`,
+        headline: article.title,
+        description: article.excerpt,
+        image: `http://127.0.0.1:3100${article.coverPath}`,
+        author: { "@type": "Person", "@id": `${authorUrl}#person`, alternateName: article.author, url: authorUrl },
+      });
+    } else {
+      await expect(publishedTime).toHaveCount(0);
+      await expect(jsonLd).toHaveCount(0);
+    }
     await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute("content", "summary_large_image");
     await expect(page.locator('meta[name="robots"][content*="noindex"], meta[name="robots"][content*="nofollow"]')).toHaveCount(0);
     await expect(page.locator("time")).toHaveCount(0);

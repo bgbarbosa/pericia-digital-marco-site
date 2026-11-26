@@ -3,12 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import ArticleCards from "@/components/practice/ArticleCards";
 import ArticleBody from "@/components/practice/ArticleBody";
 import CopyEmailButton from "@/components/practice/CopyEmailButton";
 import { practiceContactUrl, practiceWhatsAppUrl } from "@/lib/practice-contact";
 import { cardMenu, profile } from "@/data/profile";
-import { articleOutline, findArticle, practiceArticles, practiceCollection, practiceMetadata } from "@/lib/practice-articles";
+import { articleOutline, articlePath, findArticle, practiceArticles, practiceCollection, practiceMetadata } from "@/lib/practice-articles";
+import { personForByline, profilePath } from "@/lib/profile-identity";
+import { publicAbsoluteUrl } from "@/lib/site-url";
 import styles from "@/components/practice/Practice.module.css";
 
 export const dynamicParams = false;
@@ -27,6 +30,7 @@ export default async function PracticeArticlePage({ params }) {
   const article = findArticle((await params).slug);
   if (!article) notFound();
   const related = article.relatedSlugs.map(findArticle).filter(Boolean);
+  const author = personForByline(article.author);
   const contactUrl = practiceWhatsAppUrl(article.title);
   const articleContactUrl = practiceContactUrl(article.title);
 
@@ -37,6 +41,15 @@ export default async function PracticeArticlePage({ params }) {
         className={`${styles.container} ${styles.article}`}
         style={{ "--article-accent": article.theme.accent, "--article-tint": article.theme.tint }}
       >
+        <JsonLd data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          mainEntityOfPage: publicAbsoluteUrl(articlePath(article.slug)),
+          headline: article.title,
+          description: article.excerpt,
+          image: publicAbsoluteUrl(article.coverPath),
+          author,
+        }} />
         <Link className={styles.backLink} href={practiceCollection.basePath}>
           ← Voltar à coleção {practiceCollection.title}
         </Link>
@@ -44,7 +57,7 @@ export default async function PracticeArticlePage({ params }) {
           <p className={styles.category}>{article.category}</p>
           <h1>{article.title}</h1>
           <p className={styles.subtitle}>{article.subtitle}</p>
-          <p className={styles.byline}>Por <strong>{article.author}</strong> · {article.brand}</p>
+          <p className={styles.byline}>Por <strong>{author.url ? <Link href={profilePath}>{article.author}</Link> : article.author}</strong> · {article.brand}</p>
           <p className={styles.excerpt} data-testid="article-excerpt">{article.excerpt}</p>
         </header>
         <figure className={styles.cover} data-testid="article-cover">

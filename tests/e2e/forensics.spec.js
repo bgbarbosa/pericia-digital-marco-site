@@ -30,6 +30,8 @@ test("uma única seção na home encaminha para os sete recortes e o guia comple
     await expect(link).toHaveAccessibleDescription(area.summary);
     await link.locator("img").click();
     await expect(page).toHaveURL(new RegExp(`${path}\\?area=${area.id}$`));
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, follow");
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `http://127.0.0.1:3100${path}`);
     await expect(fields(page)).toHaveCount(area.technicalIds.length);
     expect(await idsOnPage(page)).toEqual(allIds.filter((id) => area.technicalIds.includes(id.slice(5))));
     for (const question of area.questions) await expect(page.getByText(question, { exact: true })).toBeVisible();
