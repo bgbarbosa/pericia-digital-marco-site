@@ -58,4 +58,21 @@ test("currículo mantém os bytes originais e perfil entra no sitemap e SEO", as
   await expect(page).toHaveTitle(/Perfil e currículo de Marco Barbosa/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "http://127.0.0.1:3100/perfil");
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", /Perfil e currículo/);
+  await expect(page.locator("#person")).toBeVisible();
+  const jsonLd = page.locator('script[type="application/ld+json"]');
+  await expect(jsonLd).toHaveCount(1);
+  expect(JSON.parse(await jsonLd.textContent())).toMatchObject({
+    "@type": "ProfilePage",
+    "@id": "http://127.0.0.1:3100/perfil",
+    mainEntity: {
+      "@type": "Person",
+      "@id": "http://127.0.0.1:3100/perfil#person",
+      name: "Marco Aurélio Pereira Barbosa",
+      alternateName: "Marco Barbosa",
+      url: "http://127.0.0.1:3100/perfil",
+      image: "http://127.0.0.1:3100/marco-barbosa-profissional.jpg",
+    },
+  });
+  const collection = page.getByRole("article").filter({ has: page.getByRole("heading", { name: "Universo Forense" }) });
+  await expect(collection.getByRole("link", { name: "Explorar a coleção" })).toHaveAttribute("href", "/pericia-na-pratica");
 });

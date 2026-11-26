@@ -2,19 +2,29 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import SelectedDamaTools from "@/components/SelectedDamaTools";
 import { cardMenu, profile } from "@/data/profile";
 import { profileEducation, profilePractice, profileTraining } from "@/data/professional-profile";
 import { pageMetadata } from "@/lib/page-metadata";
+import { practiceCollection } from "@/lib/practice-articles";
+import { profilePath, profilePerson } from "@/lib/profile-identity";
+import { publicAbsoluteUrl } from "@/lib/site-url";
 import styles from "./profile.module.css";
 
-export const metadata = pageMetadata("Perfil e currículo de Marco Barbosa", "Conheça a trajetória, formação, capacitações e projetos autorais de Marco Aurélio Pereira Barbosa, criador do Dama Universe.", "/perfil");
+export const metadata = pageMetadata("Perfil e currículo de Marco Barbosa", "Conheça a trajetória, formação, capacitações e projetos autorais de Marco Aurélio Pereira Barbosa, criador do Dama Universe.", profilePath);
 
 export default function ProfessionalProfilePage() {
   return (
     <main className={styles.page}>
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": profilePerson.url,
+        mainEntity: { ...profilePerson, image: publicAbsoluteUrl(profile.image) },
+      }} />
       <Header menu={cardMenu} contactHref="/contato" contactLabel="Contato" />
-      <section className={styles.hero} aria-labelledby="profile-title">
+      <section id="person" className={styles.hero} aria-labelledby="profile-title">
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>Perfil profissional · {profile.city}</p>
           <h1 id="profile-title">Marco <span>Barbosa</span></h1>
@@ -98,7 +108,7 @@ export default function ProfessionalProfilePage() {
         <SelectedDamaTools />
         <a className="action-secondary" href={profile.damaUniverse} target="_blank" rel="noopener noreferrer">Visitar o Dama Universe ↗</a>
         <div className={styles.grid}>
-          <article className={styles.highlight}><h3>Perícia na Prática</h3><p>Coleção educativa voltada à compreensão de questões técnicas relacionadas a mensagens digitais, evidências eletrônicas e análise de informações.</p><Link className="text-link" href="/pericia-na-pratica">Explorar a coleção →</Link></article>
+          <article className={styles.highlight}><h3>{practiceCollection.title}</h3><p>Coleção educativa voltada à compreensão de questões técnicas relacionadas a mensagens digitais, evidências eletrônicas e análise de informações.</p><Link className="text-link" href={practiceCollection.basePath}>Explorar a coleção →</Link></article>
           <article className={styles.highlight}><h3>Produção bibliográfica</h3><p>BARBOSA, M. A. P. <strong>Explorando Métodos Alternativos de Instalação de Aplicativos em Dispositivos Xiaomi com MIUI.</strong> Dispositivos Móveis e Extração Avançada, 2023.</p><p className={styles.note}>Registrada no Currículo Lattes na categoria “Outras produções bibliográficas”.</p><a className="text-link" href={profile.lattes} target="_blank" rel="noopener noreferrer">Consultar o registro no Lattes ↗</a></article>
         </div>
       </section>

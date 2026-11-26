@@ -206,6 +206,11 @@
   font-size: 0.9rem;
   line-height: 1.6;
 }
+.byline a,
+.collectionByline a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 .excerpt {
   max-width: 85ch;
   border-left: 3px solid var(--article-accent);

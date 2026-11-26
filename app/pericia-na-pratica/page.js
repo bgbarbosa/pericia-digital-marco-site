@@ -5,12 +5,14 @@ import ArticleCards from "@/components/practice/ArticleCards";
 import { practiceWhatsAppUrl } from "@/lib/practice-contact";
 import { cardMenu } from "@/data/profile";
 import { practiceArticles, practiceCollection, practiceMetadata } from "@/lib/practice-articles";
+import { personForByline, profilePath } from "@/lib/profile-identity";
 import styles from "@/components/practice/Practice.module.css";
 
 export const metadata = practiceMetadata();
 
 export default function PracticeCollectionPage() {
   const contactUrl = practiceWhatsAppUrl();
+  const author = personForByline(practiceCollection.author);
   return (
     <main className={styles.shell}>
       <Header menu={cardMenu} contactHref={contactUrl} contactLabel="Conversar pelo WhatsApp" />
@@ -24,7 +26,7 @@ export default function PracticeCollectionPage() {
         </div>
       </div>
       <div className={`${styles.container} ${styles.collectionBody}`}>
-        <p className={styles.collectionByline}>Por {practiceCollection.author} · {practiceCollection.brand}</p>
+        <p className={styles.collectionByline}>Por {author.url ? <Link href={profilePath}>{practiceCollection.author}</Link> : practiceCollection.author} · {practiceCollection.brand}</p>
         <ArticleCards articles={practiceArticles} />
         <div className={styles.collectionContact}>
           <a className="action-primary" href={contactUrl} target="_blank" rel="noopener noreferrer">Receber conteúdos pelo WhatsApp</a>
