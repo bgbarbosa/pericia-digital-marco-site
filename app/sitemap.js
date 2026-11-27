@@ -1,7 +1,5 @@
 import { publicAbsoluteUrl, publicSiteUrl } from "@/lib/site-url";
-import { articlePath, practiceArticles, practiceCollection } from "@/lib/practice-articles";
-import { applicationTopics } from "@/data/applications";
-import { guidePath } from "@/lib/forensics";
+import { contentPagePaths } from "@/lib/public-pages";
 
 export default function sitemap() {
   if (!publicSiteUrl) {
@@ -9,18 +7,7 @@ export default function sitemap() {
   }
 
   return [
-    ...[
-      "/aplicacoes",
-      guidePath,
-      ...applicationTopics.map(({ slug }) => `/aplicacoes/${slug}`),
-      "/contato",
-      "/perfil",
-      "/formacao/deteccao-imagens-ia",
-      practiceCollection.basePath,
-      ...practiceArticles
-        .filter(({ publicationStatus }) => publicationStatus === "publicado")
-        .map(({ slug }) => articlePath(slug)),
-    ].map((path) => ({
+    ...contentPagePaths.map((path) => ({
       url: publicAbsoluteUrl(path),
       changeFrequency: "monthly",
       priority: 0.7,

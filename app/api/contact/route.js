@@ -1,4 +1,6 @@
+import { after } from "next/server";
 import { validateContact } from "@/lib/contact";
+import { metricsRequestAllowed, metricsRequestOptOut, sendMetric } from "@/lib/metrics-server";
 
 export const runtime = "nodejs";
 
@@ -98,6 +100,11 @@ export async function POST(request) {
     }
     if (!providerResponse.ok) {
       return reply("O serviço não aceitou a mensagem. O texto foi mantido; tente novamente mais tarde.", 502);
+    }
+    if (metricsRequestAllowed(request) && !metricsRequestOptOut(request)) {
+      after(async () => {
+        await sendMetric({ event: "contact_success", path: "/contato", source: "internal" });
+      });
     }
     return reply("O serviço confirmou o envio da mensagem. O recebimento na caixa postal ainda não foi verificado.", 200);
   } catch (error) {

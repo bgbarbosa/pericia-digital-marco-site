@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 
+import SiteMetrics from "@/components/SiteMetrics";
 import { profile } from "@/data/profile";
+import { publicPagePaths } from "@/lib/public-pages";
 import {
   hasPublicSiteUrl,
   metadataBase,
@@ -64,6 +66,7 @@ export const metadata = {
     shortcut: ["/favicon.ico"],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
+  verification: { google: "I55K4X8A4565Rjvpmq8Zfs_tl2t_38YGRsFvyYF-cfk" },
   manifest: "/manifest.webmanifest",
 };
 
@@ -74,7 +77,10 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-slate-950 text-slate-100">{children}</body>
+      <body className="min-h-full bg-slate-950 text-slate-100">
+        {children}
+        <SiteMetrics paths={publicPagePaths} />
+      </body>
     </html>
   );
 }
