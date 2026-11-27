@@ -47,7 +47,7 @@ export default function CopyEmailButton({ email }) {
 
   return (
     <div className={styles.copyEmail}>
-      <button className="action-secondary" type="button" onClick={copyEmail} aria-disabled={copying}>
+      <button className="action-secondary" type="button" onClick={copyEmail} aria-disabled={copying} data-metrics-contact>
         {copying ? "Copiando…" : "Copiar e-mail"}
       </button>
       <p className={styles.copyStatus} role="status" aria-live="polite" aria-atomic="true">{status}</p>

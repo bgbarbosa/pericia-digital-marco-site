@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 import { CONTACT_LIMITS, CONTACT_TYPES, validateContact } from "@/lib/contact";
+import { metricsOptOut } from "@/lib/metrics";
 
 const inputClass = "w-full min-w-0 rounded-xl border border-white/20 bg-slate-950 px-4 py-3 text-white placeholder:text-slate-400 focus:border-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/30";
 
@@ -83,7 +84,11 @@ export default function ContactForm({ initialSubject = "", initialType = "", sit
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          ...(metricsOptOut() ? { "X-MB-Metrics-Opt-Out": "1" } : {}),
+        },
         body: JSON.stringify(validation.data),
       });
       const result = await response.json().catch(() => null);
