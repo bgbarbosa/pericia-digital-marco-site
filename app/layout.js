@@ -66,7 +66,10 @@ export const metadata = {
     shortcut: ["/favicon.ico"],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
-  verification: { google: "I55K4X8A4565Rjvpmq8Zfs_tl2t_38YGRsFvyYF-cfk" },
+  verification: {
+    google: "I55K4X8A4565Rjvpmq8Zfs_tl2t_38YGRsFvyYF-cfk",
+    other: { "msvalidate.01": "49A6DAE93186FEC17D4BEB690DDF7B14" },
+  },
   manifest: "/manifest.webmanifest",
 };
 
