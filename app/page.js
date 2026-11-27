@@ -21,7 +21,28 @@ import {
   whatsappUrl,
 } from "@/data/profile";
 
+const homeTitle = "Marco Barbosa | Computação forense, análise de dados e IA";
+const homeDescription =
+  "Conheça a trajetória e a produção de Marco Barbosa, em Campo Grande/MS, em computação forense, análise de dados e inteligência artificial aplicada.";
 const homeUrl = publicAbsoluteUrl("/");
+
+export const metadata = {
+  title: { absolute: homeTitle },
+  description: homeDescription,
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: profile.displayName,
+    title: homeTitle,
+    description: homeDescription,
+    url: homeUrl,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: homeTitle,
+    description: homeDescription,
+  },
+};
 const website = {
   "@context": "https://schema.org",
   "@type": "WebSite",

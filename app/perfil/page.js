@@ -13,7 +13,7 @@ import { publicAbsoluteUrl } from "@/lib/site-url";
 import styles from "./profile.module.css";
 
 const portraitUrl = publicAbsoluteUrl(profile.image);
-export const metadata = pageMetadata("Perfil e currículo de Marco Barbosa", "Conheça a trajetória, formação, capacitações e projetos autorais de Marco Aurélio Pereira Barbosa, criador do Dama Universe.", profilePath, { images: [portraitUrl] });
+export const metadata = pageMetadata("Perfil e currículo de Marco Barbosa", "Perfil e produção de Marco Barbosa em computação forense, análise de dados, inteligência artificial e projetos autorais em Campo Grande/MS.", profilePath, { images: [portraitUrl] });
 
 export default function ProfessionalProfilePage() {
   return (
