@@ -5,6 +5,7 @@
     "titleStatus": "aprovado_pelo_usuario",
     "subtitle": "Artigos, aplicações práticas, notícias e novidades sobre Perícia Digital e Computação Forense.",
     "audience": "Advogados",
+    "metaDescription": "Artigos de Marco Barbosa sobre perícia digital e evidências eletrônicas, com análises de mensagens, contratos, cronologias e documentos fiscais.",
     "introduction": "Mensagens, documentos, imagens e dados: quatro leituras para compreender possibilidades e limites da análise técnica.",
     "launchMode": "conjunto",
     "publishTogether": true,

@@ -201,6 +201,38 @@ test("novo retrato sem recorte na home, cartão e imagens sociais JPEG/PNG", asy
   expect((await portrait.body()).subarray(0, 3).toString("hex")).toBe("ffd8ff");
 });
 
+test("metadados editoriais aparecem uma única vez e alinham os canais sociais", async ({ page }) => {
+  const brand = "Marco Aurélio Pereira Barbosa";
+  const routes = [
+    {
+      path: "/",
+      title: "Marco Barbosa | Computação forense, análise de dados e IA",
+      description: "Conheça a trajetória e a produção de Marco Barbosa, em Campo Grande/MS, em computação forense, análise de dados e inteligência artificial aplicada.",
+    },
+    {
+      path: "/perfil",
+      title: "Perfil e currículo de Marco Barbosa",
+      description: "Perfil e produção de Marco Barbosa em computação forense, análise de dados, inteligência artificial e projetos autorais em Campo Grande/MS.",
+    },
+    {
+      path: "/pericia-na-pratica",
+      title: "Universo Forense",
+      description: "Artigos de Marco Barbosa sobre perícia digital e evidências eletrônicas, com análises de mensagens, contratos, cronologias e documentos fiscais.",
+    },
+  ];
+  for (const { path, title, description } of routes) {
+    await page.goto(path);
+    const expectedTitle = path === "/" ? title : `${title} | ${brand}`;
+    await expect(page.locator("head title")).toHaveCount(1);
+    await expect(page).toHaveTitle(expectedTitle);
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", description);
+    await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", title);
+    await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute("content", title);
+    await expect(page.locator('meta[property="og:description"]')).toHaveAttribute("content", description);
+    await expect(page.locator('meta[name="twitter:description"]')).toHaveAttribute("content", description);
+  }
+});
+
 test("metadados e sitemap usam as cinco rotas e a data real de publicação", async ({ page, request }) => {
   const authorUrl = "http://127.0.0.1:3100/perfil";
   for (const article of [null, ...content.articles]) {
@@ -208,7 +240,7 @@ test("metadados e sitemap usam as cinco rotas e a data real de publicação", as
     await page.goto(route);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `http://127.0.0.1:3100${route}`);
     await expect(page).toHaveTitle(new RegExp(article?.title || content.collection.title));
-    await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", article?.metaDescription || `${content.collection.subtitle} ${content.collection.introduction}`);
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", article?.metaDescription || content.collection.metaDescription);
     await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", `http://127.0.0.1:3100${route}`);
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", `http://127.0.0.1:3100${(article || content.articles[0]).coverPath}`);
     await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute("content", (article || content.articles[0]).coverAlt);
