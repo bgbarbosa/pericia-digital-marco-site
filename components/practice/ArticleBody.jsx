@@ -1,10 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { articleSections, headingId } from "@/lib/practice-articles";
 import styles from "./Practice.module.css";
 
 function ReferenceLink({ href, children }) {
+  if (href?.startsWith("/") && !href.startsWith("//")) {
+    return <Link href={href}>{children}</Link>;
+  }
   return <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>;
 }
 
@@ -49,6 +53,11 @@ function ArticleDiagram({ article }) {
 export default function ArticleBody({ article }) {
   return (
     <div className={styles.prose} data-testid="article-body">
+      {article.introMarkdown && (
+        <Markdown remarkPlugins={[remarkGfm]} skipHtml components={markdownComponents}>
+          {article.introMarkdown}
+        </Markdown>
+      )}
       {articleSections(article).map((section) => (
         <section key={section.id} aria-labelledby={section.id}>
           <h2 id={section.id} tabIndex={-1}>{section.title}</h2>

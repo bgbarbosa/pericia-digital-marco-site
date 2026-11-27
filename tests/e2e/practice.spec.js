@@ -9,6 +9,11 @@ const basePath = "/pericia-na-pratica";
 const publicationDate = "2026-10-11";
 const publicOrigin = "https://pericia-digital-marco-site.vercel.app";
 const articlePath = (article) => `${basePath}/${article.slug}`;
+const historicalSlugs = integrity.contentChecks.map(({ slug }) => slug);
+const historicalArticles = content.articles.filter(({ slug }) => historicalSlugs.includes(slug));
+const fifthArticle = content.articles.find(({ slug }) => slug === "preservacao-evidencias-digitais");
+const fifthPublished = fifthArticle?.publicationStatus === "publicado";
+const publishedArticles = content.articles.filter(({ publicationStatus }) => publicationStatus === "publicado");
 const allRoutes = ["/", "/cartao", basePath, ...content.articles.map(articlePath)];
 const normalize = (value) => value.replace(/\s+/g, " ").trim();
 
@@ -18,9 +23,11 @@ test("fonte editorial única e integridade dos quatro textos e onze imagens", ()
   expect(content.collection.publicationStatus).toBe("publicado");
   expect(content.collection.publicationDate).toBe(publicationDate);
   expect(content.collection.publicUrl).toBe(`${publicOrigin}${basePath}`);
-  expect(content.articles).toHaveLength(4);
-  expect(new Set(content.articles.map(({ slug }) => slug)).size).toBe(4);
-  for (const article of content.articles) {
+  expect(historicalArticles.map(({ slug }) => slug)).toEqual(historicalSlugs);
+  expect(historicalArticles).toHaveLength(4);
+  expect(content.articles).toHaveLength(5);
+  expect(new Set(content.articles.map(({ slug }) => slug)).size).toBe(5);
+  for (const article of historicalArticles) {
     const provenance = integrity.contentChecks.find(({ slug }) => slug === article.slug);
     expect(createHash("sha256").update(article.bodyMarkdown).digest("hex").toUpperCase())
       .toBe(provenance.bodyMarkdownSha256);
@@ -28,7 +35,7 @@ test("fonte editorial única e integridade dos quatro textos e onze imagens", ()
     expect(article.publicationDate).toBe(publicationDate);
     expect(article.publicUrl).toBe(`${publicOrigin}${articlePath(article)}`);
     expect(article.bodyMarkdown).toMatch(/hipotético/);
-    expect(article.relatedSlugs.sort()).toEqual(content.articles.filter(({ slug }) => slug !== article.slug).map(({ slug }) => slug).sort());
+    expect(article.relatedSlugs.sort()).toEqual(historicalArticles.filter(({ slug }) => slug !== article.slug).map(({ slug }) => slug).sort());
     const headings = [...article.bodyMarkdown.matchAll(/^## (.+)$/gm)].map((match) => match[1]);
     expect(headings.filter((heading) => heading === article.diagramAfterHeading)).toHaveLength(1);
     expect(headings.filter((heading) => heading === article.pullQuoteAfterHeading)).toHaveLength(1);
@@ -39,7 +46,7 @@ test("fonte editorial única e integridade dos quatro textos e onze imagens", ()
 });
 
 for (const width of [320, 390, 768, 1440]) {
-  test(`coleção com quatro leituras disponíveis em ${width}px`, async ({ page }) => {
+  test(`coleção preserva quatro leituras históricas e mostra a quinta em ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     expect((await page.goto(basePath)).status()).toBe(200);
     await expect(page.locator("h1")).toHaveText("Universo Forense");
@@ -48,14 +55,16 @@ for (const width of [320, 390, 768, 1440]) {
       const card = page.locator("article").filter({ has: page.getByRole("heading", { name: article.title, exact: true }) });
       await expect(card).toContainText(article.excerpt);
       await expect(card.getByRole("link", { name: `Ler artigo: ${article.title}` })).toHaveAttribute("href", articlePath(article));
-      await expect(card.getByRole("img")).toHaveAttribute("alt", article.coverAlt);
+      if (article.coverPath) {
+        await expect(card.getByRole("img")).toHaveAttribute("alt", article.coverAlt);
+      }
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }
 
 for (const width of [390, 1440]) {
-  for (const article of content.articles) {
+  for (const article of historicalArticles) {
     test(`leitura integral, quadros e navegação: ${article.slug} em ${width}px`, async ({ page, request }) => {
       const errors = [];
       page.on("pageerror", (error) => errors.push(error.message));
@@ -131,6 +140,88 @@ for (const width of [390, 1440]) {
       await expect(page).toHaveURL(new RegExp(`${basePath}$`));
     });
   }
+}
+
+for (const width of [390, 1440]) {
+  test(`candidato de preservação tem autoria, fontes e navegação em ${width}px`, async ({ page, request }) => {
+    expect(["aprovado_editorialmente", "publicado"]).toContain(fifthArticle.publicationStatus);
+    expect(fifthArticle.launchMode).toBe("individual");
+    const origin = "http://127.0.0.1:3100";
+    const route = articlePath(fifthArticle);
+    await page.setViewportSize({ width, height: 900 });
+    expect((await page.goto(basePath)).status()).toBe(200);
+    const card = page.locator("article").filter({
+      has: page.getByRole("heading", { name: fifthArticle.title, exact: true }),
+    });
+    if (fifthPublished) {
+      await expect(card).not.toContainText("Aguardando publicação");
+    } else {
+      await expect(card).toContainText("Aguardando publicação");
+    }
+    await expect(page.getByText(content.collection.introduction.replace("quatro leituras", "cinco leituras"), { exact: true }))
+      .toBeVisible();
+    await expect(page.getByText(content.collection.introduction, { exact: true })).toHaveCount(0);
+    await card.getByRole("link", { name: fifthArticle.title, exact: true }).click();
+    await expect(page).toHaveURL(origin + route);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(fifthArticle.title);
+    // Check server-rendered metadata separately from the client navigation above.
+    await page.reload();
+    const canonical = page.locator('link[rel="canonical"]');
+    await expect(canonical).toHaveCount(1);
+    await expect(canonical).toHaveAttribute("href", origin + route);
+    const schema = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+    expect(schema).toMatchObject({
+      "@type": "Article",
+      headline: fifthArticle.title,
+      mainEntityOfPage: origin + route,
+      author: { "@type": "Person", "@id": origin + "/perfil#person" },
+    });
+    const robots = page.locator('meta[name="robots"]');
+    const publishedTime = page.locator('meta[property="article:published_time"]');
+    const visibleDate = page.locator("time");
+    if (fifthPublished) {
+      expect(fifthArticle.publicationDate).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      const formatted = new Intl.DateTimeFormat("pt-BR", { dateStyle: "long", timeZone: "UTC" })
+        .format(new Date(fifthArticle.publicationDate));
+      await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
+      await expect(visibleDate).toBeVisible();
+      await expect(visibleDate).toHaveAttribute("datetime", fifthArticle.publicationDate);
+      await expect(visibleDate).toHaveText(formatted);
+      await expect(publishedTime).toHaveAttribute("content", fifthArticle.publicationDate);
+      expect(schema.datePublished).toBe(fifthArticle.publicationDate);
+    } else {
+      expect(fifthArticle.publicationDate).toBeNull();
+      await expect(robots).toHaveAttribute("content", "noindex, follow");
+      await expect(publishedTime).toHaveCount(0);
+      await expect(visibleDate).toHaveCount(0);
+      expect(schema).not.toHaveProperty("datePublished");
+    }
+    const signature = page.getByText(/^Por Marco Barbosa · Dama Universe$/);
+    await expect(signature.getByRole("link", { name: "Marco Barbosa" })).toHaveAttribute("href", "/perfil");
+
+    const body = page.getByTestId("article-body");
+    const example = body.getByRole("heading", { name: "Exemplo fictício" });
+    await page.getByRole("navigation", { name: "Sumário do artigo" })
+      .getByRole("link", { name: "Exemplo fictício" }).click();
+    await expect(example).toBeFocused();
+    const sourceUrls = [...(fifthArticle.introMarkdown + "\n" + fifthArticle.bodyMarkdown).matchAll(/\]\(([^)]+)\)/g)]
+      .map((match) => match[1]);
+    const rendered = await body.getByRole("link").evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+    expect(rendered).toEqual(sourceUrls);
+    const guide = body.getByRole("link", { name: "Perícia Digital na Prática Jurídica" });
+    await expect(guide).toHaveAttribute("href", "/areas-da-pericia");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    const sitemap = await (await request.get("/sitemap.xml")).text();
+    const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+    expect(urls).toHaveLength(fifthPublished ? 15 : 14);
+    expect(urls.includes(origin + route)).toBe(fifthPublished);
+    await page.getByRole("link", { name: "← Voltar à coleção Universo Forense" }).click();
+    await expect(page).toHaveURL(origin + basePath);
+    await card.getByRole("link", { name: fifthArticle.title, exact: true }).click();
+    await expect(page).toHaveURL(origin + route);
+    await guide.click();
+    await expect(page).toHaveURL(origin + "/areas-da-pericia");
+  });
 }
 
 test("menu, chamada da home e foco de teclado abrem a coleção", async ({ page }) => {
@@ -233,17 +324,17 @@ test("metadados editoriais aparecem uma única vez e alinham os canais sociais",
   }
 });
 
-test("metadados e sitemap usam as cinco rotas e a data real de publicação", async ({ page, request }) => {
+test("metadados históricos e sitemap seguem as datas e o status do catálogo", async ({ page, request }) => {
   const authorUrl = "http://127.0.0.1:3100/perfil";
-  for (const article of [null, ...content.articles]) {
+  for (const article of [null, ...historicalArticles]) {
     const route = article ? articlePath(article) : basePath;
     await page.goto(route);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `http://127.0.0.1:3100${route}`);
     await expect(page).toHaveTitle(new RegExp(article?.title || content.collection.title));
     await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", article?.metaDescription || content.collection.metaDescription);
     await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", `http://127.0.0.1:3100${route}`);
-    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", `http://127.0.0.1:3100${(article || content.articles[0]).coverPath}`);
-    await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute("content", (article || content.articles[0]).coverAlt);
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", `http://127.0.0.1:3100${(article || publishedArticles[0]).coverPath}`);
+    await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute("content", (article || publishedArticles[0]).coverAlt);
     const publishedTime = page.locator('meta[property="article:published_time"]');
     const jsonLd = page.locator('script[type="application/ld+json"]');
     await expect(page.locator('link[rel="author"]')).toHaveAttribute("href", authorUrl);
@@ -274,15 +365,15 @@ test("metadados e sitemap usam as cinco rotas e a data real de publicação", as
     await expect(page.locator('a[href*="pericia-digital-aplicada"]')).toHaveCount(0);
   }
   const sitemap = await (await request.get("/sitemap.xml")).text();
-  for (const route of [basePath, ...content.articles.map(articlePath)]) expect(sitemap).toContain(`http://127.0.0.1:3100${route}</loc>`);
+  for (const route of [basePath, ...publishedArticles.map(articlePath)]) expect(sitemap).toContain(`http://127.0.0.1:3100${route}</loc>`);
   expect(sitemap).not.toContain("<lastmod>");
   expect(sitemap).not.toContain("pericia-digital-aplicada");
-  for (const invalid of [basePath + "/artigo-inexistente", "/pericia-digital-aplicada", "/pericia-digital-aplicada/" + content.articles[0].slug]) {
+  for (const invalid of [basePath + "/artigo-inexistente", "/pericia-digital-aplicada", "/pericia-digital-aplicada/" + publishedArticles[0].slug]) {
     expect((await request.get(invalid)).status()).toBe(404);
   }
 });
 
-test("sete páginas mantêm leitura sem transbordamento com texto ampliado e em 320px", async ({ page }) => {
+test("rotas editoriais mantêm leitura sem transbordamento com texto ampliado e em 320px", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   for (const route of allRoutes) {
     await page.setViewportSize({ width: 320, height: 900 });

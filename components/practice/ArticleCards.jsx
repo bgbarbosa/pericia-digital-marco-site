@@ -9,17 +9,21 @@ export default function ArticleCards({ articles, compact = false }) {
     <div className={compact ? styles.relatedGrid : styles.cards}>
       {articles.map((article, index) => (
         <article key={article.slug} className={styles.card}>
-          <Image
-            src={article.coverPath}
-            alt={article.coverAlt}
-            width={1672}
-            height={941}
-            className={styles.cardImage}
-            loading={!compact && index < 2 ? "eager" : "lazy"}
-            sizes={compact ? "(max-width: 767px) 100vw, 360px" : "(max-width: 767px) 100vw, 560px"}
-          />
+          {article.coverPath && (
+            <Image
+              src={article.coverPath}
+              alt={article.coverAlt}
+              width={1672}
+              height={941}
+              className={styles.cardImage}
+              loading={!compact && index < 2 ? "eager" : "lazy"}
+              sizes={compact ? "(max-width: 767px) 100vw, 360px" : "(max-width: 767px) 100vw, 560px"}
+            />
+          )}
           <div className={styles.cardText}>
-            <p className={styles.category}>{article.category}</p>
+            <p className={styles.category}>
+              {article.category}{article.publicationStatus === "aprovado_editorialmente" && " · Aguardando publicação"}
+            </p>
             <Heading>
               <Link href={articlePath(article.slug)}>{article.title}</Link>
             </Heading>

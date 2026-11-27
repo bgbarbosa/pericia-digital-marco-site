@@ -17,7 +17,9 @@ export default function sitemap() {
       "/perfil",
       "/formacao/deteccao-imagens-ia",
       practiceCollection.basePath,
-      ...practiceArticles.map(({ slug }) => articlePath(slug)),
+      ...practiceArticles
+        .filter(({ publicationStatus }) => publicationStatus === "publicado")
+        .map(({ slug }) => articlePath(slug)),
     ].map((path) => ({
       url: publicAbsoluteUrl(path),
       changeFrequency: "monthly",

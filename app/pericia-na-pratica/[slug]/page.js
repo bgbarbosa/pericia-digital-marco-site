@@ -33,6 +33,9 @@ export default async function PracticeArticlePage({ params }) {
   const author = personForByline(article.author);
   const contactUrl = practiceWhatsAppUrl(article.title);
   const articleContactUrl = practiceContactUrl(article.title);
+  const publicationDate = article.launchMode === "individual" && article.publicationStatus === "publicado"
+    ? article.publicationDate
+    : null;
 
   return (
     <main className={styles.shell}>
@@ -47,23 +50,37 @@ export default async function PracticeArticlePage({ params }) {
           mainEntityOfPage: publicAbsoluteUrl(articlePath(article.slug)),
           headline: article.title,
           description: article.excerpt,
-          image: publicAbsoluteUrl(article.coverPath),
+          ...(article.coverPath ? { image: publicAbsoluteUrl(article.coverPath) } : {}),
+          ...(publicationDate ? { datePublished: publicationDate } : {}),
           author,
         }} />
         <Link className={styles.backLink} href={practiceCollection.basePath}>
           ← Voltar à coleção {practiceCollection.title}
         </Link>
         <header className={styles.articleHeader}>
-          <p className={styles.category}>{article.category}</p>
+          <p className={styles.category}>
+            {article.category}{article.publicationStatus === "aprovado_editorialmente" && " · Aguardando publicação"}
+          </p>
           <h1>{article.title}</h1>
           <p className={styles.subtitle}>{article.subtitle}</p>
           <p className={styles.byline}>Por <strong>{author.url ? <Link href={profilePath}>{article.author}</Link> : article.author}</strong> · {article.brand}</p>
-          <p className={styles.excerpt} data-testid="article-excerpt">{article.excerpt}</p>
+          {publicationDate && (
+            <p className={styles.byline}>
+              Publicado em{" "}
+              <time dateTime={publicationDate}>
+                {new Intl.DateTimeFormat("pt-BR", { dateStyle: "long", timeZone: "UTC" })
+                  .format(new Date(publicationDate))}
+              </time>
+            </p>
+          )}
+          {!article.introMarkdown && <p className={styles.excerpt} data-testid="article-excerpt">{article.excerpt}</p>}
         </header>
-        <figure className={styles.cover} data-testid="article-cover">
-          <Image src={article.coverPath} alt={article.coverAlt} width={1672} height={941} preload sizes="(max-width: 1152px) 100vw, 1120px" />
-          <figcaption>{article.coverCaption}</figcaption>
-        </figure>
+        {article.coverPath && (
+          <figure className={styles.cover} data-testid="article-cover">
+            <Image src={article.coverPath} alt={article.coverAlt} width={1672} height={941} preload sizes="(max-width: 1152px) 100vw, 1120px" />
+            <figcaption>{article.coverCaption}</figcaption>
+          </figure>
+        )}
         <div className={styles.readingLayout}>
           <nav className={styles.toc} aria-label="Sumário do artigo">
             <p>Nesta leitura</p>
