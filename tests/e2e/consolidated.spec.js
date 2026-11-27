@@ -219,7 +219,9 @@ test("sitemap, âncoras e ausência de rotas de rascunho", async ({
     "/areas-da-pericia",
     ...routes,
     practiceContent.collection.basePath,
-    ...practiceContent.articles.map(({ slug }) => `${practiceContent.collection.basePath}/${slug}`),
+    ...practiceContent.articles
+      .filter(({ publicationStatus }) => publicationStatus === "publicado")
+      .map(({ slug }) => `${practiceContent.collection.basePath}/${slug}`),
   ].sort());
   for (const route of routes) {
     await page.goto(route);

@@ -13,6 +13,8 @@ export const metadata = practiceMetadata();
 export default function PracticeCollectionPage() {
   const contactUrl = practiceWhatsAppUrl();
   const author = personForByline(practiceCollection.author);
+  const readingCount = { 4: "quatro", 5: "cinco" }[practiceArticles.length] ?? practiceArticles.length;
+  const introduction = practiceCollection.introduction.replace("quatro leituras", `${readingCount} leituras`);
   return (
     <main className={styles.shell}>
       <Header menu={cardMenu} contactHref={contactUrl} contactLabel="Conversar pelo WhatsApp" />
@@ -22,7 +24,7 @@ export default function PracticeCollectionPage() {
           <p className={styles.eyebrow}>Mensagens · documentos · imagens · dados</p>
           <h1>{practiceCollection.title}</h1>
           <p className={styles.collectionSubtitle}>{practiceCollection.subtitle}</p>
-          <p className={styles.introduction}>{practiceCollection.introduction}</p>
+          <p className={styles.introduction}>{introduction}</p>
         </div>
       </div>
       <div className={`${styles.container} ${styles.collectionBody}`}>
